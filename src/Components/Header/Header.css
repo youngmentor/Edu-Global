@@ -1,0 +1,46 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.Header-main {
+    width: 100%;
+    background-color: #5390D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Header {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Header-bttn {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    gap: 15px;
+}
+
+.Header-bttn1 {
+    width: 100px;
+    height: 40px;
+    border: none;
+    background: #FFFFFF;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.Header-bttn2 {
+    width: 100px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: transparent;
+    cursor: pointer;
+}
