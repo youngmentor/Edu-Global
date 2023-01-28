@@ -1,4 +1,4 @@
-.main{
+.main {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -7,15 +7,18 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     flex-wrap: wrap;
 }
-.SignUp-main{
+
+.SignUp-main {
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-around; 
-     
+    flex-wrap: wrap;
+    justify-content: space-around;
+
 }
-.app{
+
+.app {
     width: 400px;
     display: flex;
     justify-content: center;
@@ -23,7 +26,8 @@
     flex-direction: column;
     border-radius: 10px;
 }
-.formData{ 
+
+.formData {
     /* background-image: linear-gradient(to right, rgb(9,47,121),rgb(6,28,70)); */
     width: 30%;
     /* background-color: yellow; */
@@ -35,71 +39,146 @@
     outline: none;
     flex-direction: column;
     line-height: 1.7;
+    margin-top: 10px;
+    gap: 10px;
 }
-.formData h2{
+
+.formData h2 {
     color: white;
     font-size: 25px;
 }
-.input{
+
+.input {
+    width: 280px;
     border: 1px solid rgb(160, 156, 156);
     outline: none;
     border-radius: 10px;
     height: 60px;
     background-color: white;
+
 }
-.label{
-    width: 280px;
+
+.label {
+    
     display: flex;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
 }
-.signbttn{
+
+.signbttn {
     width: 260px;
     height: 60px;
     border: none;
     outline: none;
-    border-radius: 28px;
-    background-color: rgb(15,94,247);
+    border-radius: 15px;
+    background-color: rgb(15, 94, 247);
     color: white;
     cursor: pointer;
     margin-top: 15px;
-    font-size: x-large;
-    font-weight: 600;
+    font-size: 20px;
 }
-.line{
-    width: 300px;
-}
-.err{
+
+.err {
     display: none;
     font-size: 0.75rem;
     color: red;
 }
-.input:invalid[focus ="true"] ~ .err{
+
+.input:invalid[focus="true"]~.err {
     display: block;
-  }
-  .input:invalid[focus = "true"] {
+}
+
+.input:invalid[focus="true"] {
     border: 1px solid red;
-  }
-  .SignUpImage-contain{
+}
+
+.SignUpImage-contain {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     width: 70%;
     height: 100%;
-   background-color: whitesmoke;
-  }
-  .SignUpImage{
+    background-color: whitesmoke;
+}
+
+.SignUpImage {
     width: 100%;
     height: 100%;
     object-fit: contain;
-  }
-.sign-h3{
+}
+
+.sign-h3 {
     color: grey;
 }
-.forg{
-    color: white;
+
+.forg {
+    color: black;
 }
-.b{
-    color: rgb(17,95,247);
+
+.b {
+    color: rgb(17, 95, 247);
+}
+
+@media screen and (max-width: 769px) {
+    .SignUpImage-contain {
+        display: none;
+    }
+
+    .input {
+        border: 1px solid rgb(160, 156, 156);
+        outline: none;
+        border-radius: 10px;
+        height: 30px;
+        background-color: white;
+    }
+
+    .signbttn {
+        width: 260px;
+        height: 30px;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        background-color: rgb(15, 94, 247);
+        color: white;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .SignUpImage-contain {
+        display: none;
+    }
+
+    .input {
+        border: 1px solid rgb(160, 156, 156);
+        outline: none;
+        border-radius: 10px;
+        height: 20px;
+        background-color: white;
+    }
+
+    .signbttn {
+        width: 260px;
+        height: 20px;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        background-color: rgb(15, 94, 247);
+        color: white;
+        cursor: pointer;
+        font-size: 15px;
+        /* margin-top: 15px; */
+    }
+
+    .forg {
+        font-size: 15px;
+    }
+
+    .Already {
+        font-size: 10px;
+    }
 }

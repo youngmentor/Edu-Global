@@ -11,11 +11,11 @@ const SignUp = (props,{handleChange}) => {
    <div  className='app'>
      <div className='formwrap'>
             <label className='label'>
-             <h3 className='sign-h3'> {props.name}</h3>
               <input  
                  className="input"
                  type={props.type}
                  name={props.name}
+                 placeholder={props.placeholder}
                  onChange={handleChange}
                  required={props.required}
                  pattern={props.pattern}

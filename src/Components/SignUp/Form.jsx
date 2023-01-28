@@ -34,6 +34,7 @@ const Form = () => {
       name: "E-mail",
       type: "email",
       label: "email",
+      placeholder: "Email",
       required: true,
       errMsg: "email has to be valid",
     },
@@ -42,6 +43,7 @@ const Form = () => {
       name: "Password",
       type: "password",
       label: "password",
+      placeholder: "Password",
       required: true,
       errMsg: `At least 8 characters, min 1 Uppercase 1 Lowercase 1 Number 1 special character`,
       pattern: `^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$`
@@ -51,6 +53,7 @@ const Form = () => {
       name: "Confirm Password",
       type: "password",
       label: "confirmPassword",
+      placeholder: "confirmPassword",
       pattern: data.password,
       required: true,
       errMsg: "Password must match!"
@@ -73,15 +76,15 @@ const Form = () => {
   }, [])
   return (
      <main className="main">
-  {!header ?removeHeader: <div className='SignUp-main' >
+   <div className='SignUp-main' >
    <form onSubmit={handleSubmit} className="formData" >
       <h2 className='form-h1'>Register Your Account</h2>
       {field.map((field) => (
         <SignUp key={field.id} {...field} handleChange={handleChange} data={data[field.name]}/>
       ))}
-       {/* <input type="checkbox" onChange={() => setData ({...data, admin: true})} /> */}
-       <h3 className='forg'>Forgot Password </h3>
-      <button type="submit" className='signbttn'>Sign up</button>
+       {/* <h3 className='forg'>Forgot Password </h3> */}
+      <button type="submit" className='signbttn'><p>Sign Up</p></button>
+      <h3 className='Already'>Already have an Account</h3>
     </form>
      <div className='SignUpImage-contain' >
         <h1>Start managing <b className='b'>free</b> now !</h1>
@@ -89,7 +92,7 @@ const Form = () => {
       alt="siignup" 
       className='SignUpImage'/>
      </div>
-   </div> }
+   </div>
   </main>
   )
 }
