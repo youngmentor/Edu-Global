@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div>
        <BrowserRouter>
-      {!header ?  <Header/> :null}
+        <Header/> 
          <Routes>
             <Route path="/" element={<Hero/>}/>
             <Route path="signup" element={<Form/>} />

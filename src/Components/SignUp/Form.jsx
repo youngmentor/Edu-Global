@@ -69,11 +69,11 @@ const Form = () => {
   };
 
   useEffect(()=>{
-    !header && removeHeader
+    // !header && removeHeader
   }, [])
   return (
      <main className="main">
-   <div className='SignUp-main' >
+  {!header ?removeHeader: <div className='SignUp-main' >
    <form onSubmit={handleSubmit} className="formData" >
       <h2 className='form-h1'>Register Your Account</h2>
       {field.map((field) => (
@@ -89,7 +89,7 @@ const Form = () => {
       alt="siignup" 
       className='SignUpImage'/>
      </div>
-   </div>
+   </div> }
   </main>
   )
 }

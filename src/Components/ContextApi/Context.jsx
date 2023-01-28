@@ -2,15 +2,15 @@ import {  createContext, useReducer, useEffect, useState } from 'react';
 export const ThemeContext = createContext();
 
 export const ThemeProvider=({children})=>{
-  const [header, setHeader] = useState(false)
+  const [header, setHeader] = useState(JSON.parse(localStorage.getItem("header")));
+
 
   const removeHeader=()=>{
     setHeader(!header);
-    console.log(header)
   }
 
   useEffect(()=>{
-    // localStorage.setItem("header", header)
+    localStorage.setItem("header", header)
   },[header])
 
 
