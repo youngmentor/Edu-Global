@@ -28,9 +28,7 @@
 }
 
 .formData {
-    /* background-image: linear-gradient(to right, rgb(9,47,121),rgb(6,28,70)); */
-    width: 30%;
-    /* background-color: yellow; */
+    width: 39.5%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -49,11 +47,11 @@
 }
 
 .input {
-    width: 280px;
-    border: 1px solid rgb(160, 156, 156);
+    width: 300px;
+    border: 1px solid rgb(94, 92, 92);
     outline: none;
     border-radius: 10px;
-    height: 60px;
+    height: 70px;
     background-color: white;
 
 }
@@ -68,8 +66,8 @@
 }
 
 .signbttn {
-    width: 260px;
-    height: 60px;
+    width: 280px;
+    height: 50px;
     border: none;
     outline: none;
     border-radius: 15px;
@@ -99,7 +97,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 70%;
+    width: 60%;
     height: 100%;
     background-color: whitesmoke;
 }
@@ -128,23 +126,28 @@
     }
 
     .input {
-        border: 1px solid rgb(160, 156, 156);
+        width: 500px;
+        border: 1px solid black;
         outline: none;
         border-radius: 10px;
-        height: 30px;
+        height: 70px;
         background-color: white;
     }
 
     .signbttn {
-        width: 260px;
-        height: 30px;
+        width: 400px;
+        height: 50px;
         border: none;
         outline: none;
-        border-radius: 10px;
+        border-radius: 15px;
         background-color: rgb(15, 94, 247);
         color: white;
         cursor: pointer;
         margin-top: 15px;
+        font-size: 20px;
+    }
+    .verticalSign{
+        display: none;
     }
 }
 
@@ -154,24 +157,31 @@
     }
 
     .input {
+        width: 350px;
         border: 1px solid rgb(160, 156, 156);
         outline: none;
         border-radius: 10px;
-        height: 20px;
+        height: 40px;
         background-color: white;
     }
-
+    .verticalSign{
+        display: none;
+    }
     .signbttn {
-        width: 260px;
-        height: 20px;
+        width: 350px;
+        height: 40px;
         border: none;
         outline: none;
-        border-radius: 10px;
+        border-radius: 15px;
         background-color: rgb(15, 94, 247);
         color: white;
         cursor: pointer;
+        margin-top: 15px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 15px;
-        /* margin-top: 15px; */
     }
 
     .forg {
@@ -181,4 +191,9 @@
     .Already {
         font-size: 10px;
     }
+    .err {
+    display: none;
+    font-size: 0.5rem;
+    color: red;
+}
 }

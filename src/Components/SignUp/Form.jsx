@@ -82,10 +82,10 @@ const Form = () => {
       {field.map((field) => (
         <SignUp key={field.id} {...field} handleChange={handleChange} data={data[field.name]}/>
       ))}
-       {/* <h3 className='forg'>Forgot Password </h3> */}
-      <button type="submit" className='signbttn'><p>Sign Up</p></button>
+     <div className='SignUpbtt'> <button type="submit" className='signbttn'>Sign Up</button></div>
       <h3 className='Already'>Already have an Account</h3>
     </form>
+    <hr style={{transform: 'rotate(180deg)', height: '100vh'}} className="verticalSign" />
      <div className='SignUpImage-contain' >
         <h1>Start managing <b className='b'>free</b> now !</h1>
      <img src="/signup1 (1).png"
