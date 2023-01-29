@@ -14,6 +14,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
 }
 .FooterImgDiv{
     width: 150px;
@@ -27,9 +28,12 @@
 .FooterContact{
     line-height: 1.4;
     font-size: 20px;
+    color: white;
 }
 .FooterPartners{
     margin-top: 20px;
+    font-size: 20px;
+    color: white;
 }
 @media screen and (max-width: 426px){
     .FooterHead{

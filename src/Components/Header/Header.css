@@ -39,8 +39,9 @@
 .Header-bttn2 {
     width: 100px;
     height: 40px;
-    border: 1px solid black;
+    border: 1px solid rgb(48, 43, 43);
     border-radius: 8px;
     background-color: transparent;
     cursor: pointer;
+    color: white;
 }
