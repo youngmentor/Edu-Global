@@ -16,7 +16,7 @@
 .Features-Wrapper{
     width: 90%;
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     justify-content: center;
 }
 .Admin-img{
