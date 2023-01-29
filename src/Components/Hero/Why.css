@@ -47,10 +47,10 @@
     justify-content: space-between;
 }
 .Why-img{
-    width: 400px;
+    width: 500px;
 }
 .WhyImg{
-    width: 400px;
+    width: 500px;
     margin-top: 20px;
 }
 .Why-text{
@@ -61,8 +61,10 @@
 .Heading1{
     margin-bottom: 20px;
 }
-.Header{
-    /* font-size: 20px; */
+.paragraph{
+    font-size: 20px;
+}
+.WhyHeader{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,7 +99,7 @@
     .paragraph{
         font-size: 10px;
     }
-    .Header{
+    .WhyHeader{
         font-size: 20px;
         display: flex;
         align-items: center;
