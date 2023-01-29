@@ -14,10 +14,11 @@
     margin-top: 80px;
 }
 .Features-Wrapper{
-    width: 90%;
+    width: 95%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 .Admin-img{
     width: 300px;
