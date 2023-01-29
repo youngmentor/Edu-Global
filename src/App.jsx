@@ -5,6 +5,7 @@ import Form from './Components/SignUp/Form'
 import Hero from './Components/Hero/Hero'
 import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom'
 import { ThemeContext } from './Components/ContextApi/Context'
+import Login from './Components/Login/Login'
 const App = () => {
     const {removeHeader, header} = useContext(ThemeContext)
     
@@ -15,7 +16,7 @@ const App = () => {
          <Routes>
             <Route path="/" element={<Hero/>}/>
             <Route path="signup" element={<Form/>} />
-            <Route path="login" element={<Form/>} />
+            <Route path="login" element={<Login/>} />
          </Routes>
       </HashRouter>
     </div>

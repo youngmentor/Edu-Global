@@ -9,7 +9,7 @@ const Header = () => {
                 <img src="" alt="Logo"  onClick={()=> navigate("/")}  />
                 <div className='Header-bttn'>
                     <button className="Header-bttn1" onClick={()=> navigate("signUp")}  >Sign Up+</button>
-                    <button className='Header-bttn2' >Login</button>
+                    <button className='Header-bttn2' onClick={()=> navigate("login")}  >Login</button>
                 </div>
             </div>
         </div>
