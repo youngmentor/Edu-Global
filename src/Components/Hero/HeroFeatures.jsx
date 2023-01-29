@@ -13,7 +13,7 @@ const HeroFeatures = () => {
        {Datas?.map((i)=>
           <div className='Features-Wrapper'>
           <div className='Admin-img' >
-            <img src={i.Img} className="FeaturesImg" />
+           { <img src={i.Img} className="FeaturesImg" />}
           </div>
           <div className='Features-text'>
             <div className='Heading'><h1>{i.bgtxt}</h1></div>

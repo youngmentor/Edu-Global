@@ -11,6 +11,7 @@
 .HeroWrap{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 100px;
 }
 .Hero{
@@ -39,7 +40,6 @@
 }
 .HeroRight p{
     font-size: 30px;
-
     margin-top: 30px;
 }
 .Herobtt{
@@ -49,6 +49,9 @@
     background-color: #008AFF;
     border: none;
     border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
 @media screen and (max-width: 769px){
     .Hero{
@@ -72,7 +75,7 @@
     }
     .HeroRight{
         width: 400px;
-        margin-left: 90px;
+        /* margin-left: 90px; */
     }
     .HeroRight h1{
         font-size: 35px;
@@ -97,7 +100,7 @@
         flex-direction: column;
         align-items: center;
         height: 500px;
-        width: 60%;
+        width: 100%;
         justify-content: center;
     }
     .HeroLeft{
@@ -109,18 +112,15 @@
     .studentImg{
         width: 250px;
         height: 250px;
-       
     }
     .HeroRight{
         width: 280px;
-        margin-left: 90px;
     }
     .HeroRight h1{
         font-size: 28px;
     }
     .HeroRight p{
         font-size: 10px;
-    
         margin-top: 20px;
     }
     .Herobtt{

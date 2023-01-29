@@ -6,7 +6,7 @@
 }
 
 .Features{
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,7 @@
 .Features-Wrapper{
     width: 90%;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
 }
 .Admin-img{
