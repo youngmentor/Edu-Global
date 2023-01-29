@@ -88,7 +88,7 @@
 
     .HeroRight {
         width: 400px;
-        /* margin-left: 90px; */
+        text-align: center;
     }
 
     .HeroRight h1 {
@@ -154,5 +154,6 @@
         border: none;
         color: white;
         border-radius: 8px;
+        
     }
 }

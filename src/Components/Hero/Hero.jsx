@@ -14,7 +14,9 @@ const Hero = () => {
             <h1>A Better Platform For<br /> Management Of School <br /> Records
               And Data system </h1>
             <p>Now management of your school, college <br />or any educational base activities is 100% <br />efficient and reliable</p>
-            <button className='Herobtt' onClick={() => navigate("signUp")} >Get Started</button>
+           <div className='HeaderbttnDiv'>
+           <button className='Herobtt' onClick={() => navigate("signUp")} >Get Started</button>
+           </div>
           </div>
           <div className='HeroLeft'>
             <img src={Student} alt="student" className='studentImg' />
