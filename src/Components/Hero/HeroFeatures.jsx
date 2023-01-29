@@ -1,8 +1,9 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Datas}  from './Data'
 import './HeroFeatures.css'
 const HeroFeatures = () => {
-
+ const navigate = useNavigate()
   const style ={
     flexDirection: "row-reverse",
     backgroundColor: "blue"

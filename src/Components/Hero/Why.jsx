@@ -1,6 +1,8 @@
 import React from 'react'
 import './Why.css'
+import { useNavigate } from 'react-router-dom'
 const Why = () => {
+    const navigate = useNavigate()
     return (
         <div className='Why-Body'>
             <h1 className='WhyHeader' >Why Choose Edu-Global</h1>          
