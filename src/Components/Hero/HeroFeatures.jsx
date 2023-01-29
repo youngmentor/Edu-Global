@@ -25,6 +25,9 @@ const HeroFeatures = () => {
         </div>
        )}
     </div>
+    <div className='HeaderbttnDiv'>
+           <button className='Herobtt' onClick={() => navigate("signUp")} >Sign Up here</button>
+           </div>
     </div>
   )
 }

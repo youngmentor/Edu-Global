@@ -3,6 +3,7 @@ import Header from './Components/Header/Header'
 // import SignUp from './Components/SignUp/SignUp'
 import Form from './Components/SignUp/Form'
 import Hero from './Components/Hero/Hero'
+import Footer from './Components/Footer/Footer'
 import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom'
 import { ThemeContext } from './Components/ContextApi/Context'
 import Login from './Components/Login/Login'
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="signup" element={<Form/>} />
             <Route path="login" element={<Login/>} />
          </Routes>
+          <Footer/>
       </HashRouter>
     </div>
   )

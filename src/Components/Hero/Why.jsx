@@ -3,7 +3,7 @@ import './Why.css'
 const Why = () => {
     return (
         <div className='Why-Body'>
-            <h1 className='WhyHeader' >Why Choose Edu-Global</h1>
+            <h1 className='WhyHeader' >Why Choose Edu-Global</h1>          
             <div className='Why-Main'>
                 <div className='Why'>
                     <div className='Why-Wrapper'>
@@ -28,6 +28,9 @@ Edu-Global is a standard-rich school management system for all educational insti
                         </div>
                     </div>
                 </div>
+                <div className='HeaderbttnDiv'>
+           <button className='Herobtt' onClick={() => navigate("signUp")} >Sign Up here</button>
+           </div>
             </div>
         </div>
     )
