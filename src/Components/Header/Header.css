@@ -3,7 +3,15 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
+.LogoImg{
+    width: 100px;
+    height: 50px;
+    margin-bottom: 35px;
+}
+.HeaderLogo{
+  width: 100px;
+  height: 100px;
+}
 .Header-main {
     width: 100%;
     background-color: #5390D9;
@@ -44,4 +52,15 @@
     background-color: transparent;
     cursor: pointer;
     color: white;
+}
+.Burger{
+    display: none;
+}
+@media screen and (max-width: 426px){
+    .Burger{
+        display: flex;
+    }
+    .Header-bttn{
+        display: none;
+    }
 }

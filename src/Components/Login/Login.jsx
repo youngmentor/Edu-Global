@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState,} from "react";
+import { useNavigate } from "react-router-dom";
 import './Login.css'
 const Login = () => {
-    const field = [
+  const navigate = useNavigate()
+     const field = [
         {
             name: "username",
             label: "Username",
@@ -15,7 +17,6 @@ const Login = () => {
             type: "password"
         },
     ];
-
     const [loginData, setLoginData] = useState({});
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -46,7 +47,7 @@ const Login = () => {
                         />
                     </label>
                 ))}
-                <button type="submit" className="Loginbtt" >Login</button>
+                <button type="submit" className="Loginbtt"  onClick={()=> navigate("admin")} >Login</button>
                 </div>
                 <hr style={{transform: 'rotate(180deg)', height: '100vh'}} className="verticalSign" />
                 <div className="ImageWrap">  

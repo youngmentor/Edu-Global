@@ -2,8 +2,11 @@ import React, {useState, useContext, useEffect} from 'react'
 import SignUp from './SignUp'
 import './SignUp.css'
 import { ThemeContext } from '../ContextApi/Context'
+import { useNavigate } from 'react-router-dom'
+
 // import { useNavigate } from 'react-router-dom'
 const Form = () => {
+  const navigate = useNavigate()
     const {removeHeader, header} = useContext(ThemeContext)
   const [data, setData] = useState({
     name: "",
@@ -63,6 +66,8 @@ const Form = () => {
     event.preventDefault();
     console.log(data)
   };
+
+  
   const handleChange = event => {
     setData(
       {
@@ -82,7 +87,7 @@ const Form = () => {
       {field.map((field) => (
         <SignUp key={field.id} {...field} handleChange={handleChange} data={data[field.name]}/>
       ))}
-     <div className='SignUpbtt'> <button type="submit" className='signbttn'>Sign Up</button></div>
+     <div className='SignUpbtt'> <button type="submit" className='signbttn' onClick={()=> navigate("/admin")}  >Sign Up</button></div>
       <h3 className='Already'>Already have an Account</h3>
     </form>
     <hr style={{transform: 'rotate(180deg)', height: '100vh'}} className="verticalSign" />

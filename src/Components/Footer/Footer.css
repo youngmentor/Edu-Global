@@ -5,9 +5,11 @@
 }
 .Footer-Main{
     width: 100%;
-    background-color: #008AFF;
+    background-color: #072f52;
     margin-top: 50px;
-    padding: 15px;
+    padding: 10px;
+    /* position: absolute;
+    bottom: 0%; */
 }
 .FooterHead{
     font-size: 25px;
@@ -27,12 +29,12 @@
 }
 .FooterContact{
     line-height: 1.4;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
 }
 .FooterPartners{
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 18px;
     color: white;
 }
 @media screen and (max-width: 426px){

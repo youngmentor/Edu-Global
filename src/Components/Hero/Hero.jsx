@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Student from "./Images/student2.png"
 import HeroFeatures from './HeroFeatures'
+import Footer from '../Footer/Footer'
 import Why from './Why'
 import "./Hero.css"
 const Hero = () => {
@@ -19,12 +20,13 @@ const Hero = () => {
            </div>
           </div>
           <div className='HeroLeft'>
-            <img src={Student} alt="student" className='studentImg' />
+            <img src="/land.jpg" alt="student" className='studentImg' />
           </div>
         </div>
       </div>
       <HeroFeatures />
       <Why />
+      <Footer/>
     </div>
   )
 }

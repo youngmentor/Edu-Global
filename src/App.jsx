@@ -4,9 +4,10 @@ import Header from './Components/Header/Header'
 import Form from './Components/SignUp/Form'
 import Hero from './Components/Hero/Hero'
 import Footer from './Components/Footer/Footer'
-import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom'
+import { Routes, Route, HashRouter } from 'react-router-dom'
 import { ThemeContext } from './Components/ContextApi/Context'
 import Login from './Components/Login/Login'
+import Admin from './Components/AdminDashboard/Admin'
 import './App.css'
 const App = () => {
   return (
@@ -16,10 +17,10 @@ const App = () => {
          <Header />
          <Routes>
             <Route path="/" element={<Hero/>}/>
-            <Route path="signup" element={<Form/>} />
-            <Route path="login" element={<Login/>} />
+            <Route path="/signup" element={<Form/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/admin" element={<Admin/>}/>
          </Routes>
-          <Footer/>
       </HashRouter>
     </div>
   )
