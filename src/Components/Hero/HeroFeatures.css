@@ -48,6 +48,9 @@
     justify-content: center;
 }
 @media screen and (max-width: 426px){
+    .MainFeatures{
+        margin-top: 80px;
+    }
     .Features-Wrapper{
         width: 100%;
         display: flex;
