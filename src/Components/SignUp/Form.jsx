@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 const Form = () => {
   const navigate = useNavigate()
   const { removeHeader, header } = useContext(ThemeContext)
-  const [data, setData] = useState({
+  const [form, setForm] = useState({
     name: "",
     email: "",
     address: "",
@@ -17,21 +17,6 @@ const Form = () => {
   })
 
   const field = [
-    // {
-    //   id: 1,
-    //   name: "Name",
-    //   type: "text",
-    //   label: "name",
-    //   required: true,
-    //   errMsg: "must be atleast three letter, number and special character not included",
-    //   pattern: `[a-zA-Z][a-zA-Z0-9-_. ]{3,20}`
-    // },
-    // {
-    //   id: 2,
-    //   name: "address",
-    //   type: "text",
-    //   label: "address",
-    // },
     {
       id: 3,
       name: "E-mail",
@@ -43,21 +28,21 @@ const Form = () => {
     },
     {
       id: 4,
-      name: "Password",
+      name: "password",
       type: "password",
       label: "password",
       placeholder: "Password",
       required: true,
       errMsg: `At least 8 characters, min 1 Uppercase 1 Lowercase 1 Number 1 special character`,
-      pattern: `^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$`
+      pattern: `^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{10,}$`
     },
     {
       id: 5,
-      name: "Confirm Password",
+      name: "confirmPassword",
       type: "password",
       label: "confirmPassword",
       placeholder: "confirmPassword",
-      pattern: data.password,
+      pattern: form.password,
       required: true,
       errMsg: "Password must match!"
     },
@@ -66,12 +51,16 @@ const Form = () => {
     event.preventDefault();
     console.log(data)
   };
+  if (form.password !== form.confirmPassword) {
+    alert('Passwords do not match');
+    return;
+  }
 
 
   const handleChange = event => {
-    setData(
+    setForm(
       {
-        ...data, [event.target.name]: event.target.value
+        ...form, [e.target.name]: e.target.value
       }
     );
   };
@@ -85,10 +74,10 @@ const Form = () => {
         <form onSubmit={handleSubmit} className="formData" >
           <h2 className='form-h1'>Register Your Account</h2>
           {field.map((field) => (
-            <SignUp key={field.id} {...field} handleChange={handleChange} data={data[field.name]} />
+            <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]}  />
           ))}
           <div className='SignUpbtt'> <button type="submit" className='signbttn' onClick={() => navigate("/admin")}  >Sign Up</button></div>
-          <h3 className='Already'>Already have an Account <b className='b1' onClick={() => navigate("/login")}  >Login here?</b></h3>
+          <h3 className='Already'>Already have an Account  <b className='b1' onClick={() => navigate("/login")}> Login here?</b></h3>
         </form>
         <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
         <div className='SignUpImage-contain' >

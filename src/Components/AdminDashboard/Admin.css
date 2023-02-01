@@ -6,29 +6,93 @@
 .AdminMain{
     width: 100%;
 }
+.AdminLeftWrapper{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
 .AdminLeft{
     width: 25%;
+     padding: 20px;
     background-color: white;
     border: 1px solid black;
     display: flex;
+    flex-direction: column;
    align-items: center;
    justify-content: center;
+   gap:50px;
 }
-.AdminLeftWrap{
-   width: 90%; 
+.AdminRight{
+    width: 75%;
 }
 .AdminNav{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 30px;
 }
 .DashDrop{
-    width: 100px;
+    width: 230px;
     display: flex;
     flex-direction: column;
- 
+    align-items: flex-end;
+    margin-top: 15px;
+    gap: 10px;
 }
-.AdminSidebar{
+/* .AdminSidebar{
     width: 100%;
+} */
+.AdminwelcomeMssg{
+    width: 400px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    margin-top: 15px;
+}
+.AdminCard{
+    width: 250px;
+    height: 150px;
+    background-color: #5390D9 ;
+    margin-top: 30px;
+}
+.AdminCardHolder{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+   align-items: center;
+    gap: 15px;
+}
+.AdminLeftArrowIcon{
+    cursor: pointer;
+}
+@media screen and (max-width: 426px){
+    .AdminwelcomeMssg{
+        width: 380px;
+        height: 100px;
+        display: flex;
+        text-align: center;
+        background-color: aquamarine;
+        margin-top: 15px;
+    }
+    .AdminLeft{
+        display: none;
+    }
+    .AdminLeftWrapper{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .AdminRight{
+        width:90%;
+    }
+    .AdminCard{
+        width: 500px;
+        height: 150px;
+        background-color: #5390D9 ;
+        margin-top: 30px;
+    }
 }

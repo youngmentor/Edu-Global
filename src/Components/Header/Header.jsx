@@ -11,6 +11,7 @@ const Header = () => {
         setToggle(!toggle)
         setIsOpen(!isOpen)
     };
+     
     const navigate = useNavigate()
 
     return (
@@ -18,17 +19,17 @@ const Header = () => {
             <div className='Header'>
                 <div className='LogoImg'>
                     <img src="/LOGO.png" alt="Logo" onClick={() => navigate("/")} className="HeaderLogo" />
-                </div>   
-                {isOpen &&(
-        <div className='Header-btt'>
-        <button className="Header-bttn1" onClick={() => navigate("signUp")}  >Sign Up+</button>
-        <button className='Header-bttn2' onClick={() => navigate("login")}  >Login</button>
-    </div>
-      )}   
+                </div>    
                <div className='Header-bttn'>
                  <button className="Header-bttn1" onClick={() => navigate("signUp")}  >Sign Up+</button>
                  <button className='Header-bttn2' onClick={() => navigate("login")}  >Login</button>
              </div>
+             {isOpen &&(
+        <div className='Header-btt'>
+        <button className="Header-bttn1" onClick={() => navigate("signUp")}  >Sign Up+</button>
+        <button className='Header-bttn2' onClick={() => navigate("login")}  >Login</button>
+    </div>
+      )} 
                 <div className='Burger'>
                     {toggle ? <GiHamburgerMenu onClick={handleToggle} /> : <FaTimes onClick={handleToggle} />}
                 </div>

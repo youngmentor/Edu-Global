@@ -79,11 +79,11 @@
 
 .err {
     display: none;
-    font-size: 0.75rem;
+    font-size: 0.70rem;
     color: red;
 }
 
-.input:invalid[focus="true"]~.err {
+.input:invalid[focus= "true"] ~.err {
     display: block;
 }
 
@@ -96,7 +96,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 55%;
     height: 100%;
     background-color: whitesmoke;
 }
@@ -123,7 +123,11 @@
     cursor: pointer;
 }
 .Already{
-    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 400px;
 }
 @media screen and (max-width: 769px) {
     .SignUpImage-contain {
