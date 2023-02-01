@@ -1,49 +1,69 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
-.AdminMain{
+.AdminHeader{
+    width: 100%;
+    background-color: #5390D9;
+}
+.AdminMain {
     width: 100%;
 }
-.AdminLeftWrapper{
+
+.AdminLeftWrapper {
     width: 100%;
     display: flex;
     gap: 20px;
 }
-.AdminLeft{
+
+.AdminLeft {
     width: 25%;
-     padding: 20px;
+    padding: 20px;
     background-color: white;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   gap:50px;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
 }
-.AdminRight{
+.AdminLeftinvisible{
+    /* width: 25%; */
+    padding: 20px;
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.AdminRight {
     width: 75%;
 }
-.AdminNav{
+
+.AdminNav {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 30px;
 }
-.DashDrop{
-    width: 230px;
+
+.DashDrop {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     margin-top: 15px;
     gap: 10px;
 }
+
 /* .AdminSidebar{
     width: 100%;
 } */
-.AdminwelcomeMssg{
+.AdminwelcomeMssg {
     width: 400px;
     height: 100px;
     display: flex;
@@ -52,47 +72,80 @@
     background-color: aquamarine;
     margin-top: 15px;
 }
-.AdminCard{
+
+.AdminCard {
     width: 250px;
     height: 150px;
-    background-color: #5390D9 ;
+    background-color: #5390D9;
     margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.AdminCardHolder{
+
+.AdminCardHolder {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-   align-items: center;
+    align-items: center;
     gap: 15px;
 }
-.AdminLeftArrowIcon{
+
+.AdminLeftArrowIcon {
     cursor: pointer;
 }
-@media screen and (max-width: 426px){
-    .AdminwelcomeMssg{
-        width: 380px;
+
+.react-calendar {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #f2f2f2;
+}
+
+.react-calendar__tile {
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.react-calendar__tile--active {
+    background-color: #5390D9;
+    color: #5390D9;
+}
+
+.Calender {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 426px) {
+    .AdminwelcomeMssg {
+        width: 355px;
         height: 100px;
         display: flex;
         text-align: center;
         background-color: aquamarine;
         margin-top: 15px;
     }
-    .AdminLeft{
+
+    .AdminLeft {
         display: none;
     }
-    .AdminLeftWrapper{
+
+    .AdminLeftWrapper {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .AdminRight{
-        width:90%;
+
+    .AdminRight {
+        width: 82.5%;
     }
-    .AdminCard{
+
+    .AdminCard {
         width: 500px;
         height: 150px;
-        background-color: #5390D9 ;
+        background-color: #5390D9;
         margin-top: 30px;
     }
 }

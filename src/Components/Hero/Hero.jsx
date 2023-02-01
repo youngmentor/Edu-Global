@@ -1,14 +1,16 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Student from "./Images/student2.png"
+// import Student from "./Images/student2.png"
 import HeroFeatures from './HeroFeatures'
 import Footer from '../Footer/Footer'
+import Header from '../Header/Header'
 import Why from './Why'
 import "./Hero.css"
 const Hero = () => {
   const navigate = useNavigate()
   return (
     <div className='HeroMain'>
+       <Header />
       <div className='HeroWrap'>
         <div className='Hero'>
           <div className='HeroRight' >
