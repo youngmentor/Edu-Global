@@ -9,7 +9,7 @@ const AdminLeft = (props) => {
                     <div className='AdminNav'>
                         {props.icon1}
                         <h3>{props.title}</h3>
-                        {props.icon2}
+                        <div onClick={()=>{}}> {props.icon2}</div>
                     </div>
                     <div className='DashDrop'>
                         <p>{props.text1}</p>

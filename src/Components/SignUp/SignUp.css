@@ -53,7 +53,7 @@
     border-radius: 10px;
     height: 70px;
     background-color: white;
-
+    padding: 15px;
 }
 
 .label {
@@ -118,7 +118,13 @@
 .b {
     color: rgb(17, 95, 247);
 }
-
+.b1 {
+    color: rgb(17, 95, 247);
+    cursor: pointer;
+}
+.Already{
+    width: 200px;
+}
 @media screen and (max-width: 769px) {
     .SignUpImage-contain {
         display: none;

@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import SignUp from './SignUp'
 import './SignUp.css'
 import { ThemeContext } from '../ContextApi/Context'
@@ -7,15 +7,15 @@ import { useNavigate } from 'react-router-dom'
 // import { useNavigate } from 'react-router-dom'
 const Form = () => {
   const navigate = useNavigate()
-    const {removeHeader, header} = useContext(ThemeContext)
+  const { removeHeader, header } = useContext(ThemeContext)
   const [data, setData] = useState({
     name: "",
     email: "",
-    address:"",
+    address: "",
     password: "",
     confirmPassword: "",
   })
- 
+
   const field = [
     // {
     //   id: 1,
@@ -67,7 +67,7 @@ const Form = () => {
     console.log(data)
   };
 
-  
+
   const handleChange = event => {
     setData(
       {
@@ -76,29 +76,29 @@ const Form = () => {
     );
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     // !header && removeHeader
   }, [])
   return (
-     <main className="main">
-   <div className='SignUp-main' >
-   <form onSubmit={handleSubmit} className="formData" >
-      <h2 className='form-h1'>Register Your Account</h2>
-      {field.map((field) => (
-        <SignUp key={field.id} {...field} handleChange={handleChange} data={data[field.name]}/>
-      ))}
-     <div className='SignUpbtt'> <button type="submit" className='signbttn' onClick={()=> navigate("/admin")}  >Sign Up</button></div>
-      <h3 className='Already'>Already have an Account</h3>
-    </form>
-    <hr style={{transform: 'rotate(180deg)', height: '100vh'}} className="verticalSign" />
-     <div className='SignUpImage-contain' >
-        <h1>Start managing <b className='b'>free</b> now !</h1>
-     <img src="/signup1 (1).png"
-      alt="siignup" 
-      className='SignUpImage'/>
-     </div>
-   </div>
-  </main>
+    <main className="main">
+      <div className='SignUp-main' >
+        <form onSubmit={handleSubmit} className="formData" >
+          <h2 className='form-h1'>Register Your Account</h2>
+          {field.map((field) => (
+            <SignUp key={field.id} {...field} handleChange={handleChange} data={data[field.name]} />
+          ))}
+          <div className='SignUpbtt'> <button type="submit" className='signbttn' onClick={() => navigate("/admin")}  >Sign Up</button></div>
+          <h3 className='Already'>Already have an Account <b className='b1' onClick={() => navigate("/login")}  >Login here?</b></h3>
+        </form>
+        <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
+        <div className='SignUpImage-contain' >
+          <h1>Start managing <b className='b'>free</b> now !</h1>
+          <img src="/signup1 (1).png"
+            alt="siignup"
+            className='SignUpImage' />
+        </div>
+      </div>
+    </main>
   )
 }
 

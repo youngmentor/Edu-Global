@@ -16,13 +16,19 @@ const Admin = () => {
             text2: "setting",
             text3: "Log out",
             icon1: < AiFillHome />,
-            icon2: <IoIosArrowForward />,
+            icon2: <IoIosArrowForward  />,
+            value:false,
         },
         , {
             id: 2,
+            title: "Dashboard",
+            text1: "profile",
+            text2: "setting",
+            text3: "Log out",
             title: "Employee",
             icon1: < AiFillHome />,
             icon2: <IoIosArrowForward />,
+            value:false,
         }
         , {
             id: 3,
@@ -65,7 +71,7 @@ const Admin = () => {
     return (
         <div className='AdminMain'>
             {Sidebar.map((i) => (
-                <AdminLeft key={i.id}{...i} />
+                <AdminLeft key={i.id}{...i}  />
             ))},
             <div>
                 <h3>Welcome to admin dashboard</h3>
