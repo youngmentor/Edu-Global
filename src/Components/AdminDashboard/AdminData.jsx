@@ -8,9 +8,6 @@ export const AdminData = [
         id: 1,
         title: "Dashboard",
         icon1: < AiFillHome />,
-        // icon2: <IoIosArrowForward />,
-        // value: false,
-        // icon3: <SlArrowDown />,
     },
     , {
         id: 2,
