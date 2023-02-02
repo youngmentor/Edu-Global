@@ -4,8 +4,7 @@ import './Admin.css'
 const AdminLeft = (props) => {
     const [toggle, setToggle] = useState(false)
     return (
-        <div >
-            <div className='AdminLeftWrap' >
+        <div >       
                 <div className='AdminSidebar'>
                     <div className='AdminNav'>
                        <div> {props.icon1}</div>
@@ -20,7 +19,6 @@ const AdminLeft = (props) => {
                         {props.text4 && <p>{props.text4}</p>}
                     </div>}
                 </div>
-            </div>
         </div>
     )
 }

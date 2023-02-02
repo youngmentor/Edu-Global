@@ -58,11 +58,15 @@ const Form = () => {
 
 
   const handleChange = event => {
-    setForm(
-      {
-        ...form, [e.target.name]: e.target.value
-      }
-    );
+    // setForm(
+    //   {
+    //     ...form, [e.target.name]: e.target.value
+    //   }
+    // );
+
+    setForm((prevState)=>{
+  return {...prevState, name: event.target.value }
+    })
   };
 
   useEffect(() => {

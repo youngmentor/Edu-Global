@@ -18,10 +18,10 @@ const HeroFeatures = () => {
           <div className='Features-Wrapper'>
           <div className='Features-text'>
             <div className='Heading'><h1>{i.bgtxt}</h1></div>
-            <div className='paragraph'><p>{i.smtxt}</p></div>
-          </div>
-          <div className='Admin-img' >
+            <div className='Admin-img' >
             <img src={i.Img} className="FeaturesImg" />
+          </div>
+            <div className='paragraph'><p>{i.smtxt}</p></div>
           </div>
         </div>
        )}

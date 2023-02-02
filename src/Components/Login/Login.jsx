@@ -31,9 +31,9 @@ const Login = () => {
             <form onSubmit={handleSubmit} className="login-wrap" >
                 <div className="LoginForm">
                     <div className="UserLogin">
-                        <div className="Teacher">Teacher</div>
-                        <div className="Admin">Admin</div>
-                        <div className="Students">Student</div>
+                        <div className="Teacher" onClick={() => navigate("/teacher")}  >Teacher</div>
+                        <div className="Admin" onClick={() => navigate("/admin")}  >Admin</div>
+                        <div className="Students" onClick={() => navigate("/student")}  >Student</div>
                     </div>
                     {field.map((i) => (
                         <label key={i.name}>
@@ -47,7 +47,7 @@ const Login = () => {
                             />
                         </label>
                     ))}
-                    <button type="submit" className="Loginbtt" onClick={() => navigate("admin")} >Login</button>
+                    <button type="submit" className="Loginbtt" onClick={() => navigate("/admin")} >Login</button>
                 </div>
                 <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
                 <div className="ImageWrap">

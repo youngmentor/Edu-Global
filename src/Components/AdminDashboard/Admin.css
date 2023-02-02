@@ -3,12 +3,30 @@
     padding: 0px;
     box-sizing: border-box;
 }
-.AdminHeader{
+
+.AdminHeader {
     width: 100%;
     background-color: #5390D9;
 }
+
+.AdminHeaderWrap {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .AdminMain {
     width: 100%;
+}
+
+.AdminProfile {
+    padding: 10px;
+    position: absolute;
+    top: 105px;
+    font-size: 20px;
+    background-color: green;
+    line-height: 1.6;
 }
 
 .AdminLeftWrapper {
@@ -17,27 +35,36 @@
     gap: 20px;
 }
 
+.AdminSchoolNamewrap {
+    display: flex;
+    gap: 10px;
+}
+
 .AdminLeft {
     width: 25%;
     padding: 20px;
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid rgb(165, 161, 161);
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     gap: 50px;
 }
-.AdminLeftinvisible{
+
+.AdminLeftinvisible {
     padding: 20px;
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid rgb(165, 161, 161);
     display: flex;
     flex-direction: column;
+    position: absolute;
+    top: 4.8%;
+    left: 0%;
     align-items: center;
     justify-content: center;
     gap: 50px;
 }
+
 .AdminRight {
     width: 75%;
 }
@@ -59,9 +86,6 @@
     gap: 10px;
 }
 
-/* .AdminSidebar{
-    width: 100%;
-} */
 .AdminwelcomeMssg {
     width: 400px;
     height: 100px;
@@ -116,6 +140,10 @@
     margin-bottom: 20px;
 }
 
+.AdminBurger {
+    display: none;
+}
+
 @media screen and (max-width: 426px) {
     .AdminwelcomeMssg {
         width: 355px;
@@ -126,7 +154,15 @@
         margin-top: 15px;
     }
 
+    .AdminBurger {
+        display: flex;
+    }
+
     .AdminLeft {
+        display: none;
+    }
+
+    .AdminLogo {
         display: none;
     }
 
@@ -146,5 +182,11 @@
         height: 150px;
         background-color: #5390D9;
         margin-top: 30px;
+    }
+    .AdminHeader{
+        display: flex;
+        align-items: center;
+        height: 50px;
+        padding: 15px;
     }
 }
