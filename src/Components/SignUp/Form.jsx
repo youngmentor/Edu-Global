@@ -70,7 +70,6 @@ const Form = () => {
   };
 
   useEffect(() => {
-    // !header && removeHeader
   }, [])
   return (
     <main className="main">
