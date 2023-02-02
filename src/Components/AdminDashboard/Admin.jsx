@@ -39,13 +39,15 @@ const Admin = () => {
                        <h4>Edu-Global</h4>
                         {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }}/> : <IoIosArrowDown onClick={() => { setOpen(!open) }}/>}
                        </div>
-                      {open &&   (
+                        <div className='AdminProfileWrap'>
+                        {open &&   (
                         <div className='AdminProfile'>
                         <p>Account setting</p>
                         <p>Profile</p>
                         <p>Log out</p>
                         </div>
                       )}
+                        </div>
                     </div>
                 </div>
             </div>

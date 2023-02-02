@@ -19,13 +19,15 @@
 .AdminMain {
     width: 100%;
 }
+.AdminProfileWrap{
+    width: 100%;
 
+}
 .AdminProfile {
     padding: 10px;
     position: absolute;
     top: 105px;
     font-size: 20px;
-    background-color: green;
     line-height: 1.6;
     cursor: pointer;
 }
@@ -48,7 +50,7 @@
     border: 1px solid rgb(165, 161, 161);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     gap: 50px;
 }
 
@@ -131,7 +133,24 @@
 .AdminBurger {
     display: none;
 }
-
+@media screen and (max-width: 769px){
+    .AdminwelcomeMssg {
+        width: 515px;
+        height: 100px;
+        display: flex;
+        text-align: center;
+        background-color: aquamarine;
+        margin-top: 15px;
+    } 
+    .AdminLeft {
+        width: 25%;
+        /* padding: 20px; */
+        background-color: white;
+        border: 1px solid rgb(165, 161, 161);
+        font-size: 13px;
+        gap: 50px;
+    }
+}
 @media screen and (max-width: 426px) {
     .AdminwelcomeMssg {
         width: 355px;
@@ -141,7 +160,17 @@
         background-color: aquamarine;
         margin-top: 15px;
     }
-
+    .AdminProfile {
+        width: 150px;
+        position: absolute;
+        top: 60px;
+        right: 23px;
+        font-size: 15px;
+        background-color: white;
+        line-height: 1.6;
+        border: 1px solid rgb(173, 159, 159);
+        cursor: pointer;
+    }
     .AdminBurger {
         display: flex;
     }
