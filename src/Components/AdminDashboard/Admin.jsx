@@ -8,8 +8,10 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaTimes } from 'react-icons/fa'
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+import { useNavigate } from 'react-router-dom'
 
 const Admin = () => {
+    const navigate = useNavigate()
     const [date, setDate] = useState(new Date());
     const [toggle, setToggle] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
