@@ -1,0 +1,18 @@
+.AdminStudentMain{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.AdminAllStudentMain{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.AdminUpdateStudent{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
