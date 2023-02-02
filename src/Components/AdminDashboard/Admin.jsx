@@ -19,7 +19,6 @@ const Admin = () => {
     const handleToggle = () => {
         setToggle(!toggle)
         setIsOpen(!isOpen)
-        setOpen(!open)
     };
 
     const handleChange = (selectedDate) => {
@@ -40,11 +39,13 @@ const Admin = () => {
                        <h4>Edu-Global</h4>
                         {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }}/> : <IoIosArrowDown onClick={() => { setOpen(!open) }}/>}
                        </div>
-                      {open &&   <div className='AdminProfile'>
+                      {open &&   (
+                        <div className='AdminProfile'>
                         <p>Account setting</p>
                         <p>Profile</p>
                         <p>Log out</p>
-                        </div>}
+                        </div>
+                      )}
                     </div>
                 </div>
             </div>
@@ -67,7 +68,9 @@ const Admin = () => {
                 </div>
                 <div className='AdminRight'>
                     <div className='AdminwelcomeMssg'>
+                        <div>
                         <h3>Welcome to admin dashboard</h3>
+                        </div>
                     </div>
                     <div className='AdminCardHolder'>
                         <div className='AdminCard'>
