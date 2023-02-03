@@ -14,7 +14,7 @@ export default function Clases() {
         Classes
       </h1>
       <Routes>
-        <Route path='/' element={<AllClasses/>}/>
+        <Route path='/allClasses' element={<AllClasses/>}/>
         <Route path='/addclasses' element={<AddClasses/>}/>
         <Route path='/editclasses' element={<EditClasses/>}/>
       </Routes>

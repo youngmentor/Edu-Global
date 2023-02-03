@@ -27,13 +27,11 @@
 
 .AdminLeft {
     height: 100vh;
-    width: 25%;
+    width: 20%;
     /* background-color: #736e6e; */
     display: flex;
     overflow-y: scroll;
     justify-content: center;
-    /* padding-bottom: 10px; */
-    position: fixed;
     left: 0px;
 }
 
