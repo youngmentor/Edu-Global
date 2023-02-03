@@ -35,7 +35,7 @@ const Admin = () => {
         setToggle(!toggle)
         setIsOpen(!isOpen)
     };
- 
+
     const AdminData = [
         {
             id: 1,

@@ -24,7 +24,7 @@
   gap: 15px;
 }
 .AdminwelcomeMssg {
-  /* width: 400px; */
+  width: 100%;
   height: 100px;
   display: flex;
   align-items: center;
@@ -35,4 +35,21 @@
 .Calender {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 426px) {
+  .AdminCardHolder{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: gold; */
+  }
+  .AdminRight {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+  }
 }

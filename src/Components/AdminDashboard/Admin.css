@@ -19,9 +19,10 @@
 .AdminMain_wrap {
     width: 100%;
     /* height: 90%; */
-    background-color: rgb(226, 224, 224);
+    /* background-color: rgb(88, 86, 86); */
     display: flex;
-    align-items: center;
+    /* align-items: center; */
+    justify-content: center;
     gap: 30px;
 }
 
@@ -93,8 +94,8 @@
     .AdminBurger{
         display: flex;
     }
-    .AdminLeftWrap{
-        display: none;
+    .AdminLeft {
+       display: none;
     }
     .AdminLeftinvisible{
         height: 100vh;
