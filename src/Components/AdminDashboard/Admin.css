@@ -32,7 +32,6 @@
     display: flex;
     overflow-y: scroll;
     justify-content: center;
-    left: 0px;
 }
 
 /* Admin Left */
@@ -48,7 +47,7 @@
     display: flex;
     align-items:start;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 .AdminLeftinvisibleWrap{
     display: none;
