@@ -1,5 +1,5 @@
 import './dashboard.css'
-
+import Calendar from 'react-calendar'
 import React, {useState} from 'react'
 
 
@@ -10,7 +10,7 @@ export default function Dashboard() {
     setDate(selectedDate);
 };
   return (
-    <div className='dashboard'>
+   
        <div className='AdminRight'>
                     <div className='AdminwelcomeMssg'>
                         <div>
@@ -33,6 +33,5 @@ export default function Dashboard() {
                     </div>
                     <Calendar onChange={handleChange} value={date} className="Calender" />
                 </div>
-    </div>
   )
 }

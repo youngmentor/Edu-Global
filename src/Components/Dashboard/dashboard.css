@@ -1,7 +1,38 @@
 .dashboard{
   width: 75%;
   height: 90%;
+}
+.AdminRight {
+  width: 80%;
+}
+.AdminCard {
+  width: 250px;
+  height: 150px;
+  background-color: #5390D9;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.AdminCardHolder {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* background-color: gray; */
+  gap: 15px;
+}
+.AdminwelcomeMssg {
+  width: 400px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aquamarine;
+  margin-top: 15px;
+}
+.Calender {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

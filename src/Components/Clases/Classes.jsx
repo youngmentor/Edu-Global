@@ -3,7 +3,7 @@ import './classes.css'
 import React from 'react'
 
 
-export default function Classes() {
+export default function Clases() {
 
   return (
     <div className='classes'>

@@ -4,311 +4,76 @@
     box-sizing: border-box;
 }
 
-.AdminHeader {
-    width: 100%;
-    background-color: #5390D9;
-}
-
-.AdminHeaderWrap {
-    width: 95%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .AdminMain {
     width: 100%;
+    height: 100vh;
+
 }
-.AdminProfileWrap{
+
+.Admin_header {
     width: 100%;
-
-}
-.AdminProfile {
-    padding: 10px;
-    position: absolute;
-    top: 105px;
-    font-size: 20px;
-    line-height: 1.6;
-    cursor: pointer;
+    height: 10%;
+    background-color: blue;
 }
 
-.AdminLeftWrapper {
+.AdminMain_wrap {
     width: 100%;
-    display: flex;
-    gap: 20px;
-}
-
-.AdminSchoolNamewrap {
-    display: flex;
-    gap: 10px;
-}
-
-.AdminLeft {
-    width: 25%;
-    padding: 20px;
-    background-color: white;
-    border: 1px solid rgb(165, 161, 161);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-}
-
-
-.AdminRight {
-    width: 75%;
-}
-
-.AdminNav {
-    width: 100%;
+    /* height: 90%; */
+    background-color: rgb(226, 224, 224);
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 30px;
 }
 
-.DashDrop {
+.AdminLeft {
+    height: 100vh;
+    width: 20%;
+    background-color: #f8f8f8;
+    display: flex;
+    overflow-y: scroll;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+/* Admin Left */
+
+.AdminLeftWrap {
+    width: 70%;
+    /* background-color: grey; */
+    padding: 15px 0px;
+}
+
+.AdminNav {
+    display: flex;
+    align-items:start;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.DashDrop_wrap {
+    width: 50%;
+}
+.AdminLeftWrap_title{
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 15px;
-    gap: 10px;
-}
-
-.AdminwelcomeMssg {
-    width: 400px;
-    height: 100px;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: aquamarine;
-    margin-top: 15px;
+    gap: 45px;
 }
-
-.AdminCard {
-    width: 250px;
-    height: 150px;
-    background-color: #5390D9;
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.AdminCardHolder {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 15px;
-}
-
-.AdminLeftArrowIcon {
-    cursor: pointer;
-}
-
-.react-calendar {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    background-color: #f2f2f2;
-}
-
-.react-calendar__tile {
-    color: #333;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
-
-.react-calendar__tile--active {
-    background-color: #5390D9;
-    color: #5390D9;
-}
-
-.Calender {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.AdminBurger {
+.AdminBurger{
     display: none;
 }
-@media screen and (max-width: 769px){
-    .AdminwelcomeMssg {
-        width: 515px;
-        height: 100px;
-        display: flex;
-        text-align: center;
-        background-color: aquamarine;
-        margin-top: 15px;
-    } 
-    .AdminLeft {
-        width: 25%;
-        /* padding: 20px; */
-        background-color: white;
-        border: 1px solid rgb(165, 161, 161);
-        font-size: 13px;
-        gap: 50px;
-    }
+.AdminHeader{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5390D9;
 }
-@media screen and (max-width: 426px) {
-    .AdminwelcomeMssg {
-        width: 355px;
-        height: 100px;
-        display: flex;
-        text-align: center;
-        background-color: aquamarine;
-        margin-top: 15px;
-    }
-    .AdminProfile {
-        width: 150px;
-        position: absolute;
-        top: 60px;
-        right: 23px;
-        font-size: 15px;
-        background-color: white;
-        line-height: 1.6;
-        border: 1px solid rgb(173, 159, 159);
-        cursor: pointer;
-    }
-    .AdminBurger {
-        display: flex;
-    }
-
-    .AdminLeft {
-        display: none;
-    }
-
-    .AdminLogo {
-        display: none;
-    }
-
-    .AdminLeftWrapper {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .AdminRight {
-        width: 82.5%;
-    }
-
-    .AdminCard {
-        width: 500px;
-        height: 150px;
-        background-color: #5390D9;
-        margin-top: 30px;
-    }
-    .AdminHeader{
-        display: flex;
-        align-items: center;
-        height: 50px;
-        padding: 15px;
-    }
-    .AdminLeftinvisible {
-        padding: 20px;
-        background-color: white;
-        border: 1px solid rgb(165, 161, 161);
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 12.5%;
-        left: 0%;
-        align-items: center;
-        justify-content: center;
-        gap: 50px;
-    }
-}
-@media screen and (max-width: 376px) {
-    .AdminwelcomeMssg {
-        width: 310px;
-        height: 100px;
-        display: flex;
-        text-align: center;
-        background-color: aquamarine;
-        margin-top: 15px;
-    }
-
-    .AdminBurger {
-        display: flex;
-    }
-
-    .AdminLeft {
-        display: none;
-    }
-
-    .AdminLogo {
-        display: none;
-    }
-
-    .AdminLeftWrapper {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .AdminRight {
-        width: 82.5%;
-    }
-
-    .AdminCard {
-        width: 500px;
-        height: 150px;
-        background-color: #5390D9;
-        margin-top: 30px;
-    }
-    .AdminHeader{
-        display: flex;
-        align-items: center;
-        height: 50px;
-        padding: 15px;
-    }
-}
-@media screen and (max-width: 321px) {
-    .AdminwelcomeMssg {
-        width: 260px;
-        height: 100px;
-        display: flex;
-        text-align: center;
-        background-color: aquamarine;
-        margin-top: 15px;
-    }
-
-    .AdminBurger {
-        display: flex;
-    }
-
-    .AdminLeft {
-        display: none;
-    }
-
-    .AdminLogo {
-        display: none;
-    }
-
-    .AdminLeftWrapper {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .AdminRight {
-        width: 82.5%;
-    }
-
-    .AdminCard {
-        width: 500px;
-        height: 150px;
-        background-color: #5390D9;
-        margin-top: 30px;
-    }
-    .AdminHeader{
-        display: flex;
-        align-items: center;
-        height: 50px;
-        padding: 15px;
-    }
+.AdminHeaderWrap{
+    width: 90%;
+    /* background-color: #f8f8f8; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
