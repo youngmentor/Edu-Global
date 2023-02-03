@@ -20,13 +20,13 @@ import Subject from '../Subject/Subject'
 import Student from '../Student/Student'
 import Teachers from '../Teachers/Teachers'
 import Timetable from '../Timetable/timetable'
-import { ThemeContext } from '../ContextApi/Context'
-
+// import { ThemeContext } from '../ContextApi/Context'
+import { Route, Routes } from 'react-router-dom';
 const Admin = () => {
     const navigate = useNavigate()
-    const { s_dashboard, S_Dashboard, s_classes, S_Classes,
-        s_attendance, S_Attendance, s_subject, S_Subject, s_student, S_Student,
-        s_teacher, S_Teacher, s_timetable, S_Timetable, s_fee, S_Fee } = useContext(ThemeContext)
+    // const { s_dashboard, S_Dashboard, s_classes, S_Classes,
+    //     s_attendance, S_Attendance, s_subject, S_Subject, s_student, S_Student,
+    //     s_teacher, S_Teacher, s_timetable, S_Timetable, s_fee, S_Fee } = useContext(ThemeContext)
 
     const [toggle, setToggle] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +41,7 @@ const Admin = () => {
             id: 1,
             title: "Dashboard",
             icon1: < AiFillHome />,
-            click: S_Dashboard
+
         },
         , {
             id: 2,
@@ -53,7 +53,7 @@ const Admin = () => {
             icon2: <IoIosArrowForward />,
             value: false,
             icon3: <SlArrowDown />,
-            click: S_Classes
+
         }
         , {
             id: 3,
@@ -63,7 +63,7 @@ const Admin = () => {
             icon1: < RiPencilRulerLine />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
-            click: S_Subject
+
         }
         , {
             id: 4,
@@ -74,7 +74,7 @@ const Admin = () => {
             icon1: < FaUserFriends />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
-            click: S_Student
+
         },
         {
             id: 5,
@@ -85,7 +85,7 @@ const Admin = () => {
             icon1: < AiFillHome />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
-            click: S_Teacher
+
         },
         , {
             id: 6,
@@ -95,7 +95,7 @@ const Admin = () => {
             icon1: < AiFillHome />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
-            click: S_Attendance
+
         }
         , {
             id: 7,
@@ -104,7 +104,7 @@ const Admin = () => {
             icon1: < AiFillHome />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
-            click: S_Timetable
+
         }
         , {
             id: 8,
@@ -113,7 +113,7 @@ const Admin = () => {
             icon1: < AiFillHome />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
-            click: S_Fee
+
         }
     ]
 
@@ -146,31 +146,34 @@ const Admin = () => {
             </div>
             <div className='AdminMain_wrap'>
                 <div className='AdminLeft'>
-                    <div className='AdminLeftinvisibleWrap'>
+                    {/* <div className='AdminLeftinvisibleWrap'> */}
                         {
                             isOpen && (
-                                <div className='AdminLeftinvisible' >
+                                <div className='AdminLeftMobile' >
                                     {AdminData.map((i) => (
                                         <AdminLeft key={i.id}{...i} />
                                     ))}
                                 </div>
                             )
                         }
-                    </div>
+                    {/* </div> */}
                     <div className='AdminLeftWrap' >
                         {AdminData.map((i) => (
                             <AdminLeft key={i.id}{...i} />
                         ))}
                     </div>
                 </div>
-                {s_dashboard && <Dashboard />}
-                {s_classes && <Clases />}
-                {s_attendance && <Attendance />}
-                {s_subject && <Subject />}
-                {s_student && <Student />}
-                {s_teacher && <Teachers />}
-                {s_timetable && < Timetable />}
-                {s_fee && <Fee />}
+                
+                <Routes>
+                    <Route path="/" element={<Dashboard />} />
+                    <Route path="/Clases" element={<Clases />} />
+                    <Route path="/Student" element={<Student />} />
+                    <Route path="/Subject" element={<Subject />} />
+                    <Route path="/Teachers" element={<Teachers />} />
+                    <Route path="/Timetable" element={<Timetable />} />
+                    <Route path="/Attendance" element={<Attendance />} />
+                    <Route path="/fee" element={<Fee />} />
+                </Routes>
             </div>
         </div>
     )

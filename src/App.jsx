@@ -17,9 +17,7 @@ const App = () => {
             <Route path="/" element={<Hero/>}/>
             <Route path="/signup" element={<Form/>} />
             <Route path="/login" element={<Login/>} />
-            <Route path="/admin" element={<Admin/>}/>
-            {/* <Route path="/teacher" element={<Teachers/>}/> */}
-            {/* <Route path="/student" element={<Student/>}/> */}
+            <Route path="/admin/*" element={<Admin/>}/>
          </Routes>
       </HashRouter>
     </div>
