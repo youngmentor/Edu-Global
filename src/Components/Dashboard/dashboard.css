@@ -24,7 +24,7 @@
   gap: 15px;
 }
 .AdminwelcomeMssg {
-  width: 400px;
+  /* width: 400px; */
   height: 100px;
   display: flex;
   align-items: center;
