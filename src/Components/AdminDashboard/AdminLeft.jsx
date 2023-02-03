@@ -10,11 +10,11 @@ const AdminLeft = (props) => {
             {props.icon1}
             <div className='DashDrop_wrap'>
                 <h3 onClick={() => {setToggle(!toggle)}}>{props.title}</h3>
-            {toggle && <div className='DashDrop'>
-                <p>{props.text1}</p>
-                {props.text2 && <p>{props.text2}</p>}
-                {props.text3 && <p>{props.text3}</p>}
-                {props.text4 && <p>{props.text4}</p>}
+            {toggle && <div className='DashDrop'  >
+                <p onClick={() => { navigate(props.click1)}} >{props.text1}</p>
+                {props.text2 && <p onClick={() => { navigate(props.click2)}} >{props.text2}</p>}
+                {props.text3 && <p onClick={() => { navigate(props.click3)}} >{props.text3}</p>}
+                {props.text4 && <p onClick={() => { navigate(props.click4)}} >{props.text4}</p>}
             </div>}
         </div>
             { toggle ? <div onClick={() => { setToggle(!toggle) }}>{props.icon3}</div> : <div onClick={() => { setToggle(!toggle) }}>{props.icon2}</div> }

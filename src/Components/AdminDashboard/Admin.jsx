@@ -44,13 +44,15 @@ const Admin = () => {
             title: "Classes",
             text1: "All classes",
             text2: "New Classes",
-            text2: "Edit or Delete",
+            text3: "Edit or Delete",
             icon1: < AiFillHome />,
             icon2: <IoIosArrowForward />,
             value: false,
             icon3: <SlArrowDown />,
-            click: "/admin/clases"
-
+            click: "/admin/clases",
+            click1: "/admin/clases",
+            click2:  "/admin/clases/addclasses",
+            click3:  "/admin/clases/editclasses",
         }
         , {
             id: 3,
@@ -168,7 +170,7 @@ const Admin = () => {
 
                 <Routes>
                     <Route path="/" element={<Dashboard />} />
-                    <Route path="/clases" element={<Clases />} />
+                    <Route path="/clases/*" element={<Clases />} />
                     <Route path="/student" element={<Student />} />
                     <Route path="/subject" element={<Subject />} />
                     <Route path="/teachers" element={<Teachers />} />
