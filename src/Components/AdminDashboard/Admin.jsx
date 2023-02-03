@@ -9,10 +9,19 @@ import { FaTimes } from 'react-icons/fa'
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from 'react-router-dom'
+import Dashboard from './Dashboard/Dashboard';
+import Classes from './Classes/Classes';
+import Attendance from './Attendance/Attendance';
+import Fee from './Fee/Fee';
+import Sbject from './Sbject/Sbject'
+import Student from './Student/Student'
+import Teachers from './Teachers/Teachers'
+import Timetable from './Timetable/timetable'
+import { ThemeContext } from './ContexApi/Api';
 
 const Admin = () => {
     const navigate = useNavigate()
-    const [date, setDate] = useState(new Date());
+    
     const [toggle, setToggle] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const [open, setOpen] = useState(false)
@@ -21,9 +30,7 @@ const Admin = () => {
         setIsOpen(!isOpen)
     };
 
-    const handleChange = (selectedDate) => {
-        setDate(selectedDate);
-    };
+   
     return (
         <div className='AdminMain'>
             <div className='AdminHeader'>
@@ -67,30 +74,9 @@ const Admin = () => {
                     {AdminData.map((i) => (
                         <AdminLeft key={i.id}{...i} />
                     ))}
-                </div>
-                <div className='AdminRight'>
-                    <div className='AdminwelcomeMssg'>
-                        <div>
-                        <h3>Welcome to admin dashboard</h3>
-                        </div>
-                    </div>
-                    <div className='AdminCardHolder'>
-                        <div className='AdminCard'>
-                            <h1>Cards</h1>
-                        </div>
-                        <div className='AdminCard'>
-                            <h1>Cards</h1>
-                        </div>
-                        <div className='AdminCard'>
-                            <h1>Cards</h1>
-                        </div>
-                        <div className='AdminCard'>
-                            <h1>Cards</h1>
-                        </div>
-                    </div>
-                    <Calendar onChange={handleChange} value={date} className="Calender" />
-                </div>
+                </div>            
             </div>
+            <Dashboard/>
         </div>
     )
 }

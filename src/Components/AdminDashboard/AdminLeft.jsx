@@ -4,11 +4,10 @@ import './Admin.css'
 const AdminLeft = (props) => {
     const [toggle, setToggle] = useState(false)
     return (
-        <div >
-            <div className='AdminSidebar'>
+        <div >          
                 <div className='AdminNav'>
-                    <div> {props.icon1}</div>
-                    <h3>{props.title}</h3>
+                     {props.icon1}
+                    <div><h3>{props.title}</h3></div>
                     {toggle ? <div onClick={() => { setToggle(!toggle) }} className="AdminLeftArrowIcon" >
                         {props.icon3}
                     </div> :
@@ -23,7 +22,6 @@ const AdminLeft = (props) => {
                     {props.text4 && <p>{props.text4}</p>}
                 </div>}
             </div>
-        </div>
     )
 }
 

@@ -5,8 +5,8 @@ import Hero from './Components/Hero/Hero'
 import { Routes, Route, HashRouter } from 'react-router-dom'
 import Login from './Components/Login/Login'
 import Admin from './Components/AdminDashboard/Admin'
-import Teacher from './Components/TeacherDashboard/Teacher'
-import Student from './Components/StudentDashboard/Student'
+// import Teachers from './Components/TeacherDashboard/Teacher'
+// import Student from './Components/StudentDashboard/Student'
 import './App.css'
 const App = () => {
   return (
@@ -18,8 +18,8 @@ const App = () => {
             <Route path="/signup" element={<Form/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/admin" element={<Admin/>}/>
-            <Route path="/teacher" element={<Teacher/>}/>
-            <Route path="/student" element={<Student/>}/>
+            {/* <Route path="/teacher" element={<Teachers/>}/> */}
+            {/* <Route path="/student" element={<Student/>}/> */}
          </Routes>
       </HashRouter>
     </div>
