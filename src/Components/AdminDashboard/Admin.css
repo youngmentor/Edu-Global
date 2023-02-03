@@ -28,27 +28,27 @@
 .AdminLeft {
     height: 100vh;
     width: 20%;
-    /* background-color: #f8f8f8; */
+    /* background-color: #736e6e; */
     display: flex;
     overflow-y: scroll;
     justify-content: center;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
 }
 
 /* Admin Left */
 
 .AdminLeftWrap {
-    /* height: 100%; */
-    width: 80%;
+    height: 100vh;
+    width: 70%;
     padding: 15px 0px;
-    background-color: #5390D9;
+    /* background-color: #5390D9; */
 }
 
 .AdminNav {
     display: flex;
     align-items:start;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 .AdminLeftinvisibleWrap{
     display: none;
@@ -56,6 +56,7 @@
 
 .DashDrop_wrap {
     width: 50%;
+    font-size: 15px;
 }
 .AdminLeftWrap_title{
     width: 100%;

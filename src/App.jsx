@@ -7,7 +7,7 @@ import Login from './Components/Login/Login'
 import Admin from './Components/AdminDashboard/Admin'
 // import Teachers from './Components/TeacherDashboard/Teacher'
 // import Student from './Components/StudentDashboard/Student'
-import './App.css'
+import './App.css'  
 const App = () => {
   return (
 

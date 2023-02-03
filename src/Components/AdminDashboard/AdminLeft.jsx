@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Admin.css'
 
 const AdminLeft = (props) => {
+    const navigate =useNavigate()
     const [toggle, setToggle] = useState(false)
     return (
-        <div onClick={() => { props.click() }} className='AdminNav'>
+        <div onClick={() => { navigate(props.click)}} className='AdminNav'>
             {props.icon1}
             <div className='DashDrop_wrap'>
                 <h3 onClick={() => {setToggle(!toggle)}}>{props.title}</h3>
