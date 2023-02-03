@@ -1,8 +1,8 @@
 import React from 'react'
-
+import './AddClasses.css'
 const AddClasses = () => {
     return (
-        <div>
+        <div className='AddClassesMain' >
             AddClasses
         </div>
     )

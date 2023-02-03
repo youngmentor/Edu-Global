@@ -33,6 +33,8 @@
     overflow-y: scroll;
     justify-content: center;
     /* padding-bottom: 10px; */
+    position: fixed;
+    left: 0px;
 }
 
 /* Admin Left */

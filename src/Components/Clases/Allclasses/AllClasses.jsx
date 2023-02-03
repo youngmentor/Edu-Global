@@ -1,8 +1,8 @@
 import React from 'react'
-
+import "./AllClasses.css"
 const AllClasses = () => {
   return (
-    <div>
+    <div className='AllclassesMain' >
         AllClasses
 
     </div>

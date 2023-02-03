@@ -50,7 +50,7 @@ const Admin = () => {
             value: false,
             icon3: <SlArrowDown />,
             click: "/admin/clases",
-            click1: "/admin/clases",
+            click1: "/admin/allClasses",
             click2:  "/admin/clases/addclasses",
             click3:  "/admin/clases/editclasses",
         }
