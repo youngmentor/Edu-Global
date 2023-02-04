@@ -155,7 +155,8 @@ const Admin = () => {
     return (
         <div className='AdminMain'>
             <div className='Admin_header'>
-                <div className='AdminBurger'>
+              {/* <div className='Admin_header_wrap'> */}
+              <div className='AdminBurger'>
                     {toggle ? <FaTimes onClick={() => { setToggle(!toggle) }} /> : <GiHamburgerMenu onClick={() => { setToggle(!toggle) }} />}
                 </div>
                 <div className='AdminLogo'>
@@ -168,6 +169,7 @@ const Admin = () => {
                     </div>
                     {open && Edudrop}
                 </div>
+              {/* </div> */}
             </div>
             <div className='AdminMainWrap'>
                 <div className='AdminLeft'>

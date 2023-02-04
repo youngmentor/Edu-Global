@@ -30,7 +30,9 @@
     align-items: center;
     justify-content: space-between;
 }
-
+/* .Admin_header_wrap{
+    width: 90%;
+} */
 .AdminMain_wrap {
     width: 100%;
     height: 90%;
@@ -154,4 +156,5 @@
         display: flex;
         /* background-color: red; */
     }
+
 }
