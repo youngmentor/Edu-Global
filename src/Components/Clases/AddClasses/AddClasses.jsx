@@ -10,7 +10,7 @@ const AddClasses = () => {
             type: "text"
         },
         {
-            name: "name",
+            name: "name of teacher",
             label: "name",
             placeholder: "Name of Teacher",
             type: "text"

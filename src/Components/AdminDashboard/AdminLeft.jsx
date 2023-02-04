@@ -4,7 +4,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import './Admin.css'
 
 const AdminLeft = (props) => {
-    console.log(props)
+    // console.log(props)
     const navigate =useNavigate()
     const [toggle, setToggle] = useState(false)
     return (

@@ -23,10 +23,10 @@ import Timetable from '../Timetable/timetable'
 import { Route, Routes } from 'react-router-dom';
 const Admin = () => {
     const navigate = useNavigate()
-    const [toggle, setToggle] = useState(true);
+    const [toggle, setToggle] = useState(false);
     // const [isOpen, setIsOpen] = useState(false);
     const [open, setOpen] = useState(false)
-    
+
 
     const AdminData = [
         // {
@@ -48,8 +48,8 @@ const Admin = () => {
             icon3: <SlArrowDown />,
             click: "/admin/clases",
             click1: "/admin/clases/allClasses",
-            click2:  "/admin/clases/addclasses",
-            click3:  "/admin/clases/editclasses",
+            click2: "/admin/clases/addclasses",
+            click3: "/admin/clases/editclasses",
         }
         , {
             id: 3,
@@ -117,13 +117,28 @@ const Admin = () => {
 
         }
     ]
+const adminLeft_Mobile =(
 
+    <div className='AdminLeftMobile_con'>
+<div className='AdminLeftinvisibleWrap_mobile'>
+        {
+            toggle && (
+                <div className='AdminLeftMobile_mobile' >
+                    {AdminData.map((i) => (
+                        <AdminLeft key={i.id}{...i} />
+                    ))}
+                </div>
+            )
+        }
+    </div>
+    </div>
+)
     return (
         <div className='AdminMain'>
             <div className='AdminHeader'>
                 <div className='AdminHeaderWrap' >
                     <div className='AdminBurger'>
-                        {toggle ? <GiHamburgerMenu onClick={ ()=>{setToggle(!toggle); console.log("run")}} /> : <FaTimes onClick={ ()=>{setToggle(!toggle)}} />}
+                        {toggle ?  <FaTimes onClick={() => { setToggle(!toggle) }} />:<GiHamburgerMenu onClick={() => { setToggle(!toggle)}} /> }
                     </div>
                     <div className='AdminLogo'>
                         <img src="/LOGO.png" alt="Logo" onClick={() => navigate("/")} className="HeaderLogo" />
@@ -147,25 +162,14 @@ const Admin = () => {
             </div>
             <div className='AdminMain_wrap'>
                 <div className='AdminLeft'>
-                     <div className='AdminLeftinvisibleWrap'> 
-                    {
-                        toggle && (
-                            <div className='AdminLeftMobile' >
-                                {AdminData.map((i) => (
-                                    <AdminLeft key={i.id}{...i} />
-                                ))}
-                            </div>
-                        )
-                    }
-                    </div> 
                     <div className='AdminLeftWrap' >
-                    <div onClick={() => {navigate("/admin") }} className='AdminLeftWrap_title'>< AiFillHome /><h2>Dashboard</h2></div>
+                        <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title'>< AiFillHome /><h2>Dashboard</h2></div>
                         {AdminData.map((i) => (
                             <AdminLeft key={i.id}{...i} />
                         ))}
                     </div>
                 </div>
-
+                        {toggle && adminLeft_Mobile}
                 <Routes>
                     <Route path="/" element={<Dashboard />} />
                     <Route path="/clases/*" element={<Clases />} />
