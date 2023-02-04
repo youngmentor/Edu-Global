@@ -92,19 +92,8 @@
     align-items: center;
     justify-content: space-between;
 }
-.AdminSchoolNamewrap{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-.AdminProfileWrap{
-    width: 160px;
-    position: absolute;
-    top: 80px;
-    line-height: 1.9;
-    background-color: gray;
-}
+
+
 @media screen and (max-width: 426px){
     .AdminBurger{
         display: flex;
@@ -130,6 +119,19 @@
         position: absolute;
         top: 50px;
         padding: 10px;
+    }
+    .AdminProfileWrap{
+        width: 160px;
+        position: absolute;
+        top: 80px;
+        line-height: 1.9;
+        background-color: gray;
+    }
+    .AdminSchoolNamewrap{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
     }
 
 }

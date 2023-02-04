@@ -21,6 +21,9 @@ import Student from '../Student/Student'
 import Teachers from '../Teachers/Teachers'
 import Timetable from '../Timetable/timetable'
 import { Route, Routes } from 'react-router-dom';
+import AllClasses from '../Clases/Allclasses/AllClasses';
+import AddClasses from '../Clases/AddClasses/AddClasses';
+import EditClasses from '../Clases/EditClasses/EditClasses';
 const Admin = () => {
     const navigate = useNavigate()
     const [toggle, setToggle] = useState(true);
@@ -32,13 +35,13 @@ const Admin = () => {
     };
 
     const AdminData = [
-        {
-            id: 1,
-            title: "Dashboard",
-            icon1: < AiFillHome />,
-            click: "/admin"
+        // {
+        //     id: 1,
+        //     title: "Dashboard",
+        //     icon1: < AiFillHome />,
+        //     click: "/admin"
 
-        },
+        // },
         , {
             id: 2,
             title: "Classes",
@@ -50,7 +53,7 @@ const Admin = () => {
             value: false,
             icon3: <SlArrowDown />,
             click: "/admin/clases",
-            click1: "/admin/allClasses",
+            click1: "/admin/clases/allClasses",
             click2:  "/admin/clases/addclasses",
             click3:  "/admin/clases/editclasses",
         }
@@ -150,7 +153,7 @@ const Admin = () => {
             </div>
             <div className='AdminMain_wrap'>
                 <div className='AdminLeft'>
-                    {/* <div className='AdminLeftinvisibleWrap'> */}
+                     <div className='AdminLeftinvisibleWrap'> 
                     {
                         isOpen && (
                             <div className='AdminLeftMobile' >
@@ -160,8 +163,9 @@ const Admin = () => {
                             </div>
                         )
                     }
-                    {/* </div> */}
+                    </div> 
                     <div className='AdminLeftWrap' >
+                    <div onClick={() => {navigate("/admin") }} className='AdminLeftWrap_title'>< AiFillHome /><h2>Dashboard</h2></div>
                         {AdminData.map((i) => (
                             <AdminLeft key={i.id}{...i} />
                         ))}
@@ -177,6 +181,9 @@ const Admin = () => {
                     <Route path="/timetable" element={<Timetable />} />
                     <Route path="/attendance" element={<Attendance />} />
                     <Route path="/fee" element={<Fee />} />
+                    {/* <Route path='/allClasses' element={<AllClasses/>}/>
+                    <Route path='/addclasses' element={<AddClasses/>}/>
+                    <Route path='/editclasses' element={<EditClasses/>}/> */}
                 </Routes>
             </div>
         </div>

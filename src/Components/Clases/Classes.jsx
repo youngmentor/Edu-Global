@@ -13,11 +13,13 @@ export default function Clases() {
       <h1>
         Classes
       </h1>
+      {/* <div style={{display: "flex", width: "100%"}}> */}
       <Routes>
-        <Route path='/allClasses' element={<AllClasses/>}/>
-        <Route path='/addclasses' element={<AddClasses/>}/>
-        <Route path='/editclasses' element={<EditClasses/>}/>
+        <Route path='allClasses' element={<AllClasses/>}/>
+        <Route path='addclasses' element={<AddClasses/>}/>
+        <Route path='editclasses' element={<EditClasses/>}/>
       </Routes>
+      {/* </div> */}
     </div>
   )
 }

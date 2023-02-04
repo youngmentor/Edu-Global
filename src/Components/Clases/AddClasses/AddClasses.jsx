@@ -3,7 +3,7 @@ import './AddClasses.css'
 const AddClasses = () => {
     return (
         <div className='AddClassesMain' >
-            AddClasses
+            <h1>AddClasses</h1>
         </div>
     )
 }

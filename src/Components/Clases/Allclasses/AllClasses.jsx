@@ -3,7 +3,7 @@ import "./AllClasses.css"
 const AllClasses = () => {
   return (
     <div className='AllclassesMain' >
-        AllClasses
+        <h1>AllClasses</h1>
 
     </div>
   )
