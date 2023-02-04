@@ -24,12 +24,9 @@ import { Route, Routes } from 'react-router-dom';
 const Admin = () => {
     const navigate = useNavigate()
     const [toggle, setToggle] = useState(true);
-    const [isOpen, setIsOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
     const [open, setOpen] = useState(false)
-    const handleToggle = () => {
-        setToggle(!toggle)
-        setIsOpen(!isOpen)
-    };
+    
 
     const AdminData = [
         // {
@@ -126,7 +123,7 @@ const Admin = () => {
             <div className='AdminHeader'>
                 <div className='AdminHeaderWrap' >
                     <div className='AdminBurger'>
-                        {toggle ? <GiHamburgerMenu onClick={handleToggle} /> : <FaTimes onClick={handleToggle} />}
+                        {toggle ? <GiHamburgerMenu onClick={ ()=>{setToggle(!toggle); console.log("run")}} /> : <FaTimes onClick={ ()=>{setToggle(!toggle)}} />}
                     </div>
                     <div className='AdminLogo'>
                         <img src="/LOGO.png" alt="Logo" onClick={() => navigate("/")} className="HeaderLogo" />
@@ -152,7 +149,7 @@ const Admin = () => {
                 <div className='AdminLeft'>
                      <div className='AdminLeftinvisibleWrap'> 
                     {
-                        isOpen && (
+                        toggle && (
                             <div className='AdminLeftMobile' >
                                 {AdminData.map((i) => (
                                     <AdminLeft key={i.id}{...i} />
