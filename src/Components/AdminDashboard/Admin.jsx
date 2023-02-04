@@ -21,9 +21,6 @@ import Student from '../Student/Student'
 import Teachers from '../Teachers/Teachers'
 import Timetable from '../Timetable/timetable'
 import { Route, Routes } from 'react-router-dom';
-import AllClasses from '../Clases/Allclasses/AllClasses';
-import AddClasses from '../Clases/AddClasses/AddClasses';
-import EditClasses from '../Clases/EditClasses/EditClasses';
 const Admin = () => {
     const navigate = useNavigate()
     const [toggle, setToggle] = useState(true);

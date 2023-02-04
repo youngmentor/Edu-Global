@@ -5,3 +5,21 @@
   align-items: center;
   justify-content: center;
 }
+.AllClassCard{
+    width: 250px;
+    height: 150px;
+    background-color: #5390D9;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .AllClassCardHolder {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* background-color: gray; */
+    gap: 15px;
+  }

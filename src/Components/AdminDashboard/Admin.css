@@ -68,6 +68,10 @@
     line-height: 1.8;
     cursor: pointer;
 }
+.Dash{
+    text-decoration: none;
+    color: inherit;
+}
 .AdminLeftWrap_title{
     width: 100%;
     display: flex;
@@ -105,6 +109,9 @@
        left: 0px;
        width: 100%;
     }
+    .AdminProfile{
+        display: flex;
+    }
     .AdminLeftWrap{
         display: none;
     }
@@ -122,6 +129,7 @@
     }
     .AdminProfileWrap{
         width: 160px;
+        display: flex;
         position: absolute;
         top: 80px;
         line-height: 1.9;
