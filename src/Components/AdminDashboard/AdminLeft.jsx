@@ -7,12 +7,14 @@ const AdminLeft = (props) => {
     // console.log(props)
     const navigate =useNavigate()
     const [toggle, setToggle] = useState(false)
+
+   
     return (
         <div className='AdminNav'>
             {props.icon1}
             <div className='DashDrop_wrap'>
-                <h3 onClick={() => {setToggle(!toggle)}}>{props.title}</h3>
-            {toggle && <div className='DashDrop'  >
+                <h4 onClick={() => {setToggle(!toggle)}}>{props.title}</h4>
+            {toggle && <div className='DashDrop'   >
                 <Link className='Dash' to={`${props.click1}`} >{props.text1}</Link>
                 {props.text2 && <Link className='Dash' to={`${props.click2}`} style={{display: "block"}}>{props.text2}</Link>}
                 {props.text3 && <Link className='Dash'  to={`${props.click3}`} style={{display: "block"}}>{props.text3}</Link>}

@@ -27,6 +27,15 @@ const Admin = () => {
     // const [isOpen, setIsOpen] = useState(false);
     const [open, setOpen] = useState(false)
 
+    const colorObject = {
+        textDecoration: 'none',
+        color: 'inherit',
+      }
+      const activeColorObject = {
+        textDecoration: 'none',
+        color: 'tomato',
+      }
+
 
     const AdminData = [
         // {
@@ -117,52 +126,73 @@ const Admin = () => {
 
         }
     ]
-const adminLeft_Mobile =(
-
-    <div className='AdminLeftMobile_con'>
-<div className='AdminLeftinvisibleWrap_mobile'>
-        {
-            toggle && (
-                <div className='AdminLeftMobile_mobile' >
-                    {AdminData.map((i) => (
-                        <AdminLeft key={i.id}{...i} />
-                    ))}
-                </div>
-            )
-        }
-    </div>
-    </div>
+    const adminLeft_Mobile = (
+        <div className='AdminLeftMobile_co'>
+            {
+                 toggle && (
+                    <div className='AdminLeftMobile_mobile' >
+                          <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title'>< AiFillHome /><h4>Dashboard</h4></div>
+                        {AdminData.map((i) => (
+                            <AdminLeft key={i.id}{...i} style={({ isActive }) => isActive ? activeColorObject : colorObject}  />
+                        ))}
+                    </div>
+                )
+            }
+        </div>
+    );
+const Edudrop =(
+    <div className='AdminProfileWrap'>
+    {open && (
+        <div className='AdminProfile'>
+            <p>Account setting</p>
+            <p>Profile</p>
+            <p>Log out</p>
+        </div>
+    )}
+</div>
 )
+
     return (
         <div className='AdminMain'>
-        <div className='Admin_header'>
-
-        </div>
-
-        <div className='AdminMain_wrap'>
-            <div className='AdminLeft'>
-                <div className='AdminLeftWrap' >
-                    <div onClick={() => { S_Dashboard() }} className='AdminLeftWrap_title'>< AiFillHome /><h2>Dashboard</h2></div>
-                    {Sidebar.map((i) => (
-                        <AdminLeft key={i.id}{...i} />
-                    ))}
+            <div className='Admin_header'>
+                <div className='AdminBurger'>
+                    {toggle ? <FaTimes onClick={() => { setToggle(!toggle) }} /> : <GiHamburgerMenu onClick={() => { setToggle(!toggle) }} />}
+                </div>
+                <div className='AdminLogo'>
+                    <img src="/LOGO.png" alt="Logo" onClick={() => navigate("/")} className="HeaderLogo" />
+                </div>
+                <div className='AdminSchoolName'>
+                    <div className='AdminSchoolNamewrap'>
+                        <h4>Edu-Global</h4>
+                        {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
+                    </div>
+                    {open && Edudrop}
                 </div>
             </div>
-            <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/clases/*" element={<Clases />} />
-                <Route path="/student" element={<Student />} />
-                <Route path="/subject" element={<Subject />} />
-                <Route path="/teachers" element={<Teachers />} />
-                <Route path="/timetable" element={<Timetable />} />
-                <Route path="/attendance" element={<Attendance />} />
-                <Route path="/fee" element={<Fee />} />
-                {/* <Route path='/allClasses' element={<AllClasses/>}/>
-                <Route path='/addclasses' element={<AddClasses/>}/>
-                <Route path='/editclasses' element={<EditClasses/>}/> */}
-            </Routes>
+                <div className='AdminLeftWrap'>
+                <div className='AdminLeft'>
+                    <div className='AdminLeftWrap' >
+                        <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title'>< AiFillHome /><h4>Dashboard</h4></div>
+                        {AdminData.map((i) => (
+                            <AdminLeft key={i.id}{...i} style={({ isActive }) => isActive ? activeColorObject : colorObject} />
+                        ))}
+                    </div>                 
+                </div>
+                {toggle && adminLeft_Mobile}
+              <div className='AdminRightWrap'>
+              <Routes>
+                    <Route path="/" element={<Dashboard />} />
+                    <Route path="/clases/*" element={<Clases />} />
+                    <Route path="/student" element={<Student />} />
+                    <Route path="/subject" element={<Subject />} />
+                    <Route path="/teachers" element={<Teachers />} />
+                    <Route path="/timetable" element={<Timetable />} />
+                    <Route path="/attendance" element={<Attendance />} />
+                    <Route path="/fee" element={<Fee />} />
+                </Routes>
+              </div>
+                </div>
         </div>
-    </div>
     )
 }
 
