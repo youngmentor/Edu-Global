@@ -135,56 +135,34 @@ const adminLeft_Mobile =(
 )
     return (
         <div className='AdminMain'>
-            <div className='AdminHeader'>
-                <div className='AdminHeaderWrap' >
-                    <div className='AdminBurger'>
-                        {toggle ?  <FaTimes onClick={() => { setToggle(!toggle) }} />:<GiHamburgerMenu onClick={() => { setToggle(!toggle)}} /> }
-                    </div>
-                    <div className='AdminLogo'>
-                        <img src="/LOGO.png" alt="Logo" onClick={() => navigate("/")} className="HeaderLogo" />
-                    </div>
-                    <div className='AdminSchoolName'>
-                        <div className='AdminSchoolNamewrap'>
-                            <h4>Edu-Global</h4>
-                            {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
-                        </div>
-                        <div className='AdminProfileWrap'>
-                            {open && (
-                                <div className='AdminProfile'>
-                                    <p>Account setting</p>
-                                    <p>Profile</p>
-                                    <p>Log out</p>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='AdminMain_wrap'>
-                <div className='AdminLeft'>
-                    <div className='AdminLeftWrap' >
-                        <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title'>< AiFillHome /><h2>Dashboard</h2></div>
-                        {AdminData.map((i) => (
-                            <AdminLeft key={i.id}{...i} />
-                        ))}
-                    </div>
-                </div>
-                        {toggle && adminLeft_Mobile}
-                <Routes>
-                    <Route path="/" element={<Dashboard />} />
-                    <Route path="/clases/*" element={<Clases />} />
-                    <Route path="/student" element={<Student />} />
-                    <Route path="/subject" element={<Subject />} />
-                    <Route path="/teachers" element={<Teachers />} />
-                    <Route path="/timetable" element={<Timetable />} />
-                    <Route path="/attendance" element={<Attendance />} />
-                    <Route path="/fee" element={<Fee />} />
-                    {/* <Route path='/allClasses' element={<AllClasses/>}/>
-                    <Route path='/addclasses' element={<AddClasses/>}/>
-                    <Route path='/editclasses' element={<EditClasses/>}/> */}
-                </Routes>
-            </div>
+        <div className='Admin_header'>
+
         </div>
+
+        <div className='AdminMain_wrap'>
+            <div className='AdminLeft'>
+                <div className='AdminLeftWrap' >
+                    <div onClick={() => { S_Dashboard() }} className='AdminLeftWrap_title'>< AiFillHome /><h2>Dashboard</h2></div>
+                    {Sidebar.map((i) => (
+                        <AdminLeft key={i.id}{...i} />
+                    ))}
+                </div>
+            </div>
+            <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/clases/*" element={<Clases />} />
+                <Route path="/student" element={<Student />} />
+                <Route path="/subject" element={<Subject />} />
+                <Route path="/teachers" element={<Teachers />} />
+                <Route path="/timetable" element={<Timetable />} />
+                <Route path="/attendance" element={<Attendance />} />
+                <Route path="/fee" element={<Fee />} />
+                {/* <Route path='/allClasses' element={<AllClasses/>}/>
+                <Route path='/addclasses' element={<AddClasses/>}/>
+                <Route path='/editclasses' element={<EditClasses/>}/> */}
+            </Routes>
+        </div>
+    </div>
     )
 }
 
