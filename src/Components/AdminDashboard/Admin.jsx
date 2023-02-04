@@ -30,11 +30,11 @@ const Admin = () => {
     const colorObject = {
         textDecoration: 'none',
         color: 'inherit',
-      }
-      const activeColorObject = {
+    }
+    const activeColorObject = {
         textDecoration: 'none',
         color: 'tomato',
-      }
+    }
 
 
     const AdminData = [
@@ -129,28 +129,28 @@ const Admin = () => {
     const adminLeft_Mobile = (
         <div className='AdminLeftMobile_co'>
             {
-                 toggle && (
+                toggle && (
                     <div className='AdminLeftMobile_mobile' >
-                          <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title'>< AiFillHome /><h4>Dashboard</h4></div>
+                        <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title'>< AiFillHome /><h4>Dashboard</h4></div>
                         {AdminData.map((i) => (
-                            <AdminLeft key={i.id}{...i} style={({ isActive }) => isActive ? activeColorObject : colorObject}  />
+                            <AdminLeft key={i.id}{...i} style={({ isActive }) => isActive ? activeColorObject : colorObject} />
                         ))}
                     </div>
                 )
             }
         </div>
     );
-const Edudrop =(
-    <div className='AdminProfileWrap'>
-    {open && (
-        <div className='AdminProfile'>
-            <p>Account setting</p>
-            <p>Profile</p>
-            <p>Log out</p>
+    const Edudrop = (
+        <div className='AdminProfileWrap'>
+            {open && (
+                <div className='AdminProfile'>
+                    <p>Account setting</p>
+                    <p>Profile</p>
+                    <p>Log out</p>
+                </div>
+            )}
         </div>
-    )}
-</div>
-)
+    )
 
     return (
         <div className='AdminMain'>
@@ -169,29 +169,27 @@ const Edudrop =(
                     {open && Edudrop}
                 </div>
             </div>
-                <div className='AdminLeftWrap'>
+            <div className='AdminMainWrap'>
                 <div className='AdminLeft'>
                     <div className='AdminLeftWrap' >
                         <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title'>< AiFillHome /><h4>Dashboard</h4></div>
                         {AdminData.map((i) => (
                             <AdminLeft key={i.id}{...i} style={({ isActive }) => isActive ? activeColorObject : colorObject} />
                         ))}
-                    </div>                 
+                    </div>
                 </div>
                 {toggle && adminLeft_Mobile}
-              <div className='AdminRightWrap'>
-              <Routes>
-                    <Route path="/" element={<Dashboard />} />
-                    <Route path="/clases/*" element={<Clases />} />
-                    <Route path="/student" element={<Student />} />
-                    <Route path="/subject" element={<Subject />} />
-                    <Route path="/teachers" element={<Teachers />} />
-                    <Route path="/timetable" element={<Timetable />} />
-                    <Route path="/attendance" element={<Attendance />} />
-                    <Route path="/fee" element={<Fee />} />
-                </Routes>
-              </div>
-                </div>
+                    <Routes>
+                        <Route path="/" element={<Dashboard />} />
+                        <Route path="/clases/*" element={<Clases />} />
+                        <Route path="/student" element={<Student />} />
+                        <Route path="/subject" element={<Subject />} />
+                        <Route path="/teachers" element={<Teachers />} />
+                        <Route path="/timetable" element={<Timetable />} />
+                        <Route path="/attendance" element={<Attendance />} />
+                        <Route path="/fee" element={<Fee />} />
+                    </Routes>
+            </div>
         </div>
     )
 }
