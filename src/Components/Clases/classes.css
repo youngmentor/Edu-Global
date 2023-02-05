@@ -1,9 +1,11 @@
 .classes{
   width: 75%;
+  /* height: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  /* flex-direction: column; */
+  background-color: blue;
 }
 @media screen and (max-width: 426px){
   .classes{

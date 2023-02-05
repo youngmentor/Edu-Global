@@ -25,7 +25,7 @@ const EditClasses = () => {
     };
     return (
         <div className='EditClassesMain' >
-            <form onSubmit={handleSubmit} >
+            <form onSubmit={handleSubmit} className="EditLabel" >
             {Add.map((i) => (
                         <label key={i.name}>
                             <input
