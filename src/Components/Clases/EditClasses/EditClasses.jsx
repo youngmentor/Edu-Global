@@ -24,7 +24,7 @@ const EditClasses = () => {
         e.preventDefault();
     };
     return (
-        <div className='AddClassesMain' >
+        <div className='EditClassesMain' >
             <form onSubmit={handleSubmit} >
             {Add.map((i) => (
                         <label key={i.name}>

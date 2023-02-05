@@ -22,6 +22,9 @@
     gap: 20px;
 
 }
+.AdminHeaderLogo{
+    width: 100px;
+}
 .Admin_header {
     width: 100%;
     height: 10%;

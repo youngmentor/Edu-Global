@@ -1,26 +1,73 @@
 import React from 'react'
 import "./AllClasses.css"
+import { FaGraduationCap } from "react-icons/fa";
 const AllClasses = () => {
   return (
     <div className='AllclassesMain' >
          <div className='AllClassCardHolder'>
-                <div className='AllClassCard'>
-                    <h1>JSS1</h1>
+         <div className='AllClassCard'>
+                  <div className='AllClassCardWrap'>
+                  <div className='AllClassCardDetails'>
+                        <h4>Jss1</h4>
+                        <h2>60</h2>
+                        <h4>Students</h4>
+                    </div>
+                    <div className='AllClassGraduationCap'>
+                      <FaGraduationCap style={{ width: "50px", height: "50px" }}  />  
+                    </div>  
+                  </div>
                 </div>
                 <div className='AllClassCard'>
-                    <h1>JSS2</h1>
+                <div className='AllClassCardWrap'>
+                  <div className='AllClassCardDetails'>
+                        <h4>Jss2</h4>
+                        <h2>54</h2>
+                        <h4>Students</h4>
+                    </div>
+                    <div className='AllClassGraduationCap'>
+                      <FaGraduationCap style={{ width: "50px", height: "50px" }}  />  
+                    </div>  
+                  </div>
                 </div>
                 <div className='AllClassCard'>
-                    <h1>JSS3</h1>
+                <div className='AllClassCardWrap'>
+                  <div className='AllClassCardDetails'>
+                        <h4>Jss3</h4>
+                        <h2>45</h2>
+                        <h4>Students</h4>
+                    </div>
+                    <div className='AllClassGraduationCap'>
+                      <FaGraduationCap style={{ width: "50px", height: "50px" }}  />  
+                    </div>  
+                  </div>
                 </div>
                 <div className='AllClassCard'>
-                    <h1>SS1</h1>
+                <div className='AllClassCardWrap'>
+                  <div className='AllClassCardDetails'>
+                        <h4>ss1</h4>
+                        <h2>14</h2>
+                        <h4>Students</h4>
+                    </div>
+                    <div className='AllClassGraduationCap'>
+                      <FaGraduationCap style={{ width: "50px", height: "50px" }}  />  
+                    </div>  
+                  </div>
                 </div>
                 <div className='AllClassCard'>
-                    <h1>SS2</h1>
+                <div className='AllClassCardWrap'>
+                  <div className='AllClassCardDetails'>
+                        <h4>ss1</h4>
+                        <h2>14</h2>
+                        <h4>Students</h4>
+                    </div>
+                    <div className='AllClassGraduationCap'>
+                      <FaGraduationCap style={{ width: "50px", height: "50px" }}  />  
+                    </div>  
+                  </div>
                 </div>
                 <div className='AllClassCard'>
-                    <h1>Add new</h1>
+                    <h1>+</h1>
+                    <h1>Add New</h1>
                 </div>
             </div>
     </div>

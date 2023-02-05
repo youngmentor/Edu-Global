@@ -3,7 +3,7 @@ import SignUp from './SignUp'
 import './SignUp.css'
 import { ThemeContext } from '../ContextApi/Context'
 import { useNavigate } from 'react-router-dom'
-
+import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
 const Form = () => {
   const navigate = useNavigate()
@@ -47,14 +47,18 @@ const Form = () => {
       errMsg: "Password must match!"
     },
   ];
-  const handleSubmit = event => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(data)
+    // setLoading(true);
+    try {
+      await axios.post("https://edusms.onrender.com/api/admin/sign", form);
+      then((response) => {
+        console.log(response.data);
+      })
+    } catch (err) {
+      setError(err.message)
+      }
   };
-  if (form.password !== form.confirmPassword) {
-    alert('Passwords do not match');
-    return;
-  }
 
 
   const handleChange = event => {

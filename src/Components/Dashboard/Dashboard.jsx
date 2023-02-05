@@ -20,49 +20,49 @@ export default function Dashboard() {
             <div className='AdminCardHolder'>
                 <div className='AdminCard'>
                   <div className='AdminCardWrap'>
-                  <div className='AdminCardDetails'>
-                        <h4>Jss1</h4>
+                  <div className='AdminGraduationCap'>
+                  <h4>Total Students:</h4>
+                      <FaGraduationCap style={{ width: "50px", height: "50px" }}  />  
+                    </div>
+                  <div className='AdminCardDetails'>  
                         <h2>60</h2>
-                        <h4>Students</h4>
-                    </div>
-                    <div className='AdminGraduationCap'>
-                      <FaGraduationCap style={{ width: "50px", height: "50px" }}  />  
                     </div>  
                   </div>
                 </div>
                 <div className='AdminCard'>
                 <div className='AdminCardWrap'>
+               
+                <div className='AdminGraduationCap'>
+                <h4>Total Employee:</h4>
+                      <FaGraduationCap style={{ width: "50px", height: "50px" }}  />  
+                    </div> 
                   <div className='AdminCardDetails'>
-                        <h4>Jss2</h4>
                         <h2>54</h2>
-                        <h4>Students</h4>
-                    </div>
-                    <div className='AdminGraduationCap'>
-                      <FaGraduationCap style={{ width: "50px", height: "50px" }}  />  
-                    </div>  
+                    </div>                
                   </div>
                 </div>
                 <div className='AdminCard'>
                 <div className='AdminCardWrap'>
+               
+                <div className='AdminGraduationCap'>
+                <h4>Total Subject:</h4>
+                      <FaGraduationCap style={{ width: "50px", height: "50px" }}  />  
+                    </div> 
                   <div className='AdminCardDetails'>
-                        <h4>Jss3</h4>
                         <h2>45</h2>
-                        <h4>Students</h4>
-                    </div>
-                    <div className='AdminGraduationCap'>
-                      <FaGraduationCap style={{ width: "50px", height: "50px" }}  />  
-                    </div>  
+                    </div> 
                   </div>
                 </div>
                 <div className='AdminCard'>
                 <div className='AdminCardWrap'>
-                  <div className='AdminCardDetails'>
-                        <h4>ss1</h4>
-                        <h2>14</h2>
-                        <h4>Students</h4>
-                    </div>
-                    <div className='AdminGraduationCap'>
+                
+                <div className='AdminGraduationCap'>
+                <h4>Total Classes:</h4>
                       <FaGraduationCap style={{ width: "50px", height: "50px" }}  />  
+                    </div>
+                  <div className='AdminCardDetails'>
+                        <h2>14</h2>
+                      
                     </div>  
                   </div>
                 </div>
