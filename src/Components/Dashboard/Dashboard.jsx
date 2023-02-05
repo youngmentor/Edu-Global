@@ -22,7 +22,7 @@ export default function Dashboard() {
                   <div className='AdminCardWrap'>
                   <div className='AdminCardDetails'>
                         <h4>Jss1</h4>
-                        <h2>1</h2>
+                        <h2>60</h2>
                         <h4>Students</h4>
                     </div>
                     <div className='AdminGraduationCap'>
@@ -33,8 +33,8 @@ export default function Dashboard() {
                 <div className='AdminCard'>
                 <div className='AdminCardWrap'>
                   <div className='AdminCardDetails'>
-                        <h4>Jss1</h4>
-                        <h2>1</h2>
+                        <h4>Jss2</h4>
+                        <h2>54</h2>
                         <h4>Students</h4>
                     </div>
                     <div className='AdminGraduationCap'>
@@ -45,8 +45,8 @@ export default function Dashboard() {
                 <div className='AdminCard'>
                 <div className='AdminCardWrap'>
                   <div className='AdminCardDetails'>
-                        <h4>Jss1</h4>
-                        <h2>1</h2>
+                        <h4>Jss3</h4>
+                        <h2>45</h2>
                         <h4>Students</h4>
                     </div>
                     <div className='AdminGraduationCap'>
@@ -57,8 +57,8 @@ export default function Dashboard() {
                 <div className='AdminCard'>
                 <div className='AdminCardWrap'>
                   <div className='AdminCardDetails'>
-                        <h4>Jss1</h4>
-                        <h2>1</h2>
+                        <h4>ss1</h4>
+                        <h2>14</h2>
                         <h4>Students</h4>
                     </div>
                     <div className='AdminGraduationCap'>
