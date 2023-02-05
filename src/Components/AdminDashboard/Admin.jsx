@@ -19,7 +19,7 @@ import Fee from '../Fee/Fee';
 import Subject from '../Subject/Subject'
 import Student from '../Student/Student'
 import Teachers from '../Teachers/Teachers'
-import Timetable from '../Timetable/timetable'
+// import Timetable from '../Timetable/timetable'
 import { Route, Routes } from 'react-router-dom';
 const Admin = () => {
     const navigate = useNavigate()
