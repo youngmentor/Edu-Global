@@ -1,10 +1,10 @@
 .AllclassesMain {
-  width: 75%;
+  width: 80%;
   height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: cornflowerblue; */
+  background-color: cornflowerblue;
 }
 
 .AllClassCard {
@@ -18,12 +18,12 @@
 
 .AllClassCardHolder {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 @media screen and (max-width: 426px) {
