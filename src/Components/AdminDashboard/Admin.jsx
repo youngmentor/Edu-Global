@@ -187,7 +187,7 @@ const Admin = () => {
                         <Route path="/student" element={<Student />} />
                         <Route path="/subject" element={<Subject />} />
                         <Route path="/teachers" element={<Teachers />} />
-                        <Route path="/timetable" element={<Timetable />} />
+                        {/* <Route path="/timetable" element={<Timetable />} /> */}
                         <Route path="/attendance" element={<Attendance />} />
                         <Route path="/fee" element={<Fee />} />
                     </Routes>

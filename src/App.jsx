@@ -12,14 +12,14 @@ const App = () => {
   return (
 
     <div className='app'>
-      <BrowserRouter>
+      < HashRouter>
          <Routes>
             <Route path="/" element={<Hero/>}/>
             <Route path="/signup" element={<Form/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/admin/*" element={<Admin/>}/>
          </Routes>
-      </BrowserRouter>
+      </ HashRouter>
     </div>
   )
 }
