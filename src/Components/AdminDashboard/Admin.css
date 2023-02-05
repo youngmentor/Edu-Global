@@ -56,8 +56,8 @@
     width: 20%;
     background-color: #f8f8f8;
     display: flex;
-   position: fixed;
-   left: 0px;
+    position: fixed;
+    left: 0px;
     overflow-y: scroll;
     justify-content: center;
     padding-bottom: 10px;
@@ -67,7 +67,6 @@
 
 .AdminLeftWrap {
     width: 85%;
-    /* background-color: grey; */
     padding: 15px 0px;
 }
 
