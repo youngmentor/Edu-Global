@@ -38,6 +38,9 @@
 .Features-text{
     text-align: center;
     width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     margin-top: 20px;
 }
 .Heading{
@@ -81,6 +84,10 @@
     }
     .Heading{
         margin-bottom: 20px;
+        font-size: 15px;
+    }
+    .paragraph p{
+
         font-size: 15px;
     }
 }

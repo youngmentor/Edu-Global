@@ -146,7 +146,8 @@ const Admin = () => {
                 <div className='AdminProfile'>
                     <p>Account setting</p>
                     <p>Profile</p>
-                    <p>Log out</p>
+                    <p onClick={() => navigate("/")} >Log out</p>
+                    <h5  onClick={() => navigate("/")}  >Home</h5>
                 </div>
             )}
         </div>
@@ -160,7 +161,7 @@ const Admin = () => {
                     {toggle ? <FaTimes onClick={() => { setToggle(!toggle) }} /> : <GiHamburgerMenu onClick={() => { setToggle(!toggle) }} />}
                 </div>
                 <div className='AdminLogo'>
-                    <img src="/LOGO.png" alt="Logo" onClick={() => navigate("/")} className="HeaderLogo" />
+                    <img src="/LOGO.png" alt="Logo" onClick={() => navigate("/")} className="AdminHeaderLogo" />
                 </div>
                 <div className='AdminSchoolName'>
                     <div className='AdminSchoolNamewrap'>

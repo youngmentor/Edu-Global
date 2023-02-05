@@ -25,7 +25,7 @@
 .Admin_header {
     width: 100%;
     height: 10%;
-    background-color: blue;
+    background-color: #5390D9 ;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -76,6 +76,7 @@
 }
 .AdminBurger{
     display: none;
+    margin-left: 15px;
 }
 .DashDrop_wrap {
     width: 60%;
@@ -107,22 +108,32 @@
     display: none;
 }
 .AdminProfileWrap{
-    background-color: gray;
+    width: 140px;
+    background-color: rgb(242, 239, 239);
     position: absolute;
-    margin-top: 20px;
-    margin-left: 20px;
+    padding: 10px;
+    line-height: 1.6;
+    top: 42px;
+    right: 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(231, 207, 207);
+}
+.AdminProfile{
+    cursor: pointer;
 }
 @media screen and (max-width: 426px){
-    /* .AdminLeftMobile_con{
-        height: 100%;
-        width: 100%;  
-    } */
+    .AdminHeaderLogo{
+        display: none;
+    }
     .AdminLeftMobile_co{
         height: 100%;
         width: 60%;
         display: flex;
         position: absolute;
+        left: 5px;
         background-color:rgb(245, 238, 238);
+        border-radius: 8px;
+        border: 1px solid rgb(231, 207, 207);
        padding: 20px;
     }
     .AdminLeftWrap{

@@ -4,11 +4,6 @@ import { Datas } from './Data'
 import './HeroFeatures.css'
 const HeroFeatures = () => {
   const navigate = useNavigate()
-  const style = {
-    flexDirection: "row-reverse",
-    backgroundColor: "blue"
-  }
-
   return (
     <div className='MainFeatures'>
       <h1 className='FeaturesHeader' >Features Of Edu-Global</h1>
