@@ -78,11 +78,14 @@ const Admin = () => {
             title: "Students",
             text1: "Add new students",
             text2: "Update students",
-            text3: "Delete Student",
+            // text3: "Delete Student",
             icon1: < FaUserFriends />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
-            click: "/admin/student"
+            click: "/admin/student",
+            click1: "/admin/student/addnstudents",
+            click2: "/admin/student/updatestudents",
+            // click3: "/admin/student/editclasses",
 
         },
         {
@@ -191,7 +194,7 @@ const Admin = () => {
                     <Routes>
                         <Route path="/" element={<Dashboard />} />
                         <Route path="/clases/*" element={<Clases />} />
-                        <Route path="/student" element={<Student />} />
+                        <Route path="/student/*" element={<Student />} />
                         <Route path="/subject/*" element={<Subject />} />
                         <Route path="/teachers" element={<Teachers />} />
                         {/* <Route path="/timetable" element={<Timetable />} /> */}
