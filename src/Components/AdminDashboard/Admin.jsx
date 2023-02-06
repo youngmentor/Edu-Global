@@ -68,7 +68,9 @@ const Admin = () => {
             icon1: < RiPencilRulerLine />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
-            click: "/admin/subject"
+            click: "/admin/subject",
+            click1: "/admin/subject/",
+            click2: "/admin/clases/addclasses",
         }
         , {
             id: 4,
@@ -147,7 +149,7 @@ const Admin = () => {
                     <p>Account setting</p>
                     <p>Profile</p>
                     <p onClick={() => navigate("/")} >Log out</p>
-                    <h5  onClick={() => navigate("/")}  >Home</h5>
+                    <h5 onClick={() => navigate("/")}  >Home</h5>
                 </div>
             )}
         </div>
@@ -156,8 +158,8 @@ const Admin = () => {
     return (
         <div className='AdminMain'>
             <div className='Admin_header'>
-              {/* <div className='Admin_header_wrap'> */}
-              <div className='AdminBurger'>
+                {/* <div className='Admin_header_wrap'> */}
+                <div className='AdminBurger'>
                     {toggle ? <FaTimes onClick={() => { setToggle(!toggle) }} /> : <GiHamburgerMenu onClick={() => { setToggle(!toggle) }} />}
                 </div>
                 <div className='AdminLogo'>
@@ -170,28 +172,32 @@ const Admin = () => {
                     </div>
                     {open && Edudrop}
                 </div>
-              {/* </div> */}
+                {/* </div> */}
             </div>
             <div className='AdminMainWrap'>
-                <div className='AdminLeft'>
-                    <div className='AdminLeftWrap' >
-                        <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title'>< AiFillHome /><h4>Dashboard</h4></div>
-                        {AdminData.map((i) => (
-                            <AdminLeft key={i.id}{...i} style={({ isActive }) => isActive ? activeColorObject : colorObject} />
-                        ))}
+                <div className='AdminMainWraps'>
+                    <div className='AdminLeft'>
+                        <div className='AdminLeftWrap' >
+                            <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title'>< AiFillHome /><h4>Dashboard</h4></div>
+                            <div className='AdminLeftHolder'>
+                                {AdminData.map((i) => (
+                                    <AdminLeft key={i.id}{...i} />
+                                ))}
+                            </div>
+                        </div>
                     </div>
-                </div>
-                {toggle && adminLeft_Mobile}
+                    {toggle && adminLeft_Mobile}
                     <Routes>
                         <Route path="/" element={<Dashboard />} />
                         <Route path="/clases/*" element={<Clases />} />
                         <Route path="/student" element={<Student />} />
-                        <Route path="/subject" element={<Subject />} />
+                        <Route path="/subject/*" element={<Subject />} />
                         <Route path="/teachers" element={<Teachers />} />
                         {/* <Route path="/timetable" element={<Timetable />} /> */}
                         <Route path="/attendance" element={<Attendance />} />
                         <Route path="/fee" element={<Fee />} />
                     </Routes>
+                </div>
             </div>
         </div>
     )

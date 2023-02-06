@@ -6,7 +6,7 @@
 
 .AdminMain {
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 .AdminMainWrap{
     width: 100%;
@@ -15,12 +15,12 @@
     justify-content: space-between;
     gap: 20px;
 }
-/* .AdminContain{
+.AdminContain{
     width: 100%;
     display: flex;
     gap: 20px;
 
-} */
+}
 .AdminHeaderLogo{
     width: 100px;
 }
@@ -35,14 +35,23 @@
 /* .Admin_header_wrap{
     width: 90%;
 } */
-.AdminMain_wrap {
+.AdminMainWrap {
     width: 100%;
-    height: 90%;
-    background-color: rgb(226, 224, 224);
+    /* height: 100%; */
+    /* background-color: rgb(190, 43, 43); */
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
 }
-
+.AdminMainWraps{
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
 .AdminSchoolNamewrap{
     width: 150px;
     display: flex;
@@ -51,25 +60,33 @@
     gap: 10px;
 }
 .AdminLeft {
-    height: 80%;
+    height: 90%;
     width: 20%;
-    background-color: #f8f8f8;
-    display: flex;
-    position: fixed;
-    bottom: 60px;
-    left: 0px;
-    overflow-y: scroll;
-    justify-content: center;
-    padding-bottom: 10px;
+    /* background-color: #5390D9; */
+    
 }
 
 /* Admin Left */
 
 .AdminLeftWrap {
-    width: 85%;
+    height: 80%;
+    width: 20%;
+    margin-top: 10px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 65px;
+    margin-left: 15px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    
+}
+.AdminLeftHolder{
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
     padding: 15px 0px;
 }
-
 .AdminNav {
     width: 100%;
     display: flex;
@@ -104,6 +121,7 @@
     align-items: center;
     gap: 54px;
     font-size: 15px;
+    cursor: pointer;
     /* background-color: white; */
 
 }

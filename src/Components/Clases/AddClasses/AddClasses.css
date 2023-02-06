@@ -51,5 +51,8 @@ background-color: rgb(233, 233, 239);
     width: 80%;
     height: 70vh;
    }
+   .AddInput{
+    width: 300px;
+   }
 
 }

@@ -12,7 +12,8 @@ export default function Dashboard() {
     return (
 
         <div className='AdminRight'>
-            <div className='AdminwelcomeMssg'>
+         <div className='AdminRightDiv'>
+         <div className='AdminwelcomeMssg'>
                 <div>
                     <h3>Welcome to admin dashboard</h3>
                 </div>
@@ -66,8 +67,9 @@ export default function Dashboard() {
                     </div>  
                   </div>
                 </div>
+                <Calendar onChange={handleChange} value={date} className="Calender" />
             </div>
-            <Calendar onChange={handleChange} value={date} className="Calender" />
+         </div>
         </div>
     )
 }
