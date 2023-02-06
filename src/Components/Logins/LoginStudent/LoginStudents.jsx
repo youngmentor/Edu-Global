@@ -1,7 +1,8 @@
 import React, { useState, } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css'
-const Login = () => {
+import LoginUser from "../LoginUser";
+const LoginStudent = () => {
     const navigate = useNavigate()
     const field = [
         {
@@ -30,11 +31,7 @@ const Login = () => {
         <main className="Login" >
             <form onSubmit={handleSubmit} className="login-wrap" >
                 <div className="LoginForm">
-                    <div className="UserLogin">
-                        <div className="Teacher" onClick={() => navigate("/teacher")}  >Teacher</div>
-                        <div className="Admin" onClick={() => navigate("/admin")}  >Admin</div>
-                        <div className="Students" onClick={() => navigate("/student")}  >Student</div>
-                    </div>
+                    <LoginUser/>
                     {field.map((i) => (
                         <label key={i.name}>
                             <input
@@ -66,4 +63,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default LoginStudent;

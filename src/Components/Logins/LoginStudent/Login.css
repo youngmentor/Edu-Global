@@ -1,0 +1,217 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.Login{
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}.login-wrap{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+.ImageWrap{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+.LoginImage{
+    width: 700px;
+    /* margin-top: 40px; */
+}
+.LoginInput{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top:20px;
+    padding: 15px;
+}
+.LoginForm{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.Loginbtt{
+    margin-top: 20px;
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    background-color: rgb(15, 94, 247);
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 20px;
+}
+.login-text h1{
+   font-size: 40px;
+   margin-bottom: 25px;
+   font-weight: 1000;
+}
+.login-text p{
+    font-size: 20px;
+}
+.Admin{
+    width: 150px;
+    height: 150px;
+    background-color: gray;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -120px;
+    background-color: transparent;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+.Admin:hover{
+    background-color: rgb(15, 94, 247);
+    color: white;
+}
+.Teacher{
+    margin-bottom: 100px;
+    margin-left: 20px;
+    width: 150px;
+    border: 1px solid gray;
+    height: 150px;
+    background-color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    justify-content: center;
+}
+.Teacher:hover{
+    background-color: rgb(15, 94, 247);
+    color: white;
+}
+.Students{
+    margin-bottom: 100px;
+    width: 150px;
+    height: 150px;
+    border: 1px solid gray;
+    background-color: gray;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+.Students:hover{
+    background-color: rgb(15, 94, 247);
+    color: white;
+}
+.UserLogin{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+@media screen and (max-width: 426px){
+    .verticalSign{
+        display: none;
+    }
+    .ImageWrap{
+        display: none;
+    }
+    .LoginInput{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        height: 40px;
+        border-radius: 10px;
+        margin-top:20px;
+    }
+    .Admin{
+        width: 80px;
+        height: 80px;
+        background-color: gray;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: -120px;
+        background-color: transparent;
+        border: 1px solid gray;
+        cursor: pointer;
+    }
+    .Admin:hover{
+        background-color: rgb(15, 94, 247);
+        color: white;
+    }
+    .Teacher{
+        margin-bottom: 30px;
+        width: 80px;
+        height: 80px;
+        border: 1px solid gray;
+        background-color: gray;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        justify-content: center;
+    }
+    .Teacher:hover{
+        background-color: rgb(15, 94, 247);
+        color: white;
+    }
+    .Students{
+        margin-bottom: 30px;
+        width: 80px;
+        height: 80px;
+        border: 1px solid gray;
+        background-color: gray;
+        border-radius: 50%;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+    }
+    .Students:hover{
+        background-color: rgb(15, 94, 247);
+        color: white;
+    }
+    .UserLogin{
+        width: 300px;
+        margin-bottom: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .Loginbtt{
+        margin-top: 20px;
+        width: 300px;
+        height: 40px;
+        border: none;
+        outline: none;
+        border-radius: 15px;
+        background-color: rgb(15, 94, 247);
+        color: white;
+        cursor: pointer;
+        margin-top: 15px;
+        font-size: 20px;
+    }
+    .Login{
+        margin-top: 70px;
+    }
+}

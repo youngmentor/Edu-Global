@@ -1,16 +1,15 @@
 import React, {useContext} from 'react'
-import Header from './Components/Header/Header'
+// import Header from './Components/Header/Header'
 import Form from './Components/SignUp/Form'
 import Hero from './Components/Hero/Hero'
-import { Routes, Route, HashRouter, BrowserRouter } from 'react-router-dom'
-import Login from './Components/Login/Login'
+import { Routes, Route, HashRouter} from 'react-router-dom'
+import Login from './Components/Logins/Login/Login'
 import Admin from './Components/AdminDashboard/Admin'
-// import Teachers from './Components/TeacherDashboard/Teacher'
-// import Student from './Components/StudentDashboard/Student'
+import LoginStudent from './Components/Logins/LoginStudent/LoginStudents'
+import LoginTeacher from './Components/Logins/LoginTeacher/LoginTeacher'
 import './App.css'  
 const App = () => {
   return (
-
     <div className='app'>
       < HashRouter>
          <Routes>
@@ -18,6 +17,8 @@ const App = () => {
             <Route path="/signup" element={<Form/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/admin/*" element={<Admin/>}/>
+            <Route pathe="/loginteacher" element={<LoginTeacher/>} />
+            <Route pathe="/loginstudent" element={<LoginStudent/>} />
          </Routes>
       </ HashRouter>
     </div>
