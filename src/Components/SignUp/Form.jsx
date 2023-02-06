@@ -53,7 +53,7 @@ const Form = () => {
     try {
       await axios.post("https://edusms.onrender.com/api/admin/sign", form);
       then((response) => {
-        console.log(response.data);
+        console.log(response.form);
       })
     } catch (err) {
       setError(err.message)

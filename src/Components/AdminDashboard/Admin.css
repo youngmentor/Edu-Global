@@ -26,8 +26,9 @@
 }
 .Admin_header {
     width: 100%;
-    height: 10%;
+    height: 60px;
     background-color: #5390D9 ;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -188,6 +189,9 @@
         width: 100%;
         display: flex;
         /* background-color: red; */
+    }
+    .Admin_header{
+        height: 40px;
     }
 
 }

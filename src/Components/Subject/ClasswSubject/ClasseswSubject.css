@@ -1,0 +1,88 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.ClassSubMain{
+    width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ClassSubWrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-top: 40px;
+    align-items: center;
+}
+.ClassSub{
+    width: 400px;
+    /* height: 250px; */
+    margin-left: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(205, 205, 205);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.ClassSub p{
+    margin-top: 15px;
+}
+.SubDetailsHeader{
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    width: 350px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(205, 205, 205);
+}
+.SubDetails{
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    width: 350px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: rgb(205, 205, 205); */
+}
+@media screen and (max-width: 426px){
+    .ClassSubWrap{
+        margin-left: -20px;
+    }
+    .ClassSub{
+        margin-top: 10px;
+    }
+    .SubDetails{
+        margin-top: 10px;
+        padding: 15px;
+        border-radius: 5px;
+        width: 300px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* background-color: rgb(205, 205, 205); */
+    }
+    .SubDetailsHeader{
+        margin-top: 10px;
+        padding: 15px;
+        border-radius: 5px;
+        width: 300px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgb(205, 205, 205);
+    }
+}

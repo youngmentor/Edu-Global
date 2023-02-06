@@ -69,8 +69,9 @@ const Admin = () => {
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
             click: "/admin/subject",
-            click1: "/admin/subject/",
-            click2: "/admin/clases/addclasses",
+            click1: "/admin/subject/classeswsubject",
+            click2: "/admin/subject/addnsubject",
+           
         }
         , {
             id: 4,
