@@ -5,13 +5,15 @@ import LoginUser from "../LoginUser";
 const Login = () => {
     const navigate = useNavigate()
     const field = [
-        {
+        { 
+            id: 1,
             name: "Email",
             label: "Email",
             placeholder: "Email",
             type: "text"
         },
         {
+            id: 2,
             name: "password",
             label: "Password",
             placeholder: "Password",

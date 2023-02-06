@@ -12,7 +12,7 @@ const AddnSubject = () => {
         },
         {
           id: 2,
-            name: "name",
+            name: "Subject",
             label: "name",
             placeholder: "Name of subject",
             type: "text"

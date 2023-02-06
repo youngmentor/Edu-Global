@@ -39,7 +39,7 @@ const Form = () => {
     {
       id: 5,
       name: "confirmPassword",
-      type: "password",
+      type: "confirmpassword",
       label: "confirmPassword",
       placeholder: "confirmPassword",
       pattern: form.password,
@@ -49,15 +49,25 @@ const Form = () => {
   ];
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // setLoading(true);
+
     try {
-      await axios.post("https://edusms.onrender.com/api/admin/sign", form);
-      then((response) => {
-        console.log(response.form);
-      })
-    } catch (err) {
-      setError(err.message)
+      const response = await fetch("https://edusms.onrender.com/api/admin/sign", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password, confirmpassword }),
+      });
+
+      if (response.ok) {
+       setForm("")
+        console.log("Sign up successful");
+      } else {
+        throw new Error("Sign up failed");
       }
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
 
