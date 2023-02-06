@@ -52,7 +52,7 @@ const Form = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("https://edusms.onrender.com/api/admin/sign", { email, password});
+      const response = await axios.post("https://edusms.onrender.com/api/admin/sign", {email, password});
       console.log(response);
     } catch (error) {
       setError(error.message);
