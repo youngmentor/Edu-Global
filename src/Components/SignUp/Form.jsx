@@ -7,6 +7,7 @@ import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
 const Form = () => {
   const navigate = useNavigate()
+  const [user, setUser] = useState([])
   const { removeHeader, header } = useContext(ThemeContext)
   const [form, setForm] = useState({
     name: "",
@@ -20,7 +21,7 @@ const Form = () => {
   const field = [
     {
       id: 3,
-      name: "E-mail",
+      name: "email",
       type: "email",
       label: "email",
       placeholder: "Email",
@@ -49,11 +50,16 @@ const Form = () => {
     },
   ];
   const handleSubmit = async (event) => {
-    event.preventDefault();
-
+    
     try {
-      const response = await axios.post("https://edusms.onrender.com/api/admin/sign", {email, password});
-      console.log(response);
+      event.preventDefault();
+      const {email, password} = form
+    
+    console.log("clicked")
+      const response = await axios.post("https://edusms.onrender.com/api/admin/sign", {email: email, password:  password});
+      // setUser(response)
+      console.log(response).data;
+      // console.log(email, password);
     } catch (error) {
       setError(error.message);
     }
@@ -75,12 +81,12 @@ const Form = () => {
   return (
     <main className="main">
       <div className='SignUp-main' >
-        <form onSubmit={handleSubmit} className="formData" >
+        <form  className="formData" >
           <h2 className='form-h1'>Register Your Account</h2>
           {field.map((field) => (
             <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]}  />
           ))}
-          <div className='SignUpbtt'> <button type="submit" className='signbttn'  >Sign Up</button></div>
+          <button type="submit" className='signbttn' onClick={handleSubmit}>Sign Up</button>
           <h3 className='Already'>Already have an Account  <b className='b1' onClick={() => navigate("/login")}> Login here?</b></h3>
         </form>
         <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
