@@ -14,7 +14,8 @@ const Form = () => {
     address: "",
     password: "",
     confirmPassword: "",
-  })
+  });
+  const [error, setError] = useState("")
 
   const field = [
     {
@@ -39,7 +40,7 @@ const Form = () => {
     {
       id: 5,
       name: "confirmPassword",
-      type: "confirmpassword",
+      type: "password",
       label: "confirmPassword",
       placeholder: "confirmPassword",
       pattern: form.password,
@@ -51,20 +52,8 @@ const Form = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch("https://edusms.onrender.com/api/admin/sign", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password, confirmpassword }),
-      });
-
-      if (response.ok) {
-       setForm("")
-        console.log("Sign up successful");
-      } else {
-        throw new Error("Sign up failed");
-      }
+      const response = await axios.post("https://edusms.onrender.com/api/admin/sign", { email, password});
+      console.log(response);
     } catch (error) {
       setError(error.message);
     }
@@ -72,19 +61,17 @@ const Form = () => {
 
 
   const handleChange = event => {
-    // setForm(
-    //   {
-    //     ...form, [e.target.name]: e.target.value
-    //   }
-    // );
 
     setForm((prevState)=>{
-  return {...prevState, name: event.target.value }
+  return {...prevState, [event.target.name]: event.target.value }
     })
+    // console.log(form)
   };
 
+
   useEffect(() => {
-  }, [])
+   
+  }, [form])
   return (
     <main className="main">
       <div className='SignUp-main' >
@@ -93,7 +80,7 @@ const Form = () => {
           {field.map((field) => (
             <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]}  />
           ))}
-          <div className='SignUpbtt'> <button type="submit" className='signbttn' onClick={() => navigate("/admin")}  >Sign Up</button></div>
+          <div className='SignUpbtt'> <button type="submit" className='signbttn'  >Sign Up</button></div>
           <h3 className='Already'>Already have an Account  <b className='b1' onClick={() => navigate("/login")}> Login here?</b></h3>
         </form>
         <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
@@ -109,3 +96,4 @@ const Form = () => {
 }
 
 export default Form
+// onClick={() => navigate("/admin")} 

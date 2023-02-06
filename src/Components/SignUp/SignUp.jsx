@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import './SignUp.css'
-const SignUp = (props,{handleChange}) => {
+const SignUp = (props) => {
   const [focus, setFocus] = useState(false)
+  const {handleChange} = props
 
   const whenFocus =()=>{
     setFocus(true)
