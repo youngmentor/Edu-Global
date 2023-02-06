@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-// import './AddClasses.css'
+import './EditClasses.css'
 const EditClasses = () => {
     const [EditData, setEditData] = useState({});
     const Add = [
@@ -25,11 +25,12 @@ const EditClasses = () => {
     };
     return (
         <div className='EditClassesMain' >
-            <form onSubmit={handleSubmit} className="EditLabel" >
+        <div className='EditClassesWrap'>
+        <form onSubmit={handleSubmit} className="Edit-inputWrap" >
             {Add.map((i) => (
-                        <label key={i.name}>
+                        <label key={i.name} className="EditLabel">
                             <input
-                                className="AddInput"
+                                className="EditInput"
                                 type={i.type}
                                 name={i.name}
                                 placeholder={i.placeholder}
@@ -37,9 +38,10 @@ const EditClasses = () => {
                             />
                         </label>
                     ))}
-                      <button type="submit" className="Delete">Delete</button>
+                      <button type="submit" className="Editbttn">Delete</button>
 
             </form>
+        </div>
         </div>
     )
 }

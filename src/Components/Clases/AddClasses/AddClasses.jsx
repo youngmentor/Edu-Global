@@ -25,7 +25,8 @@ const AddClasses = () => {
     };
     return (
         <div className='AddClassesMain' >
-            <form onSubmit={handleSubmit} className="Add-inputWrap" >
+        <div className='AddClassesWrap'>
+        <form onSubmit={handleSubmit} className="Add-inputWrap" >
             {Add.map((i) => (
                         <label key={i.name} className="AddLabel">
                             <input
@@ -38,8 +39,9 @@ const AddClasses = () => {
                             />
                         </label>
                     ))}
-                      <button type="submit" className="Addbttn">Submit</button>
+                      <button type="submit" className="Addbttn">Add New</button>
             </form>
+        </div>
         </div>
     )
 }

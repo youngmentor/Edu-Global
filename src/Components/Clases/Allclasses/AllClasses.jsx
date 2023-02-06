@@ -1,7 +1,9 @@
 import React from 'react'
 import "./AllClasses.css"
+import { useNavigate } from 'react-router-dom';
 import { FaGraduationCap } from "react-icons/fa";
 const AllClasses = () => {
+  const navigate = useNavigate()
   return (
     <div className='AllclassesMain' >
          <div className='AllClassCardHolder'>
@@ -65,7 +67,7 @@ const AllClasses = () => {
                     </div>  
                   </div>
                 </div>
-                <div className='AllClassCard'>
+                <div className='AllClassCard' onClick={() => { navigate("/classes/addclasses") }}>
                     <h1>+</h1>
                     <h1>Add New</h1>
                 </div>

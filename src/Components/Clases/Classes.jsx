@@ -10,13 +10,13 @@ export default function Clases() {
 
   return (
     <div className='classes'>
-      {/* <div style={{display: "flex", width: "100%"}}> */}
-      <Routes>
-        <Route path='allClasses' element={<AllClasses/>}/>
-        <Route path='addclasses' element={<AddClasses/>}/>
-        <Route path='editclasses' element={<EditClasses/>}/>
-      </Routes>
-      {/* </div> */}
+      <div className='classesWrap'>
+        <Routes>
+          <Route path='allClasses' element={<AllClasses />} />
+          <Route path='addclasses' element={<AddClasses />} />
+          <Route path='editclasses' element={<EditClasses />} />
+        </Routes>
+      </div>
     </div>
   )
 }
