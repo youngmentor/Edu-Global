@@ -4,7 +4,6 @@
 }
 .AdminRight {
   width: 80%;
-  /* margin-left: 100px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
