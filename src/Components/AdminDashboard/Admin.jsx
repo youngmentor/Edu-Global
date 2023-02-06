@@ -27,14 +27,14 @@ const Admin = () => {
     // const [isOpen, setIsOpen] = useState(false);
     const [open, setOpen] = useState(false)
 
-    const colorObject = {
-        textDecoration: 'none',
-        color: 'inherit',
-    }
-    const activeColorObject = {
-        textDecoration: 'none',
-        color: 'tomato',
-    }
+    // const colorObject = {
+    //     textDecoration: 'none',
+    //     color: 'inherit',
+    // }
+    // const activeColorObject = {
+    //     textDecoration: 'none',
+    //     color: 'tomato',
+    // }
 
 
     const AdminData = [
