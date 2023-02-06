@@ -1,13 +1,14 @@
 .dashboard{
   width: 100%;
+  /* height: 100vh; */
   
 }
 .AdminRight {
   width: 80%;
-  height: 60%;
+  margin-top: 60px;
   /* background-color: #5390D9; */
   display: flex;
-  flex-direction: column;
+ 
   justify-content: center;
   align-items: center;
 }
@@ -72,7 +73,6 @@
 @media screen and (max-width: 426px) {
   .AdminCardHolder{
     width: 100%;
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -89,13 +89,13 @@
     /* background-color: red; */
   }
   .AdminCard {
-    width: 400px;
+    width: 350px;
     height: 150px;
     background-color: #5390D9;
     margin-top: 30px;
   }
   .AdminwelcomeMssg {
-    width: 94%;
+    width: 80%;
     height: 100px;
     display: flex;
     align-items: center;
