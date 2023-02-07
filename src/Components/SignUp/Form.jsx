@@ -7,7 +7,7 @@ import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
 const Form = () => {
   const navigate = useNavigate()
-  const [user, setUser] = useState([])
+  // const [user, setUser] = useState([])
   const [view, setView] = useState(false)
   const [form, setForm] = useState({
     name: "",
@@ -16,7 +16,6 @@ const Form = () => {
     password: "",
     confirmPassword: "",
   });
-  const [error, setError] = useState("")
   const {email, password} = form
   const field = [
     {
@@ -53,27 +52,18 @@ const Form = () => {
     
     try {
       event.preventDefault();
-     
-    
     console.log("clicked")
       const response = await axios.post("https://edusms.onrender.com/api/admin/sign", {email: email, password:  password});
-      console.log(response).data;
-      // console.log(email, password);
+      console.log(response.data.message);
     } catch (error) {
       setError(error.message);
     }
   };
-
-
   const handleChange = event => {
-
     setForm((prevState)=>{
   return {...prevState, [event.target.name]: event.target.value }
     })
-    // console.log(form)
   };
-
-
   useEffect(() => {
    
   }, [form])
