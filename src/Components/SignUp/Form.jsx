@@ -43,7 +43,7 @@ const Form = () => {
       name: "confirmPassword",
       type: "password",
       label: "confirmPassword",
-      placeholder: "confirmPassword",
+      placeholder: "Confirm Password",
       pattern: form.password,
       required: true,
       errMsg: "Password must match!"
@@ -57,7 +57,6 @@ const Form = () => {
     
     console.log("clicked")
       const response = await axios.post("https://edusms.onrender.com/api/admin/sign", {email: email, password:  password});
-      // setUser(response)
       console.log(response).data;
       // console.log(email, password);
     } catch (error) {
@@ -87,7 +86,7 @@ const Form = () => {
             <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]}  />
           ))}
           <button type="submit" className='signbttn' onClick={handleSubmit}>Sign Up</button>
-          <h3 className='Already'>Already have an Account  <b className='b1' onClick={() => navigate("/login")}> Login here?</b></h3>
+          <p className='Already'>Already have an Account  <b className='b1' onClick={() => navigate("/login")}> Login here?</b></p>
         </form>
         <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
         <div className='SignUpImage-contain' >

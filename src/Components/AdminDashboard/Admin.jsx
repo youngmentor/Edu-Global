@@ -46,7 +46,7 @@ const Admin = () => {
 
         // },
         , {
-            id: 2,
+            id: 1,
             title: "Classes",
             text1: "All classes",
             text2: "New Classes",
@@ -61,10 +61,10 @@ const Admin = () => {
             click3: "/admin/clases/editclasses",
         }
         , {
-            id: 3,
+            id: 2,
             title: "Subject",
-            text1: "Classes with subject",
-            text2: "Add new Subject",
+            text1: "Classes With Subject",
+            text2: "Add New Subject",
             icon1: < RiPencilRulerLine />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
@@ -74,22 +74,19 @@ const Admin = () => {
            
         }
         , {
-            id: 4,
+            id: 3,
             title: "Students",
             text1: "Add new students",
             text2: "Update students",
-            // text3: "Delete Student",
             icon1: < FaUserFriends />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
             click: "/admin/student",
             click1: "/admin/student/addnstudents",
             click2: "/admin/student/updatestudents",
-            // click3: "/admin/student/editclasses",
-
         },
         {
-            id: 5,
+            id: 4,
             title: "Teacher",
             text1: "Add new Teacher",
             text2: "UpdateTeacher",
@@ -101,7 +98,7 @@ const Admin = () => {
 
         },
         , {
-            id: 6,
+            id: 5,
             title: "Attendance",
             text1: "Mark Student Attendance",
             text2: "Mark Teacher Attendance",
@@ -112,7 +109,7 @@ const Admin = () => {
 
         }
         , {
-            id: 7,
+            id: 6,
             title: "TimeTable",
             text1: "View TimeTable",
             icon1: < AiFillHome />,
@@ -122,7 +119,7 @@ const Admin = () => {
 
         }
         , {
-            id: 8,
+            id: 7,
             title: "Fees",
             text1: "Pay Fees",
             icon1: < AiFillHome />,

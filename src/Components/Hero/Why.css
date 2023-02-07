@@ -52,6 +52,13 @@
 .WhyImg{
     width: 500px;
     margin-top: 20px;
+    transition: 1s ease;
+}
+.WhyImg:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease;
 }
 .Why-text{
     text-align: center;

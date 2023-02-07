@@ -2,10 +2,6 @@ import Admin from './Images/For Admin.webp'
 import Parent from './Images/For Parents.png'
 import Teacher from './Images/For Teachers.jpg'
 
-// const style={
-//     flexDirection: "row-reverse"
-// }
-
 export const Datas =[
     {
         id: 1,

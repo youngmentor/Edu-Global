@@ -6,11 +6,11 @@ const EditClasses = () => {
         {
             name: "name",
             label: "name",
-            placeholder: "Name of class",
+            placeholder: "Name of Class",
             type: "text"
         },
         {
-            name: "name of teacher",
+            name: "name",
             label: "name",
             placeholder: "Name of Teacher",
             type: "text"

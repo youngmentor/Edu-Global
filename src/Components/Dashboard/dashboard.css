@@ -20,11 +20,12 @@
   justify-content: center;
 }
 .AdminCard {
-  width: 250px;
-  height: 150px;
+  width: 500px;
+  height: 200px;
   background-color: #5390D9;
   margin-top: 30px;
   border-radius: 8px;
+  color: whitesmoke;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,6 +65,7 @@
   align-items: center;
   justify-content: center;
   background-color: aquamarine;
+  color: rgb(255, 241, 241);
   margin-top: 15px;
 }
 .Calender {

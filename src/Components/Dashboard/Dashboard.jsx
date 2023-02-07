@@ -15,7 +15,7 @@ export default function Dashboard() {
          <div className='AdminRightDiv'>
          <div className='AdminwelcomeMssg'>
                 <div>
-                    <h3>Welcome to admin dashboard</h3>
+                    <h3>Welcome To Admin Dashboard</h3>
                 </div>
             </div>
             <div className='AdminCardHolder'>
