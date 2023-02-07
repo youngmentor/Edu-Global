@@ -8,7 +8,7 @@ import axios from 'axios'
 const Form = () => {
   const navigate = useNavigate()
   const [user, setUser] = useState([])
-  const { removeHeader, header } = useContext(ThemeContext)
+  const [view, setView] = useState(false)
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -17,7 +17,7 @@ const Form = () => {
     confirmPassword: "",
   });
   const [error, setError] = useState("")
-
+  const {email, password} = form
   const field = [
     {
       id: 3,
@@ -31,7 +31,7 @@ const Form = () => {
     {
       id: 4,
       name: "password",
-      type: "password",
+      type:  view ? "text" : "Password",
       label: "password",
       placeholder: "Password",
       required: true,
@@ -41,7 +41,7 @@ const Form = () => {
     {
       id: 5,
       name: "confirmPassword",
-      type: "password",
+      type: view ? "text" : "password",
       label: "confirmPassword",
       placeholder: "Confirm Password",
       pattern: form.password,
@@ -53,7 +53,7 @@ const Form = () => {
     
     try {
       event.preventDefault();
-      const {email, password} = form
+     
     
     console.log("clicked")
       const response = await axios.post("https://edusms.onrender.com/api/admin/sign", {email: email, password:  password});
@@ -83,7 +83,7 @@ const Form = () => {
         <form  className="formData" >
           <h2 className='form-h1'>Register Your Account</h2>
           {field.map((field) => (
-            <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]}  />
+            <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]}  setView={setView} view={view}  />
           ))}
           <button type="submit" className='signbttn' onClick={handleSubmit}>Sign Up</button>
           <p className='Already'>Already have an Account  <b className='b1' onClick={() => navigate("/login")}> Login here?</b></p>

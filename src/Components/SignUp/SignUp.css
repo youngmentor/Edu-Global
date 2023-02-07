@@ -149,6 +149,11 @@
     gap: 4px;
     width: 400px;
 }
+/* .SignUpeye{
+    position: fixed;
+    top: 225px;
+   left: 470px;
+} */
 @media screen and (max-width: 769px) {
     .SignUpImage-contain {
         display: none;
@@ -178,6 +183,11 @@
     .verticalSign{
         display: none;
     }
+    .SignUpeye{
+        position: fixed;
+        top: 165px;
+       left: 520px;
+    }
 }
 
 @media screen and (max-width: 426px) {
@@ -188,6 +198,12 @@
         width: 100%;
         height: 100%;
     }
+    .SignUpeye{
+        position: fixed;
+        top: 209px;
+       left: 350px;
+    }
+}
     .input {
         width: 350px;
         border: 1px solid rgb(160, 156, 156);
