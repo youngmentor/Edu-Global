@@ -19,20 +19,27 @@ const [AddnStudent, SetAddnStudent]= useState()
     },
     {
       id: 3,
+        name: "number",
+        label: "number",
+        placeholder: "Student/Guardian No:",
+        type: "number"
+    },
+    {
+      id: 4,
         name: "file",
         label: "file",
         placeholder: "Choose A file",
         type: "file"
     },
     {
-      id: 4,
+      id: 5,
         name: "class",
         label: "class",
         placeholder: "Select Class",
         type: "select"
     },
     {
-      id: 5,
+      id: 6,
         name: "birth",
         label: "birth",
         placeholder: "mm/dd/yy",
