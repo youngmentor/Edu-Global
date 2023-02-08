@@ -2,6 +2,7 @@ import React, { useState, } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import './Login.css'
 import LoginUser from "../LoginUser";
+import axios from 'axios';
 const Login = () => {
     const navigate = useNavigate()
     const field = [
@@ -20,6 +21,11 @@ const Login = () => {
             type: "password"
         },
     ];
+    const handleLogin = (username, password) => {
+        axios.post('https://edusms.onrender.com/api/admin/login', {
+          email,
+          password
+        })
     const [loginData, setLoginData] = useState({});
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -27,6 +33,7 @@ const Login = () => {
     };
     const handleSubmit = (e) => {
         e.preventDefault();
+        handleLogin(email, password);
     };
 
     return (
@@ -66,5 +73,5 @@ const Login = () => {
         </main>
     );
 };
-
-export default Login;
+}
+export default Login
