@@ -6,19 +6,25 @@
 .LogoImg{
     width: 100px;
     height: 50px;
-    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 30px; */
 }
 .HeaderLogo{
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 100%;
 }
 .Header-main {
     width: 100%;
-    background-color: #5390D9;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    -webkit-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
+    -moz-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
+    box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
 }
 
 .Header {
@@ -37,7 +43,7 @@
 }
 .Header-btt {
     width: 200px;
-    background-color:#5390D9 ;
+    /* background-color:#5390D9 ; */
     display: flex;
     flex-direction: column;
     position: relative;
@@ -50,21 +56,21 @@
 }
 .Header-bttn1 {
     width: 100px;
-    height: 40px;
+    height: 45px;
     border: none;
-    background: #FFFFFF;
+    background: #5390D9 ;
+    color: white;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .Header-bttn2 {
     width: 100px;
-    height: 40px;
+    height: 45px;
     border: 1px solid rgb(48, 43, 43);
     border-radius: 8px;
     background-color: transparent;
     cursor: pointer;
-    color: white;
 }
 .Header-btt2 {
     cursor: pointer;

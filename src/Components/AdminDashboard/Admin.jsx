@@ -159,12 +159,12 @@ const Admin = () => {
     return (
         <div className='AdminMain'>
             <div className='Admin_header'>
-                {/* <div className='Admin_header_wrap'> */}
+                <div className='Admin_header_wrap'>
                 <div className='AdminBurger'>
                     {toggle ? <FaTimes onClick={() => { setToggle(!toggle) }} /> : <GiHamburgerMenu onClick={() => { setToggle(!toggle) }} />}
                 </div>
                 <div className='AdminLogo'>
-                    <img src="/LOGO.png" alt="Logo" onClick={() => navigate("/")} className="AdminHeaderLogo" />
+                    <img src="/NewLogo1.png" alt="Logo" onClick={() => navigate("/")} className="AdminHeaderLogo" />
                 </div>
                 <div className='AdminSchoolName'>
                     <div className='AdminSchoolNamewrap'>
@@ -173,7 +173,7 @@ const Admin = () => {
                     </div>
                     {open && Edudrop}
                 </div>
-                {/* </div> */}
+                </div>
             </div>
             <div className='AdminMainWrap'>
                 <div className='AdminMainWraps'>
