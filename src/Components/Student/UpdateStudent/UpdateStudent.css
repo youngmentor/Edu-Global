@@ -45,3 +45,14 @@
     border-radius: 8px;
     gap: 10px;
 }
+@media screen and (max-width: 426px){
+    .AddStudent_Input{
+        width: 250px;
+    }
+    .AddStudent_Label{
+        width: 400px;  
+    }
+    .AdminAddn_Student{
+        height: 100%;
+    }
+}

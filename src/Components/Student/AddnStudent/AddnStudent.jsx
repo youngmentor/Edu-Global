@@ -1,6 +1,9 @@
 import React from 'react'
 import './AddnStudent.css'
+import { useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 const AddnStudent = () => {
+  const navigate = useNavigate()
   return (
     <div className='AdminStudents_All'>
       <div className='AdminStudents_All_Wrap'>
@@ -66,10 +69,10 @@ const AddnStudent = () => {
         <p>suliton</p>
        </div>
       </div>
-      <div className='AdminStudents_All_AddWrap'>
+      <NavLink className='AdminStudents_All_AddWrap' to="/admin/student/updatestudents" >
            <p>+</p>
            <p>Add New</p>
-      </div>
+      </NavLink>
     </div>
   )
 }
