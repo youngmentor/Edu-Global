@@ -29,7 +29,7 @@ const SignUp = (props) => {
               <span className='err'>{props.errMsg}</span>
             </label>
         </div>
-        {props.name === "password" ? props.view ? <AiOutlineEyeInvisible onClick={() => { props.setView(!props.view) }} className='SignUpeye' /> : <MdRemoveRedEye className='SignUpeye' onClick={() => { props.setView(!props.view) }} /> : null}
+        {/* {props.name === "password" ? props.view ? <AiOutlineEyeInvisible onClick={() => { props.setView(!props.view) }} className='SignUpeye' /> : <MdRemoveRedEye className='SignUpeye' onClick={() => { props.setView(!props.view) }} /> : null} */}
    </div>
   )
 }
