@@ -48,7 +48,7 @@ const [AddnStudent, SetAddnStudent]= useState()
 ];
 const handleChange = (e) => {
   const { name, value } = e.target;
-  setAddData({ ...AddnStudent, [name]: value });
+  SetAddnStudent({ ...AddnStudent, [name]: value });
 };
 const handleSubmit = (e) => {
   e.preventDefault();
