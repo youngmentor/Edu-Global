@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-
+import './UpdateStudent.css'
 const UpdateStudent = () => {
 const [AddnStudent, SetAddnStudent]= useState()
   const AddStudent = [
@@ -12,7 +12,7 @@ const [AddnStudent, SetAddnStudent]= useState()
     },
     {
       id: 2,
-        name: "number",
+        name: "numbers",
         label: "number",
         placeholder: "Registration No:",
         type: "number"
@@ -60,7 +60,7 @@ const handleSubmit = (e) => {
             {AddStudent.map((i) => (
                         <label key={i.name} className="AddStudent_Label">
                             <input
-                                className="AddInput"
+                                className="AddStudent_Input"
                                 type={i.type}
                                 name={i.name}
                                 placeholder={i.placeholder}
