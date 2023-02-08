@@ -81,8 +81,6 @@
 .AdminLeft {
     height: 90%;
     width: 20%;
-    /* background-color: #5390D9; */
-    
 }
 
 /* Admin Left */
@@ -161,6 +159,13 @@
 }
 .AdminProfile{
     cursor: pointer;
+}
+.AdminProfile:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease;
+    background-color: white;
 }
 @media screen and (max-width: 426px){
     .AdminHeaderLogo{

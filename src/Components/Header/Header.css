@@ -76,10 +76,18 @@
 .Header-btt2 {
     cursor: pointer;
 }
-.Header-btt2:hover {
-    background-color: whitesmoke;
-    color: white;
-}
+.Header-bttn2:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease;
+    }
+    .Header-bttn1:hover{
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        transition: 1s ease;
+        }
 .Header-btt2 {
     cursor: pointer;
     /* color: white; */
