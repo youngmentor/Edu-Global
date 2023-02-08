@@ -5,31 +5,48 @@ import LoginUser from "../LoginUser";
 import axios from 'axios';
 const Login = () => {
     const navigate = useNavigate()
+    const [value, setValue] = useState({
+        email: "",
+        password: ""
+      })
     const field = [
         { 
             id: 1,
-            name: "Email",
-            label: "Email",
+            name: "email",
+            label: "email",
             placeholder: "Email",
-            type: "text"
+            type: "text",
+            err: "input a valid email",
+            required: true
+           
         },
         {
             id: 2,
             name: "password",
             label: "Password",
             placeholder: "Password",
-            type: "password"
+            type: "password",
+            err: "forget password",
+            required: true
         },
-    ];
-    const handleLogin = (username, password) => {
+    ]
+
+
+    const [focus, setFocus] = useState(false)
+
+    const handleFocus = (e) => {
+      setFocus(true)
+    }
+
+    const handleLogin = (email, password) => {
         axios.post('https://edusms.onrender.com/api/admin/login', {
           email,
           password
         })
-    const [loginData, setLoginData] = useState({});
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setLoginData({ ...loginData, [name]: value });
+     console.log(response.data.message)
+    }
+    const handleChange = (event) => {  
+        setValue({ ...value, [event.target.name]: event.target.value })
     };
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -38,7 +55,7 @@ const Login = () => {
 
     return (
         <main className="Login" >
-            <form onSubmit={handleSubmit} className="login-wrap" >
+            <form onSubmit={handleSubmit} className="login-wrap"   >
                 <div className="LoginForm">
                 <LoginUser/>
                     {field.map((i) => (
@@ -48,9 +65,13 @@ const Login = () => {
                                 type={i.type}
                                 name={i.name}
                                 placeholder={i.placeholder}
-                                value={loginData[i.name] || ""}
                                 onChange={handleChange}
+                                required={i.required}
+                                pattern={i.pattern}
+                                onBlur={handleFocus}
+                                focused={focus.toString()}
                             />
+                             <span className='Login_err'>{i.err}</span>
                         </label>
                     ))}
                   <NavLink to="/admin" >
@@ -73,5 +94,5 @@ const Login = () => {
         </main>
     );
 };
-}
+
 export default Login

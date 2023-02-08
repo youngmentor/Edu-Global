@@ -125,6 +125,23 @@
     align-items: center;
     justify-content: space-evenly;
 }
+.Login_err {
+    display: none;
+  
+  }
+  
+  .LogInput:invalid[focused=true]~.login_err {
+    display: block;
+    position: relative;
+    top: 20px;
+    color: red;
+  }
+  
+  .LoginInput:invalid[focused=true] {
+    display: block;
+    position: relative;
+    top: 9px;
+  }
 @media screen and (max-width: 426px){
     .verticalSign{
         display: none;
