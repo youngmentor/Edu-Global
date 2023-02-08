@@ -26,8 +26,8 @@ const Header = () => {
                 </div>
                 {isOpen && (
                     <div className='Header-btt'>
-                        <h2 className="Header-btt1" onClick={() => navigate("signUp")}  >Sign Up+</h2>
-                        <h2 className='Header-btt2' onClick={() => navigate("login")}  >Login</h2>
+                        <p className="Header-btt1" onClick={() => navigate("signUp")}  >Sign Up+</p>
+                        <p className='Header-btt2' onClick={() => navigate("login")}  >Login</p>
                     </div>
                 )}
                 <div className='Burger'>

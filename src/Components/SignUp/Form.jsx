@@ -4,10 +4,10 @@ import './SignUp.css'
 import { ThemeContext } from '../ContextApi/Context'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 const Form = () => {
   const navigate = useNavigate()
-  const history = useHistory();
+  // const history = useHistory();
   const [view, setView] = useState(false)
   const [form, setForm] = useState({
     name: "",
@@ -57,7 +57,7 @@ const Form = () => {
     } catch (error) {
       setError(error.message);
     }
-    history.push('/login');
+    // history.push('/login');
   };
   const handleChange = event => {
     setForm((prevState)=>{

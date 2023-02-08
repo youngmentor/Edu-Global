@@ -150,14 +150,20 @@
 }
 .SignUpeye{
     position: fixed;
-    top: 270px;
-   left: 390px;
+    top: 304px;
+   left: 400px;
 }
 @media screen and (max-width: 769px) {
     .SignUpImage-contain {
         display: none;
     }
-
+    .SignUp-main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .input {
         width: 500px;
         border: 1px solid black;
@@ -184,7 +190,7 @@
     }
     .SignUpeye{
         position: fixed;
-        top: 165px;
+        top: 276px;
        left: 520px;
     }
 }
@@ -196,10 +202,13 @@
     .SignUp-main {
         width: 100%;
         height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .SignUpeye{
         position: fixed;
-        top: 209px;
+        top: 225px;
        left: 350px;
     }
 }
