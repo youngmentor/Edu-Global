@@ -4,6 +4,7 @@ import './SignUp.css'
 import { ThemeContext } from '../ContextApi/Context'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+
 const Form = () => {
   const navigate = useNavigate()
   const [view, setView] = useState(false)
@@ -46,6 +47,7 @@ const Form = () => {
   ];
   const handleSubmit = async (event) => {
     try {
+      
       event.preventDefault();
       console.log("clicked")
       const response = await axios.post("https://edusms.onrender.com/api/admin/sign", { email: email, password: password });
