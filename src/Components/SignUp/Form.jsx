@@ -51,11 +51,11 @@ const Form = () => {
       console.log("clicked")
       const response = await axios.post("https://edusms.onrender.com/api/admin/sign", form);
       console.log(response.data.message);
-      response.status === 201 ? navigate("/login") : null
+      response.status === 201 ? navigate("/loginuser/login") : null
     } catch (error) {
       console.log("error")
     }
-   
+
   };
 
   const handleChange = event => {
@@ -70,7 +70,7 @@ const Form = () => {
     <main className="main">
       <div className='SignUp-main' >
         <form className="formData" >
-          {/* <h2 className='form-h1'>Register Your Account</h2> */}
+          <img src="/NewLogo1.png" alt="logo" className='SignUp_Logo' onClick={() => navigate("/")}/>
           {field.map((field) => (
             <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]} setView={setView} view={view} />
           ))}

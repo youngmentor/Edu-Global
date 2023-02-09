@@ -39,26 +39,27 @@ const Login = () => {
         setFocus(true)
     }
 
-    const handleLogin = (email, password) => {
+    const handleLogin = (e) => {
+        e.preventDefault();
         setLoad(true)
         axios.post('https://edusms.onrender.com/api/admin/login', value)
         .then(function (res) {
             console.log(res)
-            res.status === 201 ? navigate('/') : null
+            console.log(res.data.message)
+            res.status === 201 ? navigate('/admin') : null
             setLoad(false)
           })
     }
     const handleChange = (event) => {
         setValue({ ...value, [event.target.name]: event.target.value })
     };
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        handleLogin(email, password);
-    };
+    // const handleSubmit = (e) => {
+       
+    // };
 
     return (
              <main className="Login" >
-            <form onSubmit={handleSubmit} className="login-wrap"   >
+            <form onSubmit={handleLogin} className="login-wrap"   >
                 <div className="LoginForm">
                 < div className="UserLogin">
                         <div className="Teacher" onClick={() => navigate("/loginuser/loginteacher")}>Teacher</div>

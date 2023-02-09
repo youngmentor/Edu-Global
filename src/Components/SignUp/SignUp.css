@@ -25,7 +25,11 @@
     flex-direction: column;
     border-radius: 10px;
 }
-
+.SignUp_Logo{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+}
 .formData {
     width: 39.5%;
     height: 100%;
