@@ -38,7 +38,7 @@ const Login = () => {
       setFocus(true)
     }
 
-    const handleLogin = (email, password) => {
+    const handleLogin = ( email, password) => {
         axios.post('https://edusms.onrender.com/api/admin/login', {
           email,
           password
