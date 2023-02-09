@@ -43,7 +43,6 @@ const Login = () => {
           email,
           password
         })
-     console.log(response.data.message)
     }
     const handleChange = (event) => {  
         setValue({ ...value, [event.target.name]: event.target.value })

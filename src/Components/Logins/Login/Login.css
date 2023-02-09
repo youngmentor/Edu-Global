@@ -12,6 +12,7 @@
     flex-direction: column;
 }.login-wrap{
     width: 90%;
+    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content:space-around;
@@ -79,6 +80,8 @@
     background-color: transparent;
     border: 1px solid gray;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 .Admin:hover{
     background-color: rgb(15, 94, 247);
@@ -97,6 +100,8 @@
     align-items: center;
     background-color: transparent;
     justify-content: center;
+    text-decoration: none;
+    color: inherit;
 }
 .Teacher:hover{
     background-color: rgb(15, 94, 247);
@@ -114,6 +119,8 @@
     align-items: center;
     justify-content: center;
     background-color: transparent;
+    text-decoration: none;
+    color: inherit;
 }
 .Students:hover{
     background-color: rgb(15, 94, 247);

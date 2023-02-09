@@ -8,16 +8,14 @@ const Form = () => {
   const navigate = useNavigate()
   const [view, setView] = useState(false)
   const [form, setForm] = useState({
-    name: "",
     email: "",
-    address: "",
     password: "",
     confirmPassword: "",
   });
   const {email, password} = form
   const field = [
     {
-      id: 3,
+      id: 1,
       name: "email",
       type: "email",
       label: "email",
@@ -26,7 +24,7 @@ const Form = () => {
       errMsg: "email has to be valid",
     },
     {
-      id: 4,
+      id: 2,
       name: "password",
       type:  view ? "text" : "Password",
       label: "password",
@@ -36,7 +34,7 @@ const Form = () => {
       pattern: `^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{10,}$`
     },
     {
-      id: 5,
+      id: 3,
       name: "confirmPassword",
       type: view ? "text" : "password",
       label: "confirmPassword",
@@ -53,7 +51,7 @@ const Form = () => {
       const response = await axios.post("https://edusms.onrender.com/api/admin/sign", {email: email, password:  password});
       console.log(response.data.message);
     } catch (error) {
-      setError(error.message);
+      // setError(error.message);
     }
   };
   const handleChange = event => {
@@ -68,7 +66,7 @@ const Form = () => {
     <main className="main">
       <div className='SignUp-main' >
         <form  className="formData" >
-          <h2 className='form-h1'>Register Your Account</h2>
+          {/* <h2 className='form-h1'>Register Your Account</h2> */}
           {field.map((field) => (
             <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]}  setView={setView} view={view}  />
           ))}
@@ -77,7 +75,7 @@ const Form = () => {
         </form>
         <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
         <div className='SignUpImage-contain' >
-          <h1>Start managing <b className='b'>free</b> now !</h1>
+          <h1>Start managing your school Activity now !</h1>
           <img src="/signup1 (1).png"
             alt="siignup"
             className='SignUpImage' />

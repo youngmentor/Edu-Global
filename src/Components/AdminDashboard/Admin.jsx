@@ -38,13 +38,13 @@ const Admin = () => {
 
 
     const AdminData = [
-        // {
-        //     id: 1,
-        //     title: "Dashboard",
-        //     icon1: < AiFillHome />,
-        //     click: "/admin"
+        {
+            id: 1,
+            title: "Dashboard",
+            icon1: < AiFillHome />,
+            click: "/admin"
 
-        // },
+        },
         , {
             id: 1,
             title: "Classes",
@@ -77,7 +77,7 @@ const Admin = () => {
             id: 3,
             title: "Students",
             text1: "All students",
-            text2: "Add new students",
+            text2: "Add students",
             icon1: < FaUserFriends />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
