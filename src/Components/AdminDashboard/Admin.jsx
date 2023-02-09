@@ -38,18 +38,11 @@ const Admin = () => {
 
 
     const AdminData = [
-        {
-            id: 1,
-            title: "Dashboard",
-            icon1: < AiFillHome />,
-            click: "/admin"
-
-        },
         , {
             id: 1,
             title: "Classes",
             text1: "All classes",
-            text2: "New Classes",
+            text2: "Add New Classes",
             text3: "Edit or Delete",
             icon1: < AiFillHome />,
             icon2: <IoIosArrowForward />,
@@ -127,7 +120,7 @@ const Admin = () => {
             icon3: <SlArrowDown />,
             click: "/admin/fee"
 
-        }
+        },
     ]
     const adminLeft_Mobile = (
         <div className='AdminLeftMobile_co'>
@@ -179,7 +172,7 @@ const Admin = () => {
                 <div className='AdminMainWraps'>
                     <div className='AdminLeft'>
                         <div className='AdminLeftWrap' >
-                            <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title'>< AiFillHome /><h4>Dashboard</h4></div>
+                            <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title'><h4>Dashboard</h4></div>
                             <div className='AdminLeftHolder'>
                                 {AdminData.map((i) => (
                                     <AdminLeft key={i.id}{...i} />

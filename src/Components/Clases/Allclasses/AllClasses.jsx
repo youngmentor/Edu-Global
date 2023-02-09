@@ -67,7 +67,7 @@ const AllClasses = () => {
                     </div>  
                   </div>
                 </div>
-                <div className='AllClassCard' onClick={() => { navigate("/admin/classes/addclasses") }}>
+                <div className='AllClassCard' onClick={() => { navigate("/admin/clases/allClasses") }}>
                     <h1>+</h1>
                     <h1>Add New</h1>
                 </div>
