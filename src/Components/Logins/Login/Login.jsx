@@ -43,6 +43,8 @@ const Login = () => {
           email,
           password
         })
+        console.log(response.data.message);
+        response.status === 201 ? navigate("/admin") : null
     }
     const handleChange = (event) => {  
         setValue({ ...value, [event.target.name]: event.target.value })
@@ -73,9 +75,8 @@ const Login = () => {
                              <span className='Login_err'>{i.err}</span>
                         </label>
                     ))}
-                  <NavLink to="/admin" >
+
                   <button type="submit" className="Loginbtt" >Login</button>
-                  </NavLink>
                 </div>
                 <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
                 <div className="ImageWrap">

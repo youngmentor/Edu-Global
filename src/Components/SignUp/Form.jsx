@@ -12,7 +12,7 @@ const Form = () => {
     password: "",
     confirmPassword: "",
   });
-  const {email, password} = form
+  const { email, password } = form
   const field = [
     {
       id: 1,
@@ -26,7 +26,7 @@ const Form = () => {
     {
       id: 2,
       name: "password",
-      type:  view ? "text" : "Password",
+      type: view ? "text" : "Password",
       label: "password",
       placeholder: "Password",
       required: true,
@@ -47,28 +47,31 @@ const Form = () => {
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-    console.log("clicked")
-      const response = await axios.post("https://edusms.onrender.com/api/admin/sign", {email: email, password:  password});
+      console.log("clicked")
+      const response = await axios.post("https://edusms.onrender.com/api/admin/sign", { email: email, password: password });
       console.log(response.data.message);
+      response.status === 201 ? navigate("/login") : null
     } catch (error) {
       // setError(error.message);
     }
+   
   };
+
   const handleChange = event => {
-    setForm((prevState)=>{
-  return {...prevState, [event.target.name]: event.target.value }
+    setForm((prevState) => {
+      return { ...prevState, [event.target.name]: event.target.value }
     })
   };
   useEffect(() => {
-   
+
   }, [form])
   return (
     <main className="main">
       <div className='SignUp-main' >
-        <form  className="formData" >
+        <form className="formData" >
           {/* <h2 className='form-h1'>Register Your Account</h2> */}
           {field.map((field) => (
-            <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]}  setView={setView} view={view}  />
+            <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]} setView={setView} view={view} />
           ))}
           <button type="submit" className='signbttn' onClick={handleSubmit}>Sign Up</button>
           <p className='Already'>Already have an Account  <b className='b1' onClick={() => navigate("/login")}> Login here?</b></p>
