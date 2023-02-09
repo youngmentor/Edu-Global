@@ -38,7 +38,7 @@ const Admin = () => {
 
 
     const AdminData = [
-        , {
+         {
             id: 1,
             title: "Classes",
             text1: "All classes",

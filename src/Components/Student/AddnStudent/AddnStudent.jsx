@@ -42,7 +42,7 @@ const AddnStudent = () => {
         <p>suliton</p>
        </div>
       </div>
-      <div className='AdminStudents_All_Wrap'>
+      {/* <div className='AdminStudents_All_Wrap'>
        <div className='AdminStudent_Img'> 
        <img src="/UserImg.png" alt="StudentLogo" className='AdminStudent_Avatar' />
        </div>
@@ -50,8 +50,8 @@ const AddnStudent = () => {
         <p>111009</p>
         <p>suliton</p>
        </div>
-      </div>
-      <div className='AdminStudents_All_Wrap'>
+      </div> */}
+      {/* <div className='AdminStudents_All_Wrap'>
        <div className='AdminStudent_Img'> 
        <img src="/UserImg.png" alt="StudentLogo" className='AdminStudent_Avatar' />
        </div>
@@ -59,8 +59,8 @@ const AddnStudent = () => {
         <p>111009</p>
         <p>suliton</p>
        </div>
-      </div>
-      <div className='AdminStudents_All_Wrap'>
+      </div> */}
+      {/* <div className='AdminStudents_All_Wrap'>
        <div className='AdminStudent_Img'> 
        <img src="/UserImg.png" alt="StudentLogo" className='AdminStudent_Avatar' />
        </div>
@@ -68,7 +68,7 @@ const AddnStudent = () => {
         <p>111009</p>
         <p>suliton</p>
        </div>
-      </div>
+      </div> */}
       <NavLink className='AdminStudents_All_AddWrap' to="/admin/student/updatestudents" >
            <p>+</p>
            <p>Add New</p>
