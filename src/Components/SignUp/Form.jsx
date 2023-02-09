@@ -76,7 +76,7 @@ const Form = () => {
             <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]} setView={setView} view={view} />
           ))}
           <button type="submit" className='signbttn' onClick={handleSubmit}>Sign Up</button>
-          <p className='Already'>Already have an Account  <b className='b1' onClick={() => navigate("/login")}> Login here?</b></p>
+          <p className='Already'>Already have an Account  <b className='b1' onClick={() => navigate("/loginuser")}> Login here?</b></p>
         </form>
         <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
         <div className='SignUpImage-contain' >

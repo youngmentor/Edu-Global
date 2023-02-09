@@ -31,9 +31,11 @@ const LoginTeacher = () => {
         <main className="Login" >
             <form onSubmit={handleSubmit} className="login-wrap" >
                 <div className="LoginForm">
-                <NavLink className="Teacher" to="/loginteacher"  >Teacher</NavLink>
-                <NavLink className="Admin" to="/login"    >Admin</NavLink>
-                <NavLink className="Students" to="/loginstudent"    >Student</NavLink>
+                < div className="UserLogin">
+                        <div className="Teacher" onClick={() => navigate("/loginuser/loginteacher")}>Teacher</div>
+                        <div className="Admin" onClick={() => navigate("/loginuser/login")}>Admin</div>
+                        <div className="Students" onClick={() => navigate("/loginuser/loginstudent")}   >Student</div>
+                    </div>
                     {field.map((i) => (
                         <label key={i.name}>
                             <input

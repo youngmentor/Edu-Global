@@ -8,9 +8,9 @@ const Login = () => {
     const [value, setValue] = useState({
         email: "",
         password: ""
-      })
+    })
     const field = [
-        { 
+        {
             id: 1,
             name: "email",
             label: "email",
@@ -18,7 +18,7 @@ const Login = () => {
             type: "text",
             err: "input a valid email",
             required: true
-           
+
         },
         {
             id: 2,
@@ -35,18 +35,18 @@ const Login = () => {
     const [focus, setFocus] = useState(false)
 
     const handleFocus = (e) => {
-      setFocus(true)
+        setFocus(true)
     }
 
-    const handleLogin = ( email, password) => {
+    const handleLogin = (email, password) => {
         axios.post('https://edusms.onrender.com/api/admin/login', {
-          email,
-          password
+            email,
+            password
         })
         console.log(response.data.message);
         response.status === 201 ? navigate("/admin") : null
     }
-    const handleChange = (event) => {  
+    const handleChange = (event) => {
         setValue({ ...value, [event.target.name]: event.target.value })
     };
     const handleSubmit = (e) => {
@@ -59,10 +59,10 @@ const Login = () => {
             <form onSubmit={handleSubmit} className="login-wrap"   >
                 <div className="LoginForm">
                 < div className="UserLogin">
-                <NavLink className="Teacher" to="/loginteacher"  >Teacher</NavLink>
-                <NavLink className="Admin" to="/login"    >Admin</NavLink>
-                <NavLink className="Students" to="/loginstudent"    >Student</NavLink>
-            </div>
+                        <div className="Teacher" onClick={() => navigate("/loginuser/loginteacher")}>Teacher</div>
+                        <div className="Admin" onClick={() => navigate("/loginuser/login")}>Admin</div>
+                        <div className="Students" onClick={() => navigate("/loginuser/loginstudent")}   >Student</div>
+                    </div>
                     {field.map((i) => (
                         <label key={i.name}>
                             <input
@@ -76,11 +76,11 @@ const Login = () => {
                                 onBlur={handleFocus}
                                 focused={focus.toString()}
                             />
-                             <span className='Login_err'>{i.err}</span>
+                            <span className='Login_err'>{i.err}</span>
                         </label>
                     ))}
 
-                  <button type="submit" className="Loginbtt" >Login</button>
+                    <button type="submit" className="Loginbtt" >Login</button>
                 </div>
                 <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
                 <div className="ImageWrap">
