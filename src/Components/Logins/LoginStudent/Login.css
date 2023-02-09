@@ -44,7 +44,11 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 10px;
     margin-top: 10px;
+}
+.LoginType{
+    margin-top: 15px;
 }
 .Loginbtt{
     margin-top: 20px;

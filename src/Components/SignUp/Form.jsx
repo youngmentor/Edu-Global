@@ -13,7 +13,7 @@ const Form = () => {
     password: "",
     confirmPassword: "",
   });
-  const { email, password } = form
+  // const { email, password } = form
   const field = [
     {
       id: 1,
@@ -47,14 +47,13 @@ const Form = () => {
   ];
   const handleSubmit = async (event) => {
     try {
-      
       event.preventDefault();
       console.log("clicked")
-      const response = await axios.post("https://edusms.onrender.com/api/admin/sign", { email: email, password: password });
+      const response = await axios.post("https://edusms.onrender.com/api/admin/sign", form);
       console.log(response.data.message);
       response.status === 201 ? navigate("/login") : null
     } catch (error) {
-      // setError(error.message);
+      console.log("error")
     }
    
   };

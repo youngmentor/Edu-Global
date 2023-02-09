@@ -3,10 +3,10 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 import Login from './Login/Login'
 import LoginStudent from './LoginStudent/LoginStudents'
 import LoginTeacher from './LoginTeacher/LoginTeacher'
+import Loading from '../LoadingSpin/Loading'
 import './LoginUser.css'
 const LoginUser = () => {
-    // const navigate = useNavigate()
-    // const [toggle, setToggle] = useState(false)
+   
     return (
         <div className='LoginMainPage'>
             <div className='LoginMainPageWrap'>

@@ -1,14 +1,15 @@
 import React, { useState, } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import './Login.css'
-import LoginUser from "../LoginUser";
 import axios from 'axios';
+import Loading from "../../LoadingSpin/Loading";
 const Login = () => {
     const navigate = useNavigate()
     const [value, setValue] = useState({
         email: "",
         password: ""
     })
+    const  [load, setLoad] = useState(true)
     const field = [
         {
             id: 1,
@@ -39,12 +40,13 @@ const Login = () => {
     }
 
     const handleLogin = (email, password) => {
-        axios.post('https://edusms.onrender.com/api/admin/login', {
-            email,
-            password
-        })
-        console.log(data.message);
-        response.status === 201 ? navigate("/admin") : null
+        setLoad(true)
+        axios.post('https://edusms.onrender.com/api/admin/login', value)
+        .then(function (res) {
+            console.log(res)
+            res.status === 201 ? navigate('/') : null
+            setLoad(false)
+          })
     }
     const handleChange = (event) => {
         setValue({ ...value, [event.target.name]: event.target.value })
@@ -55,7 +57,7 @@ const Login = () => {
     };
 
     return (
-        <main className="Login" >
+             <main className="Login" >
             <form onSubmit={handleSubmit} className="login-wrap"   >
                 <div className="LoginForm">
                 < div className="UserLogin">
@@ -63,7 +65,9 @@ const Login = () => {
                         <div className="Admin" onClick={() => navigate("/loginuser/login")}>Admin</div>
                         <div className="Students" onClick={() => navigate("/loginuser/loginstudent")}   >Student</div>
                     </div>
-                    <p>i am an Admin</p>
+                   <div className="LoginType">
+                   <p>I'M a Admin</p>
+                   </div>
                     {field.map((i) => (
                         <label key={i.name}>
                             <input
