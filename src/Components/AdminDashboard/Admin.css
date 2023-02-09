@@ -41,15 +41,19 @@
     box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
     position: fixed;
     display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
     align-items: center;
     justify-content: center;
-    z-index: 100;
+    z-index: 10;
 }
 .Admin_header_wrap{
     width: 95%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+   
 }
 /* .Admin_header_wrap{
     width: 90%;
@@ -62,6 +66,7 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
+  
 }
 .AdminMainWraps{
   width: 100%;

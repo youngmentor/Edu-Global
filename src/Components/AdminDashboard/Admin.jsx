@@ -70,7 +70,7 @@ const Admin = () => {
             id: 3,
             title: "Students",
             text1: "All students",
-            text2: "Add students",
+            text2: "Add student",
             icon1: < FaUserFriends />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
@@ -81,13 +81,14 @@ const Admin = () => {
         {
             id: 4,
             title: "Teacher",
-            text1: "Add new Teacher",
-            text2: "UpdateTeacher",
-            text3: "Delete Teacher",
+            text1: "All Teachers",
+            text2: "Add Teacher",
             icon1: < AiFillHome />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
-            click: "/admin/teachers"
+            click: "/admin/teachers",
+            click1: "/admin/teachers/allteacher",
+            click2: "/admin/teachers/addteacher",
 
         },
         , {
@@ -186,7 +187,7 @@ const Admin = () => {
                         <Route path="/clases/*" element={<Clases />} />
                         <Route path="/student/*" element={<Student />} />
                         <Route path="/subject/*" element={<Subject />} />
-                        <Route path="/teachers" element={<Teachers />} />
+                        <Route path="/teachers/*" element={<Teachers />} />
                         {/* <Route path="/timetable" element={<Timetable />} /> */}
                         <Route path="/attendance" element={<Attendance />} />
                         <Route path="/fee" element={<Fee />} />
