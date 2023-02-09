@@ -43,7 +43,7 @@ const Login = () => {
             email,
             password
         })
-        console.log(response.data.message);
+        console.log(data.message);
         response.status === 201 ? navigate("/admin") : null
     }
     const handleChange = (event) => {
@@ -63,6 +63,7 @@ const Login = () => {
                         <div className="Admin" onClick={() => navigate("/loginuser/login")}>Admin</div>
                         <div className="Students" onClick={() => navigate("/loginuser/loginstudent")}   >Student</div>
                     </div>
+                    <p>i am an Admin</p>
                     {field.map((i) => (
                         <label key={i.name}>
                             <input
