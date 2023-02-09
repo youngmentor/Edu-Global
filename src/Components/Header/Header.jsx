@@ -22,7 +22,7 @@ const Header = () => {
                 </div>
                 <div className='Header-bttn'>
                     <button className="Header-bttn1" onClick={() => navigate("signUp")}  >Sign Up+</button>
-                    <button className='Header-bttn2' onClick={() => navigate("login")}  >Login</button>
+                    <button className='Header-bttn2' onClick={() => navigate("loginuser/login")}  >Login</button>
                 </div>
                 {isOpen && (
                     <div className='Header-btt'>

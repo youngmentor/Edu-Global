@@ -51,7 +51,7 @@ const LoginStudent = () => {
                             />
                         </label>
                     ))}
-                    <button type="submit" className="Loginbtt" onClick={() => navigate("/admin")} >Login</button>
+                    <button type="submit" className="Loginbtt" >Login</button>
                 </div>
                 <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
                 <div className="ImageWrap">
