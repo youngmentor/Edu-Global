@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import SignUp from './SignUp'
 import './SignUp.css'
-import { ThemeContext } from '../ContextApi/Context'
 import { useNavigate } from 'react-router-dom'
 import Loading from '../LoadingSpin/Loading'
 import axios from 'axios'
