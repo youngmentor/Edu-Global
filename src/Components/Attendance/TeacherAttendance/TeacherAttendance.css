@@ -1,0 +1,93 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.TeacherAtt{
+    width: 100%;
+    height: 100%;
+    display: flex;
+   flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.TAttendanceHeader{
+    width: 90%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-between;
+    background-color: blue;
+    padding: 15px;
+    border-radius: 8px;
+}
+.Teacher_A_Status{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.TAttendanceRecord{
+    width: 85%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Teacher_A_Status{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.present{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    /* background-color: green; */
+    border-radius: 100%;
+}
+.present:hover{
+    background-color: green;
+    cursor: pointer;
+}
+.lateness{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    /* background-color: blue; */
+    border-radius: 100%;
+}
+.lateness:hover{
+    background-color: blue;
+    cursor: pointer;
+}
+.absent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    /* background-color: white; */
+    border-radius: 100%;
+}
+.absent:hover{
+    background-color: red;
+    cursor: pointer;
+}
+@media screen and (max-width: 426px){
+    .TAttendanceHeader{
+        font-size: 10px;
+    }
+    .Teacher_A_Status{
+        width: 80px;
+    }
+    .TAttendanceRecord{
+        font-size: 10px;
+    }
+}

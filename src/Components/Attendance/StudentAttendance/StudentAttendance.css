@@ -1,0 +1,87 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.StudentAtt{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+.SAttendanceHeader{
+    width: 90%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: blue;
+    padding: 15px;
+    border-radius: 8px;
+}
+.SAttendanceRecord{
+    width: 85%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Student_A_Status{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.present{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    /* background-color: green; */
+    border-radius: 100%;
+}
+.present:hover{
+    background-color: green;
+    cursor: pointer;
+}
+.lateness{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    /* background-color: blue; */
+    border-radius: 100%;
+}
+.lateness:hover{
+    background-color: blue;
+    cursor: pointer;
+}
+.absent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    /* background-color: white; */
+    border-radius: 100%;
+}
+.absent:hover{
+    background-color: red;
+    cursor: pointer;
+}
+@media screen and (max-width: 426px){
+    .SAttendanceHeader{
+        font-size: 10px;
+    }
+    .Student_A_Status{
+        width: 80px;
+    }
+    .SAttendanceRecord{
+        font-size: 10px;
+    }
+}
