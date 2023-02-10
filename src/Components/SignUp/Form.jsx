@@ -3,6 +3,7 @@ import SignUp from './SignUp'
 import './SignUp.css'
 import { ThemeContext } from '../ContextApi/Context'
 import { useNavigate } from 'react-router-dom'
+import Loading from '../LoadingSpin/Loading'
 import axios from 'axios'
 
 const Form = () => {
@@ -13,6 +14,7 @@ const Form = () => {
     password: "",
     confirmPassword: "",
   });
+  const [load, setLoad] = useState(false)
   // const { email, password } = form
   const field = [
     {
@@ -46,6 +48,7 @@ const Form = () => {
     },
   ];
   const handleSubmit = async (event) => {
+    setLoad(true)
     try {
       event.preventDefault();
       console.log("clicked")
@@ -68,7 +71,7 @@ const Form = () => {
   }, [form])
   return (
     <main className="main">
-      <div className='SignUp-main' >
+     {load ?  <Loading/>:  <div className='SignUp-main' >
         <form className="formData" >
           <img src="/NewLogo1.png" alt="logo" className='SignUp_Logo' onClick={() => navigate("/")}/>
           {field.map((field) => (
@@ -84,7 +87,7 @@ const Form = () => {
             alt="siignup"
             className='SignUpImage' />
         </div>
-      </div>
+      </div>}
     </main>
   )
 }

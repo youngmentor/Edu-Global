@@ -9,7 +9,7 @@ const Login = () => {
         email: "",
         password: ""
     })
-    const  [load, setLoad] = useState(true)
+    const  [load, setLoad] = useState(false)
     const field = [
         {
             id: 1,
@@ -40,26 +40,21 @@ const Login = () => {
     }
 
     const handleLogin = (e) => {
-        e.preventDefault();
         setLoad(true)
+        e.preventDefault();
         axios.post('https://edusms.onrender.com/api/admin/login', value)
         .then(function (res) {
             console.log(res)
             console.log(res.data.message)
             res.status === 201 ? navigate('/admin') : null
-            setLoad(false)
           })
     }
     const handleChange = (event) => {
         setValue({ ...value, [event.target.name]: event.target.value })
     };
-    // const handleSubmit = (e) => {
-       
-    // };
-
     return (
-             <main className="Login" >
-            <form onSubmit={handleLogin} className="login-wrap"   >
+          <main className="Login" >
+          {load ? <Loading/> :  <form onSubmit={handleLogin} className="login-wrap"   >
                 <div className="LoginForm">
                 < div className="UserLogin">
                         <div className="Teacher" onClick={() => navigate("/loginuser/loginteacher")}>Teacher</div>
@@ -100,7 +95,7 @@ const Login = () => {
                         alt="loginimg"
                         className='LoginImage' />
                 </div>
-            </form>
+            </form>}
         </main>
     );
 };
