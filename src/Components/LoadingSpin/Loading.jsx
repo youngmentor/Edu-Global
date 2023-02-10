@@ -1,8 +1,8 @@
 import "./Loading.css"
-const Loading = ({color}) => {
+const Loading = () => {
   return (
     <div className='loader'>
-        <img src="/Loading.svg" alt="spinner"/>
+        <img src="/Loading.svg" alt="spinner" className="LoaderSvg"/>
     </div>
   )
 }

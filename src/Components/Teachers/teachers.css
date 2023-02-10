@@ -1,4 +1,10 @@
-.teachers{
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.AdminTeachers{
   width: 75%;
   height: 90%;
   display: flex;
