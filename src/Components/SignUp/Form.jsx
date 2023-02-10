@@ -70,23 +70,24 @@ const Form = () => {
   }, [form])
   return (
     <main className="main">
-     {load ?  <Loading/>:  <div className='SignUp-main' >
-        <form className="formData" >
-          <img src="/NewLogo1.png" alt="logo" className='SignUp_Logo' onClick={() => navigate("/")}/>
-          {field.map((field) => (
-            <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]} setView={setView} view={view} />
-          ))}
-          <button type="submit" className='signbttn' onClick={handleSubmit}>Sign Up</button>
-          <p className='Already'>Already have an Account  <b className='b1' onClick={() => navigate("/loginuser/login")}> Login here?</b></p>
-        </form>
-        <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
-        <div className='SignUpImage-contain' >
-          <h1>Start managing your school Activity now !</h1>
-          <img src="/signup1 (1).png"
-            alt="siignup"
-            className='SignUpImage' />
-        </div>
-      </div>}
+      {load ? <Loading /> :
+        <div className='SignUp-main' >
+          <form className="formData" >
+            <img src="/NewLogo1.png" alt="logo" className='SignUp_Logo' onClick={() => navigate("/")} />
+            {field.map((field) => (
+              <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]} setView={setView} view={view} />
+            ))}
+            <button type="submit" className='signbttn' onClick={handleSubmit}>Sign Up</button>
+            <p className='Already'>Already have an Account  <b className='b1' onClick={() => navigate("/loginuser/login")}> Login here?</b></p>
+          </form>
+          <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
+          <div className='SignUpImage-contain' >
+            <h1>Start managing your school Activity now !</h1>
+            <img src="/signup1 (1).png"
+              alt="siignup"
+              className='SignUpImage' />
+          </div>
+        </div>}
     </main>
   )
 }
