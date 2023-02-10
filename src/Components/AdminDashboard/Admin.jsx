@@ -84,7 +84,7 @@ const Admin = () => {
             id: 5,
             title: "Attendance",
             // text1: "Mark Student Attendance",
-            text2: "Mark Teacher Attendance",
+            text2: "Teacher Attendance",
             icon1: < AiFillHome />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
