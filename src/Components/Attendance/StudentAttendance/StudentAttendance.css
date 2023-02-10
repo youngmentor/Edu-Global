@@ -23,10 +23,13 @@
     border-radius: 8px;
 }
 .SAttendanceRecord{
-    width: 85%;
+    width: 90%;
     height: 60px;
+    border: 1px solid gray;
+    border-radius: 8px;
     display: flex;
     align-items: center;
+    padding: 15px;
     justify-content: space-between;
 }
 .Student_A_Status{
