@@ -88,8 +88,9 @@ const Admin = () => {
             icon1: < AiFillHome />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
-            click: "/admin/attendance"
-
+            click: "/admin/attendance",
+            click1: "/admin/attendance/studentattendance",
+            click2: "/admin/attendance/teacherattendance",
         }
         , {
             id: 6,
@@ -178,7 +179,7 @@ const Admin = () => {
                         <Route path="/subject/*" element={<Subject />} />
                         <Route path="/teachers/*" element={<Teachers />} />
                         {/* <Route path="/timetable" element={<Timetable />} /> */}
-                        <Route path="/attendance" element={<Attendance />} />
+                        <Route path="/attendance/*" element={<Attendance />} />
                         <Route path="/fee" element={<Fee />} />
                     </Routes>
                 </div>
