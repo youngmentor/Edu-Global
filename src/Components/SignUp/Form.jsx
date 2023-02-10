@@ -52,7 +52,7 @@ const Form = () => {
     try {
       event.preventDefault();
       console.log("clicked")
-      const response = await axios.post("https://edusms.onrender.com/api/admin/sign", form);
+      const response = await axios.post("https://eduglobal.onrender.com/api/admin/sign", form);
       console.log(response.data.message);
       response.status === 201 ? navigate("/loginuser/login") : null
     } catch (error) {

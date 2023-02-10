@@ -42,7 +42,7 @@ const Login = () => {
     const handleLogin = (e) => {
         setLoad(true)
         e.preventDefault();
-        axios.post('https://edusms.onrender.com/api/admin/login', value)
+        axios.post('https://eduglobal.onrender.com/api/admin/login', value)
         .then(function (res) {
             console.log(res)
             console.log(res.data.message)
