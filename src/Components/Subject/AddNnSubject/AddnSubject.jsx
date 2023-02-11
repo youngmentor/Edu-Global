@@ -36,6 +36,7 @@ const AddnSubject = () => {
     <div>
          <div className='AddClassesWrap'>
         <form onSubmit={handleSubmit} className="Add-inputWrap" >
+        <h3>Add A New Subject</h3>
             {Add.map((i) => (
                         <label key={i.name} className="AddLabel">
                             <input

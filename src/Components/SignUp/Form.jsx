@@ -71,14 +71,14 @@ const Form = () => {
   }, [form])
   return (
     <main className="main">
-      {load ? <Loading /> :
+      
         <div className='SignUp-main' >
           <form className="formData" onSubmit={handleSubmit}  >
             <img src="/NewLogo1.png" alt="logo" className='SignUp_Logo' onClick={() => navigate("/")} />
             {field.map((field) => (
               <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]} setView={setView} view={view} />
             ))}
-            <button type="submit" className='signbttn' >Sign Up</button>
+            <button type="submit" className='signbttn' >{load ? <Loading /> :"Sign Up"}</button>
             <p className='Already'>Already have an Account  <b className='b1' onClick={() => navigate("/loginuser/login")}> Login here?</b></p>
           </form>
           <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
@@ -89,7 +89,7 @@ const Form = () => {
               className='SignUpImage' />
           </div>
         </div>
-         } 
+         
     </main>
   )
 }

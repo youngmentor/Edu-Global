@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './AddClasses.css'
 const AddClasses = () => {
     const [AddData, setAddData] = useState({});
@@ -25,9 +25,10 @@ const AddClasses = () => {
     };
     return (
         <div className='AddClassesMain' >
-        <div className='AddClassesWrap'>
-        <form onSubmit={handleSubmit} className="Add-inputWrap" >
-            {Add.map((i) => (
+            <div className='AddClassesWrap'>
+                <form onSubmit={handleSubmit} className="Add-inputWrap" >
+                    <h3>Add A New Class</h3>
+                    {Add.map((i) => (
                         <label key={i.name} className="AddLabel">
                             <input
                                 className="AddInput"
@@ -39,9 +40,9 @@ const AddClasses = () => {
                             />
                         </label>
                     ))}
-                      <button type="submit" className="Addbttn">Add New</button>
-            </form>
-        </div>
+                    <button type="submit" className="Addbttn">Add New</button>
+                </form>
+            </div>
         </div>
     )
 }

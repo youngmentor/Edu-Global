@@ -3,14 +3,8 @@
     padding: 0px;
     box-sizing: border-box;
 }
-.loader{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-  
-}
 .LoaderSvg{
-    background-color: transparent;
+    background-color: none;
+    width: 20px;
+    height: 20px;
 }

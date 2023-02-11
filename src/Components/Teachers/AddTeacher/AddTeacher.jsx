@@ -86,6 +86,7 @@ const handleSubmit = (e) => {
     <div className='AdminAddn_Teacher'>
          <div className='AdminAddn_TeacherWrap'>
        <form onSubmit={handleSubmit} className="AddTeacher-inputWrap" >
+       <h3>Add A New Teacher</h3>
             {AddTeacher.map((i) => (
                         <label className="AddTeacher_Label"  key={i.label}  >
                             <input

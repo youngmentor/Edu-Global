@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import './UpdateStudent.css'
+import axios from 'axios'
 const UpdateStudent = () => {
 const [AddnStudent, SetAddnStudent]= useState()
   const AddStudent = [
@@ -8,42 +9,63 @@ const [AddnStudent, SetAddnStudent]= useState()
         name: "name",
         label: "name",
         placeholder: "Name of Student",
-        type: "text"
+        type: "text",
+        required: true
     },
     {
       id: 2,
-        name: "numbers",
-        label: "number",
-        placeholder: "Registration No:",
-        type: "number"
+        name: "email",
+        label: "email",
+        placeholder: "Email Address",
+        type: "email",
+        required: true
     },
     {
       id: 3,
+        name: "password",
+        label: "password",
+        placeholder: "Password",
+        type: "password",
+        required: true
+    },
+    {
+      id: 4,
+        name: "numbers",
+        label: "number",
+        placeholder: "Registration No:",
+        type: "number",
+        required: true
+    },
+    {
+      id: 5,
         name: "number",
         label: "number",
         placeholder: "Student/Guardian No:",
         type: "number"
     },
-    // {
-    //   id: 4,
-    //     name: "file",
-    //     label: "file",
-    //     placeholder: "Choose A file",
-    //     type: "file"
-    // },
     {
-      id: 5,
+      id: 6,
         name: "class",
         label: "class",
         placeholder: "Select Class",
-        type: "select"
+        type: "select",
+        required: true
     },
     {
-      id: 6,
+      id: 7,
         name: "birth",
         label: "birth",
         placeholder: "mm/dd/yy",
-        type: "date"
+        type: "date",
+        required: true
+    },
+    {
+      id: 8,
+        name: "date",
+        label: "date",
+        placeholder: "mm/dd/yy",
+        type: "date",
+        required: true
     },
 ];
 const handleChange = (e) => {
@@ -52,6 +74,7 @@ const handleChange = (e) => {
 };
 const handleAddStudent = (e) => {
   e.preventDefault();
+  console.log("clicked")
  axios.post("https://eduglobal.onrender.com/api/admin/63e5d1cf1757b316d1dea558", AddStudent)
  .then((response)=>{
   console.log(response)
@@ -63,7 +86,9 @@ const handleAddStudent = (e) => {
   return (
     <div className='AdminAddn_Student'>
        <div className='AdminAddn_StudentWrap'>
+       
        <form onSubmit={handleAddStudent} className="Add-inputWrap" >
+       <h3>Register New Student</h3>
             {AddStudent.map((i) => (
                         <label key={i.name} className="AddStudent_Label">
                             <input
@@ -71,6 +96,7 @@ const handleAddStudent = (e) => {
                                 type={i.type}
                                 name={i.name}
                                 placeholder={i.placeholder}
+                                required={i.required}
                                 onChange={handleChange}
                             />
                         </label>

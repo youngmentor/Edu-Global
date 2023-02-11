@@ -49,7 +49,7 @@ const Login = () => {
                 console.log(res)
                 console.log(res.data.message)
                 res.status === 200 ? navigate('/admin') : rej()
-
+                // setLoad(false)
             })
     }
     const handleChange = (event) => {
@@ -71,7 +71,7 @@ const Login = () => {
                     <p>click <b> here </b> to verify your accout</p>
                 </div>
             </div>}
-            {load ? <Loading /> : <form onSubmit={handleLogin} className="login-wrap"   >
+            <form onSubmit={handleLogin} className="login-wrap"   >
                 <div className="LoginForm">
                     < div className="UserLogin">
                         <div className="Teacher" onClick={() => navigate("/loginuser/loginteacher")}>Teacher</div>
@@ -98,7 +98,7 @@ const Login = () => {
                         </label>
                     ))}
 
-                    <button type="submit" className="Loginbtt" >Login</button>
+                    <button type="submit" className="Loginbtt" >{load ? <Loading/>:"Login"}</button>
                 </div>
                 <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
                 <div className="ImageWrap">
@@ -112,7 +112,7 @@ const Login = () => {
                         alt="loginimg"
                         className='LoginImage' />
                 </div>
-            </form>}
+            </form>
         </main>
     );
 };
