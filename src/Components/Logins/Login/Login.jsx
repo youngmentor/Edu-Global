@@ -46,7 +46,7 @@ const Login = () => {
         .then(function (res) {
             console.log(res)
             console.log(res.data.message)
-            res.status === 201 ? navigate('/admin') : null
+            res.status === 200 ? navigate('/admin') : null
           })
     }
     const handleChange = (event) => {
