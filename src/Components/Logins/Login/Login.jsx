@@ -48,7 +48,7 @@ const Login = () => {
             .then(function (res) {
                 console.log(res)
                 console.log(res.data.message)
-                res.data.isVerified === true ? navigate('/admin') : rej()
+                res.status === 200 ? navigate('/admin') : rej()
 
             })
     }

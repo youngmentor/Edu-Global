@@ -24,13 +24,13 @@ const [AddnStudent, SetAddnStudent]= useState()
         placeholder: "Student/Guardian No:",
         type: "number"
     },
-    {
-      id: 4,
-        name: "file",
-        label: "file",
-        placeholder: "Choose A file",
-        type: "file"
-    },
+    // {
+    //   id: 4,
+    //     name: "file",
+    //     label: "file",
+    //     placeholder: "Choose A file",
+    //     type: "file"
+    // },
     {
       id: 5,
         name: "class",
@@ -50,13 +50,20 @@ const handleChange = (e) => {
   const { name, value } = e.target;
   SetAddnStudent({ ...AddnStudent, [name]: value });
 };
-const handleSubmit = (e) => {
+const handleAddStudent = (e) => {
   e.preventDefault();
+ axios.post("https://eduglobal.onrender.com/api/admin/63e5d1cf1757b316d1dea558", AddStudent)
+ .then((response)=>{
+  console.log(response)
+ })
+ .catch((error)=>{
+  console.log(error);
+ });
 };
   return (
     <div className='AdminAddn_Student'>
        <div className='AdminAddn_StudentWrap'>
-       <form onSubmit={handleSubmit} className="Add-inputWrap" >
+       <form onSubmit={handleAddStudent} className="Add-inputWrap" >
             {AddStudent.map((i) => (
                         <label key={i.name} className="AddStudent_Label">
                             <input
@@ -68,7 +75,7 @@ const handleSubmit = (e) => {
                             />
                         </label>
                     ))}
-                      <button type="submit" className="Addbttn">Submit form</button>
+                      <button type="submit" className="Addbttn">Add New Student</button>
             </form>
        </div>
 
