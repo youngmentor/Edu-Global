@@ -20,7 +20,7 @@ const App = () => {
             <Route path="/admin/*" element={<Admin/>}/>
             <Route path="/loginteacher" element={<LoginTeacher/>} />
             <Route path="/loginstudent" element={<LoginStudent/>} />
-            <Route path="/verify" element={<Verify/>} />
+            <Route path="/verify/:id" element={<Verify/>} />
          </Routes>
       </ HashRouter>
     </div>
