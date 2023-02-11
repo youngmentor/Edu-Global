@@ -57,16 +57,7 @@
   /* background-color: gray; */
   gap: 15px;
 }
-.AdminwelcomeMssg {
-  width: 50%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: aquamarine;
-  color: rgb(255, 241, 241);
-  margin-top: 15px;
-}
+
 .Calender {
   margin-top: 20px;
   margin-bottom: 20px;

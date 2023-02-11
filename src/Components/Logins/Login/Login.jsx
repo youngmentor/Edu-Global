@@ -4,12 +4,14 @@ import './Login.css'
 import axios from 'axios';
 import Loading from "../../LoadingSpin/Loading";
 const Login = () => {
+
+    const [pro, setPro] = useState(false)
     const navigate = useNavigate()
     const [value, setValue] = useState({
         email: "",
         password: ""
     })
-    const  [load, setLoad] = useState(false)
+    const [load, setLoad] = useState(false)
     const field = [
         {
             id: 1,
@@ -43,27 +45,42 @@ const Login = () => {
         setLoad(true)
         e.preventDefault();
         axios.post('https://eduglobal.onrender.com/api/admin/login', value)
-        .then(function (res) {
-            console.log(res)
-            console.log(res.data.message)
-            res.status === 200 ? navigate('/admin') : null
-          })
+            .then(function (res) {
+                console.log(res)
+                console.log(res.data.message)
+                res.data.isVerified === true ? navigate('/admin') : rej()
+
+            })
     }
     const handleChange = (event) => {
         setValue({ ...value, [event.target.name]: event.target.value })
     };
+
+
+    const rej = () => {
+        setPro(true)
+        setTimeout(() => {
+            setPro(false)
+        }, 5000)
+    }
     return (
-          <main className="Login" >
-          {load ? <Loading/> :  <form onSubmit={handleLogin} className="login-wrap"   >
+        <main className="Login" >
+            {pro && <div className='AdminwelcomeMssg'>
+                <div>
+                    <h3>Welcome To Admin Dashboard</h3>
+                    <p>click <b> here </b> to verify your accout</p>
+                </div>
+            </div>}
+            {load ? <Loading /> : <form onSubmit={handleLogin} className="login-wrap"   >
                 <div className="LoginForm">
-                < div className="UserLogin">
+                    < div className="UserLogin">
                         <div className="Teacher" onClick={() => navigate("/loginuser/loginteacher")}>Teacher</div>
                         <div className="Admin" onClick={() => navigate("/loginuser/login")}>Admin</div>
                         <div className="Students" onClick={() => navigate("/loginuser/loginstudent")}   >Student</div>
                     </div>
-                   <div className="LoginType">
-                   <p>I'M a Admin</p>
-                   </div>
+                    <div className="LoginType">
+                        <p>I'M a Admin</p>
+                    </div>
                     {field.map((i) => (
                         <label key={i.name}>
                             <input

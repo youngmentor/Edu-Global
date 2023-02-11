@@ -13,12 +13,6 @@ export default function Dashboard() {
 
         <div className='AdminRight'>
          <div className='AdminRightDiv'>
-         <div className='AdminwelcomeMssg'>
-                <div>
-                    <h3>Welcome To Admin Dashboard</h3>
-                    <p>click <b> here </b> to verify your accout</p>
-                </div>
-            </div>
             <div className='AdminCardHolder'>
                 <div className='AdminCard'>
                   <div className='AdminCardWrap'>
