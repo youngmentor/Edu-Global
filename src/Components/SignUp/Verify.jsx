@@ -9,6 +9,7 @@ console.log(id)
         try{
             event.preventDefault();
         const response = await axios.post(`https://eduglobal.onrender.com/api/userVerify/${id}`)
+        console.log(response)
         }catch (error) {
             console.log("error")
           }
@@ -36,7 +37,7 @@ console.log(id)
     }
   return (
     <div style={style} className='verify'>
-        <button style={stylebutton} >click here to Verify</button>
+        <button onClick={()=>{ handleSubmit()}} style={stylebutton} >click here to Verify</button>
     </div>
   )
 }
