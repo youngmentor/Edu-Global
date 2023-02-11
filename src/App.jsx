@@ -8,6 +8,7 @@ import LoginStudent from './Components/Logins/LoginStudent/LoginStudents'
 import LoginTeacher from './Components/Logins/LoginTeacher/LoginTeacher'
 import './App.css'  
 import LoginUser from './Components/Logins/LoginUser'
+import Verify from './Components/SignUp/Verify'
 const App = () => {
   return (
     <div className='app'>
@@ -17,8 +18,9 @@ const App = () => {
             <Route path="/signup" element={<Form/>} />
             <Route path="/loginuser/*" element={<LoginUser/>} />
             <Route path="/admin/*" element={<Admin/>}/>
-            <Route pathe="/loginteacher" element={<LoginTeacher/>} />
-            <Route pathe="/loginstudent" element={<LoginStudent/>} />
+            <Route path="/loginteacher" element={<LoginTeacher/>} />
+            <Route path="/loginstudent" element={<LoginStudent/>} />
+            <Route path="/verify" element={<Verify/>} />
          </Routes>
       </ HashRouter>
     </div>

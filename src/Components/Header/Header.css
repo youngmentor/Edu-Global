@@ -3,7 +3,8 @@
     padding: 0px;
     box-sizing: border-box;
 }
-.LogoImg{
+
+.LogoImg {
     width: 100px;
     height: 50px;
     display: flex;
@@ -11,20 +12,26 @@
     justify-content: center;
     /* margin-bottom: 30px; */
 }
-.HeaderLogo{
-  width: 70px;
-  height: 70px;
-  border-radius: 100%;
+
+.HeaderLogo {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
 }
+
 .Header-main {
     width: 100%;
     padding: 10px;
     display: flex;
+    position: fixed;
+    z-index: 10;
     align-items: center;
     justify-content: center;
-    -webkit-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
-    -moz-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
-    box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
+    backdrop-filter: blur(10.4px);
+    background: rgba(235,234,234, 0.27);
+    -webkit-box-shadow: -2px 3px 13px 0px rgba(70, 151, 217, 1);
+    -moz-box-shadow: -2px 3px 13px 0px rgba(70, 151, 217, 1);
+    box-shadow: -2px 3px 13px 0px rgba(70, 151, 217, 1);
 }
 
 .Header {
@@ -41,9 +48,10 @@
     padding: 10px;
     gap: 15px;
 }
+
 .Header-btt {
     width: 100px;
-    background-color:#5390D9 ;
+    background-color: #5390D9;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -55,11 +63,12 @@
     gap: 15px;
     z-index: 100;
 }
+
 .Header-bttn1 {
     width: 100px;
     height: 45px;
     border: none;
-    background: #5390D9 ;
+    background: #5390D9;
     color: white;
     border-radius: 8px;
     cursor: pointer;
@@ -72,42 +81,53 @@
     border-radius: 8px;
     background-color: transparent;
     cursor: pointer;
+
 }
+
 .Header-btt2 {
     cursor: pointer;
 }
-.Header-bttn2:hover{
+
+.Header-bttn2:hover {
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
     transition: 1s ease;
-    }
-    .Header-bttn1:hover{
-        -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        transform: scale(1.2);
-        transition: 1s ease;
-        }
+    /* background-color: #5390D9; */
+}
+
+.Header-bttn1:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease;
+}
+
 .Header-btt2 {
     cursor: pointer;
     /* color: white; */
 }
-.Burger{
+
+.Burger {
     display: none;
 }
-@media screen and (max-width: 426px){
-    .Burger{
+
+@media screen and (max-width: 426px) {
+    .Burger {
         display: flex;
     }
-    .Header-bttn{
+
+    .Header-bttn {
         display: none;
     }
-    .LogoImg{
+
+    .LogoImg {
         width: 60px;
         height: 50px;
     }
-    .HeaderLogo{
-      width: 50px;
-      height: 50px;
+
+    .HeaderLogo {
+        width: 50px;
+        height: 50px;
     }
 }
