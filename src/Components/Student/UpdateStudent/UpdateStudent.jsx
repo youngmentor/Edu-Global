@@ -79,7 +79,7 @@ const handleChange = (e) => {
 const handleAddStudent = (e) => {
   e.preventDefault();
   console.log("clicked")
- axios.post(`https://eduglobal.onrender.com/api/admin/${id}`, AddStudent)
+ axios.post(`https://eduglobal.onrender.com/api/admin/:${id}`, AddStudent)
  .then((response)=>{
   console.log(response.data.message)
  })
