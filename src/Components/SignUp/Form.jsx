@@ -73,12 +73,12 @@ const Form = () => {
     <main className="main">
       {load ? <Loading /> :
         <div className='SignUp-main' >
-          <form className="formData"  >
+          <form className="formData" onSubmit={handleSubmit}  >
             <img src="/NewLogo1.png" alt="logo" className='SignUp_Logo' onClick={() => navigate("/")} />
             {field.map((field) => (
               <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]} setView={setView} view={view} />
             ))}
-            <button type="submit" className='signbttn'  onClick={() => navigate("/verify")} >Sign Up</button>
+            <button type="submit" className='signbttn' >Sign Up</button>
             <p className='Already'>Already have an Account  <b className='b1' onClick={() => navigate("/loginuser/login")}> Login here?</b></p>
           </form>
           <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
@@ -96,3 +96,4 @@ const Form = () => {
 
 export default Form
 // onClick={() => navigate("/admin")} 
+// onClick={() => navigate("/verify")}
