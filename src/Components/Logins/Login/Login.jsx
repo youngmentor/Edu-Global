@@ -1,4 +1,4 @@
-import React, { useState, } from "react";
+import React, { useEffect, useState, } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import './Login.css'
 import axios from 'axios';
@@ -48,21 +48,26 @@ const Login = () => {
             .then(function (res) {
                 console.log(res)
                 console.log(res.data.message)
+                // localStorage.setItem (JSON.stringify("value", res))
                 res.status === 200 ? navigate('/admin') : rej()
-                // setLoad(false)
+            }).catch((e)=>{
+                console.log(e)
             })
     }
     const handleChange = (event) => {
         setValue({ ...value, [event.target.name]: event.target.value })
     };
-
-
     const rej = () => {
         setPro(true)
         setTimeout(() => {
             setPro(false)
         }, 5000)
     }
+
+useEffect(()=>{
+    
+})
+
     return (
         <main className="Login" >
             {pro && <div className='AdminwelcomeMssg'>

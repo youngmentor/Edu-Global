@@ -25,13 +25,13 @@ const AddTeacher = () => {
         placeholder: "Student/Guardian No:",
         type: "number"
     },
-    {
-      id: 4,
-        name: "Picture",
-        label: "file",
-        placeholder: "Choose A file",
-        type: "file"
-    },
+    // {
+    //   id: 4,
+    //     name: "Picture",
+    //     label: "file",
+    //     placeholder: "Choose A file",
+    //     type: "file"
+    // },
     {
       id: 5,
         name: "address",
