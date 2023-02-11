@@ -1,8 +1,10 @@
 import React,{useState} from 'react'
 import './UpdateStudent.css'
 import axios from 'axios'
+import { useParams } from 'react-router-dom'
 const UpdateStudent = () => {
 const [AddnStudent, SetAddnStudent]= useState()
+const {id}= useParams()
   const AddStudent = [
     { 
       id: 1,
@@ -33,7 +35,8 @@ const [AddnStudent, SetAddnStudent]= useState()
         name: "numbers",
         label: "number",
         placeholder: "Registration No:",
-        type: "number",
+        type: "text",
+        inputmode: "numeric",
         required: true
     },
     {
@@ -41,7 +44,8 @@ const [AddnStudent, SetAddnStudent]= useState()
         name: "number",
         label: "number",
         placeholder: "Student/Guardian No:",
-        type: "number"
+         type: "text",
+        inputmode: "numeric",
     },
     {
       id: 6,
@@ -75,9 +79,9 @@ const handleChange = (e) => {
 const handleAddStudent = (e) => {
   e.preventDefault();
   console.log("clicked")
- axios.post("https://eduglobal.onrender.com/api/admin/63e5d1cf1757b316d1dea558", AddStudent)
+ axios.post(`https://eduglobal.onrender.com/api/admin/${id}`, AddStudent)
  .then((response)=>{
-  console.log(response)
+  console.log(response.data.message)
  })
  .catch((error)=>{
   console.log(error);

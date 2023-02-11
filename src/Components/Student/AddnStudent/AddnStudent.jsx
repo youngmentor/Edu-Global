@@ -2,15 +2,16 @@ import React, {useState, useEffect} from 'react'
 import './AddnStudent.css'
 import { useNavigate } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 const AddnStudent = () => {
   // const navigate = useNavigate()
   const [students, setStudents] = useState([]);
-
+  const {id}= useParams()
 
 
   useEffect(() => {
-    axios.get('https://eduglobal.onrender.com/api/admin/allStudent/63e5d1cf1757b316d1dea558')
+    axios.get(`https://eduglobal.onrender.com/api/admin/allStudent/${id}`)
       .then((response) => {
         setStudents(response.data);
       })

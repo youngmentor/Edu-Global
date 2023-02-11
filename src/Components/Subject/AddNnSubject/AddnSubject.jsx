@@ -22,7 +22,8 @@ const AddnSubject = () => {
             name: "Number",
             label: "number",
             placeholder: "Marks",
-            type: "number"
+            type: "text",
+            inputmode: "numeric",
         },
     ];
     const handleChange = (e) => {

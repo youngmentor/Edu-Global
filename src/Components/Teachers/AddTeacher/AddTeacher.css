@@ -21,9 +21,9 @@
     border-radius: 8px;
     background-color: rgb(250, 250, 255);
     /* background-color: blue; */
-    -webkit-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
-  -moz-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
-  box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
+    /* -webkit-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
+  -moz-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1); */
+  box-shadow: -2px 3px 13px 0px rgb(152, 152, 155);
 }
 .AddTeacher_Input{
     width: 500px;
