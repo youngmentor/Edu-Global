@@ -1,6 +1,20 @@
 import React from 'react'
 // import '/SignUp.css'
+import { useParams } from 'react-router-dom';
 const Verify = () => {
+const {id}= useParams()
+console.log(id)
+
+    const handleSubmit = async (event) => {
+        try{
+            event.preventDefault();
+        const response = await axios.post(`https://eduglobal.onrender.com/api/userVerify/${id}`)
+        }catch (error) {
+            console.log("error")
+          }
+    }
+
+
 
     const style ={
         width:'100%',
