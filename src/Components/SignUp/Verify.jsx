@@ -1,11 +1,12 @@
 import React from 'react'
 // import '/SignUp.css'
+import axios from 'axios';
 import { useParams } from 'react-router-dom';
 const Verify = () => {
 const {id}= useParams()
 console.log(id)
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = async () => {
         try{
         const response = await axios.post(`https://eduglobal.onrender.com/api/userVerify/${id}`)
         console.log(response)
@@ -36,7 +37,7 @@ console.log(id)
     }
   return (
     <div style={style} className='verify'>
-        <button onClick={()=>{ handleSubmit()}} style={stylebutton} >click here to Verify</button>
+        <button onClick={handleSubmit} style={stylebutton} >click here to Verify</button>
     </div>
   )
 }
