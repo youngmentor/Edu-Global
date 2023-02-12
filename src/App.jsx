@@ -22,7 +22,7 @@ const App = () => {
           <Route path="/loginteacher" element={<LoginTeacher />} />
           <Route path="/loginstudent" element={<LoginStudent />} />
           <Route path="/verify/:id" element={<Verify />} />
-          <Route path='/studentdash' element={<StudentsDash />} />
+          <Route path='/studentdash/*' element={<StudentsDash />} />
         </Routes>
       </ HashRouter>
     </div>

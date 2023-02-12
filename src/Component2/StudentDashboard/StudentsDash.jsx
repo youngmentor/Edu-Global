@@ -4,6 +4,11 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaTimes } from 'react-icons/fa'
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+import { Routes,Route } from 'react-router-dom';
+import Dashboard_Stu from '../Dashboard_Stu/Dashboard_Stu';
+import Timetable_Stu from '../Timetable_Stu/Timetable_Stu';
+import Report_Stu from '../Report_Stu/Report_Stu';
+import AccountSetting_Stu from '../AccountSetting_Stu/AccountSetting_Stu';
 const StudentsDash = () => {
 
     // const navigate = useNavigate()
@@ -60,7 +65,13 @@ const StudentsDash = () => {
                 </div>
                 {toggle && studentLeft_Mobile}
                 <div className=''>
-                    
+                    <Routes>
+                        <Route path='' element={<f/>} />
+                        <Route path='' element={<f/>} />
+                        <Route path='' element={<f/>} />
+                        <Route path='' element={<f/>} />
+                        <Route path='' element={<f/>} />
+                    </Routes>
                 </div>
             </div>
         </div>
