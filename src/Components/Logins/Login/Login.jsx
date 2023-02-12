@@ -33,7 +33,7 @@ const Login = () => {
             required: true
         },
     ]
-
+    // const [activeuser, setactiveuser] = useState(JSON.parse(localStorage.getItem('activeuser')))
 
     const [focus, setFocus] = useState(false)
 
@@ -46,11 +46,11 @@ const Login = () => {
         e.preventDefault();
         axios.post('https://eduglobal.onrender.com/api/admin/login', value)
             .then(function (res) {
-                console.log(res)
+                console.log(res.data)
                 console.log(res.data.message)
-                // localStorage.setItem (JSON.stringify("value", res))
-                res.status === 200 ? navigate('/admin') : rej()
-            }).catch((e)=>{
+                localStorage.setItem ( "value",JSON.stringify( res))
+                res.data.data.email === value.email ? navigate('/admin') : rej()
+            }).catch((e) => {
                 console.log(e)
             })
     }
@@ -64,9 +64,9 @@ const Login = () => {
         }, 5000)
     }
 
-useEffect(()=>{
-    
-})
+    useEffect(() => {
+
+    })
 
     return (
         <main className="Login" >
@@ -103,7 +103,7 @@ useEffect(()=>{
                         </label>
                     ))}
 
-                    <button type="submit" className="Loginbtt" >{load ? <Loading/>:"Login"}</button>
+                    <button type="submit" className="Loginbtt" >{load ? <Loading /> : "Login"}</button>
                 </div>
                 <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
                 <div className="ImageWrap">

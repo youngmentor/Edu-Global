@@ -72,6 +72,7 @@ const UpdateStudent = () => {
       required: true
     },
   ];
+  localStorage.getItem(JSON.parse)
   const handleChange = (e) => {
     const { name, value } = e.target;
     SetAddnStudent({ ...AddnStudent, [name]: value });
