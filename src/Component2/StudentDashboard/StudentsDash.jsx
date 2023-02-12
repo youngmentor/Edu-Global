@@ -9,6 +9,8 @@ import Dashboard_Stu from '../Dashboard_Stu/Dashboard_Stu';
 import Timetable_Stu from '../Timetable_Stu/Timetable_Stu';
 import Report_Stu from '../Report_Stu/Report_Stu';
 import AccountSetting_Stu from '../AccountSetting_Stu/AccountSetting_Stu';
+import Payment from '../PayFee/Payment';
+import "./StudentDash.css"
 const StudentsDash = () => {
 
     // const navigate = useNavigate()
@@ -65,12 +67,12 @@ const StudentsDash = () => {
                 </div>
                 {toggle && studentLeft_Mobile}
                 <div className=''>
-                    <Routes>
-                        <Route path='' element={<f/>} />
-                        <Route path='' element={<f/>} />
-                        <Route path='' element={<f/>} />
-                        <Route path='' element={<f/>} />
-                        <Route path='' element={<f/>} />
+                    <Routes>                    
+                        <Route path='studentpage' element={<Dashboard_Stu/>} />
+                        <Route path='table' element={<Timetable_Stu/>} />
+                        <Route path='report' element={<Report_Stu />} />
+                        <Route path='payfee' element={<Payment />} />
+                        <Route path='accountset' element={<AccountSetting_Stu/>} />
                     </Routes>
                 </div>
             </div>
