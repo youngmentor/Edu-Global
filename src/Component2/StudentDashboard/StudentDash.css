@@ -11,8 +11,7 @@
 .Student_Main_Wrap{
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
 }
 .StudentLogo{
@@ -46,5 +45,32 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: green;
+   
+}
+.StudentBurger{
+    display: none;
+}
+.StudentLeftHolder{
+   width: 20%;
+   height: 90vh;
+   background: white;
+   border: 1px solid rgb(214, 210, 210);
+   display: flex;
+   justify-content: center;
+   /* position: fixed; */
+   top: 50px;
+   margin-top: 10px;
+}
+.StudentNav{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 50px;
+}
+.DashboardMiddle{
+    width: 80%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
 }

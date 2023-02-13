@@ -4,27 +4,26 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaTimes } from 'react-icons/fa'
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-import { Routes,Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Dashboard_Stu from '../Dashboard_Stu/Dashboard_Stu';
 import Timetable_Stu from '../Timetable_Stu/Timetable_Stu';
 import Report_Stu from '../Report_Stu/Report_Stu';
 import AccountSetting_Stu from '../AccountSetting_Stu/AccountSetting_Stu';
 import Payment from '../PayFee/Payment';
 import "./StudentDash.css"
+import { useNavigate } from 'react-router-dom';
 const StudentsDash = () => {
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const [toggle, setToggle] = useState(false);
     const [open, setOpen] = useState(false)
-
-
 
     const studentLeft_Mobile = (
         <div className='StudentLeftMobile_co'>
             {
                 toggle && (
                     <div className='StudentLeftMobile_mobile' >
-                        <StudentDashLeft />                     
+                        <StudentDashLeft />
                     </div>
                 )
             }
@@ -62,17 +61,17 @@ const StudentsDash = () => {
                 </div>
             </div>
             <div className='Student_Main_Wrap'>
-                <div className=''>
+                <div className='StudentLeftHolder'>
                     <StudentDashLeft />
                 </div>
                 {toggle && studentLeft_Mobile}
-                <div className=''>
-                    <Routes>                    
-                        <Route path='studentpage' element={<Dashboard_Stu/>} />
-                        <Route path='table' element={<Timetable_Stu/>} />
-                        <Route path='report' element={<Report_Stu />} />
-                        <Route path='payfee' element={<Payment />} />
-                        <Route path='accountset' element={<AccountSetting_Stu/>} />
+                <div className='DashboardMiddle'>
+                    <Routes>
+                        <Route path="/" element={<Dashboard_Stu />} />
+                        <Route path="/table" element={<Timetable_Stu />} />
+                        <Route path="/report" element={<Report_Stu />} />
+                        <Route path="/payfee'" element={<Payment />} />
+                        <Route path="/accountset" element={<AccountSetting_Stu />} />
                     </Routes>
                 </div>
             </div>
