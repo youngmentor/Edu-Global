@@ -3,7 +3,7 @@
     margin-top: 20px;
 }
 .Dashboard_Stu_Main_Wrap{
-    width: 95%;
+    width: 80%;
     /* background-color: blue; */
     display: flex;
     justify-content: space-between;
@@ -33,7 +33,7 @@
     gap: 10px;
 }
 .Dashboard_Stu_Msg{
-    width: 600px;
+    width: 500px;
     height: 100px;
     padding: 10px;
     background-color: gray;
