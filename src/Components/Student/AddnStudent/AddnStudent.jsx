@@ -7,13 +7,22 @@ import axios from 'axios'
 const AddnStudent = () => {
   // const navigate = useNavigate()
   const [students, setStudents] = useState([]);
+  const [items, setItems] = useState([]);
   const {id}= useParams()
 
 
   useEffect(() => {
-    axios.get(`https://eduglobal.onrender.com/api/admin/allStudent/${id}`)
+
+    const items = JSON.parse(localStorage.getItem('value'));
+    if (items) {
+      setItems(items);
+    }
+    // console.log(items.data.data._id)
+
+    axios.get(`https://eduglobal.onrender.com/api/admin/allStudent/${items.data.data._id}`)
       .then((response) => {
         setStudents(response.data);
+        console.log(response.data)
       })
       .catch((error) => {
         console.log(error);
@@ -25,14 +34,10 @@ const AddnStudent = () => {
        <div className='AdminStudent_Img'> 
        <img src="/UserImg.png" alt="StudentLogo" className='AdminStudent_Avatar' />
        </div>
-      {
-        students.map((student)=>(
           <div className='AdminStudent_Details'>
-          <p>{student.regNumber}</p>
-          <p>{student.studentName}</p>
+          <p>sulito</p>
+          <p>001</p>
          </div>
-        ))
-      }
       </div>
       {/* <div className='AdminStudents_All_Wrap'>
        <div className='AdminStudent_Img'> 

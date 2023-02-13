@@ -6,7 +6,7 @@ const Timetable_Stu = () => {
 
   return (
     <div>
-        
+        good morning
     </div>
   )
 }

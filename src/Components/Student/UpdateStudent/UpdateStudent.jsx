@@ -1,14 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './UpdateStudent.css'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 const UpdateStudent = () => {
-  const [AddnStudent, SetAddnStudent] = useState()
+  const [add_new_student, SetAdd_new_student] = useState(
+    {
+      studentName: "",
+      email: "",
+      password: "",
+      regNumber: "",
+      studentClass: "",
+      admissionYear: "",
+      guardianPhoneNumber: "",
+      DOB: ""
+    }
+  )
+  const [items, setItems] = useState([]);
   const { id } = useParams()
   const AddStudent = [
     {
       id: 1,
-      name: "name",
+      name: "studentName",
       // label: "name",
       placeholder: "Name of Student",
       type: "text",
@@ -32,7 +44,7 @@ const UpdateStudent = () => {
     },
     {
       id: 4,
-      name: "numbers",
+      name: "regNumber",
       // label: "number",
       placeholder: "Registration No:",
       type: "text",
@@ -41,7 +53,7 @@ const UpdateStudent = () => {
     },
     {
       id: 5,
-      name: "number",
+      name: "guardianPhoneNumber",
       // label: "number",
       placeholder: "Student/Guardian No:",
       type: "text",
@@ -49,7 +61,7 @@ const UpdateStudent = () => {
     },
     {
       id: 6,
-      name: "class",
+      name: "studentClass",
       // label: "class",
       placeholder: "Select Class",
       type: "select",
@@ -57,7 +69,7 @@ const UpdateStudent = () => {
     },
     {
       id: 7,
-      name: "birth",
+      name: "DOB",
       label: "Date Of Birth",
       placeholder: "mm/dd/yy",
       type: "date",
@@ -65,23 +77,31 @@ const UpdateStudent = () => {
     },
     {
       id: 8,
-      name: "date",
+      name: "admissionYear",
       label: "Date of Admission",
       placeholder: "mm/dd/yy",
       type: "date",
       required: true
     },
   ];
-  localStorage.getItem(JSON.parse)
+
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('value'));
+    if (items) {
+      setItems(items);
+    }
+    console.log(items.data.data._id)
+  }, []);
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    SetAddnStudent({ ...AddnStudent, [name]: value });
+    // const { name, value } = e.target;
+    SetAdd_new_student({ ...add_new_student, [e.target.name]: e.target.value });
   };
   const handleAddStudent = (e) => {
     e.preventDefault();
     console.log("clicked")
-    axios.post(`https://eduglobal.onrender.com/api/admin/${id}`, AddStudent)
+    axios.post(`https://eduglobal.onrender.com/api/admin/${items.data.data._id}`, add_new_student)
       .then((response) => {
+        console.log(res.data)
         console.log(response.data.message)
       })
       .catch((error) => {
@@ -107,7 +127,7 @@ const UpdateStudent = () => {
             </label>
           ))}
           <div className='AddStudentDiv'>
-          <button type="submit" className="AddSbttn">Add New Student</button>
+            <button type="submit" className="AddSbttn">Add New Student</button>
           </div>
         </form>
       </div>
