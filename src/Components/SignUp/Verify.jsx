@@ -1,44 +1,41 @@
-import React from 'react'
+import React,{useState} from 'react'
 // import '/SignUp.css'
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 const Verify = () => {
-const {id}= useParams()
-console.log(id)
+  const { id } = useParams()
+  console.log(id)
+  // const { changeTheme, display, setactiveuser } = useContext(ThemeContext)
+  const navigate = useNavigate()
+  const [state, setState] = useState(false)
 
     const handleSubmit = async () => {
-        try{
         const response = await axios.post(`https://eduglobal.onrender.com/api/userVerify/${id}`)
         console.log(response)
-        }catch (error) {
-            console.log("error")
-          }
+        setState(true)
+        setTimeout(() => {
+          navigate('/login')
+        }, 3000);
     }
+    useEffect(() => {
+
+      handleSubmit()
+    }, [])
 
 
-
-    const style ={
-        width:'100%',
-        height:'100%',
-        display:'flex',
-        flexDirection:"column",
-        alignItem:'center',
-        justifyContent:"center",
-        backgroundColor:'grey'
-    }
-
-    const stylebutton ={
-        height:'50px',
-        display:'flex',
-        paddingTop:10,
-        flexDirection:"column",
-        alignItem:'center',
-        justifyContent:"center"
+    const style = {
+      width: '100%',
+      height: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#f8f8f8',
     }
   return (
     <div style={style} className='verify'>
-        <button onClick={handleSubmit} style={stylebutton} >click here to Verify</button>
-    </div>
+    {!state ? <h1>Waiting.....</h1> :
+      <h1>Your verification was sucessful</h1>}
+  </div >
   )
 }
 

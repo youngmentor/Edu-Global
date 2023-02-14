@@ -7,11 +7,15 @@ const Features = createSlice({
   name: 'e-store',
   initialState,
   reducers: {
-    userData: (state, { payload }) => {
-      state.product = payload;
-    },
+    addUser: (state, { payload }) => {
+        state.user = [payload];
+      },
+      clearUser: (state) => {
+        const clearAll = []
+        state.user = clearAll
+      },
   }
 })
 
-export const { userData} = Features.actions
+export const { addUser,clearUser} = Features.actions
 export default Features.reducer

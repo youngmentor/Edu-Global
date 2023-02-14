@@ -3,9 +3,14 @@ import { useNavigate, NavLink } from "react-router-dom";
 import './Login.css'
 import axios from 'axios';
 import Loading from "../../LoadingSpin/Loading";
+import { addUser } from "../../../Redux/Features";
+import { clearUser } from "../../../Redux/Features";
+import { useDispatch, useSelector } from "react-redux";
 const Login = () => {
-
+    const dispatch = useDispatch()
+    const user = useSelector((state) => state.Commerce.user)
     const [pro, setPro] = useState(false)
+    const [verifyAlert, setverifyAlert] = useState(false)
     const navigate = useNavigate()
     const [value, setValue] = useState({
         email: "",
@@ -42,14 +47,16 @@ const Login = () => {
     }
 
     const handleLogin = (e) => {
+        console.log("clicked")
         setLoad(true)
         e.preventDefault();
         axios.post('https://eduglobal.onrender.com/api/admin/login', value)
             .then(function (res) {
                 console.log(res.data)
                 console.log(res.data.message)
-                localStorage.setItem ( "value",JSON.stringify( res))
-                res.data.data.email === value.email ? navigate('/admin') : rej()
+                // localStorage.setItem ( "value",JSON.stringify( res))
+                res.data.data.email === value.email ? dispatch(addUser(res)) : null
+                res.data.data.email === value.email ? navigate('/admin') : null
             }).catch((e) => {
                 console.log(e)
             })
@@ -65,8 +72,11 @@ const Login = () => {
     }
 
     useEffect(() => {
-
-    })
+        setverifyAlert(true)
+        setTimeout(() => {
+          setverifyAlert(false)
+        }, 5000);
+      }, [])
 
     return (
         <main className="Login" >

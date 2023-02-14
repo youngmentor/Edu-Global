@@ -20,7 +20,7 @@ export default function Dashboard() {
                 <FaGraduationCap style={{ width: "50px", height: "50px" }} />
               </div>
               <div className='AdminCardDetails'>
-                <h2>60</h2>
+                <h2>0</h2>
               </div>
             </div>
           </div>
@@ -31,7 +31,7 @@ export default function Dashboard() {
                 <FaGraduationCap style={{ width: "50px", height: "50px" }} />
               </div>
               <div className='AdminCardDetails'>
-                <h2>54</h2>
+                <h2>0</h2>
               </div>
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function Dashboard() {
                 <FaGraduationCap style={{ width: "50px", height: "50px" }} />
               </div>
               <div className='AdminCardDetails'>
-                <h2>45</h2>
+                <h2>0</h2>
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function Dashboard() {
                 <FaGraduationCap style={{ width: "50px", height: "50px" }} />
               </div>
               <div className='AdminCardDetails'>
-                <h2>14</h2>
+                <h2>0</h2>
               </div>
             </div>
           </div>
