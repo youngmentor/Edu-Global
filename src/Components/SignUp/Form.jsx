@@ -78,6 +78,7 @@ const Form = () => {
             {field.map((field) => (
               <SignUp key={field.id} {...field} handleChange={handleChange} form={form[field.name]} setView={setView} view={view} />
             ))}
+            <p className='forg'>Forget Paasword ?</p>
             <button type="submit" className='signbttn' >{load ? <Loading /> :"Sign Up"}</button>
             <p className='Already'>Already have an Account  <b className='b1' onClick={() => navigate("/loginuser/login")}> Login here?</b></p>
           </form>

@@ -135,8 +135,13 @@
 
 .forg {
     color: black;
+    cursor: pointer;
+position: relative;  
+left: 100px; 
 }
-
+.forg:hover{
+    color: rgb(92, 92, 193);
+}
 .b {
     color: rgb(17, 95, 247);
 }
@@ -151,6 +156,7 @@
     font-size: 12px;
     gap: 4px;
     width: 400px;
+    font-weight: 800;
 }
 .SignUpeye{
     position: fixed;
