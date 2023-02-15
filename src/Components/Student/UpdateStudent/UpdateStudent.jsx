@@ -16,7 +16,7 @@ const UpdateStudent = () => {
     }
   )
   const [items, setItems] = useState([]);
-  const { id } = useParams()
+  const { _id } = useParams()
   const AddStudent = [
     {
       id: 1,
@@ -90,7 +90,7 @@ const UpdateStudent = () => {
     if (items) {
       setItems(items);
     }
-    console.log(items.data.data._id)
+    // console.log(items.data.data._id)
   }, []);
   const handleChange = (e) => {
     // const { name, value } = e.target;
@@ -99,7 +99,7 @@ const UpdateStudent = () => {
   const handleAddStudent = (e) => {
     e.preventDefault();
     console.log("clicked")
-    axios.post(`https://eduglobal.onrender.com/api/admin/${items.data.data._id}`, add_new_student)
+    // axios.post(`https://eduglobal.onrender.com/api/admin/${items.data.data._id}`, add_new_student)
       .then((response) => {
         console.log(res.data)
         console.log(response.data.message)

@@ -13,20 +13,20 @@ const AddnStudent = () => {
 
   useEffect(() => {
 
-    const items = JSON.parse(localStorage.getItem('value'));
+    // const items = JSON.parse(localStorage.getItem('value'));
     if (items) {
       setItems(items);
     }
     // console.log(items.data.data._id)
 
-    axios.get(`https://eduglobal.onrender.com/api/admin/allStudent/${items.data.data._id}`)
-      .then((response) => {
-        setStudents(response.data);
-        console.log(response.data)
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // axios.get(`https://eduglobal.onrender.com/api/admin/allStudent/${items.data.data._id}`)
+      // .then((response) => {
+      //   setStudents(response.data);
+      //   console.log(response.data)
+      // })
+      // .catch((error) => {
+      //   console.log(error);
+      // });
   }, []);
   return (
     <div className='AdminStudents_All'>

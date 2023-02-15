@@ -90,7 +90,7 @@ const Admin = () => {
             icon3: <SlArrowDown />,
             click: "/admin/attendance",
             // click1: "/admin/attendance/studentattendance",
-            click1: "/admin/attendance/teacherattendance",
+            click2: "/admin/attendance/teacherattendance",
         }
         , {
             id: 6,
