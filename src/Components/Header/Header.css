@@ -14,8 +14,8 @@
 }
 
 .HeaderLogo {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 100%;
 }
 
@@ -31,7 +31,7 @@
     background: rgba(235,234,234, 0.90);
     -webkit-box-shadow: -2px 3px 13px 0px rgba(70, 151, 217, 1);
     -moz-box-shadow: -2px 3px 13px 0px rgba(70, 151, 217, 1);
-    box-shadow: -2px 3px 13px 0px rgba(70, 151, 217, 1);
+    box-shadow: -2px 3px 13px 0px rgb(101, 139, 177);
 }
 
 .Header {
@@ -66,7 +66,7 @@
 
 .Header-bttn1 {
     width: 100px;
-    height: 45px;
+    height: 40px;
     border: none;
     background: #5390D9;
     color: white;
@@ -76,7 +76,7 @@
 
 .Header-bttn2 {
     width: 100px;
-    height: 45px;
+    height: 40px;
     border: 1px solid rgb(48, 43, 43);
     border-radius: 8px;
     background-color: transparent;
