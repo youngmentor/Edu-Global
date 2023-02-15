@@ -19,7 +19,7 @@ import Fee from '../Fee/Fee';
 import Subject from '../Subject/Subject'
 import Student from '../Student/Student'
 import Teachers from '../Teachers/Teachers'
-// import Timetable from '../Timetable/timetable'
+import Timetable_Admin from '../Timetable_Admin/Timetable_Admin';
 import { Route, Routes } from 'react-router-dom';
 const Admin = () => {
     const navigate = useNavigate()
@@ -90,7 +90,7 @@ const Admin = () => {
             icon3: <SlArrowDown />,
             click: "/admin/attendance",
             // click1: "/admin/attendance/studentattendance",
-            click2: "/admin/attendance/teacherattendance",
+            click1: "/admin/attendance/teacherattendance",
         }
         , {
             id: 6,
@@ -99,7 +99,9 @@ const Admin = () => {
             icon1: < AiFillHome />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
-            click: "/admin/timetable"
+            click: "/admin/timetable",
+            click1: "/admin/timetable"
+
 
         }
         , {
@@ -178,7 +180,7 @@ const Admin = () => {
                         <Route path="/student/*" element={<Student />} />
                         <Route path="/subject/*" element={<Subject />} />
                         <Route path="/teachers/*" element={<Teachers />} />
-                        {/* <Route path="/timetable" element={<Timetable />} /> */}
+                        <Route path="/timetable" element={<Timetable_Admin />} />
                         <Route path="/attendance/*" element={<Attendance />} />
                         <Route path="/fee" element={<Fee />} />
                     </Routes>
