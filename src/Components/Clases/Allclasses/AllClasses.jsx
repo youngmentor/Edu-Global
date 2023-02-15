@@ -11,7 +11,7 @@ const AllClasses = () => {
                   <div className='AllClassCardWrap'>
                   <div className='AllClassCardDetails'>
                         <h4>Jss1</h4>
-                        <h2>60</h2>
+                        <h2>0</h2>
                         <h4>Students</h4>
                     </div>
                     <div className='AllClassGraduationCap'>
@@ -23,7 +23,7 @@ const AllClasses = () => {
                 <div className='AllClassCardWrap'>
                   <div className='AllClassCardDetails'>
                         <h4>Jss2</h4>
-                        <h2>54</h2>
+                        <h2>0</h2>
                         <h4>Students</h4>
                     </div>
                     <div className='AllClassGraduationCap'>
@@ -35,7 +35,7 @@ const AllClasses = () => {
                 <div className='AllClassCardWrap'>
                   <div className='AllClassCardDetails'>
                         <h4>Jss3</h4>
-                        <h2>45</h2>
+                        <h2>0</h2>
                         <h4>Students</h4>
                     </div>
                     <div className='AllClassGraduationCap'>
@@ -47,7 +47,7 @@ const AllClasses = () => {
                 <div className='AllClassCardWrap'>
                   <div className='AllClassCardDetails'>
                         <h4>ss1</h4>
-                        <h2>14</h2>
+                        <h2>0</h2>
                         <h4>Students</h4>
                     </div>
                     <div className='AllClassGraduationCap'>
@@ -59,7 +59,7 @@ const AllClasses = () => {
                 <div className='AllClassCardWrap'>
                   <div className='AllClassCardDetails'>
                         <h4>ss1</h4>
-                        <h2>14</h2>
+                        <h2>0</h2>
                         <h4>Students</h4>
                     </div>
                     <div className='AllClassGraduationCap'>
