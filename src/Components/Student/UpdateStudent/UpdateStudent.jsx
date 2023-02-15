@@ -98,15 +98,15 @@ const UpdateStudent = () => {
   };
   const handleAddStudent = (e) => {
     e.preventDefault();
-    console.log("clicked")
+    // console.log("clicked")
     // axios.post(`https://eduglobal.onrender.com/api/admin/${items.data.data._id}`, add_new_student)
-      .then((response) => {
-        console.log(res.data)
-        console.log(response.data.message)
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    //   .then((response) => {
+    //     console.log(res.data)
+    //     console.log(response.data.message)
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
   return (
     <div className='AdminAddn_Student'>

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .AdminAddn_Student{
-    width: 70%;
+    width: 80%;
     height: 100%;
     border-radius: 8px;
     /* background-color: green; */
@@ -65,8 +65,11 @@
     width: 400px;
     height: 40px;
     border-radius: 8px;
+    outline: none;
+    border: none;
     background-color: #5390D9;
     color: white;
+    cursor: pointer;
 }
 @media screen and (max-width: 426px){
     .AddStudent_Input{
