@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .AdminAddn_Student{
-    width: 100%;
+    width: 70%;
     height: 100%;
     border-radius: 8px;
     /* background-color: green; */
@@ -12,7 +12,7 @@
 }
 .AdminAddn_StudentWrap{
     width: 700px;
-    height: 600px;
+    /* height: 600px; */
     /* margin-top: 50px; */
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
     outline: none;
 }
 .AddStudent_Label{
-    height: 500px;
+    /* height: 500px; */
     display: flex;
     flex-direction: column;
   justify-content: center;

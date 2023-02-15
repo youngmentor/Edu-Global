@@ -1,0 +1,37 @@
+.AddSub-inputWrap{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* background-color: rgb(250, 250, 255); */
+    
+}
+.AddSubjectWrap{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: rgb(250, 250, 255);
+    gap: 10px;
+    padding: 10px;
+    box-shadow: -2px 3px 13px 0px rgb(173, 175, 176);
+}
+.AddSubInput{
+    width: 400px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid rgb(224, 215, 215);
+    border-radius: 8px;
+    outline: none;
+  }
+  .AddSubLabel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    /* background-color: #5390D9; */
+  }

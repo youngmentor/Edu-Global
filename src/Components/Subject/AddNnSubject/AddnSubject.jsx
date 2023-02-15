@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+import "./AddnSubject.css"
 const AddnSubject = () => {
   const [AddData, setAddData] = useState({});
     const Add = [
@@ -34,14 +34,14 @@ const AddnSubject = () => {
         e.preventDefault();
     };
   return (
-    <div>
-         <div className='AddClassesWrap'>
-        <form onSubmit={handleSubmit} className="Add-inputWrap" >
+    <div className='AddSubjectMain' >
+         <div className='AddSubjectWrap'>
+        <form onSubmit={handleSubmit} className="AddSub-inputWrap" >
         <h3>Add A New Subject</h3>
             {Add.map((i) => (
-                        <label key={i.name} className="AddLabel">
+                        <label key={i.name} className="AddSubLabel">
                             <input
-                                className="AddInput"
+                                className="AddSubInput"
                                 type={i.type}
                                 name={i.name}
                                 placeholder={i.placeholder}
