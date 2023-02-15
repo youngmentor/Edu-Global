@@ -49,8 +49,8 @@
         align-items: center;
     }
     .FooterImgDiv{
-        width: 60px;
-        height: 40px;
+        width: 55px;
+        height: 30px;
         display: flex;
         gap: 10px;
     }
@@ -65,6 +65,12 @@
     }
     .FooterPartners{
         margin-top: 20px;
+    }
+    .FooterContact{
+        display: flex;
+        gap: 5px;
+        align-items: flex-start;
+        flex-direction:column;
     }
 }
 @media screen and (max-width: 769px){
@@ -94,13 +100,5 @@
         background-color: #072f52;
         margin-top: 50px;
         padding: 10px;
-    }
-}
-@media screen and (max-width: 769px){
-    .FooterContact{
-        display: flex;
-        gap: 5px;
-        align-items: flex-start;
-        flex-direction:column;
     }
 }
