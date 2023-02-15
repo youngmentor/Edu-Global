@@ -99,7 +99,7 @@
 @media screen and (max-width: 769px){
     .FooterContact{
         display: flex;
-        line-height: 1.4;
+        gap: 5px;
         align-items: flex-start;
         flex-direction:column;
     }
