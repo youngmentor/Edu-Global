@@ -58,7 +58,7 @@ const AllClasses = () => {
                 <div className='AllClassCard'>
                 <div className='AllClassCardWrap'>
                   <div className='AllClassCardDetails'>
-                        <h4>ss1</h4>
+                        <h4>ss2</h4>
                         <h2>0</h2>
                         <h4>Students</h4>
                     </div>
