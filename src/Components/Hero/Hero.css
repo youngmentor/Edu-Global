@@ -30,7 +30,7 @@
 .Hero {
     display: flex;
     height: 500px;
-    width: 85%;
+    width: 90%;
     justify-content: space-between;
 }
 
@@ -43,7 +43,8 @@
 
 .studentImg {
     width: 280px;
-    height: 400px;
+    height: 300px;
+    /* margin-bottom: 50px; */
 }
 
 .HeroRight {
@@ -53,23 +54,23 @@
 }
 
 .HeroRight h1 {
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .HeroRight p {
-    font-size: 30px;
+    font-size: 20px;
     margin-top: 30px;
 }
 
 .Herobtt {
     margin-top: 50px;
     width: 300px;
-    height: 50px;
+    height: 40px;
     background-color: #008AFF;
     border: none;
     border-radius: 8px;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
 }
 .Herobtt:hover {

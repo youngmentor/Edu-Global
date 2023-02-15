@@ -22,17 +22,17 @@
     height: 100%;
 }
 .Features-Wrapper{
-    width: 98%;
+    width: 95%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 .Admin-img{
-    width: 300px;
+    width: 200px;
 }
 .FeaturesImg{
-    width: 300px;
+    width: 200px;
     margin-top: 20px;
     transition: 1s ease;
 }
@@ -52,11 +52,15 @@
 }
 .Heading{
     margin-bottom: 20px;
+    font-size: 12px;
 }
 .FeaturesHeader{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.paragraph p {
+    font-size: 14px;
 }
 @media screen and (max-width: 426px){
     .MainFeatures{
