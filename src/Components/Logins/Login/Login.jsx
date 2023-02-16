@@ -11,7 +11,6 @@ const Login = () => {
     const {  verifyAlert, login_alert } = useContext(ThemeContext)
     const dispatch = useDispatch()
     const user = useSelector((state) => state.Commerce.user)
-    const [pro, setPro] = useState(false)
     const navigate = useNavigate()
     const [value, setValue] = useState({
         email: "",
@@ -39,7 +38,7 @@ const Login = () => {
             required: true
         },
     ]
-    // const [activeuser, setactiveuser] = useState(JSON.parse(localStorage.getItem('activeuser')))
+
 
     const [focus, setFocus] = useState(false)
 
@@ -65,18 +64,9 @@ const Login = () => {
     const handleChange = (event) => {
         setValue({ ...value, [event.target.name]: event.target.value })
     };
-    // const rej = () => {
-    //     setPro(true)
-    //     setTimeout(() => {
-    //         setPro(false)
-    //     }, 5000)
-    // }
 
     useEffect(() => {
-        // setverifyAlert(true)
-        // setTimeout(() => {
-        //     setverifyAlert(false)
-        // }, 5000);
+        
     }, [])
 
     return (

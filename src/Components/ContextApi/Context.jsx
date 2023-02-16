@@ -10,7 +10,7 @@ export const ThemeProvider = ({ children }) => {
     setverifyAlert(true)
     setTimeout(() => {
       setverifyAlert(false)
-    }, 7000);
+    }, 10000);
   }
 
 
