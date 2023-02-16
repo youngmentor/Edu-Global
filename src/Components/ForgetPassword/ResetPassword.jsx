@@ -10,7 +10,7 @@ const ResetPassword = () => {
     const { id } = useParams()
 
     return (
-        <div>
+        <div className='forget'>
             <div className='forget_text'>
                 <h2>New password</h2>
             </div>

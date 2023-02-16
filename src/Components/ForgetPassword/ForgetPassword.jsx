@@ -10,7 +10,7 @@ const ForgetPassword = () => {
     const navigate = useNavigate()
 
     return (
-        <div>
+        <div className='forget'>
             <div className='forget_text'>
                 <h2>Forgot password?</h2>
                 <p>No worries, we’ll send you reset instructions</p>
