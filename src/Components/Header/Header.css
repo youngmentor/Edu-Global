@@ -59,7 +59,7 @@
     align-items: center;
     padding: 10px;
     top: 90px;
-    right: -110px;
+    right: -100px;
     gap: 15px;
     z-index: 100;
 }
@@ -84,8 +84,9 @@
 
 }
 
-.Header-btt2 {
+.Header-btt1 {
     cursor: pointer;
+    color: white;
 }
 
 .Header-bttn2:hover {
@@ -105,7 +106,8 @@
 
 .Header-btt2 {
     cursor: pointer;
-    /* color: white; */
+    color: white;
+    
 }
 
 .Burger {

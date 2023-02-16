@@ -125,6 +125,7 @@
     .HeroRight {
         width: 400px;
         text-align: center;
+       
     }
 
     .HeroRight h1 {
@@ -156,6 +157,7 @@
         height: 500px;
         width: 100%;
         justify-content: center;
+        margin-top: 100px;
     }
 
     .HeroLeft {
@@ -174,7 +176,6 @@
 
     .HeroRight {
         width: 280px;
-        margin-top: 50px;
     }
 
     .HeroRight h1 {
