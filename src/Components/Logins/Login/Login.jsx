@@ -73,7 +73,7 @@ const Login = () => {
         <main className="Login" >
             {verifyAlert  && <div className='AdminwelcomeMssg'>
                 <div>
-                <p>please check your Email for a verification link</p>
+                <p>Please check your Email for a verification link</p>
                 </div>
             </div>}
             <form onSubmit={handleLogin} className="login-wrap"   >

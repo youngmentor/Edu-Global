@@ -4,7 +4,7 @@ const initialState = {
 }
 
 const Features = createSlice({
-  name: 'e-store',
+  name: 'eduglobal',
   initialState,
   reducers: {
     addUser: (state, { payload }) => {

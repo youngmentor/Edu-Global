@@ -154,6 +154,7 @@ const Admin = () => {
                 </div>
                 <div className='AdminSchoolName'>
                     <div className='AdminSchoolNamewrap'>
+                        <div className='ActiveUser'></div>
                         <h4>Edu-Global</h4>
                         {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
                     </div>
