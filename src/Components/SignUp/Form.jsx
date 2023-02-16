@@ -1,12 +1,14 @@
 import React, { useState, useContext, useEffect } from 'react'
 import SignUp from './SignUp'
-import Verify from './Verify';
+// import Verify from './Verify';
 import './SignUp.css'
 import { useNavigate } from 'react-router-dom'
 import Loading from '../LoadingSpin/Loading'
 import axios from 'axios'
+import { ThemeContext } from '../ContextApi/Context';
 
 const Form = () => {
+  const { login_alert } = useContext(ThemeContext)
   const navigate = useNavigate()
   const [view, setView] = useState(false)
   const [form, setForm] = useState({
@@ -55,6 +57,7 @@ const Form = () => {
       const response = await axios.post("https://eduglobal.onrender.com/api/admin/sign", form);
       console.log(response.data.message);
       response.status === 201 ? navigate("/loginuser/login") : null  
+      login_alert()
     } catch (error) {
       console.log("error")
     }

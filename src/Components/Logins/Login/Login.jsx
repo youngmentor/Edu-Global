@@ -1,4 +1,4 @@
-import React, { useEffect, useState, } from "react";
+import React, { useEffect, useState,  useContext } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import './Login.css'
 import axios from 'axios';
@@ -65,26 +65,25 @@ const Login = () => {
     const handleChange = (event) => {
         setValue({ ...value, [event.target.name]: event.target.value })
     };
-    const rej = () => {
-        setPro(true)
-        setTimeout(() => {
-            setPro(false)
-        }, 5000)
-    }
+    // const rej = () => {
+    //     setPro(true)
+    //     setTimeout(() => {
+    //         setPro(false)
+    //     }, 5000)
+    // }
 
     useEffect(() => {
-        setverifyAlert(true)
-        setTimeout(() => {
-            setverifyAlert(false)
-        }, 5000);
+        // setverifyAlert(true)
+        // setTimeout(() => {
+        //     setverifyAlert(false)
+        // }, 5000);
     }, [])
 
     return (
         <main className="Login" >
-            {pro && <div className='AdminwelcomeMssg'>
+            {verifyAlert  && <div className='AdminwelcomeMssg'>
                 <div>
-                    <h3>Welcome To Admin Dashboard</h3>
-                    <p>click <b> here </b> to verify your accout</p>
+                <p>please check your Email for a verification link</p>
                 </div>
             </div>}
             <form onSubmit={handleLogin} className="login-wrap"   >

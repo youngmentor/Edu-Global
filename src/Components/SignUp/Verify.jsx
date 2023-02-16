@@ -1,11 +1,9 @@
 import React,{useState} from 'react'
-// import '/SignUp.css'
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 const Verify = () => {
   const { id } = useParams()
   console.log(id)
-  // const { changeTheme, display, setactiveuser } = useContext(ThemeContext)
   const navigate = useNavigate()
   const [state, setState] = useState(false)
 

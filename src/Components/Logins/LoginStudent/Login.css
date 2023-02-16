@@ -123,6 +123,12 @@
     background-color: rgb(15, 94, 247);
     color: white;
 }
+.forg {
+    color: black;
+    cursor: pointer;
+position: relative;  
+left: 100px; 
+}
 .UserLogin{
     width: 500px;
     display: flex;
@@ -178,6 +184,7 @@
         background-color: rgb(15, 94, 247);
         color: white;
     }
+   
     .Students{
         margin-bottom: 30px;
         width: 80px;
