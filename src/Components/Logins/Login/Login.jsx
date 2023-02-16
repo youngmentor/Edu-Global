@@ -4,13 +4,14 @@ import './Login.css'
 import axios from 'axios';
 import Loading from "../../LoadingSpin/Loading";
 import { addUser } from "../../../Redux/Features";
-import { clearUser } from "../../../Redux/Features";
+// import { clearUser } from "../../../Redux/Features";
 import { useDispatch, useSelector } from "react-redux";
+import { ThemeContext } from "../../ContextApi/Context";
 const Login = () => {
+    const {  verifyAlert, login_alert } = useContext(ThemeContext)
     const dispatch = useDispatch()
     const user = useSelector((state) => state.Commerce.user)
     const [pro, setPro] = useState(false)
-    const [verifyAlert, setverifyAlert] = useState(false)
     const navigate = useNavigate()
     const [value, setValue] = useState({
         email: "",
@@ -74,9 +75,9 @@ const Login = () => {
     useEffect(() => {
         setverifyAlert(true)
         setTimeout(() => {
-          setverifyAlert(false)
+            setverifyAlert(false)
         }, 5000);
-      }, [])
+    }, [])
 
     return (
         <main className="Login" >
@@ -112,7 +113,7 @@ const Login = () => {
                             <span className='Login_err'>{i.err}</span>
                         </label>
                     ))}
-
+                    <p className='forg' onClick={() => navigate("/forgetpassword")} >Forget Paasword ?</p>
                     <button type="submit" className="Loginbtt" >{load ? <Loading /> : "Login"}</button>
                 </div>
                 <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
