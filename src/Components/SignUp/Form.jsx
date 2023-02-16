@@ -89,12 +89,9 @@ const Form = () => {
               alt="siignup"
               className='SignUpImage' />
           </div>
-        </div>
-         
+        </div>   
     </main>
   )
 }
 
 export default Form
-// onClick={() => navigate("/admin")} 
-// onClick={() => navigate("/verify")}

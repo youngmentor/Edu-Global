@@ -32,7 +32,7 @@
     flex-wrap: wrap;
 }
 .ImageWrap{
-    width: 450px;
+    width: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,12 +41,12 @@
     
 }
 .LoginImage{
-    width: 600px;
+    width: 100px;
 }
 .LoginInput{
     display: flex;
     flex-direction: column;
-    width: 350px;
+    width: 30px;
     height: 40px;
     border-radius: 10px;
     margin-top:20px;
@@ -60,12 +60,12 @@
 }
 .Loginbtt{
     margin-top: 20px;
-    width: 400px;
+    width: 350px;
     height: 40px;
     border: none;
     outline: none;
     border-radius: 15px;
-    background-color: rgb(15, 94, 247);
+    /* background-color: rgb(15, 94, 247); */
     color: white;
     cursor: pointer;
     margin-top: 15px;
@@ -80,8 +80,8 @@
     font-size: 20px;
 }
 .Admin{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     background-color: gray;
     border-radius: 50%;
     display: flex;
@@ -101,9 +101,9 @@
 .Teacher{
     margin-bottom: 100px;
     margin-left: 20px;
-    width: 150px;
+    width: 100px;
     border: 1px solid gray;
-    height: 150px;
+    height: 100px;
     background-color: gray;
     border-radius: 50%;
     cursor: pointer;
@@ -120,8 +120,8 @@
 }
 .Students{
     margin-bottom: 100px;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border: 1px solid gray;
     background-color: gray;
     border-radius: 50%;
@@ -138,7 +138,7 @@
     color: white;
 }
 .UserLogin{
-    width: 500px;
+    width: 400px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
