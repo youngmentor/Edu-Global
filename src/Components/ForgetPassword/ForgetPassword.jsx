@@ -16,8 +16,8 @@ const ForgetPassword = () => {
                 <p>No worries, we’ll send you reset instructions</p>
             </div>
             <input type="email" className='forget_input' ref={inputRef} placeholder="Enter your email..." />
-            <button className='forget_button pointer' onClick={() => navigate("/forgetpassword")}  >Reset password</button>
-            <div className='forget_back pointer' onClick={() => { navigate('/login') }} ><MdOutlineArrowBack fontSize={20} /><p>Back to login</p></div>
+            <button className='forget_button pointer'  >Reset password</button>
+            <div className='forget_back pointer' onClick={() => { navigate('/loginuser/login') }} ><MdOutlineArrowBack fontSize={20} /><p>Back to login</p></div>
         </div>
     )
 }
