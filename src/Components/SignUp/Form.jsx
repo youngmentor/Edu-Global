@@ -84,7 +84,7 @@ const Form = () => {
           </form>
           <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
           <div className='SignUpImage-contain' >
-            <h1>Start managing your school Activity now !</h1>
+            <h1>Start <b className='SignUpText'> managing</b> your school Activity <b className='SignUpText' >now !</b></h1>
             <img src="/signup1 (1).png"
               alt="siignup"
               className='SignUpImage' />
