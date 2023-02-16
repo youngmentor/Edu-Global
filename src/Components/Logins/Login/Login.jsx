@@ -112,7 +112,7 @@ const Login = () => {
                             <span className='Login_err'>{i.err}</span>
                         </label>
                     ))}
-                    <p className='forg' onClick={() => navigate("/forgetpassword")} >Forget Paasword ?</p>
+                    <p className='forg' onClick={() => navigate("/forgetpassword")} >Forgot Paasword ?</p>
                     <button type="submit" className="Loginbtt" >{load ? <Loading /> : "Login"}</button>
                 </div>
                 <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
