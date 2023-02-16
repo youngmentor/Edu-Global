@@ -15,7 +15,7 @@ const ResetPassword = () => {
                 <h2>New password</h2>
             </div>
             <input className='forget_input' ref={inputRef} placeholder="Enter your new password..." />
-            <button className='forget_button pointer' >Change password</button>
+            <button className='forget_button pointer' onClick={() => navigate("/resetpassword")}  >Change password</button>
         </div>
     )
 }
