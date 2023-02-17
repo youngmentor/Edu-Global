@@ -52,12 +52,11 @@
 }
 .StudentLeftHolder{
    width: 20%;
-   height: 90vh;
+   /* height: 90vh; */
    background: white;
    border: 1px solid rgb(214, 210, 210);
    display: flex;
    justify-content: center;
-   /* position: fixed; */
    top: 50px;
    margin-top: 10px;
 }
@@ -83,5 +82,19 @@
     }
     .StudentBurger{
         display: flex;
+    }
+    .StudentLeftMobile_co{
+        width: 50%;
+        position: absolute;
+        padding: 10px;
+        left: 0px;
+        background-color: blue;
+    }
+    .StudentNav{
+        background-color: green;
+        width: 95%;
+    }
+    .StudentLeftMobile_mobile{
+        background-color: red;
     }
 }
