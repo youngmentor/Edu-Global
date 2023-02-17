@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ThemeContext } from "../../ContextApi/Context";
 const Login = () => {
     const {  verifyAlert, login_alert } = useContext(ThemeContext)
+    
     const dispatch = useDispatch()
     const user = useSelector((state) => state.Commerce.user)
     const navigate = useNavigate()
