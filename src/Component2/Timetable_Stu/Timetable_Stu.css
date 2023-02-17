@@ -1,0 +1,30 @@
+.Student_TimeTable{
+    width: 100%;
+    height: 80vh;
+    /* background-color: gray; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Student_TimeTable_Form{
+    width: 80%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.UploadAdminBtt{
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgb(15, 94, 247);
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 20px;
+}
