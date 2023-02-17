@@ -19,10 +19,8 @@ import Fee from '../Fee/Fee';
 import Subject from '../Subject/Subject'
 import Student from '../Student/Student'
 import Teachers from '../Teachers/Teachers'
-// import Timetable_Admin from '../Timetable_Admin/Timetable_Admin';
-import ExcelReader from '../Timetable_Admin/TimetableData';
+import Timetable_Admin from '../Timetable_Admin/Timetable_Admin';
 import { Route, Routes } from 'react-router-dom';
-// import ExcelReader from '../Timetable_Admin/TimetableData';
 const Admin = () => {
     const navigate = useNavigate()
     const [toggle, setToggle] = useState(false);
@@ -102,7 +100,7 @@ const Admin = () => {
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
             click: "/admin/timetable",
-            click1: "/admin/timetable"
+            click1: "/admin/viewtimetable"
 
 
         }
@@ -183,7 +181,7 @@ const Admin = () => {
                         <Route path="/student/*" element={<Student />} />
                         <Route path="/subject/*" element={<Subject />} />
                         <Route path="/teachers/*" element={<Teachers />} />
-                        <Route path="/timetable" element={<ExcelReader />} />
+                        <Route path="/viewtimetable" element={< Timetable_Admin  />} />
                         <Route path="/attendance/*" element={<Attendance />} />
                         <Route path="/fee" element={<Fee />} />
                     </Routes>
