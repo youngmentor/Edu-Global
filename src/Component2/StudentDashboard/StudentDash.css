@@ -73,6 +73,11 @@
     align-items: center;
     justify-content: center; */
 }
+.Dash h3{
+    display: flex;
+    align-items: center;
+   gap: 30px;
+}
 @media screen and (max-width: 426px){
     .StudentLeftHolder{
         display: none;
