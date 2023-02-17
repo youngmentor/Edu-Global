@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
-  user: [{}]
+  user: [{}],
+  addFile: [],
 }
 
 const Features = createSlice({
@@ -14,8 +15,11 @@ const Features = createSlice({
         const clearAll = []
         state.user = clearAll
       },
+      addFile: (state, { payload }) => {
+        state.addProduct = [...state.addProduct, payload]
+      },
   }
 })
 
-export const { addUser,clearUser} = Features.actions
+export const { addUser,clearUser, addFile} = Features.actions
 export default Features.reducer
