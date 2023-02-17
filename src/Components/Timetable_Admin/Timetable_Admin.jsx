@@ -29,7 +29,7 @@ const Timetable_Admin = () => {
         {/* <h1>good morning timetable</h1> */}
         <input type="file" onChange={handleFileSelect} />
         {selectedFile && <p>Selected file: {selectedFile.name}</p>}
-        <button type="submit">Upload</button>
+        <button type="submit" className='UploadAdminBtt'>Upload TimeTable</button>
       </form>
     </div>
   )
