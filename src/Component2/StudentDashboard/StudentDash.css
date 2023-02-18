@@ -38,6 +38,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
   
 }
 .Student_header_wrap{
@@ -77,6 +78,9 @@
     display: flex;
     align-items: center;
    gap: 30px;
+}
+.StudentLeftMobile_co{
+    display: none;
 }
 @media screen and (max-width: 426px){
     .StudentLeftHolder{
