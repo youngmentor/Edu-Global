@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import FileSaver from 'file-saver';
+import FileSaver from 'file-saver';
 
 function Timetabl_Stu({ studentId }) {
   const [studentName, setStudentName] = useState('');
