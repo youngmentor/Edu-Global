@@ -4,7 +4,6 @@
 }
 .Dashboard_Stu_Main_Wrap{
     width: 80%;
-    /* background-color: blue; */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
