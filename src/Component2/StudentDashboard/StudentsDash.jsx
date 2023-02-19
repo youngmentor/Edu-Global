@@ -6,7 +6,6 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { Routes, Route } from 'react-router-dom';
 import Dashboard_Stu from '../Dashboard_Stu/Dashboard_Stu';
-// import Timetable_Stu from '../Timetable_Stu/Timetable_Stu';
 import TimeTableMain from '../Timetable_Stu/TimeTableMain';
 import Report_Stu from '../Report_Stu/Report_Stu';
 import AccountSetting_Stu from '../AccountSetting_Stu/AccountSetting_Stu';
