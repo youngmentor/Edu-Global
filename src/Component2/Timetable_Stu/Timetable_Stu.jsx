@@ -17,7 +17,7 @@ function Timetabl_Stu({ studentId }) {
   
 
   useEffect(() => {
-    axios.get(`/api/timetable/${studentId}`)
+    axios.get(`/${studentId}`)
       .then(response => {
         setStudentName(response.data.name);
         setTimetable(response.data.timetable);

@@ -8,22 +8,21 @@ function Report_Stu({ studentId }) {
   const [isDownloaded, setIsDownloaded] = useState(false);
 
   useEffect(() => {
-    // Fetch data using an HTTP request
-    // axios.get(`/api/results/${studentId}`)
-    //   .then(response => {
-    //     setStudentName(response.data.name);
-    //     setResults(response.data.results);
-    //   })
-    //   .catch(error => {
-    //     console.error(error);
-    //   });
+    axios.get(`/${studentId}`)
+      .then(response => {
+        setStudentName(response.data.name);
+        setResults(response.data.results);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }, [studentId]);
 
   const handleDownload = () => {
-    // const resultsString = JSON.stringify(results);
-    // const blob = new Blob([resultsString], { type: 'application/json' });
-    // FileSaver.saveAs(blob, `${studentName}_results.json`);
-    // setIsDownloaded(true);
+    const resultsString = JSON.stringify(results);
+    const blob = new Blob([resultsString], { type: 'application/json' });
+    FileSaver.saveAs(blob, `${studentName}_results.json`);
+    setIsDownloaded(true);
   }
 
   return (

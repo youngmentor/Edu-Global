@@ -12,6 +12,10 @@ export default function Dashboard() {
   return (
     <div className='AdminRight'>
       <div className='AdminRightDiv'>
+      <div className='Admin_Msg' >
+            <h4>Welcome to Admin Dashboard <br /> Your Account is verified</h4>
+            <img src='/Message.png' alt='' className='Admin_Info_Mssg' />
+          </div>
         <div className='AdminCardHolder'>
           <div className='AdminCard'>
             <div className='AdminCardWrap'>
