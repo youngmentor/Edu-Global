@@ -1,42 +1,76 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./TeacherDashb.css"
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { FaTimes } from 'react-icons/fa'
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+import { Routes, Route } from 'react-router-dom';
+import TeacherDashbLeft from './TeacherDashbLeft'
 import ReportCard_Stu from '../ReportCard_Stu/ReportCard_Stu'
 import Attendance_Stu from '../Attendance_Stu/Attendance_Teach'
 import AccountSetting_Teach from '../AccountSetting_Teach/AccountSetting_Teach'
 import TimeTable_Teach from '../TimeTable_Teach/TimeTable_Teach'
 import DashBoard__Teacher from '../DashBoard__Teacher/DashBoard__Teacher'
+import { useNavigate } from 'react-router-dom';
 const Teachers_Dashb = () => {
+    const navigate = useNavigate()
+    const [toggle, setToggle] = useState(false);
+    const [open, setOpen] = useState(false)
+
+    const TeacherLeft_Mobile = (
+        <div className='TeacherLeftMobile_co'>
+            {
+                toggle && (
+                    <div className='TeacherLeftMobile_mobile' >
+                        <TeacherDashbLeft />
+                    </div>
+                )
+            }
+        </div>
+    );
+    const TeacherEdudrop = (
+        <div className='TeacherProfileWrap'>
+            {open && (
+                <div className='TeacherProfile'>
+                    <p>Account setting</p>
+                    <p>Profile</p>
+                    <p onClick={() => navigate("/")} >Log out</p>
+                    <h5 onClick={() => navigate("/")}  >Home</h5>
+                </div>
+            )}
+        </div>
+    )
     return (
-        <div className='Student_Main'>
-            <div className='Student_header'>
-                <div className='Student_header_wrap'>
-                    <div className='StudentBurger'>
+        <div className='Teacher_Main'>
+            <div className='Teacher_header'>
+                <div className='Teacher_header_wrap'>
+                    <div className='TeacherBurger'>
                         {toggle ? <FaTimes onClick={() => { setToggle(!toggle) }} /> : <GiHamburgerMenu onClick={() => { setToggle(!toggle) }} />}
                     </div>
-                    <div className='StudentLogo'>
-                        <img src="/NewLogo1.png" alt="Logo" onClick={() => navigate("/")} className="StudentHeaderLogo" />
+                    <div className='TeacherLogo'>
+                        <img src="/NewLogo1.png" alt="Logo" onClick={() => navigate("/")} className="TeacherHeaderLogo" />
                     </div>
                     <div className='AdminSchoolName'>
                         <div className='AdminSchoolNamewrap'>
                             <h4>Edu-Global</h4>
                             {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
                         </div>
-                        {open && StudentEdudrop}
+                        {open && TeacherEdudrop }
                     </div>
                 </div>
             </div>
-            <div className='Student_Main_Wrap'>
-                <div className='StudentLeftHolder'>
-                    <StudentDashLeft />
+            <div className='Teacher_Main_Wrap'>
+                <div className='TeacherLeftHolder'>
+                    <TeacherDashbLeft />
                 </div>
-                {toggle && studentLeft_Mobile}
+                {toggle && TeacherLeft_Mobile }
                 <div className='DashboardMiddle'>
                     <Routes>
                         <Route path="/" element={<DashBoard__Teacher/>} />
-                        <Route path="/table" element={<TimeTable_Teach />} />
-                        <Route path="/report" element={<ReportCard_Stu  />} />
-                        <Route path="/payfee'" element={<Attendance_Stu/>} />
-                        <Route path="/accountset" element={<AccountSetting_Teach/>} />
+                        <Route path="/tableteacher" element={<TimeTable_Teach />} />
+                        <Route path="/reportteacher" element={<ReportCard_Stu  />} />
+                        <Route path="/attendanceteacher'" element={<Attendance_Stu/>} />
+                        <Route path="/accountsetteacher" element={<AccountSetting_Teach/>} />
                     </Routes>
                 </div>
             </div>

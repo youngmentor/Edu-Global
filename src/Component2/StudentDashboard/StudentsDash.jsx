@@ -46,7 +46,7 @@ const StudentsDash = () => {
             <div className='Student_header'>
                 <div className='Student_header_wrap'>
                     <div className='StudentBurger'>
-                        {toggle ? <FaTimes onClick={() => { setToggle(!toggle) }} /> : <GiHamburgerMenu onClick={() => { setToggle(!toggle) }} />}
+                        {toggle ? <FaTimes onClick={() => { setToggle(!toggle) }} /> : < GiHamburgerMenu  onClick={() => { setToggle(!toggle) }} />}
                     </div>
                     <div className='StudentLogo'>
                         <img src="/NewLogo1.png" alt="Logo" onClick={() => navigate("/")} className="StudentHeaderLogo" />
