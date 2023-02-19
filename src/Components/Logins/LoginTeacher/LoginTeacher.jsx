@@ -52,7 +52,7 @@ const LoginTeacher = () => {
                         </label>
                     ))}
                     <p className='forg' onClick={() => navigate("/forgetpassword")} >Forgot Paasword ?</p>
-                    <button type="submit" className="Loginbtt">Login</button>
+                    <button type="submit" className="Loginbtt" onClick={() => navigate("/teacherdash")}  >Login</button>
                 </div>
                 <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
                 <div className="ImageWrap">
