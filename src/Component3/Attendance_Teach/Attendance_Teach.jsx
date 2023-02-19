@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import "./TeacherAttendance.css"
-const TeacherAttendance = () => {
+import "./Attendance_Teach.css"
+const Attendance_Teach = () => {
   const [attendanceData, setAttendanceData] = useState({});
 
   const handleAttendanceChange = (teacherId, present) => {
@@ -88,4 +88,4 @@ const TeacherAttendance = () => {
   );
 };
 
-export default TeacherAttendance;
+export default Attendance_Teach;

@@ -58,7 +58,7 @@
    border: 1px solid rgb(214, 210, 210);
    display: flex;
    justify-content: center;
-   top: 50px;
+   top: 55px;
    margin-top: 10px;
    position: fixed;
    left: 0px;
@@ -77,8 +77,9 @@
 }
 .DashboardMiddle{
     width: 80%;
+    padding: 10px;
     /* background-color: green; */
-    margin-left: 250px;
+    margin-left: 300px;
     margin-top: 60px;
     display: flex;
     align-items: center;
