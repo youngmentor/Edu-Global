@@ -7,7 +7,7 @@ function TimeTableMain() {
 
   return (
     <div className="Todo" >
-        <Timetable_Stu/>
+        <Timetable_Stu   studentId="123" />
     </div>
   )
 }

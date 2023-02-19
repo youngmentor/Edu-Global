@@ -1,62 +1,47 @@
-import './Timetable_Stu.css'
-import React, { useState } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+// import FileSaver from 'file-saver';
 
-const Timetable_Stu = () => {
-  const [selectedFile, setSelectedFile] = useState(null)
-  const [fileUrl, setFileUrl] = useState(null);
+function Timetabl_Stu({ studentId }) {
+  const [studentName, setStudentName] = useState('');
+  const [timetable, setTimetable] = useState([]);
 
-  
-  const downloadFile = () => {
-    axios.get(fileUrl, {
-      responseType: 'blob'
-    })
-    .then(response => {
-      const url = URL.createObjectURL(new Blob([response.data]));
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = selectedFile.name;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    })
-    .catch(error => {
-      // Handle any errors
-    });
+
+  const handleDownload = () => {
+    const csvData = timetable.map(event => {
+      return `${event.subject}, ${event.date}, ${event.startTime}, ${event.endTime}`;
+    }).join('\n');
+    const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+    FileSaver.saveAs(blob, `${studentName}_timetable.csv`);
   }
- 
-  const handleFileSelect = (event) => {
-    setSelectedFile(event.target.files[0]);
-  };
+  
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  
-    const formData = new FormData();
-    formData.append('file', selectedFile);
-  
-    axios.post('/upload', formData)
+  useEffect(() => {
+    axios.get(`/api/timetable/${studentId}`)
       .then(response => {
-        setFileUrl(URL.createObjectURL(selectedFile));
+        setStudentName(response.data.name);
+        setTimetable(response.data.timetable);
       })
       .catch(error => {
-       
+        console.error(error);
       });
-  }
+  }, [studentId]);
+  
+
 
   return (
-    <div  className='Student_TimeTable'>
-        <form  onSubmit={handleSubmit} className="Student_TimeTable_Form">
-        {/* <h1>good morning timetable</h1> */}
-        <input type="file" onChange={handleFileSelect} />
-        {/* {fileUrl && <iframe src={fileUrl} title="Uploaded file" />} */}
-        {fileUrl && <img src={fileUrl} alt="Uploaded file" />}
-        {selectedFile && <p>Selected file: {selectedFile.name}</p>}
-        <button type="submit" className='UploadAdminBtt'>Upload TimeTable</button>
-        {fileUrl && <button onClick={downloadFile} className='UploadStudentBtt' >Download</button>}
-      </form>
+    <div className='Student_TimeTable '>
+      <h2>{studentName} Suliton's Timetable</h2>
+      {timetable.map((event, index) => (
+        <div key={index}>
+          <p>Subject: {event.subject}</p>
+          <p>Date: {event.date}</p>
+          <p>Start Time: {event.startTime}</p>
+          <p>End Time: {event.endTime}</p>
+        </div>
+      ))}
+      <button onClick={handleDownload} className="DownloadAdminBtt" >Download Timetable</button>
     </div>
-  )
+  );  
 }
-
-export default Timetable_Stu
+export default Timetabl_Stu;
