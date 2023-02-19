@@ -10,7 +10,7 @@
     padding: 10px;
 }
 .Dashboard_Stu_Info_Right{
-    width: 300px;
+    width: 250px;
     background-color: white;
     border-radius: 8px;
     border: 1px solid rgb(219, 218, 218);
@@ -22,7 +22,7 @@
     justify-content: center;
 }
 .Dashboard_Stu_Info_Img{
-    width: 200px;
+    width: 150px;
 }
 .Dashboard_Stu_Info_Mss{
     width: 150px;
@@ -33,18 +33,22 @@
     align-items: center;
     gap: 10px;
 }
+.Calender{
+    width: 400px;
+}
 .Dashboard_Stu_Msg{
-    width: 500px;
-    height: 100px;
+    width: 400px;
+    height: 80px;
     padding: 10px;
     background-color: gray;
     border-radius: 8px;
     display: flex;
     align-items: center;
    justify-content: space-between;
+   font-size: 13px;
 }
 .Dashboard_info{
-    width: 250px;
+    width: 200px;
     background-color: rgb(215, 215, 215);
     display: flex;
     flex-direction: column;
@@ -53,14 +57,15 @@
     border-radius: 10px;
 }
 .Dashboard_detail{
-    width: 220px;
+    width: 180px;
     display: flex;
     padding: 8px;
+    font-size: 12px;
     justify-content: space-between;
 }
 @media screen and (max-width: 426px){
 .Dashboard_Stu_Msg{
-    width: 300px;
+    width: 280px;
     height: 50px;
     padding: 10px;
     font-size: 8px;

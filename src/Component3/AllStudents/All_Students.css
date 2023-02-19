@@ -1,0 +1,127 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.TeacherStudents_All{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.TeacherStudents_All_Wrap{
+    width: 200px;
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: column;
+   
+    gap: 25px;
+}
+.TeacherStudent_Img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: rgb(196, 196, 199);
+    margin-top: 10px;
+}
+.TeacherStudent_Avatar{
+    width: 150px;
+    object-fit: contain;
+    border-radius: 100%;
+}
+.TeacherStudent_Details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #5390D9; */
+    padding: 10px;
+}
+.TeacherStudents_All_AddWrap{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    margin-top: -30px;
+    margin-left: 30px;
+    background-color: #5390D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+}
+.ResultUpload {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ResultUpload input{
+    width: 90%;
+    /* margin-left: 70px; */
+}
+.ResultUpload button{
+    width:100px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgb(15, 94, 247);
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 15px;
+}
+@media screen and (max-width: 426px){
+    .TeacherStudents_All{
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .TeacherStudents_All_Wrap{
+        width: 100px;
+        height: 120px;
+        background-color: whitesmoke;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 25px;
+    }
+    .TeacherStudent_Img{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background-color: rgb(196, 196, 199);
+        margin-top: 10px;
+    }
+    .TeacherStudent_Avatar{
+        width: 50px;
+        object-fit: contain;
+        border-radius: 100%;
+    }
+    .TeacherStudent_Details{
+        font-size: 10px;
+    }
+    .TeacherStudents_All_AddWrap{
+        width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 30px;
+    }
+}

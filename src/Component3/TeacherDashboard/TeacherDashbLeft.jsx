@@ -11,7 +11,7 @@ const TeacherDashbLeft = () => {
     <div className='TeacherNav'>
           <Link to={"/teacherdash"} className="Dash" ><h3><RxDashboard/> Dashboard</h3></Link>
             <Link to={"tableteacher"} className="Dash" ><h3> <BsListTask/> TimeTable</h3></Link>
-            <Link to={"reportteacher"} className="Dash"><h3> <HiOutlineDocumentReport/>Report Card</h3></Link>
+            <Link to={"allstudentteacher"} className="Dash"><h3> <HiOutlineDocumentReport/>All Student</h3></Link>
             <Link to={"attendanceteacher"} className="Dash"><h3> <MdEventAvailable/> Attendance</h3></Link>
             <Link to={"accountsetteacher"} className="Dash"><h3> <AiOutlineSetting/> Account Setting</h3></Link>
             <Link to={"logout"} className="Dash"> <h3> <BiLogOut/> Logout</h3></Link>
