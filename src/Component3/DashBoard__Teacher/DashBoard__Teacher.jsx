@@ -31,7 +31,7 @@ const Dashboard_Teacher= () => {
              </div> */}
              <div className='Dashboard_detail'>
                <h5>Subject:</h5>
-               <h5>Physic</h5>
+               <h5>Physics</h5>
              </div>
              <div className='Dashboard_detail'>
                <h5>Gender:</h5>
