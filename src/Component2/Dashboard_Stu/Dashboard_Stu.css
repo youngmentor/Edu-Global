@@ -1,16 +1,16 @@
 .Dashboard_Stu_Main{
     width: 100%;
     margin-top: 20px;
-    /* background-color: red; */
+   
 }
 .Dashboard_Student_Main_Wrap{
-    width: 90%;
+    width: 100%;
     display: flex;
     /* flex-wrap: wrap; */
     padding: 10px;
     gap: 10px;
     /* background-color: red; */
-    /* margin-left: 250px; */
+    margin-left: 150px;
 }
 .Dashboard_Student_Info_Right{
     width: 250px;
