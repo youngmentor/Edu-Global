@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: blue;
+    /* background-color: blue; */
     gap: 10px;
 }
 
@@ -22,7 +22,7 @@
     justify-content: center;
     flex-direction: column;
     padding: 10px;
-    background-color: red;
+    /* background-color: red; */
     margin-left: 200px;
 }
 
@@ -79,7 +79,12 @@
 
     }
     .TeacherAttendance_Form_Wrap {
-        width: 400px;
-        /* margin-right: 200px; */
+        width: 500px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 10px;
+        margin-left: 10px;
     }
+    
 }
