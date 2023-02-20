@@ -64,7 +64,7 @@ const Teachers_Dashb = () => {
                     <TeacherDashbLeft />
                 </div>
                 {toggle && TeacherLeft_Mobile }
-                <div className='DashboardMiddle'>
+                <div className='TeacherDashboardMiddle'>
                     <Routes>
                         <Route path="/" element={<DashBoard__Teacher/>} />
                         <Route path="/tableteacher" element={<TimeTable_Teach />} />

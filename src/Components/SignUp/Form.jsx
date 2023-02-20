@@ -17,7 +17,6 @@ const Form = () => {
     confirmPassword: "",
   });
   const [load, setLoad] = useState(false)
-  // const { email, password } = form
   const field = [
     {
       id: 1,
@@ -55,6 +54,7 @@ const Form = () => {
       event.preventDefault();
       console.log("clicked")
       const response = await axios.post("https://eduglobal.onrender.com/api/admin/sign", form);
+      console.log(response.data)
       console.log(response.data.message);
       response.status === 201 ? navigate("/loginuser/login") : null  
       login_alert()

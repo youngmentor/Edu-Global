@@ -11,8 +11,8 @@ const Dashboard_Stu = () => {
   return (
     <div className='Dashboard_Student_Main'>
       <div className='Dashboard_Student_Main_Wrap' >
-        <div className='Dashboard_Stu_Info_Right' >
-          <div className='Dashboard_Stu_Info_Detail'>
+        <div className='Dashboard_Student_Info_Right' >
+          <div className='Dashboard_Student_Info_Detail'>
             <img src='/UserImg.png' alt='' className='Dashboard_Stu_Info_Img' />
             <h3>Suliton</h3>
           </div>
