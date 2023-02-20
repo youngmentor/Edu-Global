@@ -76,10 +76,9 @@
     
 }
 .DashboardMiddle{
-    width: 80%;
+    width: 100%;
     padding: 10px;
     /* background-color: green; */
-    margin-left: 300px;
     margin-top: 60px;
     display: flex;
     align-items: center;
@@ -111,10 +110,24 @@
         background-color: blue;
     }
     .TeacherNav{
-        background-color: green;
+      
         width: 95%;
     }
     .TeacherLeftMobile_mobile{
         background-color: red;
+    }
+    .Teacher_header {
+        width: 100%;
+    }
+}
+@media screen and (max-width:769px){
+    .TeacherLeftHolder{
+        display: none;
+    }
+    .TeacherBurger{
+        display: flex;
+    }
+    .TeacherHeaderLogo{
+        display: none;
     }
 }
