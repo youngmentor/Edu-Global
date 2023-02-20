@@ -78,7 +78,6 @@
 .DashboardMiddle{
     width: 100%;
     padding: 10px;
-    /* background-color: green; */
     margin-top: 60px;
     display: flex;
     align-items: center;
@@ -103,19 +102,20 @@
         display: flex;
     }
     .TeacherLeftMobile_co{
+        display: flex;
         width: 50%;
-        position: absolute;
+        position: fixed;
+        top: 40px;
+        left: 0px;
         padding: 10px;
         left: 0px;
-        background-color: blue;
+        background-color:rgb(245, 238, 238);
     }
     .TeacherNav{
       
         width: 95%;
     }
-    .TeacherLeftMobile_mobile{
-        background-color: red;
-    }
+
     .Teacher_header {
         width: 100%;
     }
@@ -129,5 +129,15 @@
     }
     .TeacherHeaderLogo{
         display: none;
+    }
+    .TeacherLeftMobile_co{
+        display: flex;
+        width: 50%;
+        position: fixed;
+        top: 40px;
+        left: 0px;
+        padding: 10px;
+        left: 0px;
+        background-color:rgb(245, 238, 238);
     }
 }
