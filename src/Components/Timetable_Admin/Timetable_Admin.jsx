@@ -31,7 +31,7 @@ const Timetable_Admin = () => {
       <h2>Upload Timetable</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Select a CSV file:
+          Select a file:
           <input type="file" onChange={handleFileChange} />
         </label>
         <br />

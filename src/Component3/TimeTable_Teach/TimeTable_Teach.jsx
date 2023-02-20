@@ -3,13 +3,13 @@ import "./TimeTable_Teach.css"
 import axios from 'axios';
 const TimeTable_Teach = () => {
 
-  const [timetableUrl, setTimetableUrl] = useState(null);
+  const [timetables, setTimetables] = useState(null);
 
   useEffect(() => {
     const fetchTimetable = async () => {
       try {
         const response = await axios.get('/api/timetable');
-        setTimetableUrl(response.data.url);
+        setTimetables(response.data.url);
       } catch (error) {
         console.error(error);
       }
@@ -18,12 +18,12 @@ const TimeTable_Teach = () => {
   }, []);
 
   const handleDownloadClick = () => {
-    window.open(timetableUrl, '_blank');
+    window.open(timetables, '_blank');
   };
   return (
     <div className='Teacher_TimeTable'>
       <h2>View Timetable</h2>
-      {timetableUrl ? (
+      {timetables ? (
         <div>
           <p>Download the timetable:</p>
           <button onClick={handleDownloadClick}>Download</button>
@@ -34,5 +34,4 @@ const TimeTable_Teach = () => {
     </div>
   )
 }
-
 export default TimeTable_Teach
