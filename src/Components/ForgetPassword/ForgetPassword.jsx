@@ -5,7 +5,9 @@ import { MdOutlineArrowBack } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 // import axios from 'axios';
 const ForgetPassword = () => {
+    const inputRef = useRef('')
 
+    const navigate = useNavigate()
     // const forget = () => {
     //     const Email = { email: inputRef.current.value }
     //     console.log(Email.email)
