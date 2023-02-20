@@ -3,25 +3,26 @@
     padding: 0px;
     box-sizing: border-box;
 }
-.AdminAttendance_Main{
+
+.TeacherAttendance_Main{
     width: 100%;
-    height: 90vh;
-    margin-top: 80px;
+    /* height: 90vh; */
+    margin-top: 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
     /* background-color: blue; */
     gap: 10px;
 }
-.AdminAttendance_Form_Wrap{
+.TeacherAttendance_Form_Wrap{
     width: 600px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding: 10px;
 }
-.AdminAttendance_Submit_Bttn{
+.TeacherAttendance_Submit_Bttn{
     width: 200px;
     height: 50px;
     display: flex;
@@ -35,8 +36,9 @@
     color: white;
     background-color: rgb(15, 94, 247);
 }
-.AdminAttendance_Body{
+.TeacherAttendance_Body{
     width: 500px;
     height: 150px;
-    background-color: gray;
+    border-radius: 8px;
+    background-color: rgb(228, 216, 216);
 }

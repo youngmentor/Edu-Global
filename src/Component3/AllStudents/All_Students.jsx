@@ -30,7 +30,82 @@ const All_Students = () => {
             });
     };
     return (
-        <div>
+        <div className='TeacherStudents_All'>
+            <div className='TeacherStudents_All_Wrap'>
+                <div className='TeacherStudent_Img'>
+                    <img src="/UserImg.png" alt="StudentLogo" className='TeacherStudent_Avatar' />
+                </div>
+                <div className='TeacherStudent_Details'>
+                    <p>sulito</p>
+                    <p>001</p>
+                    <div className='ResultUpload'>
+                        <p>Upload Results</p>
+                        <input type="file" onChange={handleFileSelect} />
+                        <button onClick={handleFileUpload}>{load ? <Loading /> : "Upload"}</button>
+                        {message && <p>{message}</p>}
+                    </div>
+                </div>
+            </div>
+            <div className='TeacherStudents_All_Wrap'>
+                <div className='TeacherStudent_Img'>
+                    <img src="/UserImg.png" alt="StudentLogo" className='TeacherStudent_Avatar' />
+                </div>
+                <div className='TeacherStudent_Details'>
+                    <p>sulito</p>
+                    <p>001</p>
+                    <div className='ResultUpload'>
+                        <p>Upload Results</p>
+                        <input type="file" onChange={handleFileSelect} />
+                        <button onClick={handleFileUpload}>{load ? <Loading /> : "Upload"}</button>
+                        {message && <p>{message}</p>}
+                    </div>
+                </div>
+            </div>
+            <div className='TeacherStudents_All_Wrap'>
+                <div className='TeacherStudent_Img'>
+                    <img src="/UserImg.png" alt="StudentLogo" className='TeacherStudent_Avatar' />
+                </div>
+                <div className='TeacherStudent_Details'>
+                    <p>sulito</p>
+                    <p>001</p>
+                    <div className='ResultUpload'>
+                        <p>Upload Results</p>
+                        <input type="file" onChange={handleFileSelect} />
+                        <button onClick={handleFileUpload}>{load ? <Loading /> : "Upload"}</button>
+                        {message && <p>{message}</p>}
+                    </div>
+                </div>
+            </div>
+            <div className='TeacherStudents_All_Wrap'>
+                <div className='TeacherStudent_Img'>
+                    <img src="/UserImg.png" alt="StudentLogo" className='TeacherStudent_Avatar' />
+                </div>
+                <div className='TeacherStudent_Details'>
+                    <p>sulito</p>
+                    <p>001</p>
+                    <div className='ResultUpload'>
+                        <p>Upload Results</p>
+                        <input type="file" onChange={handleFileSelect} />
+                        <button onClick={handleFileUpload}>{load ? <Loading /> : "Upload"}</button>
+                        {message && <p>{message}</p>}
+                    </div>
+                </div>
+            </div>
+            <div className='TeacherStudents_All_Wrap'>
+                <div className='TeacherStudent_Img'>
+                    <img src="/UserImg.png" alt="StudentLogo" className='TeacherStudent_Avatar' />
+                </div>
+                <div className='TeacherStudent_Details'>
+                    <p>sulito</p>
+                    <p>001</p>
+                    <div className='ResultUpload'>
+                        <p>Upload Results</p>
+                        <input type="file" onChange={handleFileSelect} />
+                        <button onClick={handleFileUpload}>{load ? <Loading /> : "Upload"}</button>
+                        {message && <p>{message}</p>}
+                    </div>
+                </div>
+            </div>
             <div className='TeacherStudents_All_Wrap'>
                 <div className='TeacherStudent_Img'>
                     <img src="/UserImg.png" alt="StudentLogo" className='TeacherStudent_Avatar' />

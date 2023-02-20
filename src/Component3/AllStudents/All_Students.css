@@ -5,10 +5,11 @@
 }
 .TeacherStudents_All{
     width: 100%;
-    height: 90vh;
+   padding: 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    /* background-color: green; */
     justify-content: center;
     gap: 20px;
 }

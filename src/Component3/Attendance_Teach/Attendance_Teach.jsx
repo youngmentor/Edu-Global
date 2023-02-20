@@ -49,18 +49,18 @@ const Attendance_Teach = () => {
 
   ];
   return (
-    <div className='AdminAttendance_Main'>
-      <h2>Take Teacher Attendance</h2>
-      <form onSubmit={handleSubmit} className="AdminAttendance_Form_Wrap">
+    <div className='TeacherAttendance_Main'>
+      <h2>Take Student Attendance</h2>
+      <form onSubmit={handleSubmit} className="TeacherAttendance_Form_Wrap">
         <table>
-          <thead className='AdminAttendance_Head'>
+          <thead className='TeacherAttendance_Head'>
             <tr >
               <th>Teacher ID</th>
               <th>Name</th>
               <th>Present</th>
             </tr>
           </thead>
-          <tbody className='AdminAttendance_Body'>
+          <tbody className='TeacherAttendance_Body'>
             {teachers.map((teacher) => (
               <tr key={teacher.id}>
                 <td>{teacher.id}</td>
@@ -80,10 +80,9 @@ const Attendance_Teach = () => {
               </tr>
             ))}
           </tbody>
-        </table>
-    
+        </table>  
       </form>
-      <button type="submit" className='AdminAttendance_Submit_Bttn'>Submit</button>
+      <button type="submit" className='TeacherAttendance_Submit_Bttn'>Submit</button>
     </div>
   );
 };

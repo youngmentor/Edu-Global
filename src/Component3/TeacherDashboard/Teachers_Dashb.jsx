@@ -6,9 +6,8 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { Routes, Route } from 'react-router-dom';
 import TeacherDashbLeft from './TeacherDashbLeft'
-// import ReportCard_Stu from '../ReportCard_Stu/ReportCard_Stu'
 import All_Students from '../AllStudents/All_Students';
-import Attendance_Teach from '../Attendance_Teach/Attendance_Teach'
+import Attendance_Teach from '../Attendance_Teach/Attendance_Teach';
 import AccountSetting_Teach from '../AccountSetting_Teach/AccountSetting_Teach'
 import TimeTable_Teach from '../TimeTable_Teach/TimeTable_Teach'
 import DashBoard__Teacher from '../DashBoard__Teacher/DashBoard__Teacher'
@@ -70,7 +69,7 @@ const Teachers_Dashb = () => {
                         <Route path="/" element={<DashBoard__Teacher/>} />
                         <Route path="/tableteacher" element={<TimeTable_Teach />} />
                         <Route path="/allstudentteacher" element={<All_Students  />} />
-                        <Route path="/attendanceteacher'" element={<Attendance_Teach/>} />
+                        <Route path="/attendanceteacher" element={<Attendance_Teach/>} />
                         <Route path="/accountsetteacher" element={<AccountSetting_Teach/>} />
                     </Routes>
                 </div>
