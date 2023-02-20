@@ -9,10 +9,10 @@ const Dashboard_Teacher= () => {
       setDate(selectedDate);
   };
   return (
-    <div className='Dashboard_Stu_Main'>
-      <div className='Dashboard_Stu_Main_Wrap' >
-        <div className='Dashboard_Stu_Info_Right' >
-          <div className='Dashboard_Stu_Info_Detail'>
+    <div className='Dashboard_Teach_Main'>
+      <div className='Dashboard_Teach_Main_Wrap' >
+        <div className='Dashboard_Teach_Info_Right' >
+          <div className='Dashboard_Teach_Info_Detail'>
             <img src='/UserImg.png' alt='' className='Dashboard_Stu_Info_Img' />
             <h3>Mr Anthony</h3>
           </div>
@@ -39,12 +39,12 @@ const Dashboard_Teacher= () => {
              </div>
           </div>
         </div>
-      <div className='Dashboard_Stu_Left'>
-      <div className='Dashboard_Stu_Msg' >
+      <div className='Dashboard_Teach_Left'>
+      <div className='Dashboard_Teach_Msg' >
           <h4>Mr Suliton Welcome to Teacher's portal<br/> you have access to your info</h4>
-          <img src='/Message.png' alt='' className='Dashboard_Stu_Info_Mss' />
+          <img src='/Message.png' alt='' className='Dashboard_Teach_Info_Mss' />
         </div>
-        <Calendar onChange={handleChange} value={date} className="Calender" />
+        <Calendar onChange={handleChange} value={date} className="TeachCalender" />
       </div>
       </div>
     </div>

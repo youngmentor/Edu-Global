@@ -1,16 +1,17 @@
-.Dashboard_Stu_Main{
+.Dashboard_Teach_Main{
     width: 100%;
     margin-top: 20px;
 }
-.Dashboard_Stu_Main_Wrap{
+.Dashboard_Teach_Main_Wrap{
     width: 70%;
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
+    gap: 10px;
     /* background-color: red; */
     margin-left: 250px;
 }
-.Dashboard_Stu_Info_Right{
+.Dashboard_Teach_Info_Right{
     width: 250px;
     background-color: white;
     border-radius: 8px;
@@ -21,23 +22,25 @@
     flex-direction: column;
     padding: 10px;
     justify-content: center;
+    gap: 10px;
 }
-.Dashboard_Stu_Info_Img{
+.Dashboard_Teach_Info_Img{
     width: 150px;
 }
-.Dashboard_Stu_Info_Mss{
+.Dashboard_Teach_Info_Mss{
     width: 150px;
 }
-.Dashboard_Stu_Info_Detail{
+.Dashboard_Teach_Info_Detail{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
-.Calender{
+.TeachCalender{
+    margin-top: 10px;
     width: 400px;
 }
-.Dashboard_Stu_Msg{
+.Dashboard_Teach_Msg{
     width: 400px;
     height: 80px;
     padding: 10px;
@@ -65,20 +68,20 @@
     justify-content: space-between;
 }
 @media screen and (max-width: 426px){
-.Dashboard_Stu_Msg{
+.Dashboard_Teach_Msg{
     width: 280px;
     height: 50px;
     padding: 10px;
     font-size: 8px;
     margin-top: 10px;
 }
-.Dashboard_Stu_Info_Mss{
+.Dashboard_Teach_Info_Mss{
     width: 80px;
 }
 .Calender{
     width: 300px;
 }
-.Dashboard_Stu_Main_Wrap{
+.Dashboard_Teach_Main_Wrap{
     width: 100%;
     display: flex;
     align-items: center;
@@ -86,7 +89,7 @@
     /* background-color: red; */
     margin-right: 250px; 
 }
-.Dashboard_Stu_Main{
+.Dashboard_Teach_Main{
     width: 100%;
     margin-top: 20px;
     display: flex;
@@ -95,32 +98,32 @@
 }
 }
 @media screen and (max-width: 769px){
-    .Dashboard_Stu_Main{
+    .Dashboard_Teach_Main{
         width: 100%;
         background-color: red;
     }
-    .Dashboard_Stu_Main_Wrap{
+    .Dashboard_Teach_Main_Wrap{
         width: 100%;
         display: flex;
         align-items: center;
         background-color: green;
     }
-    .Dashboard_Stu_Info_Img{
+    .Dashboard_Teach_Info_Img{
     width: 150px;
 }
-.Dashboard_Stu_Info_Mss{
+.Dashboard_Teach_Info_Mss{
     width: 150px;
 }
-.Dashboard_Stu_Info_Detail{
+.Dashboard_Teach_Info_Detail{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
-.Calender{
+.TeachCalender{
     width: 400px;
 }
-.Dashboard_Stu_Msg{
+.Dashboard_Teach_Msg{
     width: 400px;
     height: 80px;
     padding: 10px;

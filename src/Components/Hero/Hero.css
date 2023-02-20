@@ -8,10 +8,7 @@
 }
 
 .HeroMain {
-    width: 100%;
-    /* height: 100vh; */
-    
-    
+    width: 100%;  
 }
 
 .HeroWrap {
@@ -198,4 +195,15 @@
         font-size: 13px;
         
     }
+}
+@media screen and (max-width: 769px){
+    .Hero {
+        margin-top: 100px;
+        /* background-color: red; */
+    }
+    
+.HeroMain {
+    width: 100%;  
+    /* background-color: gold; */
+}
 }

@@ -48,12 +48,26 @@
     justify-content: space-between;
    
 }
+.StudentProfileWrap{
+    width: 140px;
+    background-color: rgb(242, 239, 239);
+    position: absolute;
+    padding: 10px;
+    line-height: 1.6;
+    top: 65px;
+    right: 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(231, 207, 207);
+}
+.StudentProfile{
+    cursor: pointer;
+}
 .StudentBurger{
     display: none;
 }
 .StudentLeftHolder{
    width: 25%;
-   /* height: 90vh; */
+   height: 80vh;
    background: white;
    border: 1px solid rgb(214, 210, 210);
    display: flex;
@@ -65,7 +79,7 @@
     width: 80%;
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
+    margin-top: 30px;
     gap: 50px;
     font-size: 12px;
 }
@@ -95,16 +109,46 @@
     }
     .StudentLeftMobile_co{
         width: 50%;
+        display: flex;
         position: absolute;
         padding: 10px;
         left: 0px;
-        background-color: blue;
+        background-color: rgb(204, 204, 212);
     }
     .StudentNav{
-        background-color: green;
-        width: 95%;
+        /* background-color: green; */
+        width: 100%;
     }
     .StudentLeftMobile_mobile{
-        background-color: red;
+        width: 100%;
+        /* background-color: red; */
+    }
+}
+@media screen and (max-width: 769px){
+    .StudentLeftHolder{
+        display: none;
+    }
+    .StudentHeaderLogo{
+        display: none;
+    }
+    .StudentBurger{
+        display: flex;
+    }
+    .StudentLeftMobile_co{
+        width: 50%;
+        display: flex;
+        position: absolute;
+        border-radius: 5px;
+        padding: 10px;
+        left: 0px;
+        background-color: rgb(230, 230, 240);
+    }
+    .StudentNav{
+        /* background-color: green; */
+        width: 100%;
+    }
+    .StudentLeftMobile_mobile{
+        width: 100%;
+        /* background-color: red; */
     }
 }

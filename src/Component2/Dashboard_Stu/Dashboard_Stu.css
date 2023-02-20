@@ -3,7 +3,7 @@
     /* background-color: green; */
 }
 .Dashboard_Student_Main_Wrap{
-    width:85%;
+    width:90%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -79,4 +79,10 @@
     align-items: center;
     justify-content: center;
 }
+}
+@media screen and (max-width: 769pxpx){
+    .Dashboard_Student_Main_Wrap{
+        width: 100%;
+        display: flex;
+    }
 }

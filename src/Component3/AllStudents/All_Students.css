@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .TeacherStudents_All{
-    width: 100%;
+    width: 80%;
    padding: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -12,6 +12,7 @@
     /* background-color: green; */
     justify-content: center;
     gap: 20px;
+    margin-left: 200px;
 }
 .TeacherStudents_All_Wrap{
     width: 200px;
