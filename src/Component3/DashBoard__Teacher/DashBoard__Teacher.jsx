@@ -22,16 +22,16 @@ const Dashboard_Teacher= () => {
                <h5>001</h5>
              </div>
              <div className='Dashboard_detail'>
-               <h5>Date of Admission:</h5>
+               <h5>Date of Employment:</h5>
                <h5>2008-10-15</h5>
              </div>
-             <div className='Dashboard_detail'>
+             {/* <div className='Dashboard_detail'>
                <h5>Class:</h5>
                <h5>ss3</h5>
-             </div>
+             </div> */}
              <div className='Dashboard_detail'>
-               <h5>Date of Birth:</h5>
-               <h5>001</h5>
+               <h5>Subject:</h5>
+               <h5>Physic</h5>
              </div>
              <div className='Dashboard_detail'>
                <h5>Gender:</h5>
@@ -41,7 +41,7 @@ const Dashboard_Teacher= () => {
         </div>
       <div className='Dashboard_Teach_Left'>
       <div className='Dashboard_Teach_Msg' >
-          <h4>Mr Suliton Welcome to Teacher's portal<br/> you have access to your info</h4>
+          <h4>Mr Anthony Welcome to Teacher's portal<br/> you have access to your info</h4>
           <img src='/Message.png' alt='' className='Dashboard_Teach_Info_Mss' />
         </div>
         <Calendar onChange={handleChange} value={date} className="TeachCalender" />
