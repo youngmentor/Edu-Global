@@ -38,5 +38,6 @@
 .AdminAttendance_Body{
     width: 500px;
     height: 150px;
-    background-color: rgb(15, 94, 247);
+    margin-top: 50px;
+    /* background-color: rgb(15, 94, 247); */
 }

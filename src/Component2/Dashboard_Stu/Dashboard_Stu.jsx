@@ -9,8 +9,8 @@ const Dashboard_Stu = () => {
       setDate(selectedDate);
   };
   return (
-    <div className='Dashboard_Stu_Main'>
-      <div className='Dashboard_Stu_Main_Wrap' >
+    <div className='Dashboard_Student_Main'>
+      <div className='Dashboard_Student_Main_Wrap' >
         <div className='Dashboard_Stu_Info_Right' >
           <div className='Dashboard_Stu_Info_Detail'>
             <img src='/UserImg.png' alt='' className='Dashboard_Stu_Info_Img' />
