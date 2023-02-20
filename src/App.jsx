@@ -27,7 +27,7 @@ const App = () => {
           <Route path='/studentdash/*' element={<StudentsDash />} />
           <Route path='teacherdash/*' element={<Teachers_Dashb />} />
           <Route path='/forgetpassword' element={<ForgetPassword />} />
-          <Route path='/resetpassword/:id' element={<ResetPassword />} />
+          <Route path='/resetpassword' element={<ResetPassword />} />
           <Route path='/verify/:id' element={<Verify />} />
         </Routes>
       </ HashRouter>
