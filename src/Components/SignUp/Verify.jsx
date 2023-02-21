@@ -12,7 +12,7 @@ const Verify = () => {
         console.log(response)
         setState(true)
         setTimeout(() => {
-          navigate('/loginuser')
+          navigate('/loginuser/login')
         }, 3000);
     }
     useEffect(() => {
