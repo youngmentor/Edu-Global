@@ -10,10 +10,16 @@ const AddClasses = () => {
             type: "text"
         },
         {
+            name: "name",
+            label: "name",
+            placeholder: "Class Branch",
+            type: "text"
+        },
+        {
             name: "name ",
             label: "name",
-            placeholder: "Name of Teacher",
-            type: "text"
+            placeholder: "Fee",
+            type: "Number"
         },
     ];
     const handleChange = (e) => {

@@ -1,18 +1,20 @@
-import React, { useEffect, useState,  useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import './Login.css'
 import axios from 'axios';
 import Loading from "../../LoadingSpin/Loading";
 import { addUser } from "../../../Redux/Features";
-// import { clearUser } from "../../../Redux/Features";
+import { clearUser } from "../../../Redux/Features";
 import { useDispatch, useSelector } from "react-redux";
 import { ThemeContext } from "../../ContextApi/Context";
 const Login = () => {
-    // const {  verifyAlert, login_alert } = useContext(ThemeContext)
-    
+    const { verifyAlert, login_alert } = useContext(ThemeContext)
+
     const dispatch = useDispatch()
     const user = useSelector((state) => state.Commerce.user)
     const navigate = useNavigate()
+    const [herr, setHerr] = useState(false)
+    const [err, setErr] = useState('')
     const [value, setValue] = useState({
         email: "",
         password: ""
@@ -46,6 +48,13 @@ const Login = () => {
     const handleFocus = (e) => {
         setFocus(true)
     }
+    const logOut = async () => {
+        const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/:${user[0]?.data.data._id}`)
+        console.log(res.data)
+        res.status === 201 ? dispatch(clearUser()) : null
+        res.status === 201 ? navigate('/loginuser/login') : null
+        login_alert()
+    }
 
     const handleLogin = (e) => {
         console.log("clicked")
@@ -55,26 +64,37 @@ const Login = () => {
             .then(function (res) {
                 console.log(res.data)
                 console.log(res.data.message)
-                // localStorage.setItem ( "value",JSON.stringify( res))
                 res.data.data.email === value.email ? dispatch(addUser(res)) : null
-                res.data.data.email === value.email ? navigate('/admin') : null
-            }).catch((e) => {
-                console.log(e)
+                if (res.data.data.isVerified === true) {
+                    res.data.data.email === value.email ? navigate('/admin') : null
+                } else {
+                    logOut()
+                    setLoad(false)
+                }
+
             })
+            .catch(function (error) {
+                console.log(error);
+                setErr(error.response.data.message)
+                setLoad(false)
+            });
     }
     const handleChange = (event) => {
         setValue({ ...value, [event.target.name]: event.target.value })
     };
 
     useEffect(() => {
-        
-    }, [])
+        setHerr(true)
+        setTimeout(() => {
+          setHerr(false)
+        }, 5000);
+      }, [err])
 
     return (
         <main className="Login" >
-            {verifyAlert  && <div className='AdminwelcomeMssg'>
+            {verifyAlert && <div className='AdminwelcomeMssg'>
                 <div>
-                <p>Please check your Email for a verification link</p>
+                    <p>Please check your Email for a verification link</p>
                 </div>
             </div>}
             <form onSubmit={handleLogin} className="login-wrap"   >
