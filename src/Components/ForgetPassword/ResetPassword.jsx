@@ -5,8 +5,9 @@ import "./ForgetPassword.css"
 // import axios from 'axios'
 const ResetPassword = () => {
 
-    // const navigate = useNavigate()
-    // const { id } = useParams()
+    const navigate = useNavigate()
+    const inputRef = useRef('')
+    const { id } = useParams()
 
 
     // const ResetPass = async () => {
@@ -20,7 +21,7 @@ const ResetPassword = () => {
             <div className='forget_text'>
                 <h2>Please Enter a New password</h2>
             </div>
-            <input className='forget_input' placeholder="Enter your new password..." />
+            <input className='forget_input' ref={inputRef} placeholder="Enter your new password..." />
             <button className='forget_button pointer' >Input a New password</button>
         </div>
     )
