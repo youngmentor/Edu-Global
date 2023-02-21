@@ -21,10 +21,15 @@ import Student from '../Student/Student'
 import Teachers from '../Teachers/Teachers'
 import Timetable_Admin from '../Timetable_Admin/Timetable_Admin';
 import { Route, Routes } from 'react-router-dom';
+import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearUser } from '../../Redux/Features';
 const Admin = () => {
+    const dispatch=useDispatch()
     const navigate = useNavigate()
     const [toggle, setToggle] = useState(false);
     const [open, setOpen] = useState(false)
+    const user = useSelector((state) => state.Commerce.user)
 
     const AdminData = [
          {
@@ -114,7 +119,15 @@ const Admin = () => {
             click: "/admin/fee"
 
         },
-    ]
+    ];
+
+    const logOut = async () => {
+        const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/:${user[0]?.data.data.id}`)
+        console.log(res.data.data.message)
+        res.status === 201 ? dispatch(clearUser()) : null
+        res.status === 201 ? navigate('/loginuser/login') : null
+    }
+
     const adminLeft_Mobile = (
         <div className='AdminLeftMobile_co'>
             {
@@ -135,7 +148,7 @@ const Admin = () => {
                 <div className='AdminProfile'>
                     <p>Account setting</p>
                     <p>Profile</p>
-                    <p onClick={() => navigate("/")} >Log out</p>
+                    <p onClick={() => { logOut() }}>Log out</p>
                     <h5 onClick={() => navigate("/")}  >Home</h5>
                 </div>
             )}
