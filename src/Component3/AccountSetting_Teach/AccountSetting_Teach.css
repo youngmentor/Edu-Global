@@ -4,8 +4,24 @@
     box-sizing: border-box;
 }
 .UpdateAccountTeach_Main{
-    width: 100%;
+    width: 70%;
     height: 90vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-left: 200px;
+}
+.UpdateAccountTeach_Main_Wrap{
+    width: 100%;
+    /* height: 90%; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 15px; 
+    justify-content: space-around;
+}
+.UpdateAccountTeach_Main_Wrap1{
+    width: 40%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -20,11 +36,123 @@
 }
 .UpdateAccounTeacht_Bttn{
     width: 200px;
-    height: 50px;
+    height: 40px;
     border: none;
     outline: none;
     border-radius: 5px;
-    color: white;
+    /* color: white; */
     font-size: 18px;
     background-color: #5390D9;
+    cursor: pointer;
+}
+.UpdateAccounTeacht_Bttn2{
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.UpdateAccountTeach_Main_Wrap2{
+    width: 40%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    border-radius: 5px;
+    align-items: center;
+    padding: 10px;
+    background-color: #5390D9;
+    justify-content: center;
+}
+@media screen and (max-width:426px){
+    .UpdateAccountTeach_Main_Wrap{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    margin-top: 100px;
+        /* background-color: green; */
+        gap: 20px;
+    }
+    .UpdateAccountTeach_Main_Wrap2{
+        width: 300px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+        border-radius: 5px;
+        align-items: center;
+        padding: 10px;
+        background-color: #5390D9;
+        justify-content: center;
+    }
+    .UpdateAccountTeach_Main_Wrap1{
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    .UpdateAccountTeach_Main{
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: blue; */
+        margin-right: 200px;
+    }
+    .accountsetteach_text{
+        width: 300px;
+        /* background-color: red; */
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:769px){
+    .UpdateAccountTeach_Main_Wrap{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .UpdateAccountTeach_Main_Wrap2{
+        width: 300px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+        border-radius: 5px;
+        align-items: center;
+        padding: 10px;
+        background-color: #5390D9;
+        justify-content: center;
+    }
+    .UpdateAccountTeach_Main_Wrap1{
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    .UpdateAccountTeach_Main{
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: blue; */
+        margin-right: 200px;
+    }
+    .accountsetteach_text{
+        width: 300px;
+        /* background-color: red; */
+        font-size: 15px;
+    }
 }

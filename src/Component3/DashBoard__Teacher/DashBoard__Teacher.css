@@ -91,7 +91,7 @@
     }
 
     .Teach_Calender {
-        width: 200px;
+        width: 280px;
     }
 
     .Dashboard_Teach_Main_Wrap {
@@ -109,67 +109,5 @@
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-}
-
-@media screen and (max-width: 769px) {
-    .Dashboard_Teach_Main {
-        width: 100%;
-        /* background-color: red; */
-    }
-
-    .Dashboard_Teach_Main_Wrap {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        /* background-color: green; */
-    }
-
-    .Dashboard_Teach_Info_Img {
-        width: 150px;
-    }
-
-    .Dashboard_Teach_Info_Mss {
-        width: 150px;
-    }
-
-    .Dashboard_Teach_Info_Detail {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .Teach_Calender {
-        width: 250px;
-        /* margin-left: 50px; */
-    }
-
-    .Dashboard_Teach_Msg {
-        width: 250px;
-        height: 80px;
-        padding: 10px;
-        background-color: gray;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        font-size: 8px;
-    }
-
-    .Dashboard_info {
-        width: 200px;
-        background-color: rgb(215, 215, 215);
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 10px;
-        border-radius: 10px;
-    }
-
-    .Dashboard_detail {
-        width: 180px;
-        display: flex;
-        padding: 8px;
-        font-size: 12px;
     }
 }

@@ -118,14 +118,21 @@
     .TeacherHeaderLogo{
         display: none;
     }
+    .TeacherLeftMobile_co{
+        width: 50%;
+        display: flex;
+        position: fixed;
+        top: 50px;
+        left: 0px;
+    }
     .TeacherBurger{
         display: flex;
     }
-    .TeacherLeftMobile_co{
+    .TeacherLeftMobile_mobile{
         display: flex;
         width: 50%;
         position: fixed;
-        top: 40px;
+        top: 60px;
         left: 0px;
         padding: 10px;
         left: 0px;
@@ -133,7 +140,7 @@
     }
     .TeacherNav{
       
-        width: 95%;
+        width: 100%;
     }
 
     .Teacher_header {
@@ -154,7 +161,7 @@
         display: flex;
         width: 50%;
         position: fixed;
-        top: 40px;
+        top: 60px;
         left: 0px;
         padding: 10px;
         left: 0px;
