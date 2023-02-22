@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './UpdateStudent.css'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 const UpdateStudent = () => {
   const [add_new_student, SetAdd_new_student] = useState(
     {
@@ -16,7 +17,7 @@ const UpdateStudent = () => {
     }
   )
   const [items, setItems] = useState([]);
-  const { _id } = useParams()
+  const user = useSelector((state) => state.Commerce.user)
   const AddStudent = [
     {
       id: 1,
@@ -86,27 +87,23 @@ const UpdateStudent = () => {
   ];
 
   useEffect(() => {
-    const items = JSON.parse(localStorage.getItem('value'));
-    if (items) {
-      setItems(items);
-    }
-    // console.log(items.data.data._id)
+  
+    
   }, []);
   const handleChange = (e) => {
-    // const { name, value } = e.target;
     SetAdd_new_student({ ...add_new_student, [e.target.name]: e.target.value });
   };
   const handleAddStudent = (e) => {
     e.preventDefault();
-    // console.log("clicked")
-    // axios.post(`https://eduglobal.onrender.com/api/admin/${items.data.data._id}`, add_new_student)
-    //   .then((response) => {
-    //     console.log(res.data)
-    //     console.log(response.data.message)
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    console.log("clicked")
+    axios.post(`https://eduglobal.onrender.com/api/admin${user?._id}`, add_new_student)
+      .then((response) => {
+        console.log(res.data)
+        console.log(response.data.message)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className='AdminAddn_Student'>

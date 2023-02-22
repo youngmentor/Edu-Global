@@ -39,7 +39,7 @@
     background: rgba(235,234,234, 0.90);
     -webkit-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
     -moz-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
-    box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
+    box-shadow: -2px 3px 13px 0px rgb(183, 184, 184);
     backdrop-filter: blur(12.4px);
     position: fixed;
     display: flex;
@@ -89,7 +89,7 @@
     margin-top: 40px;
     background-color: #ffffff;
     position: fixed;
-    top: 15px;
+    top: 40px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;

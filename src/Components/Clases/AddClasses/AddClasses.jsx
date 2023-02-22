@@ -1,34 +1,52 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 import './AddClasses.css'
 const AddClasses = () => {
-    const [AddData, setAddData] = useState({});
+    const [AddData, setAddData] = useState({
+        nameOfClass: "SS2",
+        classBranch: "B",
+        monthlyTutionFees: "65000",
+    });
     const Add = [
         {
-            name: "name",
+            name: "nameOfClass",
             label: "name",
             placeholder: "Name of Class",
             type: "text"
         },
         {
-            name: "name",
+            name: "classBranch",
             label: "name",
             placeholder: "Class Branch",
             type: "text"
         },
         {
-            name: "name ",
+            name: "monthlyTutionFees",
             label: "name",
             placeholder: "Fee",
             type: "Number"
         },
     ];
+
+    // const AddNewClass = async (e) => {
+    //     e.preventDefault()
+    //     const res = await axios.post("https://eduglobal.onrender.com/api/admin/newClass")
+    // } 
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setAddData({ ...AddData, [name]: value });
     };
-    const handleSubmit = (e) => {
+
+
+    const handleSubmit = async (e) => {
+        console.log("clicked")
         e.preventDefault();
-    };
+        const res = await axios.post("https://eduglobal.onrender.com/api/admin/newClass", AddData)
+        console.log(res)
+        console.log(res.data.message)
+    }
+
     return (
         <div className='AddClassesMain' >
             <div className='AddClassesWrap'>
@@ -51,6 +69,7 @@ const AddClasses = () => {
             </div>
         </div>
     )
-}
 
+
+};
 export default AddClasses

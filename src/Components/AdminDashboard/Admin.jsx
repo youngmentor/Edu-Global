@@ -134,10 +134,11 @@ const Admin = () => {
     ];
 
     const logOut = async () => {
-        const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/:${user[0]?.data.data.id}`)
-        console.log(res.data.data.message)
-        res.status === 201 ? dispatch(clearUser()) : null
-        res.status === 201 ? navigate('/loginuser/login') : null
+        const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/${user?._id}`)
+        console.log(res)
+        res.status === 200 ? dispatch(clearUser()) : null
+        res.status === 200 ? navigate('/loginuser/login') : null
+        // console.log(user[0]?.data.data._id)
     }
 
     const adminLeft_Mobile = (

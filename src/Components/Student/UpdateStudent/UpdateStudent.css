@@ -42,8 +42,8 @@
 }
 
 .Add-inputWrap {
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 550px;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
@@ -51,6 +51,7 @@
     align-items: center;
     border-radius: 8px;
     gap: 10px;
+    margin-right: 100px;
     margin-bottom: 50px;
     background-color: rgb(250, 250, 255);
     box-shadow: -2px 3px 13px 0px rgb(152, 152, 155);

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
-  user: [{}],
+  user: {},
   addFile: [],
 }
 
@@ -9,10 +9,10 @@ const Features = createSlice({
   initialState,
   reducers: {
     addUser: (state, { payload }) => {
-        state.user = [payload];
+        state.user = payload;
       },
       clearUser: (state) => {
-        const clearAll = []
+        const clearAll = {}
         state.user = clearAll
       },
       addFile: (state, { payload }) => {

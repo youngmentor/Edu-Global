@@ -49,7 +49,7 @@ const Login = () => {
         setFocus(true)
     }
     const logOut = async () => {
-        const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/:${user[0]?.data.data._id}`)
+        const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/:${user?._id}`)
         console.log(res.data)
         res.status === 201 ? dispatch(clearUser()) : null
         res.status === 201 ? navigate('/loginuser/login') : null
@@ -64,7 +64,7 @@ const Login = () => {
             .then(function (res) {
                 console.log(res.data)
                 console.log(res.data.message)
-                res.data.data.email === value.email ? dispatch(addUser(res)) : null
+                res.data.data.email === value.email ? dispatch(addUser(res.data.data)) : null
                     res.data.data.email === value.email ? navigate('/admin') : null
                 
 
