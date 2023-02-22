@@ -146,7 +146,7 @@ const Admin = () => {
         <div className='AdminProfileWrap'>
             {open && (
                 <div className='AdminProfile'>
-                    <p>Account setting</p>
+                    <p onClick={()=> navigate("/accountsetadmin")}>Account setting</p>
                     <p>Profile</p>
                     <p onClick={() => { logOut() }}>Log out</p>
                     <h5 onClick={() => navigate("/")}  >Home</h5>

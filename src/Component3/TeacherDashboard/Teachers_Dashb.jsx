@@ -11,7 +11,7 @@ import Attendance_Teach from '../Attendance_Teach/Attendance_Teach';
 import AccountSetting_Teach from '../AccountSetting_Teach/AccountSetting_Teach'
 import TimeTable_Teach from '../TimeTable_Teach/TimeTable_Teach'
 import DashBoard__Teacher from '../DashBoard__Teacher/DashBoard__Teacher'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 const Teachers_Dashb = () => {
     const navigate = useNavigate()
     const [toggle, setToggle] = useState(false);
@@ -32,7 +32,7 @@ const Teachers_Dashb = () => {
         <div className='TeacherProfileWrap'>
             {open && (
                 <div className='TeacherProfile'>
-                    <p>Account setting</p>
+                    <Link to={"accountsetteach"} className="AccountsettingLink"><p>Account setting</p></Link>
                     <p>Profile</p>
                     <p onClick={() => navigate("/")} >Log out</p>
                     <h5 onClick={() => navigate("/")}  >Home</h5>
@@ -70,7 +70,7 @@ const Teachers_Dashb = () => {
                         <Route path="/tableteacher" element={<TimeTable_Teach />} />
                         <Route path="/allstudentteacher" element={<All_Students  />} />
                         <Route path="/attendanceteacher" element={<Attendance_Teach/>} />
-                        <Route path="/accountsetteacher" element={<AccountSetting_Teach/>} />
+                        <Route path="/accountsetteach" element={<AccountSetting_Teach/>} />
                     </Routes>
                 </div>
             </div>

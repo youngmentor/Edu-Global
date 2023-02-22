@@ -3,7 +3,10 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
+.AccountsettingLink{
+    text-decoration: none;
+    color: inherit;
+}
 .Teacher_Main {
     width: 100%;
     height: 100%;

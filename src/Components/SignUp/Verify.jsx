@@ -12,7 +12,7 @@ const Verify = () => {
         console.log(response)
         setState(true)
         setTimeout(() => {
-          navigate('loginuser/login')
+        response.data.data.isVerified === true ?  navigate('loginuser/login') : null
         }, 3000);
     }
     useEffect(() => {

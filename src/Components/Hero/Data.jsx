@@ -20,7 +20,7 @@ export const Datas =[
     {
         id: 3,
         Img: Parent,
-        bgtxt: "For Parents",
+        bgtxt: "For Student",
         smtxt: "Parents are kept duly informed of all activities and performance of their children. With every other information readily accessible and secured in their dasboard.",
         
     },

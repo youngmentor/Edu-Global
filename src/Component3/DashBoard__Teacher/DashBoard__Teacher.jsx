@@ -44,7 +44,7 @@ const Dashboard_Teacher= () => {
           <h4>Mr Anthony Welcome to Teacher's portal<br/> you have access to your info</h4>
           <img src='/Message.png' alt='' className='Dashboard_Teach_Info_Mss' />
         </div>
-        <Calendar onChange={handleChange} value={date} className="TeachCalender" />
+        <Calendar onChange={handleChange} value={date} className="Teach_Calender" />
       </div>
       </div>
     </div>

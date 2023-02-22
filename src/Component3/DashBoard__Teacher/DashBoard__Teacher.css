@@ -1,8 +1,9 @@
-.Dashboard_Teach_Main{
+.Dashboard_Teach_Main {
     width: 100%;
     margin-top: 20px;
 }
-.Dashboard_Teach_Main_Wrap{
+
+.Dashboard_Teach_Main_Wrap {
     width: 70%;
     display: flex;
     flex-wrap: wrap;
@@ -11,36 +12,42 @@
     /* background-color: red; */
     margin-left: 250px;
 }
-.Dashboard_Teach_Info_Right{
+
+.Dashboard_Teach_Info_Right {
     width: 250px;
     background-color: white;
     border-radius: 8px;
     border: 1px solid rgb(219, 218, 218);
     display: flex;
     align-items: center;
-   flex-wrap: wrap;
+    flex-wrap: wrap;
     flex-direction: column;
     padding: 10px;
     justify-content: center;
     gap: 10px;
 }
-.Dashboard_Teach_Info_Img{
+
+.Dashboard_Teach_Info_Img {
     width: 150px;
 }
-.Dashboard_Teach_Info_Mss{
+
+.Dashboard_Teach_Info_Mss {
     width: 150px;
 }
-.Dashboard_Teach_Info_Detail{
+
+.Dashboard_Teach_Info_Detail {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
-.TeachCalender{
+
+.Teach_Calender {
     margin-top: 10px;
     width: 400px;
 }
-.Dashboard_Teach_Msg{
+
+.Dashboard_Teach_Msg {
     width: 400px;
     height: 80px;
     padding: 10px;
@@ -48,10 +55,11 @@
     border-radius: 8px;
     display: flex;
     align-items: center;
-   justify-content: space-between;
-   font-size: 13px;
+    justify-content: space-between;
+    font-size: 13px;
 }
-.Dashboard_info{
+
+.Dashboard_info {
     width: 200px;
     background-color: rgb(215, 215, 215);
     display: flex;
@@ -60,92 +68,108 @@
     padding: 10px;
     border-radius: 10px;
 }
-.Dashboard_detail{
+
+.Dashboard_detail {
     width: 180px;
     display: flex;
     padding: 8px;
     font-size: 12px;
     justify-content: space-between;
 }
-@media screen and (max-width: 426px){
-.Dashboard_Teach_Msg{
-    width: 280px;
-    height: 50px;
-    padding: 10px;
-    font-size: 8px;
-    margin-top: 10px;
-}
-.Dashboard_Teach_Info_Mss{
-    width: 80px;
-}
-.TeachCalender{
-    width: 300px;
-}
-.Dashboard_Teach_Main_Wrap{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* background-color: red; */
-    margin-right: 250px; 
-}
-.Dashboard_Teach_Main{
-    width: 100%;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-}
-@media screen and (max-width: 769px){
-    .Dashboard_Teach_Main{
-        width: 100%;
-        background-color: red;
+
+@media screen and (max-width: 426px) {
+    .Dashboard_Teach_Msg {
+        width: 280px;
+        height: 50px;
+        padding: 10px;
+        font-size: 8px;
+        margin-top: 10px;
     }
-    .Dashboard_Teach_Main_Wrap{
+
+    .Dashboard_Teach_Info_Mss {
+        width: 80px;
+    }
+
+    .Teach_Calender {
+        width: 200px;
+    }
+
+    .Dashboard_Teach_Main_Wrap {
         width: 100%;
         display: flex;
         align-items: center;
-        background-color: green;
+        justify-content: center;
+        /* background-color: red; */
+        margin-right: 250px;
     }
-    .Dashboard_Teach_Info_Img{
-    width: 150px;
+
+    .Dashboard_Teach_Main {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
-.Dashboard_Teach_Info_Mss{
-    width: 150px;
-}
-.Dashboard_Teach_Info_Detail{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-.TeachCalender{
-    width: 400px;
-}
-.Dashboard_Teach_Msg{
-    width: 400px;
-    height: 80px;
-    padding: 10px;
-    background-color: gray;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-   font-size: 13px;
-}
-.Dashboard_info{
-    width: 200px;
-    background-color: rgb(215, 215, 215);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 10px;
-    border-radius: 10px;
-}
-.Dashboard_detail{
-    width: 180px;
-    display: flex;
-    padding: 8px;
-    font-size: 12px;
-}
+
+@media screen and (max-width: 769px) {
+    .Dashboard_Teach_Main {
+        width: 100%;
+        /* background-color: red; */
+    }
+
+    .Dashboard_Teach_Main_Wrap {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        /* background-color: green; */
+    }
+
+    .Dashboard_Teach_Info_Img {
+        width: 150px;
+    }
+
+    .Dashboard_Teach_Info_Mss {
+        width: 150px;
+    }
+
+    .Dashboard_Teach_Info_Detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .Teach_Calender {
+        width: 250px;
+        /* margin-left: 50px; */
+    }
+
+    .Dashboard_Teach_Msg {
+        width: 250px;
+        height: 80px;
+        padding: 10px;
+        background-color: gray;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        font-size: 8px;
+    }
+
+    .Dashboard_info {
+        width: 200px;
+        background-color: rgb(215, 215, 215);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .Dashboard_detail {
+        width: 180px;
+        display: flex;
+        padding: 8px;
+        font-size: 12px;
+    }
 }
