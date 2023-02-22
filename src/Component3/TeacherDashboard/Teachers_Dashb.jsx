@@ -33,7 +33,6 @@ const Teachers_Dashb = () => {
             {open && (
                 <div className='TeacherProfile'>
                     <Link to={"accountsetteach"} className="AccountsettingLink"><p>Account setting</p></Link>
-                    <p>Profile</p>
                     <p onClick={() => navigate("/")} >Log out</p>
                     <h5 onClick={() => navigate("/")}  >Home</h5>
                 </div>

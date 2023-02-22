@@ -34,7 +34,6 @@ const StudentsDash = () => {
             {open && (
                 <div className='StudentProfile'>
                     <p>Account setting</p>
-                    <p>Profile</p>
                     <p onClick={() => navigate("/")} >Log out</p>
                     <h5 onClick={() => navigate("/")}  >Home</h5>
                 </div>

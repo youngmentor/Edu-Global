@@ -1,0 +1,158 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.UpdateAccountStu_Main{
+    width: 70%;
+    height: 90vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-left: 200px;
+}
+.UpdateAccountStu_Main_Wrap{
+    width: 100%;
+    /* height: 90%; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 15px; 
+    justify-content: space-around;
+}
+.UpdateAccountStu_Main_Wrap1{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.UpdateAccountStu{
+    width: 300px;
+    height: 50px;
+    border-radius: 8px;
+    padding: 15px;
+}
+.UpdateAccounStut_Bttn{
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    /* color: white; */
+    font-size: 18px;
+    background-color: #5390D9;
+    cursor: pointer;
+}
+.UpdateAccounStut_Bttn2{
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.UpdateAccountStu_Main_Wrap2{
+    width: 40%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    border-radius: 5px;
+    align-items: center;
+    padding: 10px;
+    background-color: #5390D9;
+    justify-content: center;
+}
+@media screen and (max-width:426px){
+    .UpdateAccountStu_Main_Wrap{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    margin-top: 100px;
+        /* background-color: green; */
+        gap: 20px;
+    }
+    .UpdateAccountStu_Main_Wrap2{
+        width: 300px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+        border-radius: 5px;
+        align-items: center;
+        padding: 10px;
+        background-color: #5390D9;
+        justify-content: center;
+    }
+    .UpdateAccountStu_Main_Wrap1{
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    .UpdateAccountStu_Main{
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: blue; */
+        margin-right: 200px;
+    }
+    .accountsetStu_text{
+        width: 300px;
+        /* background-color: red; */
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:769px){
+    .UpdateAccountStu_Main_Wrap{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .UpdateAccountStu_Main_Wrap2{
+        width: 300px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+        border-radius: 5px;
+        align-items: center;
+        padding: 10px;
+        background-color: #5390D9;
+        justify-content: center;
+    }
+    .UpdateAccountStu_Main_Wrap1{
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    .UpdateAccountStu_Main{
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: blue; */
+        margin-right: 200px;
+    }
+    .accountsetStu_text{
+        width: 300px;
+        /* background-color: red; */
+        font-size: 15px;
+    }
+}
