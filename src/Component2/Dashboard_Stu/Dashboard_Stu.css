@@ -95,13 +95,13 @@
 @media screen and (max-width: 769px){
     .Dashboard_Stu_Main{
         width: 100%;
-        background-color: red;
+        /* background-color: red; */
     }
     .Dashboard_Stu_Main_Wrap{
         width: 100%;
         display: flex;
         align-items: center;
-        background-color: green;
+        /* background-color: green; */
     }
     .Dashboard_Stu_Info_Img{
     width: 150px;

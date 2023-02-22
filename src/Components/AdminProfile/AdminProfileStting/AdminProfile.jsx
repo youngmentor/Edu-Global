@@ -1,10 +1,12 @@
 import React from 'react'
 import "./AdminProfile.css"
+import { useRef } from 'react'
 const AdminProfile = () => {
+  const inputRef=useRef()
   return (
     <div className='AdminProfile_Update'>
       <div className='AdminProfile_Update_Wrap'>
-        <div>
+        <div className='AdminProfile_Update_SubWrap1'>
         <div className='AdminPtofile_text'>
           <h4>Please Enter a New password and Email</h4>
         </div>
@@ -16,8 +18,10 @@ const AdminProfile = () => {
         <input type="passowrd" className='AdminUpdate' ref={inputRef} placeholder="Address" />
         <button className='AdminUpdate_Bttn' >Update</button>
         </div>
-        <div>
-          i will upload here
+        <div className='AdminProfile_Update_SubWrap2'>
+          <div>
+            come to my bed room
+          </div>
         </div>
       </div>
     </div>

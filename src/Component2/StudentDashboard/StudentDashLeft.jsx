@@ -16,7 +16,7 @@ const StudentDashLeft = () => {
             <Link to={"table"} className="Dash" ><h3> <BsListTask/> TimeTable</h3></Link>
             <Link to={"report"} className="Dash"><h3> <HiOutlineDocumentReport/>Report Card</h3></Link>
             <Link to={"payfee"} className="Dash"><h3> <MdOutlinePayments/> Pay Fee</h3></Link>
-            <Link to={"accountset"} className="Dash"><h3> <AiOutlineSetting/> Account Setting</h3></Link>
+            <Link to={"accountsetStu"} className="Dash"><h3> <AiOutlineSetting/> Account Setting</h3></Link>
             <Link to={"logout"} className="Dash"> <h3> <BiLogOut/> Logout</h3></Link>
         </div>
     )

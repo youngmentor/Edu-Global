@@ -4,12 +4,12 @@ import { useRef } from 'react'
 const AccountSetting_Stu = () => {
   const inputRef = useRef()
   return (
-    <div>
+    <div className='UpdateAccountStu_Main'>
       <div className='UpdateAccountStu_Main_Wrap'>
         <div className='UpdateAccountStu_Main_Wrap1'>
           <div className='accountsetStu_text'>
             <h4>Please Enter a New password and Email</h4>
-          </div>
+          </div> 
           <input type="text" className='UpdateAccountStu' ref={inputRef} placeholder="Enter your new Email..." />
           <input type="passowrd" className='UpdateAccountStu' ref={inputRef} placeholder="Enter your new PassWord..." />
           <button className='UpdateAccounStut_Bttn' >Update</button>

@@ -73,7 +73,7 @@
    position: fixed;
    left: 0px;
    justify-content: center;
-   top: 65px;
+   top: 75px;
    margin-top: 10px;
    border-radius: 8px;
 }
@@ -103,17 +103,30 @@
     display: none;
 }
 .StudentProfileWrap{
-    width: 140px;
+    width: 220px;
     background-color: rgb(242, 239, 239);
     position: absolute;
     padding: 10px;
     line-height: 1.6;
-    top: 65px;
+    top: 90px;
     right: 10px;
     border-radius: 8px;
     border: 1px solid rgb(231, 207, 207);
 }
+.StudentSetting{
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 .StudentProfile{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: blue; */
+    gap: 20px;
     cursor: pointer;
 }
 @media screen and (max-width: 426px){

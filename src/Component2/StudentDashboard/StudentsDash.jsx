@@ -10,8 +10,11 @@ import TimeTableMain from '../Timetable_Stu/TimeTableMain';
 import Report_Stu from '../Report_Stu/Report_Stu';
 import AccountSetting_Stu from '../AccountSetting_Stu/AccountSetting_Stu';
 import Payment from '../PayFee/Payment';
+import { AiOutlineSetting } from "react-icons/ai";
+import { BiLogOut } from "react-icons/bi";
+import { AiFillHome } from "react-icons/ai";
 import "./StudentDash.css"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 const StudentsDash = () => {
 
     const navigate = useNavigate()
@@ -33,9 +36,9 @@ const StudentsDash = () => {
         <div className='StudentProfileWrap'>
             {open && (
                 <div className='StudentProfile'>
-                    <p>Account setting</p>
-                    <p onClick={() => navigate("/")} >Log out</p>
-                    <h5 onClick={() => navigate("/")}  >Home</h5>
+                   <Link to={"accountsetStu"} className="StudentSetting"> <AiOutlineSetting/>  <p>Account setting</p></Link>
+                    <div className="StudentSetting"> <BiLogOut/> <p onClick={() => navigate("/")} > Log out</p></div>
+                    <div className="StudentSetting">  < AiFillHome /> <h5 onClick={() => navigate("/")}>Home</h5></div>
                 </div>
             )}
         </div>
@@ -70,7 +73,7 @@ const StudentsDash = () => {
                         <Route path="/table" element={<TimeTableMain />} />
                         <Route path="/report" element={<Report_Stu />} />
                         <Route path="/payfee'" element={<Payment />} />
-                        <Route path="/accountset" element={<AccountSetting_Stu />} />
+                        <Route path="/accountsetStu" element={<AccountSetting_Stu />} />
                     </Routes>
                 </div>
             </div>

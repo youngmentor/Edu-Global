@@ -20,7 +20,8 @@ import Subject from '../Subject/Subject'
 import Student from '../Student/Student'
 import Teachers from '../Teachers/Teachers'
 import Timetable_Admin from '../Timetable_Admin/Timetable_Admin';
-import AdminProfile from '../AdminProfile/AdminProfile';
+// import AdminProfile from '../AdminProfile/AdminProfileStting/AdminProfile';
+import AdminProfileMain from '../AdminProfile/AdminProfileMain';
 import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
@@ -128,7 +129,7 @@ const Admin = () => {
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
             click: "admin/adminprofile",
-            click1: "/admin/adminprofile"
+            click1: "/admin/adminprofile/adminprofileupdate"
         }
     ];
 
@@ -208,7 +209,7 @@ const Admin = () => {
                         <Route path="/viewtimetable" element={< Timetable_Admin  />} />
                         <Route path="/attendance/*" element={<Attendance />} />
                         <Route path="/fee" element={<Fee />} />
-                        <Route path="/adminprofile" element={<AdminProfile />}/>
+                        <Route path="/adminprofile/*" element={<AdminProfileMain/>}/>
                     </Routes>
                 </div>
             </div>

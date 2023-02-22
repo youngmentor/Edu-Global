@@ -5,11 +5,15 @@
 }
 .UpdateAccountStu_Main{
     width: 70%;
-    height: 90vh;
+    height: 80vh;
    display: flex;
    align-items: center;
    justify-content: center;
    margin-left: 200px;
+}
+.accountsetStu_text{
+    width: 350px;
+    margin-left: 40px;
 }
 .UpdateAccountStu_Main_Wrap{
     width: 100%;
@@ -40,7 +44,7 @@
     border: none;
     outline: none;
     border-radius: 5px;
-    /* color: white; */
+    color: white;
     font-size: 18px;
     background-color: #5390D9;
     cursor: pointer;
