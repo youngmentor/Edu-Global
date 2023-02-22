@@ -78,7 +78,7 @@ const Admin = () => {
             title: "Teacher",
             text1: "All Teachers",
             text2: "Add Teacher",
-            icon1: < AiFillHome />,
+            icon1: < FaUserFriends />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
             click: "/admin/teachers",
@@ -101,7 +101,7 @@ const Admin = () => {
         , {
             id: 6,
             title: "TimeTable",
-            text1: "View TimeTable",
+            text1: "Upload TimeTable",
             icon1: < AiFillHome />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
@@ -123,8 +123,12 @@ const Admin = () => {
         {
             id: 8,
             title: "Profile",
+            text1: "Edit Profile",
             icon1: < AiFillHome />,
-            click: "admin/adminprofile"
+            icon2: <IoIosArrowForward />,
+            icon3: <SlArrowDown />,
+            click: "admin/adminprofile",
+            click1: "/admin/adminprofile"
         }
     ];
 
