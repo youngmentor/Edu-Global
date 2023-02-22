@@ -20,6 +20,7 @@ import Subject from '../Subject/Subject'
 import Student from '../Student/Student'
 import Teachers from '../Teachers/Teachers'
 import Timetable_Admin from '../Timetable_Admin/Timetable_Admin';
+import AdminProfile from '../AdminProfile/AdminProfile';
 import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
@@ -119,6 +120,12 @@ const Admin = () => {
             click: "/admin/fee"
 
         },
+        {
+            id: 8,
+            title: "Profile",
+            icon1: < AiFillHome />,
+            click: "admin/adminprofile"
+        }
     ];
 
     const logOut = async () => {
@@ -197,6 +204,7 @@ const Admin = () => {
                         <Route path="/viewtimetable" element={< Timetable_Admin  />} />
                         <Route path="/attendance/*" element={<Attendance />} />
                         <Route path="/fee" element={<Fee />} />
+                        <Route path="/adminprofile" element={<AdminProfile />}/>
                     </Routes>
                 </div>
             </div>

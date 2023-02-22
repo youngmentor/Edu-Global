@@ -65,12 +65,8 @@ const Login = () => {
                 console.log(res.data)
                 console.log(res.data.message)
                 res.data.data.email === value.email ? dispatch(addUser(res)) : null
-                if (res.data.data.isVerified === true) {
                     res.data.data.email === value.email ? navigate('/admin') : null
-                } else {
-                    logOut()
-                    setLoad(false)
-                }
+                
 
             })
             .catch(function (error) {
