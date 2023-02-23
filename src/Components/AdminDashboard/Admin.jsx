@@ -201,7 +201,8 @@ const Admin = () => {
                         </div>
                     </div>
                     {toggle && adminLeft_Mobile}
-                    <Routes>
+                  
+                  <Routes>
                         <Route path="/" element={<Dashboard />} />
                         <Route path="/clases/*" element={<Clases />} />
                         <Route path="/student/*" element={<Student />} />
@@ -212,6 +213,7 @@ const Admin = () => {
                         <Route path="/fee" element={<Fee />} />
                         <Route path="/adminprofile/*" element={<AdminProfileMain/>}/>
                     </Routes>
+               
                 </div>
             </div>
         </div>

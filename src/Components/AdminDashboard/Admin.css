@@ -90,6 +90,7 @@
     background-color: #ffffff;
     position: fixed;
     top: 40px;
+    left: 0px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -177,12 +178,13 @@
         display: none;
     }
     .AdminLeftMobile_co{
-        height: 90%;
-        width: 65%;
+        height: 80%;
+        width: 75%;
         display: flex;
         position: fixed;
-        top: 40px;
+        top: 60px;
         left: 0px;
+        overflow-y: scroll;
         background-color:rgb(245, 238, 238);
         border-radius: 8px;
         border: 1px solid rgb(231, 207, 207);
@@ -192,7 +194,7 @@
         display: none;
     }
     .AdminLeftMobile_mobile{
-        overflow-y: scroll;
+        width: 90%;
         padding: 15px 0px;
     }
     .AdminLeft{
@@ -224,6 +226,10 @@
     }
     .Admin_header{
         height: 40px;
+    }
+    .AdminLeftWrap_title{
+        font-size: 13px;
+        margin-left: -1px;
     }
 
 }

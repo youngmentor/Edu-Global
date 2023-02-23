@@ -1,7 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import './AddClasses.css'
+import Loading from '../../LoadingSpin/Loading';
+import { Navigate, useNavigate } from 'react-router-dom';
 const AddClasses = () => {
+    const Navigate= useNavigate()
+    const [successMessage, setSuccessMessage] = useState(null);
+    const [Load, setLoad] =useState(false)
     const [AddData, setAddData] = useState({
         nameOfClass: "SS2",
         classBranch: "B",
@@ -41,10 +46,14 @@ const AddClasses = () => {
 
     const handleSubmit = async (e) => {
         console.log("clicked")
+        setLoad(true)
         e.preventDefault();
         const res = await axios.post("https://eduglobal.onrender.com/api/admin/newClass", AddData)
-        console.log(res)
-        console.log(res.data.message)
+      setLoad(false)
+        // console.log(res)
+        // console.log(res.data.message)
+        setSuccessMessage(res.data.message)
+        res.status === 201 ? Navigate('/allclasses') : null
     }
 
     return (
@@ -64,7 +73,8 @@ const AddClasses = () => {
                             />
                         </label>
                     ))}
-                    <button type="submit" className="Addbttn">Add New</button>
+                     {successMessage && <p>{successMessage}</p>}
+                    <button type="submit" className="Addbttn">{Load? <Loading/>: "Add New"}</button>
                 </form>
             </div>
         </div>
