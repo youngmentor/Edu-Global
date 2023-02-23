@@ -4,14 +4,16 @@
     box-sizing: border-box;
 }
 .AdminAddn_Student{
-    width: 100%;
+    width: 70%;
     height: 90vh;
-    background-color: rgb(210, 210, 210);
+    background-color: rgb(250, 250, 255);
+  box-shadow: -2px 3px 13px 0px rgb(173, 175, 176);
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    padding: 15px;
+    margin-top: 20px;
+    padding: 20px;
     border-radius: 10px;
 }
 .Add-inputWrap{
@@ -22,7 +24,7 @@
 }
 .AddStudent_Input{
     width: 400px;
-    height: 40px;
+    height: 30px;
     display: flex;
     margin-top: 10px;
     padding: 8px;
@@ -49,6 +51,7 @@
     }
     .AdminAddn_Student{
         height: 100%;
+        /* background-color: green; */
     }
     .AddStudent_Label{
         /* background-color: green; */
@@ -67,5 +70,23 @@
         border-radius: 5px;
         border: 1px solid rgb(201, 200, 200);
         background-color: #5390D9;
+    }
+}
+@media screen and (max-width: 769px){
+    .AddStudent_Input{
+        width: 300px;
+        height: 40px;
+    }
+    .AdminAddn_Student{
+        width: 400px;
+
+    }
+    .AddStudent_Label{
+        font-size: 12px;
+    }
+    .AddSbttn{
+        width: 300px;
+        margin-top: 10px;
+        height: 40px;
     }
 }

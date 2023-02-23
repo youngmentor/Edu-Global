@@ -49,25 +49,31 @@ const Login = () => {
         setFocus(true)
     }
     const logOut = async () => {
-        const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/:${user?._id}`)
+        const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/${user?._id}`)
         console.log(res.data)
         res.status === 201 ? dispatch(clearUser()) : null
         res.status === 201 ? navigate('/loginuser/login') : null
         login_alert()
     }
 
-    const handleLogin = (e) => {
+    const handleLogin = async(e) => {
         console.log("clicked")
         setLoad(true)
         e.preventDefault();
-        axios.post('https://eduglobal.onrender.com/api/admin/login', value)
+      await axios.post('https://eduglobal.onrender.com/api/admin/login', value)
             .then(function (res) {
                 console.log(res.data)
                 console.log(res.data.message)
                 res.data.data.email === value.email ? dispatch(addUser(res.data.data)) : null
+                setLoad(false)
+                if(res.data.data.isVerified === true){
                     res.data.data.email === value.email ? navigate('/admin') : null
+                } else{
+                    logOut()
+                    setLoad(false)
+                }
+                    
                 
-
             })
             .catch(function (error) {
                 console.log(error);

@@ -2,12 +2,12 @@
     width: 80%;
   height: 90%;
 }
-.AddClassesWrap{
+.AddClassesWrapper{
   width: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: rgb(250, 250, 255);
   gap: 10px;
   box-shadow: -2px 3px 13px 0px rgb(173, 175, 176);
@@ -35,7 +35,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  background-color: rgb(250, 250, 255);
+  /* background-color: rgb(222, 222, 225); */
 }
 .Addbttn{
   width: 200px;
@@ -56,9 +56,29 @@
    .AddInput{
     width: 300px;
    }
-   .AddClassesWrap{
-    /* width: 60%; */
-    height: 70vh;
+   .AddClassesWrapper{
+    width: 350px;
+    margin-top: 30px;
+    padding: 10px;
    }
-
+   .Add1-inputWrap{
+    width: 320px;
+   }
+}
+@media screen and (max-width: 769px){
+.AddClassesWrapper{
+  width: 500px;
+  padding: 10px;
+  margin-left: 60px;
+}
+.Add1-inputWrap{
+  width: 90%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /* background-color: rgb(73, 73, 160); */
+}
 }

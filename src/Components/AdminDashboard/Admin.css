@@ -147,12 +147,12 @@
     display: none;
 }
 .AdminProfileWrap{
-    width: 140px;
+    width: 220px;
     background-color: rgb(242, 239, 239);
     position: absolute;
     padding: 10px;
     line-height: 1.6;
-    top: 65px;
+    top: 90px;
     right: 10px;
     border-radius: 8px;
     border: 1px solid rgb(231, 207, 207);
@@ -163,7 +163,20 @@
     border-radius: 100%;
     background-color: green;
 }
+.AdminSetting{
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 .AdminProfile{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: blue; */
+    gap: 20px;
     cursor: pointer;
 }
 /* .AdminProfile:hover{
@@ -232,4 +245,28 @@
         margin-left: -1px;
     }
 
+}
+@media screen and (max-width: 769px){
+    .AdminLeftWrap {
+        height: 90%;
+        width: 30%;
+        margin-top: 40px;
+        background-color: #ffffff;
+        position: fixed;
+        top: 40px;
+        left: 0px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        border: 1px  solid rgb(223, 216, 216);
+        padding: 5px;
+        font-size: 13px;
+    }
+    .AdminNav {
+        width: 100%;
+        display: flex;
+        align-items:start;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
 }

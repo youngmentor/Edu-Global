@@ -58,7 +58,7 @@ const AddClasses = () => {
 
     return (
         <div className='AddClassesMain' >
-            <div className='AddClassesWrap'>
+            <div className='AddClassesWrapper'>
                 <form onSubmit={handleSubmit} className="Add1-inputWrap" >
                     <h3>Add A New Class</h3>
                     {Add.map((i) => (

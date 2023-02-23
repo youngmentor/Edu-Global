@@ -16,7 +16,6 @@ const UpdateStudent = () => {
       DOB: ""
     }
   )
-  const [items, setItems] = useState([]);
   const user = useSelector((state) => state.Commerce.user)
   const allclass = useSelector((state) => state.Commerce.allclass)
   const AddStudent = [
@@ -61,14 +60,6 @@ const UpdateStudent = () => {
       type: "text",
       inputmode: "numeric",
     },
-    // {
-    //   id: 6,
-    //   name: "studentClass",
-    //   // label: "class",
-    //   placeholder: "Select Class",
-    //   type: "select",
-    //   required: true
-    // },
     {
       id: 6,
       name: "DOB",
@@ -132,6 +123,7 @@ const UpdateStudent = () => {
             <label key={i.id} className="AddStudent_Label">
               {i.label}
               <input
+               key={i.id}
                 className="AddStudent_Input"
                 type={i.type}
                 name={i.name}
