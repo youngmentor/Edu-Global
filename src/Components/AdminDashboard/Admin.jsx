@@ -11,7 +11,8 @@ import { RiPencilRulerLine } from "react-icons/ri";
 import { FaUserFriends } from "react-icons/fa";
 import { SlArrowDown } from "react-icons/sl";
 import { IoIosArrowForward } from "react-icons/io";
-import { useNavigate } from 'react-router-dom'
+import { AiOutlineSetting } from "react-icons/ai";
+import { useNavigate, Link } from 'react-router-dom'
 import Dashboard from '../Dashboard/Dashboard'
 import Clases from '../Clases/Classes'
 import Attendance from '../Attendance/Attendance';
@@ -20,8 +21,9 @@ import Subject from '../Subject/Subject'
 import Student from '../Student/Student'
 import Teachers from '../Teachers/Teachers'
 import Timetable_Admin from '../Timetable_Admin/Timetable_Admin';
-// import AdminProfile from '../AdminProfile/AdminProfileStting/AdminProfile';
+import AdminProfile from '../AdminProfile/AdminProfileStting/AdminProfile';
 import AdminProfileMain from '../AdminProfile/AdminProfileMain';
+import AccountSetting from '../AccountSetting/AccountSetting';
 import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
@@ -138,7 +140,7 @@ const Admin = () => {
         console.log(res)
         res.status === 200 ? dispatch(clearUser()) : null
         res.status === 200 ? navigate('/loginuser/login') : null
-        // console.log(user[0]?.data.data._id)
+        console.log(user[0]?.data.data._id)
     }
 
     const adminLeft_Mobile = (
@@ -159,10 +161,10 @@ const Admin = () => {
         <div className='AdminProfileWrap'>
             {open && (
                 <div className='AdminProfile'>
-                    <p onClick={()=> navigate("/accountsetadmin")}>  Account setting</p>
-                    <p>Profile</p>
-                    <p onClick={() => { logOut() }}>Log out</p>
-                    <h5 onClick={() => navigate("/")}  >Home</h5>
+                  <Link to={"accountsetadmin"} className="AdminSetting"> <AiOutlineSetting/>  <p>Account setting</p></Link>
+                    <p onClick={()=> navigate("/adminprofile/adminprofileupdate")}>Profile</p>
+                  <div>  <p onClick={() => { logOut() }}>Log out</p></div>
+                   <div> <h5 onClick={() => navigate("/")}  >Home</h5></div>
                 </div>
             )}
         </div>
@@ -212,6 +214,7 @@ const Admin = () => {
                         <Route path="/attendance/*" element={<Attendance />} />
                         <Route path="/fee" element={<Fee />} />
                         <Route path="/adminprofile/*" element={<AdminProfileMain/>}/>
+                        <Route path="/accountsetadmin" element={<AccountSetting/>}/>
                     </Routes>
                
                 </div>

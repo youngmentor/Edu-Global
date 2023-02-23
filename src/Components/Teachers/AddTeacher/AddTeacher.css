@@ -62,3 +62,15 @@
         height: 100%;
     }
 }
+@media screen and (max-width: 769px){
+    .AdminAddn_TeacherWrap{
+        width: 450px;
+        height: 650px;
+    }
+    .AddTeacher_Input{
+        width: 400px;
+    }
+    .AddTeacher_Label{
+      width: 400px;
+    }
+}
