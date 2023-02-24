@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 const UpdateStudent = () => {
+  const {id}=useParams()
   const [add_new_student, SetAdd_new_student] = useState(
     {
       studentName: "",
@@ -95,7 +96,7 @@ const UpdateStudent = () => {
   };
 
   const handleAddStudent = (e) => {
-    console.log(add_new_student.studentClass.slice(0, 3))
+    // console.log(add_new_student.studentClass.slice(0, 3))
 
 
 
@@ -106,7 +107,7 @@ const UpdateStudent = () => {
     // console.log(Get)
     e.preventDefault();
     console.log("clicked")
-    axios.post(`https://eduglobal.onrender.com/api/admin${user?._id}:${allclass?._id}`, add_new_student)
+    axios.post(`https://eduglobal.onrender.com/api/admin${user?._id}`, add_new_student)
       .then((response) => {
         console.log(res.data)
         console.log(response.data.message)
@@ -133,12 +134,14 @@ const UpdateStudent = () => {
               />
             </label>
           ))}
-          <select className="AddStudent_Input" onChange={(e) => { SetAdd_new_student({ ...add_new_student, studentClass: e.target.value }); }}  >
-            {allclass.map((i) => (
-              <option onClick={() => { console.log(i._id) }} placeholder="Select Class">{i.nameOfClass} {i.classBranch}</option>
+          <div className="AddStudent_Input" onChange={(e) => { SetAdd_new_student({ ...add_new_student, studentClass: e.target.value }); }}  ><p>select a class</p></div>
+          <div>
+          {allclass.map((i) => (
+              <div onClick={() => { console.log(i._id) }} placeholder="Select Class" value={i.nameOfClass}>{i.nameOfClass} {i.classBranch}</div>
             ))
             }
-          </select>
+          </div>
+          
             <button type="submit" className="AddSbttn">Add New Student</button>        
         </form>
     </div>
