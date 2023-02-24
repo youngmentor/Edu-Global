@@ -35,23 +35,27 @@
 }
 .Admin_header {
     width: 100%;
-    height: 10%;
-    background: rgba(235,234,234, 0.90);
+    height: 12%;
+    background: rgba(235,234,234, 3.90);
     -webkit-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
     -moz-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
-    box-shadow: -2px 3px 13px 0px rgb(183, 184, 184);
+    box-shadow: -2px 3px 13px 0px rgb(159, 161, 161);
     backdrop-filter: blur(12.4px);
     position: fixed;
     display: flex;
     align-items: center;
+    
     justify-content: center;
   
 }
 .Admin_header_wrap{
     width: 95%;
+    height: 100%;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* background-color: green; */
 }
 .AdminMainWrap {
     width: 100%;
@@ -84,7 +88,7 @@
 /* Admin Left */
 
 .AdminLeftWrap {
-    height: 80%;
+    height: 75%;
     width: 25%;
     margin-top: 40px;
     background-color: #ffffff;
@@ -135,13 +139,15 @@
     justify-content: center;
 } */
 .AdminLeftWrap_title{
-    width: 70%;
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 54px;
-    font-size: 20px;
-    cursor: pointer;
-    margin-left: 60px;
+    font-size: 13px;
+    cursor: pointer;  
+    /* background-color: red; */
+    margin-left: -7px;
 }
 .AdminLeftMobile_co{
     display: none;

@@ -162,7 +162,7 @@ const Admin = () => {
             {open && (
                 <div className='AdminProfile'>
                   <Link to={"accountsetadmin"} className="AdminSetting"> <AiOutlineSetting/>  <p>Account setting</p></Link>
-                    <p onClick={()=> navigate("/adminprofile/adminprofileupdate")}>Profile</p>
+                    <p onClick={()=> navigate("/admin/adminprofile/adminprofileupdate")}>Profile</p>
                   <div>  <p onClick={() => { logOut() }}>Log out</p></div>
                    <div> <h5 onClick={() => navigate("/")}  >Home</h5></div>
                 </div>

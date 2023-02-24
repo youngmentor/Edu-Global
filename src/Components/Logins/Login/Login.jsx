@@ -56,24 +56,18 @@ const Login = () => {
         login_alert()
     }
 
-    const handleLogin = async(e) => {
+    const handleLogin = async (e) => {
         console.log("clicked")
         setLoad(true)
         e.preventDefault();
-      await axios.post('https://eduglobal.onrender.com/api/admin/login', value)
+        await axios.post('https://eduglobal.onrender.com/api/admin/login', value)
             .then(function (res) {
                 console.log(res.data)
                 console.log(res.data.message)
                 res.data.data.email === value.email ? dispatch(addUser(res.data.data)) : null
-                setLoad(false)
-                if(res.data.data.isVerified === true){
-                    res.data.data.email === value.email ? navigate('/admin') : null
-                } else{
-                    logOut()
-                    setLoad(false)
-                }
-                    
-                
+                res.data.data.email === value.email ? navigate('/admin') : null
+
+
             })
             .catch(function (error) {
                 console.log(error);
@@ -88,9 +82,9 @@ const Login = () => {
     useEffect(() => {
         setHerr(true)
         setTimeout(() => {
-          setHerr(false)
+            setHerr(false)
         }, 5000);
-      }, [err])
+    }, [err])
 
     return (
         <main className="Login" >

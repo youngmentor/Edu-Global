@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { FaGraduationCap } from "react-icons/fa";
 import { addClass } from '../../../Redux/Features';
+import { AiOutlineUserAdd } from "react-icons/ai";
 // import { useParams } from 'react-router-dom';
 
 const AllClasses = () => {
@@ -42,6 +43,7 @@ const AllClasses = () => {
                 <h2>{i.students.length}</h2>
                 <h4>Students</h4>
               </div>
+              <AiOutlineUserAdd className='AddStudent_icon' onClick={() => { navigate("/admin/student/updatestudents") }} />
               <div className='AllClassGraduationCap'>
                 <FaGraduationCap style={{ width: "50px", height: "50px" }} />             
               </div>
@@ -52,7 +54,7 @@ const AllClasses = () => {
         }
         <div className='AllClassCard' onClick={() => { navigate("/admin/clases/addclasses") }}>
           <h1>+</h1>
-          <h1>Add New</h1>
+          <h1>Add New Class</h1>
         </div>
       </div>
     </div>

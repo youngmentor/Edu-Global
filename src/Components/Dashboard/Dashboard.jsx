@@ -67,17 +67,17 @@ export default function Dashboard() {
             </div>
           </div>
           <div className='AdminCard'>
-            {Allclass?.map((i)=>(
+           
               <div className='AdminCardWrap'>
               <div className='AdminGraduationCap'>
                 <h4>Total Classes:</h4>
                 <FaGraduationCap style={{ width: "50px", height: "50px" }} />
               </div>
               <div className='AdminCardDetails'>
-                <h2>{i.classlength}</h2>
+                <h2>0</h2>
               </div>
             </div>
-            ))}
+          
             
           </div>
           <Calendar onChange={handleChange} value={date} className="Calender" />
