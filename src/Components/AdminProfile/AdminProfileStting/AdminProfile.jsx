@@ -26,7 +26,7 @@ const AdminProfile = () => {
   const UpdateProfile = async (e) => {
     console.log("clicked")
     e.preventDefault();
-    const res = await axios.post(`https://eduglobal.onrender.com/api/admin/updatedProfile/${user?._id}`, profile)
+    const res = await axios.put(`https://eduglobal.onrender.com/api/admin/updatedProfile/${user?._id}`, profile)
       .then(function (res) {
         console.log(res)
         console.log(res.data.message)

@@ -79,18 +79,7 @@ const UpdateStudent = () => {
     },
   ];
 
-  useEffect(() => {
-
-
-  }, []);
-
-
-
-
-
-
-
-
+  
   const handleChange = (e) => {
     SetAdd_new_student({ ...add_new_student, [e.target.name]: e.target.value });
   };
@@ -99,7 +88,7 @@ const UpdateStudent = () => {
     e.preventDefault();
     console.log("clicked")
     console.log(id)
-   await axios.post(`https://eduglobal.onrender.com/api/admin/${id}`, add_new_student)
+   await axios.post(`https://eduglobal.onrender.com/api/admin/${user._id}${allclass}`, add_new_student)
       .then((response) => {
         console.log(res.data)
         console.log(response.data.message)
@@ -108,6 +97,11 @@ const UpdateStudent = () => {
         console.log(error);
       });
   };
+
+  useEffect(() => {
+
+
+  }, []);
   return (
     <div className='AdminAddn_Student'>   
         <form onSubmit={handleAddStudent} className="Add-inputWrap" >
