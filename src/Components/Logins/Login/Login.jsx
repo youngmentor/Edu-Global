@@ -48,13 +48,13 @@ const Login = () => {
     const handleFocus = (e) => {
         setFocus(true)
     }
-    const logOut = async () => {
-        const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/${user?._id}`)
-        console.log(res.data)
-        res.status === 201 ? dispatch(clearUser()) : null
-        res.status === 201 ? navigate('/loginuser/login') : null
-        login_alert()
-    }
+    // const logOut = async () => {
+    //     const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/${user?._id}`)
+    //     console.log(res.data)
+    //     res.status === 201 ? dispatch(clearUser()) : null
+    //     res.status === 201 ? navigate('/loginuser/login') : null
+    //     login_alert()
+    // }
 
     const handleLogin = async (e) => {
         console.log("clicked")
@@ -90,7 +90,7 @@ const Login = () => {
         <main className="Login" >
             {verifyAlert && <div className='AdminwelcomeMssg'>
                 <div>
-                    <p>Please check your Email for a verification link</p>
+                    <p>Please check your Email a verification link has been sent to you</p>
                 </div>
             </div>}
             <form onSubmit={handleLogin} className="login-wrap"   >

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./AllClasses.css"
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { FaGraduationCap } from "react-icons/fa";
 import { addClass } from '../../../Redux/Features';
@@ -40,12 +40,16 @@ const AllClasses = () => {
             <div className='AllClassCardWrap'>
               <div className='AllClassCardDetails'>
                 <h4>{i.nameOfClass} {i.classBranch}</h4>
+                {/* <p>SchoolFee: {i.monthlyTutionFees}</p> */}
                 <h2>{i.students.length}</h2>
                 <h4>Students</h4>
               </div>
-              <AiOutlineUserAdd className='AddStudent_icon' onClick={() => { navigate("/admin/student/updatestudents") }} />
+              <Link to ={`/admin/student/updatestudents/${i._id}`}>  
+              <AiOutlineUserAdd className='AddStudent_icon'/>
+              </Link>
               <div className='AllClassGraduationCap'>
-                <FaGraduationCap style={{ width: "50px", height: "50px" }} />             
+                <FaGraduationCap style={{ width: "50px", height: "50px" }} />  
+                <p>SchoolFee: {i.monthlyTutionFees}</p>           
               </div>
             </div>
           </div>

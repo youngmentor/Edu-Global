@@ -8,8 +8,8 @@ const Student = () => {
     <div className='AdminStudent'>
          <div className='AdminStuWrap'>
         <Routes>
-          <Route path='addnstudents' element={<AddnStudent/>} />
-          <Route path='updatestudents' element={<UpdateStudent />} />
+          <Route path='/addnstudents' element={<AddnStudent/>} />
+          <Route path='/updatestudents/:id' element={<UpdateStudent />} />
         </Routes>
       </div>
     </div>

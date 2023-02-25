@@ -95,19 +95,11 @@ const UpdateStudent = () => {
     SetAdd_new_student({ ...add_new_student, [e.target.name]: e.target.value });
   };
 
-  const handleAddStudent = (e) => {
-    // console.log(add_new_student.studentClass.slice(0, 3))
-
-
-
-    // const Get = allclass.map((i) => {
-    //   i._id === add_new_student?.studentClass.slice(0, 3)
-    // })
-
-    // console.log(Get)
+  const handleAddStudent = async (e) => {
     e.preventDefault();
     console.log("clicked")
-    axios.post(`https://eduglobal.onrender.com/api/admin${user?._id}`, add_new_student)
+    console.log(id)
+   await axios.post(`https://eduglobal.onrender.com/api/admin/${id}`, add_new_student)
       .then((response) => {
         console.log(res.data)
         console.log(response.data.message)
@@ -134,13 +126,13 @@ const UpdateStudent = () => {
               />
             </label>
           ))}
-          <div className="AddStudent_Input" onChange={(e) => { SetAdd_new_student({ ...add_new_student, studentClass: e.target.value }); }}  ><p>select a class</p></div>
+          {/* <div className="AddStudent_Input" onChange={(e) => { SetAdd_new_student({ ...add_new_student, studentClass: e.target.value }); }}  ><p>select a class</p></div>
           <div>
           {allclass.map((i) => (
               <div onClick={() => { console.log(i._id) }} placeholder="Select Class" value={i.nameOfClass}>{i.nameOfClass} {i.classBranch}</div>
             ))
             }
-          </div>
+          </div> */}
           
             <button type="submit" className="AddSbttn">Add New Student</button>        
         </form>

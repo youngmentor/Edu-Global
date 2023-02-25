@@ -10,12 +10,12 @@ export default function Dashboard() {
     setDate(selectedDate);
   };
 
-  const getAll = async () => {
+  const getOne = async () => {
     const res = await axios.get(`https://eduglobal.onrender.com/api/admin/allClass/${user?._id}`)
     // console.log(res)
     setAllClass(res.data.data)
     // console.log(res.data.data)
-    res.status === 201? dispatch(addClass(res.data.data)) : null
+    // res.status === 201? dispatch(addClass(res.data.data)) : null
   };
 
   useEffect(() => {
@@ -66,8 +66,7 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-          <div className='AdminCard'>
-           
+          <div className='AdminCard'>         
               <div className='AdminCardWrap'>
               <div className='AdminGraduationCap'>
                 <h4>Total Classes:</h4>
@@ -77,8 +76,6 @@ export default function Dashboard() {
                 <h2>0</h2>
               </div>
             </div>
-          
-            
           </div>
           <Calendar onChange={handleChange} value={date} className="Calender" />
         </div>

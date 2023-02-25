@@ -74,7 +74,7 @@ const Admin = () => {
             icon3: <SlArrowDown />,
             click: "/admin/student",
             click1: "/admin/student/addnstudents",
-            click2: "/admin/student/updatestudents",
+            // click2: "/admin/student/updatestudents",
         },
         {
             id: 4,
@@ -140,7 +140,7 @@ const Admin = () => {
         console.log(res)
         res.status === 200 ? dispatch(clearUser()) : null
         res.status === 200 ? navigate('/loginuser/login') : null
-        console.log(user[0]?.data.data._id)
+        console.log(user?.data.data._id)
     }
 
     const adminLeft_Mobile = (

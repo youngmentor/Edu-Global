@@ -13,8 +13,7 @@ import Teachers_Dashb from './Component3/TeacherDashboard/Teachers_Dashb'
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword'
 import ResetPassword from './Components/ForgetPassword/ResetPassword'
 import Verify from './Components/SignUp/Verify'
-// import AccountSetting from './Components/AccountSetting/AccountSetting'
-// import AccountSetting_Teach from './Component3/AccountSetting_Teach/AccountSetting_Teach'
+
 const App = () => {
   return (
     <div className='app'>
@@ -27,12 +26,10 @@ const App = () => {
           <Route path="/loginteacher" element={<LoginTeacher />} />
           <Route path="/loginstudent" element={<LoginStudent />} />
           <Route path='/studentdash/*' element={<StudentsDash />} />
-          <Route path='teacherdash/*' element={<Teachers_Dashb />} />
+          <Route path='/teacherdash/*' element={<Teachers_Dashb />} />
           <Route path='/forgetpassword' element={<ForgetPassword />} />
           <Route path='/resetpassword' element={<ResetPassword />} />
           <Route path='/verify/:id' element={<Verify />} />
-          {/* <Route path="/accountsetadmin" element={<AccountSetting/>}/> */}
-          {/* <Route path="/accountsetteach" element={<AccountSetting_Teach/>}/> */}
         </Routes>
       </ HashRouter>
     </div>
