@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./AdminProfile.css"
 import { useRef } from 'react'
 import { AiOutlinePhone, AiOutlineMail } from "react-icons/ai";
@@ -16,73 +16,94 @@ const AdminProfile = () => {
     website: "",
     country: "",
     schoolImage: "",
-    email: "",
   })
+
+  const handleImage = (event) => {
+    const file = event.target.files[0];
+    setProfile({ ...profile, schoolImage: file });
+  };
   // const inputRef = useRef()
   const handleChange = (e) => {
     setProfile({ ...profile, [e.target.name]: e.target.value });
   };
 
-  const UpdateProfile = async (e) => {
-    console.log("clicked")
+  const UpdateProfile = (e) => {
     e.preventDefault();
-    const res = await axios.put(`https://eduglobal.onrender.com/api/admin/updatedProfile/${user?._id}`, profile)
+    console.log(profile)
+    const formData = new FormData();
+    formData.append('nameOfSchool', profile.nameOfSchool);
+    formData.append('phoneNumber', profile.phoneNumber);
+    formData.append('address', profile.address);
+    formData.append('targetLine', profile.targetLine);
+    formData.append('website', profile.website);
+    formData.append('country', profile.country);
+    formData.append('schoolImage', profile.schoolImage);
+    console.log("clicked")
+    
+    axios.patch(`https://eduglobal.onrender.com/api/admin/updatedProfile/${user?._id}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }
+    )
       .then(function (res) {
         console.log(res)
         console.log(res.data.message)
       })
       .catch(function (error) {
-        console.log(error);
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
       });
   }
   const Profile = [
     {
       id: 1,
-      name: "schoolImage",
-      type: "file",
-      placeholder: "Select Your School Logo ",
-      required: true
-    },
-    {
-      id: 2,
       name: "nameOfSchool",
       type: "text",
       placeholder: "Name Of School",
       required: true
     },
     {
-      id: 3,
+      id: 2,
       name: "targetLine",
       type: "text",
       placeholder: "Target line ",
       required: true
     },
     {
-      id: 4,
+      id: 3,
       name: "phoneNumber",
       type: "number",
       placeholder: "Phone Number",
       required: true
     },
     {
-      id: 5,
+      id: 4,
       name: "address",
       type: "text",
       placeholder: "School Address",
       required: true
     },
     {
-      id: 6,
+      id: 5,
       name: "country",
       type: "text",
       placeholder: " Country",
       required: true
     },
     {
-      id: 7,
-      name: "email",
+      id: 6,
+      name: "website",
       type: "text",
-      placeholder: "Input Email ",
+      placeholder: "Website",
       required: true
     },
   ]
@@ -94,6 +115,15 @@ const AdminProfile = () => {
             <h4>Please Enter a New password and Email</h4>
           </div>
           <form onSubmit={UpdateProfile} className="AdminProfile_Form">
+          <label  className='AdminUpdate_Wrap'>
+                <input
+                  // ref={inputRef}
+                  className="AdminUpdate"
+                  type="file" 
+                  onChange={handleImage}
+                  required = {true}
+                />
+              </label>
             {Profile.map((i) => (
               <label key={i.name} className='AdminUpdate_Wrap'>
                 <input
@@ -135,10 +165,3 @@ const AdminProfile = () => {
 
 export default AdminProfile
 
-{/* <input type="file" className='AdminUpdate' ref={inputRef} placeholder="Select Your School Logo " onChange={handleChange}/>
-          <input type="text" className='AdminUpdate' ref={inputRef} placeholder="Name Of School" onChange={handleChange} />
-          <input type="text" className='AdminUpdate' ref={inputRef} placeholder="Target Line" onChange={handleChange} />
-          <input type="number" className='AdminUpdate' ref={inputRef} placeholder="Phone Number" onChange={handleChange} />
-          <input type="text" className='AdminUpdate' ref={inputRef} placeholder="Email" onChange={handleChange} />
-          <input type="text" className='AdminUpdate' ref={inputRef} placeholder="Country"onChange={handleChange} />
-          <input type="text" className='AdminUpdate' ref={inputRef} placeholder="Address"onChange={handleChange} /> */}

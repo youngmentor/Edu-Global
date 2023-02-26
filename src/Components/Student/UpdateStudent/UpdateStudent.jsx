@@ -2,9 +2,15 @@ import React, { useEffect, useState } from 'react'
 import './UpdateStudent.css'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addStudent } from '../../../Redux/Features'
+import Loading from '../../LoadingSpin/Loading'
 const UpdateStudent = () => {
   const {id}=useParams()
+  const [Load, setLoad] =useState(false)
+  const [successMessage, setSuccessMessage] = useState(null);
+  const dispatch = useDispatch()
+  // const student = useSelector((state) => state.Commerce.student)
   const [add_new_student, SetAdd_new_student] = useState(
     {
       studentName: "",
@@ -18,7 +24,7 @@ const UpdateStudent = () => {
     }
   )
   const user = useSelector((state) => state.Commerce.user)
-  const allclass = useSelector((state) => state.Commerce.allclass)
+  // const allclass = useSelector((state) => state.Commerce.allclass)
   const AddStudent = [
     {
       id: 1,
@@ -88,10 +94,15 @@ const UpdateStudent = () => {
     e.preventDefault();
     console.log("clicked")
     console.log(id)
-   await axios.post(`https://eduglobal.onrender.com/api/admin/${user._id}${allclass}`, add_new_student)
+    setLoad(true)
+   await axios.post(`https://eduglobal.onrender.com/api/admin/${user._id}/${id}`, add_new_student)
+   
       .then((response) => {
-        console.log(res.data)
+        setLoad(false)
+        setSuccessMessage(response.data.message)
+        console.log(response.data)
         console.log(response.data.message)
+        response.status === 201 ? dispatch(addStudent(response.data.data)) : null
       })
       .catch((error) => {
         console.log(error);
@@ -127,8 +138,8 @@ const UpdateStudent = () => {
             ))
             }
           </div> */}
-          
-            <button type="submit" className="AddSbttn">Add New Student</button>        
+           {successMessage && <p>{successMessage}</p>}
+            <button type="submit" className="AddSbttn" >{Load? <Loading/>: "Add New Student"}</button>        
         </form>
     </div>
   )

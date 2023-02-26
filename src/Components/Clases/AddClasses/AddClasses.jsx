@@ -8,9 +8,9 @@ const AddClasses = () => {
     const [successMessage, setSuccessMessage] = useState(null);
     const [Load, setLoad] =useState(false)
     const [AddData, setAddData] = useState({
-        nameOfClass: "SS2",
-        classBranch: "B",
-        monthlyTutionFees: "65000",
+        nameOfClass: "",
+        classBranch: "",
+        monthlyTutionFees: "",
     });
     const Add = [
         {
@@ -31,12 +31,7 @@ const AddClasses = () => {
             placeholder: "Fee",
             type: "Number"
         },
-    ];
-
-    // const AddNewClass = async (e) => {
-    //     e.preventDefault()
-    //     const res = await axios.post("https://eduglobal.onrender.com/api/admin/newClass")
-    // } 
+    ]; 
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -53,7 +48,7 @@ const AddClasses = () => {
         // console.log(res)
         // console.log(res.data.message)
         setSuccessMessage(res.data.message)
-        res.status === 201 ? Navigate('/admin/clases/addclasses') : null
+        // res.status === 201 ? Navigate('/admin/clases/addclasses') : null
     }
 
     return (

@@ -18,10 +18,10 @@ const AllClasses = () => {
 
   const getAll = async () => {
     const res = await axios.get(`https://eduglobal.onrender.com/api/admin/allClass/${user?._id}`)
-    // console.log(res)
+
     setAllClass(res.data.data)
     // console.log(res.data.data)
-    res.status === 201? dispatch(addClass(res.data.data)) : null
+    // res.status === 201? dispatch(addClass(res.data.data)) : null
   };
   useEffect(() => {
     getAll()
