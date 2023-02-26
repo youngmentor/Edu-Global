@@ -36,8 +36,8 @@ const StudentsDash = () => {
         <div className='StudentProfileWrap'>
             {open && (
                 <div className='StudentProfile'>
-                   <Link to={"accountsetStu"} className="StudentSetting"> <AiOutlineSetting/>  <p>Account setting</p></Link>
-                    <div className="StudentSetting"> <BiLogOut/> <p onClick={() => navigate("/")} > Log out</p></div>
+                    <Link to={"accountsetStu"} className="StudentSetting"> <AiOutlineSetting />  <p>Account setting</p></Link>
+                    <div className="StudentSetting"> <BiLogOut /> <p onClick={() => navigate("/")} > Log out</p></div>
                     <div className="StudentSetting">  < AiFillHome /> <h5 onClick={() => navigate("/")}>Home</h5></div>
                 </div>
             )}
@@ -48,7 +48,7 @@ const StudentsDash = () => {
             <div className='Student_header'>
                 <div className='Student_header_wrap'>
                     <div className='StudentBurger'>
-                        {toggle ? <FaTimes onClick={() => { setToggle(!toggle) }} /> : < GiHamburgerMenu  onClick={() => { setToggle(!toggle) }} />}
+                        {toggle ? <FaTimes onClick={() => { setToggle(!toggle) }} /> : < GiHamburgerMenu onClick={() => { setToggle(!toggle) }} />}
                     </div>
                     <div className='StudentLogo'>
                         <img src="/NewLogo1.png" alt="Logo" onClick={() => navigate("/")} className="StudentHeaderLogo" />
@@ -67,15 +67,13 @@ const StudentsDash = () => {
                     <StudentDashLeft />
                 </div>
                 {toggle && studentLeft_Mobile}
-                <div className='DashboardMiddle'>
-                    <Routes>
-                        <Route path="/" element={<Dashboard_Stu />} />
-                        <Route path="/table" element={<TimeTableMain />} />
-                        <Route path="/report" element={<Report_Stu />} />
-                        <Route path="/payfee'" element={<Payment />} />
-                        <Route path="/accountsetStu" element={<AccountSetting_Stu />} />
-                    </Routes>
-                </div>
+                <Routes>
+                    <Route path="/" element={<Dashboard_Stu />} />
+                    <Route path="/table" element={<TimeTableMain />} />
+                    <Route path="/report" element={<Report_Stu />} />
+                    <Route path="/payfee'" element={<Payment />} />
+                    <Route path="/accountsetStu" element={<AccountSetting_Stu />} />
+                </Routes>
             </div>
         </div>
     )
