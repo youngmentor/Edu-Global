@@ -9,8 +9,7 @@ import { AiOutlineUserAdd } from "react-icons/ai";
 // import { useParams } from 'react-router-dom';
 
 const AllClasses = () => {
-  const dispatch = useDispatch()
-  const allclass = useSelector((state) => state.Commerce.allclass)
+  // const allclass = useSelector((state) => state.Commerce.allclass)
   const navigate = useNavigate()
   const user = useSelector((state) => state.Commerce.user)
   const [Allclass, setAllClass] = useState([])

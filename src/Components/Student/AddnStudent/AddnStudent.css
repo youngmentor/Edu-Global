@@ -10,7 +10,9 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    /* background-color: blue; */
     gap: 20px;
+    margin-left: 40px;
 }
 .AdminStudents_All_Wrap{
     width: 150px;
@@ -51,6 +53,14 @@
     text-decoration: none;
     color: white;
 }
+.AdminAllStudent_Details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    background-color: green;
+}
 @media screen and (max-width: 426px){
     .AdminStudents_All{
         width: 100%;
@@ -62,7 +72,7 @@
     }
     .AdminStudents_All_Wrap{
         width: 100px;
-        height: 120px;
+        height: 130px;
         background-color: whitesmoke;
         border-radius: 8px;
         display: flex;
@@ -83,8 +93,13 @@
         object-fit: contain;
         border-radius: 100%;
     }
-    .AdminStudent_Details{
+    .AdminAllStudent_Details{
         font-size: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* background-color: green; */
     }
     .AdminStudents_All_AddWrap{
         width: 100px;
