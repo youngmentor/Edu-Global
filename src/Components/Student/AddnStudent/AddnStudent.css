@@ -13,6 +13,7 @@
     /* background-color: blue; */
     gap: 20px;
     margin-left: 40px;
+    margin-top: 40px;
 }
 .AdminStudents_All_Wrap{
     width: 150px;
@@ -59,7 +60,7 @@
     align-items: center;
     justify-content: center;
     font-size: 15px;
-    background-color: green;
+    /* background-color: green; */
 }
 @media screen and (max-width: 426px){
     .AdminStudents_All{
