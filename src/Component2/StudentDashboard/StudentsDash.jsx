@@ -35,7 +35,7 @@ const StudentsDash = () => {
     const StudentEdudrop = (
         <div className='StudentProfileWrap'>
             {open && (
-                <div className='StudentProfile'>
+                <div className='Student_Profile'>
                     <Link to={"accountsetStu"} className="StudentSetting"> <AiOutlineSetting />  <p>Account setting</p></Link>
                     <div className="StudentSetting"> <BiLogOut /> <p onClick={() => navigate("/")} > Log out</p></div>
                     <div className="StudentSetting">  < AiFillHome /> <h5 onClick={() => navigate("/")}>Home</h5></div>
@@ -44,8 +44,8 @@ const StudentsDash = () => {
         </div>
     )
     return (
-        <div className='Student_Main'>
-            <div className='Student_header'>
+        <div className='Student_Dashboard_Main'>
+            <div className='Student_Dashboard_header'>
                 <div className='Student_header_wrap'>
                     <div className='StudentBurger'>
                         {toggle ? <FaTimes onClick={() => { setToggle(!toggle) }} /> : < GiHamburgerMenu onClick={() => { setToggle(!toggle) }} />}
@@ -53,8 +53,8 @@ const StudentsDash = () => {
                     <div className='StudentLogo'>
                         <img src="/NewLogo1.png" alt="Logo" onClick={() => navigate("/")} className="StudentHeaderLogo" />
                     </div>
-                    <div className='AdminSchoolName'>
-                        <div className='AdminSchoolNamewrap'>
+                    <div className='StudentSchoolName'>
+                        <div className='StudentSchoolNamewrap'>
                             <h4>Edu-Global</h4>
                             {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
                         </div>
@@ -62,7 +62,7 @@ const StudentsDash = () => {
                     </div>
                 </div>
             </div>
-            <div className='Student_Main_Wrap'>
+            <div className='Student_Dashboard_Main_Wrap'>
                 <div className='StudentLeftHolder'>
                     <StudentDashLeft />
                 </div>

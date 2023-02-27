@@ -81,6 +81,10 @@
     border-radius: 8px;
     background-color: transparent;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 
 }
 
@@ -89,12 +93,12 @@
     color: white;
 }
 
-.Header-bttn2:hover {
+/* .Header-bttn2:hover {
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
     transition: 1s ease;
-    /* background-color: #5390D9; */
+    background-color: #5390D9;
 }
 
 .Header-bttn1:hover {
@@ -102,7 +106,7 @@
     -ms-transform: scale(1.2);
     transform: scale(1.2);
     transition: 1s ease;
-}
+} */
 
 .Header-btt2 {
     cursor: pointer;

@@ -28,7 +28,9 @@ import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearUser } from '../../Redux/Features';
+
 const Admin = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
     const dispatch=useDispatch()
     const navigate = useNavigate()
     const [toggle, setToggle] = useState(false);
@@ -136,13 +138,18 @@ const Admin = () => {
     ];
 
     const logOut = async () => {
+        console.log("clicked")
         const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/${user?._id}`)
+        setIsLoggedIn(true)
         console.log(res)
         res.status === 200 ? dispatch(clearUser()) : null
         res.status === 200 ? navigate('/loginuser/login') : null
-        console.log(user?.data.data._id)
+        console.log(user?._id)
     }
-
+ const Login =(()=>{
+    setIsLoggedIn(false)
+    res.status === 200 ? navigate('/loginuser/login') : null
+ })
     const adminLeft_Mobile = (
         <div className='AdminLeftMobile_co'>
             {
@@ -163,7 +170,7 @@ const Admin = () => {
                 <div className='AdminProfile'>
                   <Link to={"accountsetadmin"} className="AdminSetting"> <AiOutlineSetting/>  <p>Account setting</p></Link>
                     <p onClick={()=> navigate("/admin/adminprofile/adminprofileupdate")}>Profile</p>
-                  <div>  <p onClick={() => { logOut() }}>Log out</p></div>
+                  {isLoggedIn ? (<div>  <p onClick={() => { logOut() }}>Log out</p></div>): (<div>  <p onClick={()=>{Login()}}>Log in</p></div>)}
                    <div> <h5 onClick={() => navigate("/")}  >Home</h5></div>
                 </div>
             )}
@@ -182,7 +189,7 @@ const Admin = () => {
                 </div>
                 <div className='AdminSchoolName'>
                     <div className='AdminSchoolNamewrap'>
-                        <div className='ActiveUser'></div>
+                        <div className='ActiveUse'></div>
                         <h4>Edu-Global</h4>
                         {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
                     </div>

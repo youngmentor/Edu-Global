@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaTimes } from 'react-icons/fa'
 
 const Header = () => {
+    
     const [toggle, setToggle] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const handleToggle = () => {
