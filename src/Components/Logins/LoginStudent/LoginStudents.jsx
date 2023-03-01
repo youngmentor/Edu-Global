@@ -2,29 +2,51 @@ import React, { useState, } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css'
 import LoginUser from "../LoginUser";
+import axios from "axios";
+import { addStudent, addUser } from "../../../Redux/Features";
+import { useDispatch } from "react-redux";
 const LoginStudent = () => {
+    const dispatch = useDispatch()
     const navigate = useNavigate()
+    const [value, setValue] = useState({
+        email: "",
+        password: ""
+    })
     const field = [
         {
-            name: "Email",
+            name: "email",
             label: "Email",
             placeholder: "Email",
-            type: "text"
+            type: "text",
+            required: true
         },
         {
             name: "password",
             label: "Password",
             placeholder: "Password",
-            type: "password"
+            type: "password",
+            required: true
         },
     ];
-    const [loginData, setLoginData] = useState({});
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setLoginData({ ...loginData, [name]: value });
+    // const [loginData, setLoginData] = useState({});
+    const handleChange = (event) => {
+        setValue({ ...value, [event.target.name]: event.target.value })
     };
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log("clicked")
+        await axios.post(`https://eduglobal.onrender.com/api/student/login`, value)
+        
+        .then(function(res){
+            localStorage.setItem("res", JSON.stringify(res));
+            console.log(res.data)
+                console.log(res.data.message)
+                res.data.data.email === value.email ? dispatch(addUser(res.data.data)) : null
+                res.data.data.email === value.email ? navigate('/studentdash') : null
+        })
+        .catch(function(error){
+            console.log(error);
+        })
     };
 
     return (
@@ -46,13 +68,13 @@ const LoginStudent = () => {
                                 type={i.type}
                                 name={i.name}
                                 placeholder={i.placeholder}
-                                value={loginData[i.name] || ""}
+                                // value={loginData[i.name] || ""}
                                 onChange={handleChange}
                             />
                         </label>
                     ))}
                     <p className='forg' onClick={() => navigate("/forgetpassword")} >Forgot Paasword ?</p>
-                    <button type="submit" className="Loginbtt" onClick={() => navigate("/studentdash")}   >Login</button>
+                    <button type="submit" className="Loginbtt" >Login</button>
                 </div>
                 <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
                 <div className="ImageWrap">

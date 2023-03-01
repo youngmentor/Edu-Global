@@ -4,6 +4,10 @@ import './Login.css'
 import LoginUser from "../LoginUser";
 const LoginTeacher = () => {
     const navigate = useNavigate()
+     const [value, setValue] = useState({
+        email: "",
+        password: ""
+    })
     const field = [
         {
             name: "Email",
@@ -18,13 +22,25 @@ const LoginTeacher = () => {
             type: "password"
         },
     ];
-    const [loginData, setLoginData] = useState({});
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setLoginData({ ...loginData, [name]: value });
+    // const [loginData, setLoginData] = useState({});
+    const handleChange = (event) => {
+        setValue({ ...value, [event.target.name]: event.target.value })
     };
-    const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log("clicked")
+        await axios.post(`https://eduglobal.onrender.com/api/teacher/login`, value)
+        
+        .then(function(res){
+            localStorage.setItem("res", JSON.stringify(res));
+            console.log(res.data)
+                console.log(res.data.message)
+                res.data.data.email === value.email ? dispatch(addUser(res.data.data)) : null
+                res.data.data.email === value.email ? navigate('/teacherdash') : null
+        })
+        .catch(function(error){
+            console.log(error);
+        })
     };
 
     return (

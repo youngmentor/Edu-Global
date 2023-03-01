@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "./All_Students.css"
+import { useDispatch, useSelector } from "react-redux";
 import Loading from '../../Components/LoadingSpin/Loading';
 const All_Students = () => {
-
+    const user = useSelector((state) => state.Commerce.user)
+    const [Allstudents, setAllStudents] = useState([]);
     const [selectedFile, setSelectedFile] = useState(null);
     const [message, setMessage] = useState('');
     const [load, setLoad] = useState(false)
@@ -29,6 +31,15 @@ const All_Students = () => {
                 console.error(error);
             });
     };
+    // const getAllStudent = async (e) => {
+    //     const res = await axios.get(`https://eduglobal.onrender.com/api/admin/allStudent/${user?._id}`)
+    //     setAllStudents(res.data.data)
+    //     // console.log(res.data.data)
+    //   }
+    //   useEffect(() => {
+    //     getAllStudent()
+    
+    //   }, [])
     return (
         <div className='TeacherStudents_All'>
             <div className='TeacherStudents_All_Wrap'>

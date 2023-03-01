@@ -3,14 +3,19 @@ import "./AdminProfile.css"
 import { useRef } from 'react'
 import { AiOutlinePhone, AiOutlineMail } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import Loading from '../../LoadingSpin/Loading';
+import { addUser } from '../../../Redux/Features';
 import axios from 'axios';
 const AdminProfile = () => {
   const user = useSelector((state) => state.Commerce.user)
-  // const [Update, setUpdate] =useState()
+  const dispatch = useDispatch()
+  const [successMessage, setSuccessMessage] = useState(null);
+  const [Load, setLoad] = useState(false)
   const [profile, setProfile] = useState({
     nameOfSchool: "",
     phoneNumber: "",
+    email: "",
     address: "",
     targetLine: "",
     website: "",
@@ -22,7 +27,6 @@ const AdminProfile = () => {
     const file = event.target.files[0];
     setProfile({ ...profile, schoolImage: file });
   };
-  // const inputRef = useRef()
   const handleChange = (e) => {
     setProfile({ ...profile, [e.target.name]: e.target.value });
   };
@@ -33,28 +37,32 @@ const AdminProfile = () => {
     const formData = new FormData();
     formData.append('nameOfSchool', profile.nameOfSchool);
     formData.append('phoneNumber', profile.phoneNumber);
+    formData.append('email', profile.email);
     formData.append('address', profile.address);
     formData.append('targetLine', profile.targetLine);
     formData.append('website', profile.website);
     formData.append('country', profile.country);
     formData.append('schoolImage', profile.schoolImage);
     console.log("clicked")
-    
-    axios.patch(`https://eduglobal.onrender.com/api/admin/updatedProfile/${user?._id}`, formData, {
+    setLoad(true)
+    axios.patch(`https://eduglobal.onrender.com/api/admin/updatedProfile/${user._id}`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
     }
     )
       .then(function (res) {
+        setLoad(false)
+        setSuccessMessage(res.data.message)
         console.log(res)
         console.log(res.data.message)
+        res.data.data.email === value.email ? dispatch(addUser(res.data.data)) : null
       })
       .catch(function (error) {
-        if (error.response) {
-          console.log(error.response.data);
-          console.log(error.response.status);
-          console.log(error.response.headers);
+        if (error.res) {
+          console.log(error.res.data);
+          console.log(error.res.status);
+          console.log(error.res.headers);
         } else if (error.request) {
           console.log(error.request);
         } else {
@@ -87,20 +95,27 @@ const AdminProfile = () => {
     },
     {
       id: 4,
+      name: "email",
+      type: "text",
+      placeholder: "Email Address",
+      required: true
+    },
+    {
+      id: 5,
       name: "address",
       type: "text",
       placeholder: "School Address",
       required: true
     },
     {
-      id: 5,
+      id: 6,
       name: "country",
       type: "text",
       placeholder: " Country",
       required: true
     },
     {
-      id: 6,
+      id: 7,
       name: "website",
       type: "text",
       placeholder: "Website",
@@ -115,15 +130,15 @@ const AdminProfile = () => {
             <h4>Please Enter a New password and Email</h4>
           </div>
           <form onSubmit={UpdateProfile} className="AdminProfile_Form">
-          <label  className='AdminUpdate_Wrap'>
-                <input
-                  // ref={inputRef}
-                  className="AdminUpdate"
-                  type="file" 
-                  onChange={handleImage}
-                  required = {true}
-                />
-              </label>
+            <label className='AdminUpdate_Wrap'>
+              <input
+                // ref={inputRef}
+                className="AdminUpdate"
+                type="file"
+                onChange={handleImage}
+                required={true}
+              />
+            </label>
             {Profile.map((i) => (
               <label key={i.name} className='AdminUpdate_Wrap'>
                 <input
@@ -137,26 +152,27 @@ const AdminProfile = () => {
                 />
               </label>
             ))}
-            <button className='AdminUpdate_Bttn' type='submit'>Update</button>
+            {successMessage && <p>{successMessage}</p>}
+            <button className='AdminUpdate_Bttn' type='submit'>{Load ? <Loading /> : "Update Profile"}</button>
           </form>
 
         </div>
         <div className='AdminProfile_Update_SubWrap2'>
           <h4>Your School Profile</h4>
-          <div className='AdminProfile_Logo_Div'><img src='./NewLogo1.png' className='AdminProfile_Logo' /></div>
-          <h4>The curve Africa</h4>
-          <p>Senior secondary school</p>
+          <div className='AdminProfile_Logo_Div'><img src={profile.schoolImage} alt="Logo" className='AdminProfile_Logo'/></div>
+          <h4>{profile.nameOfSchool}</h4>
+          <p>{profile.targetLine}</p>
           <hr className='line' />
           <div className='AdminProfileUpdate_Details'>
-            <AiOutlinePhone /><p>0914356785</p>
+            <AiOutlinePhone /><p>{profile.phoneNumber}</p>
           </div>
           <div className='AdminProfileUpdate_Details'>
-            <AiOutlineMail /> <p>olaleresuliton@gmail.com</p>
+            <AiOutlineMail /> <p>{profile.email}</p>
           </div>
           <hr className='line' />
           <GoLocation />
-          <h4>37, Arogundade Street </h4>
-          <h5>Nigeria</h5>
+          <h4>{profile.address}</h4>
+          <h5>{profile.country}</h5>
         </div>
       </div>
     </div>

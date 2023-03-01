@@ -24,7 +24,7 @@ const UpdateStudent = () => {
     }
   )
   const user = useSelector((state) => state.Commerce.user)
-  // const allclass = useSelector((state) => state.Commerce.allclass)
+  const allclass = useSelector((state) => state.Commerce.allclass)
   const AddStudent = [
     {
       id: 1,
@@ -93,7 +93,7 @@ const UpdateStudent = () => {
   const handleAddStudent = async (e) => {
     e.preventDefault();
     console.log("clicked")
-    console.log(id)
+    // console.log(id)
     setLoad(true)
    await axios.post(`https://eduglobal.onrender.com/api/admin/${user._id}/${id}`, add_new_student)
    
@@ -131,13 +131,12 @@ const UpdateStudent = () => {
               />
             </label>
           ))}
-          {/* <div className="AddStudent_Input" onChange={(e) => { SetAdd_new_student({ ...add_new_student, studentClass: e.target.value }); }}  ><p>select a class</p></div>
-          <div>
+          <select className="AddStudent_Input" onChange={(e) => { SetAdd_new_student({ ...add_new_student, studentClass: e.target.value }); }}>
           {allclass.map((i) => (
-              <div onClick={() => { console.log(i._id) }} placeholder="Select Class" value={i.nameOfClass}>{i.nameOfClass} {i.classBranch}</div>
+              <option onClick={() => { console.log(i._id) }} placeholder="Select Class" value={i.nameOfClass}>{i.nameOfClass} {i.classBranch}</option>
             ))
             }
-          </div> */}
+          </select>
            {successMessage && <p>{successMessage}</p>}
             <button type="submit" className="AddSbttn" >{Load? <Loading/>: "Add New Student"}</button>        
         </form>

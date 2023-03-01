@@ -10,11 +10,11 @@ const AddnStudent = () => {
   // const navigate = useNavigate()
   const user = useSelector((state) => state.Commerce.user)
   const [Allstudents, setAllStudents] = useState([]);
-
+  const allclass = useSelector((state) => state.Commerce.allclass)
   const getAllStudent = async (e) => {
     const res = await axios.get(`https://eduglobal.onrender.com/api/admin/allStudent/${user?._id}`)
     setAllStudents(res.data.data)
-    console.log(res.data.data)
+    // console.log(res.data.data)
   }
   useEffect(() => {
     getAllStudent()
@@ -34,7 +34,7 @@ const AddnStudent = () => {
           <div className='AdminAllStudent_Details'>
             <p>{i.studentName}</p>
             <p>{i.regNumber}</p>
-            {/* <p>{i.classes}</p> */}
+            {/* <p>{i._id}</p> */}
           </div>
         </div>
       ))}

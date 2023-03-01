@@ -6,6 +6,7 @@ import { useState } from 'react'
 import axios from 'axios'
 const AddTeacher = () => {
   const user = useSelector((state) => state.Commerce.user)
+  const allclass = useSelector((state) => state.Commerce.allclass)
   const {id}=useParams()
   const [Load, setLoad] =useState(false)
   const [successMessage, setSuccessMessage] = useState(null);
@@ -30,71 +31,89 @@ const AddTeacher = () => {
       name: "teacherName",
       // label: "name",
       placeholder: "Name of Teacher",
-      type: "text"
+      type: "text",
+      required: true
     },
     {
       id: 2,
       name: "phoneNumber",
       // label: "number",
       placeholder: "Mobile No",
-      type: "number"
+      type: "number",
+      required: true
     },
     {
       id: 3,
       name: "password",
       // label: "password",
-      placeholder: "Password:",
-      type: "password"
+      placeholder: "Password",
+      type: "password",
+      required: true
     },
     {
       id: 4,
-      name: "homeAddress",
-      // label: "address",
-      placeholder: "Home Address:",
-      type: "select"
+      name: "email",
+      // label: "password",
+      placeholder: "Email",
+      type: "text",
+      required: true
     },
     {
       id: 5,
-      name: "joiningDate",
-      label: "Joining date",
-      placeholder: "joining date",
-      type: "date"
+      name: "homeAddress",
+      // label: "address",
+      placeholder: "Home Address:",
+      type: "text",
+      required: true
     },
     {
       id: 6,
-      name: "DOB",
-      label: "Date Of Birth",
-      placeholder: "Date Of Birth",
-      type: "date"
+      name: "joiningDate",
+      label: "Joining date",
+      placeholder: "joining date",
+      type: "date",
+      required: true
     },
     {
       id: 7,
-      name: "educationalLevel",
-      // label: "Education",
-      placeholder: "Level of Education",
-      type: "text"
+      name: "DOB",
+      label: "Date Of Birth",
+      placeholder: "Date Of Birth",
+      type: "date",
+      required: true
     },
     {
       id: 8,
+      name: "educationalLevel",
+      // label: "Education",
+      placeholder: "Level of Education",
+      type: "text",
+      required: true
+    },
+    {
+      id: 9,
       name: "experience",
       // label: "Experience",
       placeholder: "Years Of Experience",
-      type: "text"
+      type: "text",
+      required: true
     },
 
     {
-      id: 9,
+      id: 10,
       name: "religion",
       // label: "Religion",
       placeholder: "Religion",
-      type: "text"
+      type: "text",
+      required: true
     },
     {
-      id: 10,
+      id: 11,
       name: "gender",
       // label: "Gender",
       placeholder: "Gender",
-      type: "text"
+      type: "text",
+      required: true
     },
   ];
   const handleChange = (e) => {
@@ -104,13 +123,15 @@ const AddTeacher = () => {
   const handleAddTeacher = async(e) => {
     e.preventDefault();
     console.log("clicked")
- await axios.post(`https://eduglobal.onrender.com/api/newTeacher/${id}`)
+    console.log(user?._id)
+ await axios.post(`https://eduglobal.onrender.com/api/newTeacher/${user?._id}`, AddnTeacher)
  .then((response) => {
+  console.log(allclass?._id)
   setLoad(false)
   setSuccessMessage(response.data.message)
   console.log(response.data)
   console.log(response.data.message)
-  response.status === 201 ? dispatch(addStudent(response.data.data)) : null
+  // response.status === 201 ? dispatch(addStudent(response.data.data)) : null
 })
 .catch((error) => {
   console.log(error);
@@ -122,12 +143,12 @@ const AddTeacher = () => {
         <form onSubmit={handleAddTeacher} className="AddTeacher-inputWrap" >
           <h3>Add A New Teacher</h3>
           {AddTeacher.map((i) => (
-            <label className="AddTeacher_Label" key={i.id}  >
+            <label className="AddTeacher_Label" key={i.name}  >
                {i.label}
               <input
                 className="AddTeacher_Input"
                 type={i.type}
-                name={i.name}
+                required={i.required}
                 placeholder={i.placeholder}
                 onChange={handleChange}
               />
