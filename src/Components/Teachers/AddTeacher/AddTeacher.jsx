@@ -5,8 +5,8 @@ import './AddTeacher.css'
 import { useState } from 'react'
 import axios from 'axios'
 const AddTeacher = () => {
-  const user = useSelector((state) => state.Commerce.user)
-  const allclass = useSelector((state) => state.Commerce.allclass)
+  // const user = useSelector((state) => state.Commerce.user)
+  // const allclass = useSelector((state) => state.Commerce.allclass)
   const {id}=useParams()
   const [Load, setLoad] =useState(false)
   const [successMessage, setSuccessMessage] = useState(null);
@@ -22,7 +22,7 @@ const AddTeacher = () => {
     DOB: "",
     experience: "",
     // salary: "",
-    // subjectToTeach: "",
+    subjectToTeach: "",
   }
   )
   const AddTeacher = [
@@ -115,6 +115,14 @@ const AddTeacher = () => {
       type: "text",
       required: true
     },
+    {
+      id: 12,
+      name: "subjectToTeach",
+      // label: "Gender",
+      placeholder: "Subject to Offer",
+      type: "text",
+      required: true
+    },
   ];
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -123,10 +131,10 @@ const AddTeacher = () => {
   const handleAddTeacher = async(e) => {
     e.preventDefault();
     console.log("clicked")
-    console.log(user?._id)
- await axios.post(`https://eduglobal.onrender.com/api/newTeacher/${user?._id}`, AddnTeacher)
+    console.log(id)
+ await axios.post(`https://eduglobal.onrender.com/api/newTeacher/${id}`, AddnTeacher)
  .then((response) => {
-  console.log(allclass?._id)
+  console.log(id)
   setLoad(false)
   setSuccessMessage(response.data.message)
   console.log(response.data)
@@ -138,9 +146,9 @@ const AddTeacher = () => {
 });
   };
   return (
-    <div className='AdminAddn_Teacher'>
-      <div className='AdminAddn_TeacherWrap'>
-        <form onSubmit={handleAddTeacher} className="AddTeacher-inputWrap" >
+    <div className='AdminAddnew_Teacher'>
+      <div className='AdminAddnew_TeacherWrap'>
+        <form onSubmit={handleAddTeacher} className="AddNewTeacher-inputWrap" >
           <h3>Add A New Teacher</h3>
           {AddTeacher.map((i) => (
             <label className="AddTeacher_Label" key={i.name}  >
@@ -156,7 +164,7 @@ const AddTeacher = () => {
           ))}
           
           {successMessage && <p>{successMessage}</p>}
-          <button type="submit" className="Addbttn">{Load? <Loading/>: "Add New Teacher"}</button>
+          <button type="submit" className="AddNewbttn">{Load? <Loading/>: "Add New Teacher"}</button>
         </form>
       </div>
     </div>

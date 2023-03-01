@@ -4,33 +4,27 @@
     box-sizing: border-box;
 }
 
-.AdminAddn_Teacher {
+.AdminAddnew_Teacher {
     width: 100%;
-    height: 90%;
+    height: 600px;
+    margin-top: 50px;
+    /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.AdminAddn_TeacherWrap {
-    width: 600px;
-    height: 700px;
-    margin-top: 100px;
-    margin-bottom: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.AdminAddnew_TeacherWrap {
+    width: 550px;
+    margin-top: 50px;
+    margin-bottom: 20px;
     border-radius: 8px;
-    background-color: rgb(250, 250, 255);
-    /* background-color: blue; */
-    /* -webkit-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
-  -moz-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1); */
     box-shadow: -2px 3px 13px 0px rgb(152, 152, 155);
 }
 
 .AddTeacher_Input {
     width: 500px;
-    height: 35px;
+    height: 30px;
     padding: 10px;
     border: 1px solid rgb(224, 215, 215);
     border-radius: 8px;
@@ -42,20 +36,31 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    /* background-color: blue; */
     font-size: 12px;
-    width: 700px;
+    width: 500px;
 }
 
-.AddTeacher-inputWrap {
+.AddNewTeacher-inputWrap{
     width: 100%;
-    /* height: 90vh; */
-    margin-top: 100px;
+    height: 600px;
+    /* margin-top: 80px; */
+    padding: 102px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     border-radius: 8px;
+    background-color: green;
     gap: 10px;
+}
+.AddNewbttn{
+    width: 200px;
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid rgb(201, 200, 200);
+    background-color: #5390D9;
 }
 
 @media screen and (max-width: 426px) {

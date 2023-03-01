@@ -71,7 +71,7 @@ const StudentsDash = () => {
                     <Route path="/" element={<Dashboard_Stu />} />
                     <Route path="/table" element={<TimeTableMain />} />
                     <Route path="/report" element={<Report_Stu />} />
-                    <Route path="/payfee'" element={<Payment />} />
+                    <Route path="/payfee" element={<Payment />} />
                     <Route path="/accountsetStu" element={<AccountSetting_Stu />} />
                 </Routes>
             </div>

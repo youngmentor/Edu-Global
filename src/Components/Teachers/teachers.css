@@ -6,8 +6,10 @@
 
 .AdminTeachers{
   width: 75%;
-  height: 90%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
+  /* background-color: red; */
 }
