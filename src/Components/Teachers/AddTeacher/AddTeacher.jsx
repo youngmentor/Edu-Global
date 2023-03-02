@@ -125,13 +125,14 @@ const AddTeacher = () => {
     },
   ];
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    SetAddnTeacher({ ...AddnTeacher, [name]: value });
+    SetAddnTeacher({ ...AddnTeacher, [e.target.name]: e.target.value });
   };
   const handleAddTeacher = async(e) => {
     e.preventDefault();
     console.log("clicked")
+    console.log(id)
   const res = await axios.post(`https://eduglobal.onrender.com/api/newTeacher/${id}`, AddnTeacher)
+ 
   setLoad(false)
   setSuccessMessage(res.data.message)
   console.log(res.data)

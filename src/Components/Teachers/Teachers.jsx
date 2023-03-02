@@ -11,7 +11,7 @@ export default function Teachers() {
       <div className='AdminTeachers_Wrap'>
         <Routes>
           <Route path="/allteacher" element={<AllTeachers/>} />
-          <Route path="/addteacher/:_id" element={<AddTeacher/>}/>
+          <Route path="/addteacher/:id" element={<AddTeacher/>}/>
         </Routes>
       </div>
     </div>
