@@ -21,7 +21,7 @@ const AddnStudent = () => {
   };
   const deleteStudent = async (e) => {
     console.log("clicked")
-      await axios.delete(`https://edusms.onrender.com/api/admin/deleteStudent/${user?._id} ${id}`)
+      await axios.delete(`https://edusms.onrender.com/api/admin/deleteStudent/${user?._id}`)
       // console.log
       setDeleteStudent(res.data.data)
       console.log(res.data.data)
