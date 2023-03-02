@@ -8,7 +8,7 @@ const Student = () => {
     <div className='AdminStudent'>
          <div className='AdminStuWrap'>
         <Routes>
-          <Route path='/addnstudents' element={<AddnStudent/>} />
+          <Route path='/addnstudents/:id' element={<AddnStudent/>} />
           <Route path='/updatestudents/:id' element={<UpdateStudent />} />
         </Routes>
       </div>

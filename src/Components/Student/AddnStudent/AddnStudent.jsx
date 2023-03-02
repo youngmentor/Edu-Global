@@ -5,16 +5,26 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import { addStudent } from '../../../Redux/Features'
+// import { addStudent } from '../../../Redux/Features'
+import { MdDelete } from "react-icons/md";
 const AddnStudent = () => {
   // const navigate = useNavigate()
+  const {id}=useParams()
   const user = useSelector((state) => state.Commerce.user)
   const [Allstudents, setAllStudents] = useState([]);
-  const allclass = useSelector((state) => state.Commerce.allclass)
+ const [DeleteStudent, setDeleteStudent]= useState([])
+  const addStudent = useSelector((state) => state.Commerce.addStudent)
   const getAllStudent = async (e) => {
     const res = await axios.get(`https://eduglobal.onrender.com/api/admin/allStudent/${user?._id}`)
     setAllStudents(res.data.data)
     // console.log(res.data.data)
+  };
+  const deleteStudent = async (e) => {
+    console.log("clicked")
+      await axios.delete(`https://edusms.onrender.com/api/admin/deleteStudent/${user?._id} ${id}`)
+      // console.log
+      setDeleteStudent(res.data.data)
+      console.log(res.data.data)
   }
   useEffect(() => {
     getAllStudent()
@@ -23,7 +33,7 @@ const AddnStudent = () => {
   useEffect(() => {
     // console.log(res)
     // console.log(Allclass)
-  }, [Allstudents])
+  }, [Allstudents , DeleteStudent])
   return (
     <div className='AdminStudents_All'>
       {Allstudents?.map((i) => (
@@ -36,6 +46,7 @@ const AddnStudent = () => {
             <p>{i.regNumber}</p>
             {/* <p>{i._id}</p> */}
           </div>
+          <div className='AdminStudent_Delete_Icon'><MdDelete  onClick={() => deleteStudent()}/></div>
         </div>
       ))}
 

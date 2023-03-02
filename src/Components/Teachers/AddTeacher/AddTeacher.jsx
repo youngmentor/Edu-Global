@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import './AddTeacher.css'
 import { useState } from 'react'
 import axios from 'axios'
+import Loading from '../../LoadingSpin/Loading'
 const AddTeacher = () => {
   // const user = useSelector((state) => state.Commerce.user)
   // const allclass = useSelector((state) => state.Commerce.allclass)
@@ -130,6 +131,7 @@ const AddTeacher = () => {
   const handleAddTeacher = async(e) => {
     e.preventDefault();
     console.log("clicked")
+    setLoad(true)
     // console.log(AddnTeacher)
     // const {email, teacherName, password, phoneNumber, homeAddress, joiningDate, DOB, educationalLevel, experience, religion,gender,subjectToTeach  } = 
   const res = await axios.post(`https://eduglobal.onrender.com/api/newTeacher/${id}`, AddnTeacher)
@@ -144,15 +146,15 @@ const AddTeacher = () => {
 // });
   };
   return (
-    <div className='AdminAddnew_Teacher'>
-      <div className='AdminAddnew_TeacherWrap'>
-        <form onSubmit={handleAddTeacher} className="AddNewTeacher-inputWrap" >
+    <div className='AdminAddnew_Teacher_Main'>
+      <div className='AdminAddnew_TeacherWrapper'>
+        <form onSubmit={handleAddTeacher} className="AddNewTeacher-inputWrapper" >
           <h3>Add A New Teacher</h3>
           {AddTeacher.map((i) => (
             <label className="AddTeacher_Label" key={i.name}  >
                {i.label}
               <input
-                className="AddTeacher_Input"
+                className="AddTeacher_Inputs"
                 key={i.id}
                 type={i.type}
                 name={i.name}
@@ -164,7 +166,7 @@ const AddTeacher = () => {
           ))}
           
           {successMessage && <p>{successMessage}</p>}
-          <button type="submit" className="AddNewbttn">{Load? <Loading/>: "Add New Teacher"}</button>
+          <button type="submit" className="AddNewTeacherbttn">{Load? <Loading/>: "Add New Teacher"}</button>
         </form>
       </div>
     </div>

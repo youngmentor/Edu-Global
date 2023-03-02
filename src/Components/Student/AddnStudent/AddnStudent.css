@@ -22,7 +22,7 @@
     border-radius: 8px;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    /* cursor: pointer; */
     flex-direction: column;
    
     gap: 25px;
@@ -61,6 +61,18 @@
     justify-content: center;
     font-size: 15px;
     /* background-color: green; */
+}
+.AdminStudent_Delete_Icon{
+    width: 20px;
+    height: 20px;
+    /* background-color: red; */
+    position: relative;
+    bottom: 20px;
+    left: 50px;
+    cursor: pointer;
+}
+.AdminStudent_Delete_Icon:hover{
+    color: red;
 }
 @media screen and (max-width: 426px){
     .AdminStudents_All{
@@ -107,5 +119,12 @@
     height: 100px;
     margin-top: 20px;
     margin-left: 30px;
+    }
+    .AdminStudent_Delete_Icon{
+        position: relative;
+        bottom: 25px;
+        left: 30px;
+        width: 10px;
+        height: 10px;
     }
 }
