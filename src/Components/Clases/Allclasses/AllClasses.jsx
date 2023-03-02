@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaGraduationCap } from "react-icons/fa";
 import { addClass } from '../../../Redux/Features';
 import { AiOutlineUserAdd } from "react-icons/ai";
+import { FaChalkboardTeacher } from "react-icons/fa";
 // import { useParams } from 'react-router-dom';
 
 const AllClasses = () => {
@@ -35,7 +36,7 @@ const AllClasses = () => {
       <div className='AllClassCardHolder'>
 
         {Allclass?.map((i) => {
-         return <div key={i._id} className='AllClassCard'>
+          return <div key={i._id} className='AllClassCard'>
             <div className='AllClassCardWrap'>
               <div className='AllClassCardDetails'>
                 <h4>{i.nameOfClass} {i.classBranch}</h4>
@@ -43,13 +44,18 @@ const AllClasses = () => {
                 <h2>{i.students.length}</h2>
                 <h4>Students</h4>
               </div>
-              <Link to ={`/admin/student/updatestudents/${i._id}`}>  
-              <AiOutlineUserAdd className='AddStudent_icon'/>
+              <Link to={`/admin/student/updatestudents/${i._id}`} className='AddStudent_icon'>
+                <AiOutlineUserAdd />
+                <p>Add Student</p>
               </Link>
-              <div className='AllClassGraduationCap'>
+              <Link to={`/admin/teachers/addteacher/${i._id}`} className='AddTeacher_icon'>
+                <FaChalkboardTeacher />
+                <p>Add Teacher</p>
+              </Link>
+              {/* <div className='AllClassGraduationCap'>
                 <FaGraduationCap style={{ width: "50px", height: "50px" }} />  
                 <p>SchoolFee: {i.monthlyTutionFees}</p>           
-              </div>
+              </div> */}
             </div>
           </div>
         })

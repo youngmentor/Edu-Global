@@ -131,16 +131,12 @@ const AddTeacher = () => {
   const handleAddTeacher = async(e) => {
     e.preventDefault();
     console.log("clicked")
-    console.log(id)
- await axios.post(`https://eduglobal.onrender.com/api/newTeacher/${id}`, AddnTeacher)
- .then((response) => {
-  console.log(id)
+  const res = await axios.post(`https://eduglobal.onrender.com/api/newTeacher/${id}`, AddnTeacher)
   setLoad(false)
-  setSuccessMessage(response.data.message)
-  console.log(response.data)
-  console.log(response.data.message)
-  // response.status === 201 ? dispatch(addStudent(response.data.data)) : null
-})
+  setSuccessMessage(res.data.message)
+  console.log(res.data)
+  console.log(res.data.message)
+
 .catch((error) => {
   console.log(error);
 });

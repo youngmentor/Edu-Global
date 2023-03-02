@@ -12,9 +12,9 @@ export default function Clases() {
     <div className='classes'>
       <div className='classesWrap'>
         <Routes>
-          <Route path='allClasses' element={<AllClasses />} />
-          <Route path='addclasses' element={<AddClasses />} />
-          <Route path='editclasses' element={<EditClasses />} />
+          <Route path='/allClasses' element={<AllClasses />} />
+          <Route path='/addclasses' element={<AddClasses />} />
+          <Route path='/editclasses' element={<EditClasses />} />
         </Routes>
       </div>
     </div>
