@@ -130,7 +130,8 @@ const AddTeacher = () => {
   const handleAddTeacher = async(e) => {
     e.preventDefault();
     console.log("clicked")
-    console.log(id)
+    // console.log(AddnTeacher)
+    // const {email, teacherName, password, phoneNumber, homeAddress, joiningDate, DOB, educationalLevel, experience, religion,gender,subjectToTeach  } = 
   const res = await axios.post(`https://eduglobal.onrender.com/api/newTeacher/${id}`, AddnTeacher)
  
   setLoad(false)
@@ -138,9 +139,9 @@ const AddTeacher = () => {
   console.log(res.data)
   console.log(res.data.message)
 
-.catch((error) => {
-  console.log(error);
-});
+// .catch((error) => {
+//   console.log(error);
+// });
   };
   return (
     <div className='AdminAddnew_Teacher'>
@@ -152,9 +153,11 @@ const AddTeacher = () => {
                {i.label}
               <input
                 className="AddTeacher_Input"
+                key={i.id}
                 type={i.type}
-                required={i.required}
+                name={i.name}
                 placeholder={i.placeholder}
+                required={i.required}
                 onChange={handleChange}
               />
             </label>

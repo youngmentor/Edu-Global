@@ -118,7 +118,7 @@ const UpdateStudent = () => {
         <form onSubmit={handleAddStudent} className="Add-inputWrap" >
           <h3>Register New Student</h3>
           {AddStudent.map((i) => (
-            <label key={i.id} className="AddStudent_Label">
+            <label className="AddStudent_Label">
               {i.label}
               <input
                key={i.id}
