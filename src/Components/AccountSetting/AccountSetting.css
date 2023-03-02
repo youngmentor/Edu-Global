@@ -79,13 +79,13 @@
 
 @media screen and (max-width:426px) {
     .UpdateAccountAdmin_Main_Wrap {
-        width: 100%;
+        width: 500px;
         display: flex;
-        flex-direction: column;
+        /* flex-direction: column; */
         align-items: center;
         justify-content: center;
         margin-top: 150px;
-margin-left: 150px;
+        margin-right: 130px; 
         /* background-color: green; */
         gap: 20px;
     }
@@ -120,7 +120,6 @@ margin-left: 150px;
         align-items: center;
         justify-content: center;
         /* background-color: blue; */
-        margin-right: 200px;
     }
 
     .accountsetAdmin_text {
@@ -131,11 +130,12 @@ margin-left: 150px;
 }
 
 @media screen and (max-width:769px) {
-    
-.UpdateAccountAdmin_Main {
-    width: 100%;
-    display: flex;
-}
+
+    .UpdateAccountAdmin_Main {
+        width: 100%;
+        display: flex;
+    }
+
     .UpdateAccountAdmin_Main_Wrap {
         width: 100%;
         display: flex;

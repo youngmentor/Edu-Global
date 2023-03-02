@@ -28,7 +28,7 @@ import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearUser } from '../../Redux/Features';
-
+import { BiLogOut } from "react-icons/bi";
 const Admin = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
     const dispatch=useDispatch()
@@ -155,7 +155,7 @@ const Admin = () => {
             {
                 toggle && (
                     <div className='AdminLeftMobile_mobile' >
-                        <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title'>< AiFillHome /><h4>Dashboard</h4></div>
+                        <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title1'><h4>Dashboard</h4></div>
                         {AdminData.map((i) => (
                             <AdminLeft key={i.id}{...i} style={({ isActive }) => isActive ? activeColorObject : colorObject} />
                         ))}
@@ -170,8 +170,8 @@ const Admin = () => {
                 <div className='AdminProfile'>
                   <Link to={"accountsetadmin"} className="AdminSetting"> <AiOutlineSetting/>  <p>Account setting</p></Link>
                     <p onClick={()=> navigate("/admin/adminprofile/adminprofileupdate")}>Profile</p>
-                  {isLoggedIn ? (<div>  <p onClick={() => { logOut() }}>Log out</p></div>): (<div>  <p onClick={()=>{Login()}}>Log in</p></div>)}
-                   <div> <h5 onClick={() => navigate("/")}  >Home</h5></div>
+                  {isLoggedIn ? (<div className="AdminSetting"> <BiLogOut />  <p onClick={() => { logOut() }}>Log out</p></div>): (<div>  <p onClick={()=>{Login()}}>Log in</p></div>)}
+                   <div className="AdminSetting">  < AiFillHome /> <h5 onClick={() => navigate("/")}  >Home</h5></div>
                 </div>
             )}
         </div>

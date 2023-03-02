@@ -9,10 +9,10 @@ const AccountSetting = () => {
       <div className='UpdateAccountAdmin_Main_Wrap'>
         <div className='UpdateAccountAdmin_Main_Wrap1'>
           <div className='accountsetAdmin_text'>
-            <h4>Please Enter a New password and Email</h4>
+            <h4>Please Enter a New password</h4>
           </div>
-          <input type="text" className='UpdateAccountAdmin' ref={inputRef} placeholder="Enter your new Email..." />
-          <input type="passowrd" className='UpdateAccountAdmin' ref={inputRef} placeholder="Enter your new PassWord..." />
+          <input type="text" className='UpdateAccountAdmin'  placeholder="Enter your Email..." />
+          <input type="passowrd" className='UpdateAccountAdmin'  placeholder="Enter your new PassWord..." />
           <button className='UpdateAccounAdmint_Bttn' >Update</button>
         </div>
         <div className='UpdateAccountAdmin_Main_Wrap2' >
