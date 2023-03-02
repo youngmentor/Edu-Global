@@ -17,8 +17,9 @@
 }
 .AdminStudents_All_Wrap{
     width: 150px;
-    height: 200px;
+    /* height: 200px; */
     background-color: whitesmoke;
+    /* background-color: red; */
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -63,13 +64,14 @@
     /* background-color: green; */
 }
 .AdminStudent_Delete_Icon{
-    width: 20px;
-    height: 20px;
+    background-color: white;
+    /* width: 20px;
+    height: 20px; */
     /* background-color: red; */
-    position: relative;
+    /* position: relative;
     bottom: 20px;
     left: 50px;
-    cursor: pointer;
+    cursor: pointer; */
 }
 .AdminStudent_Delete_Icon:hover{
     color: red;

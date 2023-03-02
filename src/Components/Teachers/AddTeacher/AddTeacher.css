@@ -52,3 +52,18 @@
     background-color: #5390D9;
     color: white;
 }
+@media screen and (max-width: 426px){
+    .AdminAddnew_Teacher_Main{
+        width: 100%;
+        /* background-color: red; */
+    }
+    .AdminAddnew_TeacherWrapper{
+        width: 100%;
+    }
+    .AddNewTeacher-inputWrapper{
+        width: 380px; 
+    }
+    .AddTeacher_Inputs{
+        width: 300px;
+    }
+}

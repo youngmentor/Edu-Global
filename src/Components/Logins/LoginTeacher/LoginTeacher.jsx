@@ -2,6 +2,7 @@ import React, { useState, } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css'
 import LoginUser from "../LoginUser";
+import axios from "axios";
 const LoginTeacher = () => {
     const navigate = useNavigate()
      const [value, setValue] = useState({
@@ -26,11 +27,10 @@ const LoginTeacher = () => {
     const handleChange = (event) => {
         setValue({ ...value, [event.target.name]: event.target.value })
     };
-   const handleSubmit = async (e) => {
+   const handleSubmit =  (e) => {
         e.preventDefault();
         console.log("clicked")
-        await axios.post(`https://eduglobal.onrender.com/api/teacher/login`, value)
-        
+     axios.post(`https://eduglobal.onrender.com/api/teacher/login`, value)
         .then(function(res){
             localStorage.setItem("res", JSON.stringify(res));
             console.log(res.data)
@@ -62,13 +62,13 @@ const LoginTeacher = () => {
                                 type={i.type}
                                 name={i.name}
                                 placeholder={i.placeholder}
-                                value={loginData[i.name] || ""}
+                                // value={loginData[i.name] || ""}
                                 onChange={handleChange}
                             />
                         </label>
                     ))}
                     <p className='forg' onClick={() => navigate("/forgetpassword")} >Forgot Paasword ?</p>
-                    <button type="submit" className="Loginbtt" onClick={() => navigate("/teacherdash")}  >Login</button>
+                    <button type="submit" className="Loginbtt" >Login</button>
                 </div>
                 <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
                 <div className="ImageWrap">
