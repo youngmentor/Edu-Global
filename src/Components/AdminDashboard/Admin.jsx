@@ -91,40 +91,40 @@ const Admin = () => {
             // click2: "/admin/teachers/addteacher",
 
         },
-        , {
-            id: 5,
-            title: "Attendance",
-            // text1: "Mark Student Attendance",
-            text2: "Teacher Attendance",
-            icon1: < AiFillHome />,
-            icon2: <IoIosArrowForward />,
-            icon3: <SlArrowDown />,
-            click: "/admin/attendance",
-            // click1: "/admin/attendance/studentattendance",
-            click2: "/admin/attendance/teacherattendance",
-        }
-        , {
-            id: 6,
-            title: "TimeTable",
-            text1: "Upload TimeTable",
-            icon1: < AiFillHome />,
-            icon2: <IoIosArrowForward />,
-            icon3: <SlArrowDown />,
-            click: "/admin/timetable",
-            click1: "/admin/viewtimetable"
+        // , {
+        //     id: 5,
+        //     title: "Attendance",
+        //     text1: "Mark Student Attendance",
+        //     text2: "Teacher Attendance",
+        //     icon1: < AiFillHome />,
+        //     icon2: <IoIosArrowForward />,
+        //     icon3: <SlArrowDown />,
+        //     click: "/admin/attendance",
+        //     click1: "/admin/attendance/studentattendance",
+        //     click2: "/admin/attendance/teacherattendance",
+        // }
+        // , {
+        //     id: 6,
+        //     title: "TimeTable",
+        //     text1: "Upload TimeTable",
+        //     icon1: < AiFillHome />,
+        //     icon2: <IoIosArrowForward />,
+        //     icon3: <SlArrowDown />,
+        //     click: "/admin/timetable",
+        //     click1: "/admin/viewtimetable"
 
 
-        }
-        , {
-            id: 7,
-            title: "Fees",
-            text1: "Pay Fees",
-            icon1: < AiFillHome />,
-            icon2: <IoIosArrowForward />,
-            icon3: <SlArrowDown />,
-            click: "/admin/fee"
+        // }
+        // , {
+        //     id: 7,
+        //     title: "Fees",
+        //     text1: "Pay Fees",
+        //     icon1: < AiFillHome />,
+        //     icon2: <IoIosArrowForward />,
+        //     icon3: <SlArrowDown />,
+        //     click: "/admin/fee"
 
-        },
+        // },
         {
             id: 8,
             title: "Profile",
@@ -201,7 +201,7 @@ const Admin = () => {
                 <div className='AdminMainWraps'>
                     <div className='AdminLeft'>
                         <div className='AdminLeftWrap' >
-                            <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title'><h4>Dashboard</h4></div>
+                            <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title1'><h4>Dashboard</h4></div>
                             <div className='AdminLeftHolder'>
                                 {AdminData.map((i) => (
                                     <AdminLeft key={i.id}{...i} />
