@@ -29,18 +29,6 @@ const Payment = () => {
       type: "number",
       placeholder: "Payer Number",
       required: true,
-    // }, {
-    //   id: 3,
-    //   name: "studentClass",
-    //   type: "text",
-    //   placeholder: "Student Class",
-    //   required: true,
-    // }, {
-      id: 4,
-      name: " amountToPay",
-      type: "number",
-      placeholder: "Amount",
-      required: true,
     }, {
       id: 5,
       name: "regNumber",
@@ -82,7 +70,13 @@ const Payment = () => {
           ))}
           <select className="Student_Payment_Input" onChange={(e) => { setPayment({ ...Payment, studentClass: e.target.value }); }}>
           {allclass.map((i) => (
-              <option onClick={() => { console.log(i._id) }} placeholder="Select Class" value={i.nameOfClass}>{i.nameOfClass} {i.classBranch}</option>
+              <option onClick={() => { console.log(i._id) }} placeholder="Select Class" value={i.nameOfClass}> Class- {i.nameOfClass} {i.classBranch}</option>
+            ))
+            }
+          </select>
+          <select className="Student_Payment_Input" onChange={(e) => { setPayment({ ...Payment, studentClass: e.target.value }); }}>
+          {allclass.map((i) => (
+              <option onClick={() => { console.log(i._id) }} placeholder="Select Class" value={i.monthlyTutionFees}> Amount- {i.nameOfClass}{i.classBranch} - {i.monthlyTutionFees}</option>
             ))
             }
           </select>

@@ -6,15 +6,15 @@ function Timetabl_Stu() {
   const [timetableUrl, setTimetableUrl] = useState(null);
 
   useEffect(() => {
-    const fetchTimetable = async () => {
-      try {
-        const response = await axios.get('/api/timetable');
-        setTimetableUrl(response.data.url);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchTimetable();
+    // const fetchTimetable = async () => {
+    //   try {
+    //     const response = await axios.get('/api/timetable');
+    //     setTimetableUrl(response.data.url);
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // };
+    // fetchTimetable();
   }, []);
 
   const handleDownloadClick = () => {

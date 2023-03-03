@@ -8,14 +8,14 @@ function Report_Stu({ studentId }) {
   const [isDownloaded, setIsDownloaded] = useState(false);
 
   useEffect(() => {
-    axios.get(`/${studentId}`)
-      .then(response => {
-        setStudentName(response.data.name);
-        setResults(response.data.results);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    // axios.get(`/${studentId}`)
+    //   .then(response => {
+    //     setStudentName(response.data.name);
+    //     setResults(response.data.results);
+    //   })
+    //   .catch(error => {
+    //     console.error(error);
+    //   });
   }, [studentId]);
 
   const handleDownload = () => {
