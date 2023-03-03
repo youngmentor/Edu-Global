@@ -48,7 +48,7 @@ const AddClasses = () => {
         // console.log(res)
         // console.log(res.data.message)
         setSuccessMessage(res.data.message)
-        // res.status === 201 ? Navigate('/admin/clases/addclasses') : null
+        res.status === 201 ? Navigate('/admin/clases/addclasses') : null
     }
 
     return (

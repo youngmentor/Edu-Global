@@ -56,7 +56,7 @@ const Form = () => {
       const response = await axios.post("https://eduglobal.onrender.com/api/admin/sign", form);
       console.log(response.data)
       console.log(response.data.message);
-      response.status === 201 ? navigate("/loginuser/login") : null  
+      response.status === 200 ? navigate("/loginuser/login") : null  
       login_alert()
     } catch (error) {
       console.log("error")
