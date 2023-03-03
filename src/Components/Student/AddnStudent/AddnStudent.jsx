@@ -43,7 +43,7 @@ const AddnStudent = () => {
         <Student_Card key={i._id} {...i}  deleteStudent={ deleteStudent} status={DeleteStudent} />
       ))}
 
-      <NavLink className='AdminStudents_All_AddWrap' to="/admin/student/updatestudents" >
+      <NavLink className='AdminStudents_All_AddWrap' to="/admin/clases/allClasses" >
         <p>+</p>
         <p>Add New</p>
       </NavLink>

@@ -29,7 +29,7 @@ const AllTeachers = () => {
      {AllTeacher?.map((i)=>(
       <Teachers_Card key={i._id} {...i} />
      ))}
-      <NavLink className='AdminTeacher_All_AddWrap' to="/admin/teachers/addteacher" >
+      <NavLink className='AdminTeacher_All_AddWrap' to="/admin/clases/allClasses" >
         <p>+</p>
         <p>Add New</p>
       </NavLink>
