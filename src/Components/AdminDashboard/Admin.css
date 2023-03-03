@@ -130,7 +130,8 @@
 .Dash{
     text-decoration: none;
     color: inherit;
-    line-height: 1.7;
+    /* line-height: 1.7; */
+    margin-top: 10px;
     cursor: pointer;
 }
 /* .AdminNavContan{
