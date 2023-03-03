@@ -6,12 +6,13 @@ import 'react-calendar/dist/Calendar.css';
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaTimes } from 'react-icons/fa'
 import { IoIosArrowDown } from "react-icons/io";
-import { AiFillHome } from "react-icons/ai";
+import { AiFillHome, AiOutlineProfile } from "react-icons/ai";
 import { RiPencilRulerLine } from "react-icons/ri";
 import { FaUserFriends } from "react-icons/fa";
 import { SlArrowDown } from "react-icons/sl";
 import { IoIosArrowForward } from "react-icons/io";
 import { AiOutlineSetting } from "react-icons/ai";
+import { MdOutlineClass } from "react-icons/md";
 import { useNavigate, Link } from 'react-router-dom'
 import Dashboard from '../Dashboard/Dashboard'
 import Clases from '../Clases/Classes'
@@ -43,8 +44,8 @@ const Admin = () => {
             title: "Classes",
             text1: "All classes",
             text2: "Add New Classes",
-            text3: "Edit or Delete",
-            icon1: < AiFillHome />,
+            // text3: "Edit or Delete",
+            icon1: < MdOutlineClass/>,
             icon2: <IoIosArrowForward />,
             value: false,
             icon3: <SlArrowDown />,
@@ -52,19 +53,6 @@ const Admin = () => {
             click1: "/admin/clases/allClasses",
             click2: "/admin/clases/addclasses",
             click3: "/admin/clases/editclasses",
-        }
-        , {
-            id: 2,
-            title: "Subject",
-            text1: "Classes With Subject",
-            text2: "Add New Subject",
-            icon1: < RiPencilRulerLine />,
-            icon2: <IoIosArrowForward />,
-            icon3: <SlArrowDown />,
-            click: "/admin/subject",
-            click1: "/admin/subject/classeswsubject",
-            click2: "/admin/subject/addnsubject",
-           
         }
         , {
             id: 3,
@@ -129,7 +117,7 @@ const Admin = () => {
             id: 8,
             title: "Profile",
             text1: "Edit Profile",
-            icon1: < AiFillHome />,
+            icon1: < AiOutlineProfile/>,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
             click: "admin/adminprofile",
@@ -169,7 +157,7 @@ const Admin = () => {
             {open && (
                 <div className='AdminProfile'>
                   <Link to={"accountsetadmin"} className="AdminSetting"> <AiOutlineSetting/>  <p>Account setting</p></Link>
-                    <p onClick={()=> navigate("/admin/adminprofile/adminprofileupdate")}>Profile</p>
+                  <div className="AdminSetting"> < AiOutlineProfile/> <p onClick={()=> navigate("/admin/adminprofile/adminprofileupdate")}>Profile</p> </div>
                   {isLoggedIn ? (<div className="AdminSetting"> <BiLogOut />  <p onClick={() => { logOut() }}>Log out</p></div>): (<div>  <p onClick={()=>{Login()}}>Log in</p></div>)}
                    <div className="AdminSetting">  < AiFillHome /> <h5 onClick={() => navigate("/")}  >Home</h5></div>
                 </div>
@@ -201,7 +189,7 @@ const Admin = () => {
                 <div className='AdminMainWraps'>
                     <div className='AdminLeft'>
                         <div className='AdminLeftWrap' >
-                            <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title1'><h4>Dashboard</h4></div>
+                            <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title1'> < AiFillHome /> <h4>Dashboard</h4></div>
                             <div className='AdminLeftHolder'>
                                 {AdminData.map((i) => (
                                     <AdminLeft key={i.id}{...i} />

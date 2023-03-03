@@ -40,25 +40,12 @@ export default function Dashboard() {
               <div className='AdminCardDetails'>
                 <h2>0</h2>
               </div>
-            </div>
-        
-            
+            </div>     
           </div>
           <div className='AdminCard'>
             <div className='AdminCardWrap'>
               <div className='AdminGraduationCap'>
-                <h4>Total Employee:</h4>
-                <FaGraduationCap style={{ width: "50px", height: "50px" }} />
-              </div>
-              <div className='AdminCardDetails'>
-                <h2>0</h2>
-              </div>
-            </div>
-          </div>
-          <div className='AdminCard'>
-            <div className='AdminCardWrap'>
-              <div className='AdminGraduationCap'>
-                <h4>Total Subject:</h4>
+                <h4>Total Teachers:</h4>
                 <FaGraduationCap style={{ width: "50px", height: "50px" }} />
               </div>
               <div className='AdminCardDetails'>
