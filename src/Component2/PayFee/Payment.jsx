@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import "./Payment.css"
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addPayment } from '../../Redux/Features'
+
 import PaymentApi from './PaymentApi'
 const Payment = () => {
-
+  const dispatch = useDispatch()
+  const [amountPay, setAmountPay] = useState("")
   const [Payment, setPayment] = useState({
     // quantity: cart.length,
     studentName: "",
@@ -12,6 +15,7 @@ const Payment = () => {
     studentClass: "",
     studentEmail: "",
     regNumber: "",
+    pay: true
 
   })
 
@@ -30,57 +34,96 @@ const Payment = () => {
       placeholder: "Payer Number",
       required: true,
     }, {
-      id: 5,
+      id: 3,
       name: "regNumber",
       type: "number",
-      placeholder: "Phone Number",
+      placeholder: "Reg Number",
+      required: true,
+    },
+    {
+      id: 4,
+      name: "studentEmail",
+      type: "text",
+      placeholder: "Email",
       required: true,
     }
   ]
   const allclass = useSelector((state) => state.Commerce.allclass)
-  function PaymentApi (amount) {
+
+  const setAmount = (i) => {
+    const classes = i.slice(0, 3)
+    console.log(classes)
+    if (classes === "SS1") {
+      setAmountPay(1000)
+      console.log("clicked1")
+    } else if (classes === "SS2") {
+      setAmountPay(2000)
+      console.log("clicked2")
+    } else if (classes === "SS3") {
+      setAmountPay(3000)
+      console.log("clicked3")
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     console.log("clicked")
-    // let key = `key${Math.random()}`
-    window.korapay.initialize({
-      key: "pk_test_MFDuWfiVWvpnJ35q6UCrTFnjyMnmdPBJJcSZHSKd",
-      refrence: `${refVal}`,
-      amount: {totalAmount},
+
+    let key = `key${Math.random()}`
+    window.Korapay.initialize({
+      key: 'pk_test_N87ZLKAVcU2K6XicN7L1nyrQvcrvmco9tK87CaFY',
+      reference: key,
+      amount: amountPay,
       currency: "NGN",
       customer: {
         name: "John Doe",
-        email: "john@doe.com",
+        email: "john@doe.com"
       },
-      notification_url: "https://example.com/webhook"
-    });;
+      onClose: function () {
+        // Handle when modal is closed
+      },
+      onSuccess: function (data) {
+        data.reference === key ? dispatch(addPayment(Payment)) : null
+        console.log(data)
+        // console.log(key)
+      },
+      onFailed: function (data) {
+        // console.log(data)
+      }
+    });
+  };
+  const handleChange = (e) => {
+
+    setPayment({ ...Payment, [e.target.name]: e.target.value });
+    // console.log(e.target.value)
   }
   return (
     <div className='StudentPayment_Main'>
       <div className='StudentPayment_Main_Wrap'>
-        <form className='StudentPayment_Main_Form'>
+        <form className='StudentPayment_Main_Form' onSubmit={handleSubmit}>
           {Field.map((i) => (
             <label key={i.id}>
               <input
-              className='Student_Payment_Input'
+                className='Student_Payment_Input'
                 placeholder={i.placeholder}
                 type={i.type}
                 name={i.name}
-                
+                onChange={handleChange}
               />
             </label>
           ))}
-          <select className="Student_Payment_Input" onChange={(e) => { setPayment({ ...Payment, studentClass: e.target.value }); }}>
-          {allclass.map((i) => (
-              <option onClick={() => { console.log(i._id) }} placeholder="Select Class" value={i.nameOfClass}> Class- {i.nameOfClass} {i.classBranch}</option>
+          <select className="Student_Payment_Input" onChange={(e) => {
+            setAmount(e.target.value)
+            setPayment({ ...Payment, studentClass: e.target.value });
+            // console.log(e.target.value)
+          }}>
+            <option value="">Select a Class</option>
+            {allclass.map((i) => (
+              <option placeholder="Select Class" value={`${i.nameOfClass} ${i.classBranch}`}> Class- {i.nameOfClass} {i.classBranch}</option>
             ))
             }
           </select>
-          <select className="Student_Payment_Input" onChange={(e) => { setPayment({ ...Payment, studentClass: e.target.value }); }}>
-          {allclass.map((i) => (
-              <option onClick={() => { console.log(i._id) }} placeholder="Select Class" value={i.monthlyTutionFees}> Amount- {i.nameOfClass}{i.classBranch} - {i.monthlyTutionFees}</option>
-            ))
-            }
-          </select>
-          <button type="submit" className='Payment_Button'  onClick={PaymentApi}> Proceed To Payment</button>
+          <button className='Payment_Button' > Proceed To Payment</button>
         </form>
       </div>
     </div>

@@ -5,7 +5,9 @@ import LoginUser from "../LoginUser";
 import axios from "axios";
 import { addStudent, addUser } from "../../../Redux/Features";
 import { useDispatch } from "react-redux";
+import Loading from "../../LoadingSpin/Loading";
 const LoginStudent = () => {
+    const [load, setLoad] = useState(false)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [value, setValue] = useState({
@@ -35,17 +37,19 @@ const LoginStudent = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("clicked")
+        setLoad(true)
         await axios.post(`https://eduglobal.onrender.com/api/student/login`, value)
         
         .then(function(res){
-            localStorage.setItem("res", JSON.stringify(res));
+            // localStorage.setItem("res", JSON.stringify(res));
             console.log(res.data)
                 console.log(res.data.message)
-                res.data.data.email === value.email ? dispatch(addUser(res.data.data)) : null
+                res.data.data.email === value.email ? dispatch(addStudent(res.data.data)) : null
                 res.data.data.email === value.email ? navigate('/studentdash') : null
         })
         .catch(function(error){
             console.log(error);
+            setLoad(false)
         })
     };
 
@@ -74,7 +78,7 @@ const LoginStudent = () => {
                         </label>
                     ))}
                     <p className='forg' onClick={() => navigate("/forgetpassword")} >Forgot Paasword ?</p>
-                    <button type="submit" className="Loginbtt" >Login</button>
+                    <button type="submit" className="Loginbtt" >{load ? <Loading /> : "Login"}</button>
                 </div>
                 <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
                 <div className="ImageWrap">

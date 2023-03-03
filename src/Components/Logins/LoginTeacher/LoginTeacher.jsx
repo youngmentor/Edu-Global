@@ -2,8 +2,10 @@ import React, { useState, } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css'
 import LoginUser from "../LoginUser";
+import Loading from "../../LoadingSpin/Loading";
 import axios from "axios";
 const LoginTeacher = () => {
+    const [load, setLoad] = useState(false)
     const navigate = useNavigate()
      const [value, setValue] = useState({
         email: "",
@@ -30,6 +32,7 @@ const LoginTeacher = () => {
    const handleSubmit =  (e) => {
         e.preventDefault();
         console.log("clicked")
+        setLoad(true)
      axios.post(`https://eduglobal.onrender.com/api/teacher/login`, value)
         .then(function(res){
             localStorage.setItem("res", JSON.stringify(res));
@@ -40,6 +43,7 @@ const LoginTeacher = () => {
         })
         .catch(function(error){
             console.log(error);
+            setLoad(false)
         })
     };
 
@@ -68,7 +72,7 @@ const LoginTeacher = () => {
                         </label>
                     ))}
                     <p className='forg' onClick={() => navigate("/forgetpassword")} >Forgot Paasword ?</p>
-                    <button type="submit" className="Loginbtt" >Login</button>
+                    <button type="submit" className="Loginbtt" >{load ? <Loading /> : "Login"}</button>
                 </div>
                 <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
                 <div className="ImageWrap">

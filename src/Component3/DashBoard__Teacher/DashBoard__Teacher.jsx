@@ -2,12 +2,14 @@ import React, {useState} from 'react'
 import "./DashBoard__Teacher.css"
 import Calendar from 'react-calendar'
 const Dashboard_Teacher= () => {
-
   const [date, setDate] = useState(new Date());
-
   const handleChange = (selectedDate) => {
       setDate(selectedDate);
   };
+
+  // const getStudent = () =>{
+  //   axios.get(`https://eduglobal.onrender.com/api/admin/Teacher/`)
+  // }
   return (
     <div className='Dashboard_Teach_Main'>
       <div className='Dashboard_Teach_Main_Wrap' >

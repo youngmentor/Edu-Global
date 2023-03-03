@@ -22,7 +22,7 @@ const Header = () => {
                     <img src="/NewLogo1.png" alt="Logo" onClick={() => navigate("/")} className="HeaderLogo" />
                 </div>
                 <div className='Header-bttn'>
-                    <button className="Header-bttn1" onClick={() => navigate("signUp")}  >Sign Up+</button>
+                    <button className="Header-bttn1" onClick={() => navigate("signUp")}  >Sign Up</button>
                     <button className='Header-bttn2' onClick={() => navigate("loginuser/login")}  >Login</button>
                 </div>
                 {isOpen && (
