@@ -61,7 +61,7 @@ const [onestudent, setOneStudent]=useState()
               <h5>{onestudentdata.gender}</h5>
             </div>
           </div>
-        </div>:"b"
+        </div>:"Loading Your info"
         }
         <div className='Dashboard_Students_Left'>
           <div className='Dashboard_Students_Msg' >
