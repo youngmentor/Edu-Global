@@ -3,21 +3,24 @@ import Calendar from 'react-calendar'
 import React, { useState,useEffect } from 'react'
 import { FaGraduationCap } from "react-icons/fa";
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 export default function Dashboard() {
+  const user = useSelector((state) => state.Commerce.user)
   const [date, setDate] = useState(new Date());
   const [Allclass, setAllClass] = useState([])
   const handleChange = (selectedDate) => {
     setDate(selectedDate);
   };
 
-  const getOne = async () => {
+  const getClass = async () => {
     const res = await axios.get(`https://eduglobal.onrender.com/api/admin/allClass/${user?._id}`)
-    // console.log(res)
     setAllClass(res.data.data)
     // console.log(res.data.data)
     // res.status === 201? dispatch(addClass(res.data.data)) : null
   };
-
+  useEffect(() => {
+    getClass()
+  }, [])
   useEffect(() => {
     // console.log(res)
     // console.log(Allclass)
@@ -60,7 +63,7 @@ export default function Dashboard() {
                 <FaGraduationCap style={{ width: "50px", height: "50px" }} />
               </div>
               <div className='AdminCardDetails'>
-                <h2>0</h2>
+                <h2>{Allclass.length}</h2>
               </div>
             </div>
           </div>
