@@ -1,20 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./Dashboard_Stu.css"
 import Calendar from 'react-calendar'
 import axios from 'axios';
 import { addStudent } from '../../Redux/Features';
 import { useDispatch, useSelector } from "react-redux";
 const Dashboard_Stu = () => {
-const [oneStudent, setOneStudent]=useState([])
+const [onestudent, setOneStudent]=useState()
   const [date, setDate] = useState(new Date());
   const student = useSelector((state) => state.Commerce.student)
   const handleChange = (selectedDate) => {
     setDate(selectedDate);
   };
 
-  const getStudent = () =>{
-    axios.get(`https://eduglobal.onrender.com/api/admin/Student/${student?._id}`)
+  const getStudent = async () =>{
+    const res = await   axios.get(`https://eduglobal.onrender.com/api/admin/Student/${student._id}`)
     setOneStudent(res.data.data)
+    console.log("this is what am looking for",onestudent)
   }
 
   useEffect(() => {
@@ -22,13 +23,20 @@ const [oneStudent, setOneStudent]=useState([])
 
   }, [])
   useEffect(() => {
-    console.log(res)
+    // console.log(res)
     // console.log(Allclass)
-  }, [oneStudent])
+  },)
   return (
     <div className='Dashboard_Students_Main'>
       <div className='Dashboard_Students_Main_Wrap' >
-      {oneStudent?.map((i)=>(
+
+        {/* {
+          onestudent.map((i)=>(
+            console.log(i)
+          ))
+        } */}
+
+      {/* {?.map((i) =>(
           <div className='Dashboard_Students_Info_Right' >
           <div className='Dashboard_Students_Info_Detail'>
             <img src='/UserImg.png' alt='' className='Dashboard_Students_Info_Img' />
@@ -57,7 +65,7 @@ const [oneStudent, setOneStudent]=useState([])
             </div>
           </div>
         </div>
-      ))}
+      ))} */}
         <div className='Dashboard_Students_Left'>
           <div className='Dashboard_Students_Msg' >
             <h4>Suliton Welcome to student portal<br /> you have access to your info</h4>
