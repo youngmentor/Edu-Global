@@ -8,6 +8,8 @@ export default function Dashboard() {
   const user = useSelector((state) => state.Commerce.user)
   const [date, setDate] = useState(new Date());
   const [Allclass, setAllClass] = useState([])
+  const [Allstudent, setAllStudent] = useState([])
+  const [Allteacher, setAllTeacher] = useState([])
   const handleChange = (selectedDate) => {
     setDate(selectedDate);
   };
@@ -18,8 +20,20 @@ export default function Dashboard() {
     // console.log(res.data.data)
     // res.status === 201? dispatch(addClass(res.data.data)) : null
   };
+  const getAllStudent = async (e) => {
+    const res = await axios.get(`https://eduglobal.onrender.com/api/admin/allStudent/${user?._id}`)
+    setAllStudent(res.data.data)
+    // console.log(res.data.data)
+  };
+  const getAllTeacher = async (e) => {
+    const res = await axios.get(`https://eduglobal.onrender.com/api/admin/allTeacher/${user?._id}`)
+    setAllTeacher(res.data.data)
+    // console.log(res.data.data)
+  };
   useEffect(() => {
     getClass()
+    getAllStudent()
+    getAllTeacher()
   }, [])
   useEffect(() => {
     // console.log(res)
@@ -33,15 +47,14 @@ export default function Dashboard() {
             <img src='/Message.png' alt='' className='Admin_Info_Mssg' />
           </div>
         <div className='AdminCardHolder'>
-          <div className='AdminCard'>
-            
+          <div className='AdminCard'>         
               <div className='AdminCardWrap'>
               <div className='AdminGraduationCap'>
                 <h4>Total Students:</h4>
                 <FaGraduationCap style={{ width: "50px", height: "50px" }} />
               </div>
               <div className='AdminCardDetails'>
-                <h2>0</h2>
+                <h2>{Allstudent.length}</h2>
               </div>
             </div>     
           </div>
@@ -52,7 +65,7 @@ export default function Dashboard() {
                 <FaGraduationCap style={{ width: "50px", height: "50px" }} />
               </div>
               <div className='AdminCardDetails'>
-                <h2>0</h2>
+                <h2>{Allteacher.length}</h2>
               </div>
             </div>
           </div>
