@@ -127,7 +127,7 @@ const AdminProfile = () => {
       <div className='AdminProfile_Update_Wrap'>
         <div className='AdminProfile_Update_SubWrap1'>
           <div className='AdminPtofile_text'>
-            <h4>Please Enter a New password and Email</h4>
+            <h4>Update School Detail</h4>
           </div>
           <form onSubmit={UpdateProfile} className="AdminProfile_Form">
             <label className='AdminUpdate_Wrap'>

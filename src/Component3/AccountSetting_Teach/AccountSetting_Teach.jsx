@@ -8,7 +8,7 @@ const AccountSetting_Teach = () => {
       <div className='UpdateAccountTeach_Main_Wrap'>
         <div className='UpdateAccountTeach_Main_Wrap1'>
           <div className='accountsetteach_text'>
-            <h4>Please Enter a New password and Email</h4>
+            <h4>Update Account Details</h4>
           </div>
           <input type="text" className='UpdateAccountTeach' ref={inputRef} placeholder="Enter your new Email..." />
           <input type="passowrd" className='UpdateAccountTeach' ref={inputRef} placeholder="Enter your new PassWord..." />
