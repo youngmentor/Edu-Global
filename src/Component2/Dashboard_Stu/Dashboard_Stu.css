@@ -128,24 +128,34 @@
         justify-content: center;
         flex-direction: column;
         background-color: white;
+        /* background-color: red; */
         border-radius: 8px;
         border: 1px solid rgb(202, 201, 201);
     }
 
     .Dashboard_Students_Info_Detail {
-        width: 100px;
+        width: 200px;
         height: 100px;
         border-radius: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
 
     .Dashboard_Students_Info_Img {
         width: 80px;
         height: 80px;
         border-radius: 100%;
+    }
+
+    .Dashboard_Students_Info_Detail h3 {
+        width: 100%;
+        /* color: white; */
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 13px;
     }
 
     .Dashboard_Students_info {
@@ -193,10 +203,12 @@
         width: 120px;
         height: 80px;
     }
-    .Student_Calender{
+
+    .Student_Calender {
         width: 300px;
     }
 }
+
 @media screen and (max-width: 769px) {
     .Dashboard_Students_Main {
         margin-top: 400px;

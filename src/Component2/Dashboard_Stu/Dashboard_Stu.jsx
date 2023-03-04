@@ -65,7 +65,7 @@ const [onestudent, setOneStudent]=useState()
         }
         <div className='Dashboard_Students_Left'>
           <div className='Dashboard_Students_Msg' >
-            <h4>Suliton Welcome to student portal<br /> you have access to your info</h4>
+            <h4>{onestudentdata.studentName} Welcome to student portal<br /> you have access to your info</h4>
             <img src='/Message.png' alt='' className='Dashboard_Stu_Info_Img' />
           </div>
           <Calendar onChange={handleChange} value={date} className="Student_Calender" />

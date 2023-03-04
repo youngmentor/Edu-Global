@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import StudentDashLeft from './StudentDashLeft'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaTimes } from 'react-icons/fa'
@@ -15,12 +15,26 @@ import { BiLogOut } from "react-icons/bi";
 import { AiFillHome } from "react-icons/ai";
 import "./StudentDash.css"
 import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
+import { useSelector } from 'react-redux';
 const StudentsDash = () => {
 
     const navigate = useNavigate()
+    const [onestudent, setOneStudent]=useState()
     const [toggle, setToggle] = useState(false);
     const [open, setOpen] = useState(false)
+    const student = useSelector((state) => state.Commerce.student)
 
+
+     const getStudent = () =>{
+    axios.get(`https://eduglobal.onrender.com/api/admin/Student/${student._id}`)
+    .then(res=> {setOneStudent(res.data.data)})
+
+  }
+  const onestudentdata = {...onestudent}
+   useEffect(() => {
+    getStudent()
+  }, [])
     const studentLeft_Mobile = (
         <div className='StudentLeftMobile_co'>
             {
@@ -55,7 +69,7 @@ const StudentsDash = () => {
                     </div>
                     <div className='StudentSchoolName'>
                         <div className='StudentSchoolNamewrap'>
-                            <h4>Edu-Global</h4>
+                            {onestudent ?<h4>{onestudentdata.studentName}</h4>: "Edu-Global"}
                             {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
                         </div>
                         {open && StudentEdudrop}

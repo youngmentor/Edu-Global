@@ -40,7 +40,7 @@ const LoginTeacher = () => {
                 console.log(res.data)
                 console.log(res.data.message)
                 res.data.data.email === value.email ? dispatch(addTeacher(res.data.data)) : null
-                res.data.data.email === 200 ? navigate('/teacherdash') : null
+                res.data.data.email === value.email ? navigate('/teacherdash') : null
             })
             .catch(function (error) {
                 console.log(error);
