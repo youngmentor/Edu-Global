@@ -102,7 +102,7 @@ const UpdateStudent = () => {
         setSuccessMessage(response.data.message)
         console.log(response.data)
         console.log(response.data.message)
-        response.status === 201 ? dispatch(addStudent(response.data.data)) : null
+        response.status === 200 ? dispatch(addStudent(response.data.data)) : null
       })
       .catch((error) => {
         console.log(error);
@@ -114,15 +114,15 @@ const UpdateStudent = () => {
 
   }, []);
   return (
-    <div className='AdminAddn_Student'>   
-        <form onSubmit={handleAddStudent} className="Add-inputWrap" >
+    <div className='AdminAddn_Students'>   
+        <form onSubmit={handleAddStudent} className="AddStudent-inputWrap" >
           <h3>Register New Student</h3>
           {AddStudent.map((i) => (
             <label className="AddStudent_Label">
               {i.label}
               <input
                key={i.id}
-                className="AddStudent_Input"
+                className="AddStudent_Inputs"
                 type={i.type}
                 name={i.name}
                 placeholder={i.placeholder}
@@ -131,7 +131,7 @@ const UpdateStudent = () => {
               />
             </label>
           ))}
-          <select className="AddStudent_Input" onChange={(e) => { SetAdd_new_student({ ...add_new_student, studentClass: e.target.value }); }}>
+          <select className="AddStudent_Inputs" onChange={(e) => { SetAdd_new_student({ ...add_new_student, studentClass: e.target.value }); }}>
           {allclass.map((i) => (
               <option onClick={() => { console.log(i._id) }} placeholder="Select Class" value={i.nameOfClass}>{i.nameOfClass} {i.classBranch}</option>
             ))

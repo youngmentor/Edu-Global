@@ -4,7 +4,7 @@ import './AddClasses.css'
 import Loading from '../../LoadingSpin/Loading';
 import { Navigate, useNavigate } from 'react-router-dom';
 const AddClasses = () => {
-    const Navigate= useNavigate()
+    const navigate= useNavigate()
     const [successMessage, setSuccessMessage] = useState(null);
     const [Load, setLoad] =useState(false)
     const [AddData, setAddData] = useState({
@@ -43,12 +43,12 @@ const AddClasses = () => {
         console.log("clicked")
         setLoad(true)
         e.preventDefault();
-        const res = await axios.post("https://eduglobal.onrender.com/api/admin/newClass", AddData)
+        const res = await axios.post("https://eduglobal.onrender.com/api/classNew", AddData)
       setLoad(false)
-        // console.log(res)
+        console.log(res)
         // console.log(res.data.message)
         setSuccessMessage(res.data.message)
-        res.status === 201 ? Navigate('/admin/clases/addclasses') : null
+        res.status === 200 ? navigate('/admin/clases/allClasses') : null
     }
 
     return (

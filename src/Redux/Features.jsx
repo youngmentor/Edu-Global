@@ -34,5 +34,5 @@ const Features = createSlice({
   }
 })
 
-export const { addUser,clearUser, addFile, addClass, addStudent, addPayment} = Features.actions
+export const { addUser,clearUser, addFile, addClass, addStudent, addPayment, addTeacher} = Features.actions
 export default Features.reducer

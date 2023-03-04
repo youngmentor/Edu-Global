@@ -1,15 +1,17 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import './AddTeacher.css'
 import { useState } from 'react'
 import axios from 'axios'
 import Loading from '../../LoadingSpin/Loading'
+import { addTeacher } from '../../../Redux/Features'
 const AddTeacher = () => {
   // const user = useSelector((state) => state.Commerce.user)
   // const allclass = useSelector((state) => state.Commerce.allclass)
-  const {id}=useParams()
-  const [Load, setLoad] =useState(false)
+  const { id } = useParams()
+  const [Load, setLoad] = useState(false)
+  const Navigate = useNavigate()
   const [successMessage, setSuccessMessage] = useState(null);
   const [AddnTeacher, SetAddnTeacher] = useState({
     teacherName: "",
@@ -128,22 +130,18 @@ const AddTeacher = () => {
   const handleChange = (e) => {
     SetAddnTeacher({ ...AddnTeacher, [e.target.name]: e.target.value });
   };
-  const handleAddTeacher = async(e) => {
+  const handleAddTeacher = async (e) => {
     e.preventDefault();
     console.log("clicked")
     setLoad(true)
-    // console.log(AddnTeacher)
-    // const {email, teacherName, password, phoneNumber, homeAddress, joiningDate, DOB, educationalLevel, experience, religion,gender,subjectToTeach  } = 
-  const res = await axios.post(`https://eduglobal.onrender.com/api/newTeacher/${id}`, AddnTeacher)
- 
-  setLoad(false)
-  setSuccessMessage(res.data.message)
-  console.log(res.data)
-  console.log(res.data.message)
+    const res = await axios.post(`https://eduglobal.onrender.com/api/admin/${id}`, AddnTeacher)
 
-// .catch((error) => {
-//   console.log(error);
-// });
+    setLoad(false)
+    setSuccessMessage(res.data.message)
+    console.log(res.data)
+    console.log(res.data.message)
+    res.status === 200 ? dispatch(addTeacher(response.data.data)) : null
+    res.status === 200 ? Navigate('/admin/clases/allClasses') : null
   };
   return (
     <div className='AdminAddnew_Teacher_Main'>
@@ -152,7 +150,7 @@ const AddTeacher = () => {
           <h3>Add A New Teacher</h3>
           {AddTeacher.map((i) => (
             <label className="AddTeacher_Label" key={i.name}  >
-               {i.label}
+              {i.label}
               <input
                 className="AddTeacher_Inputs"
                 key={i.id}
@@ -164,9 +162,9 @@ const AddTeacher = () => {
               />
             </label>
           ))}
-          
+
           {successMessage && <p>{successMessage}</p>}
-          <button type="submit" className="AddNewTeacherbttn">{Load? <Loading/>: "Add New Teacher"}</button>
+          <button type="submit" className="AddNewTeacherbttn">{Load ? <Loading /> : "Add New Teacher"}</button>
         </form>
       </div>
     </div>

@@ -207,7 +207,7 @@
         position: fixed;
         top: 60px;
         left: 0px;
-        overflow-y: scroll;
+        /* overflow-y: scroll;/ */
         background-color:rgb(245, 238, 238);
         border-radius: 8px;
         border: 1px solid rgb(231, 207, 207);
@@ -217,7 +217,7 @@
         display: none;
     }
     .AdminLeftMobile_mobile{
-        width: 90%;
+        width: 100%;
         padding: 15px 0px;
     }
     .AdminLeft{
@@ -252,7 +252,11 @@
     }
     .AdminLeftWrap_title1{
         font-size: 13px;
-        width: 100%;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: red; */
         /* margin-left: -100px; */
     }
 
