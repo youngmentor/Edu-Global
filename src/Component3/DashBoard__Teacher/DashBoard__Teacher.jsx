@@ -7,59 +7,71 @@ const Dashboard_Teacher= () => {
   const teacher = useSelector((state) => state.Commerce.teacher)
   const [oneteacher, setOneTeacher]=useState()
   const [date, setDate] = useState(new Date());
+
+
   const handleChange = (selectedDate) => {
       setDate(selectedDate);
   };
 
   const getTeacher = () =>{
+  
     axios.get(`https://eduglobal.onrender.com/api/admin/Teacher/${teacher._id}`)
-    .then(res=> {setOneTeacher(res.data.data)})
-
+    
+    .then(res=> {
+      setOneTeacher(res.data.data)}
+      )
   }
   useEffect(() => {
     getTeacher()
+
   }, [])
-  
+  const oneteacherdata = {...oneteacher}
   return (
     <div className='Dashboard_Teach_Main'>
       <div className='Dashboard_Teach_Main_Wrap' >
-        <div className='Dashboard_Teach_Info_Right' >
+        {oneteacher ?  <div className='Dashboard_Teach_Info_Right' >
           <div className='Dashboard_Teach_Info_Detail'>
-            <img src='/UserImg.png' alt='' className='Dashboard_Stu_Info_Img' />
-            <h3>{oneteacher.teacherName}</h3>
+            <img src='/UserImg.png' alt='' className='Dashboard_Teach_Info_Img' />
+            <h3>{oneteacherdata.teacherName}</h3>
           </div>
           <div className='Dashboard_info'>           
              <div className='Dashboard_detail'>
                <h5>Class:</h5>
-               <h5>{oneteacher.teacherclass.nameOfClass} {oneteacher.teacherclass.classBranch}  </h5>
+               <h5>{oneteacherdata.teacherclass.nameOfClass} {oneteacherdata.teacherclass.classBranch}  </h5>
              </div>
              <div className='Dashboard_detail'>
                <h5>Subject:</h5>
-               <h5>{oneteacher.subjectToTeach}</h5>
+               <h5>{oneteacherdata.subjectToTeach}</h5>
              </div>
              <div className='Dashboard_detail'>
                <h5>Gender:</h5>
-               <h5>{oneteacher.gender}</h5>
+               <h5>{oneteacherdata.gender}</h5>
              </div>
              <div className='Dashboard_detail'>
                <h5>Contact:</h5>
-               <h5>{oneteacher.phoneNumber}</h5>
+               <h5>{oneteacherdata.phoneNumber}</h5>
              </div>
              <div className='Dashboard_detail'>
                <h5>Date of Employment:</h5>
-               <h5>{oneteacher.joiningDate}</h5>
+               <h5>{oneteacherdata.joiningDate}</h5>
              </div>
              <div className='Dashboard_detail'>
                <h5>Experience:</h5>
-               <h5>{oneteacher.experience }</h5>
+               <h5>{oneteacherdata.experience }</h5>
              </div>
           </div>
-        </div>
+          </div>
+          : "Loading info..."}
+       
+        
       <div className='Dashboard_Teach_Left'>
-      <div className='Dashboard_Teach_Msg' >
-          <h4>{oneteacher.teacherName} Welcome to Teacher's portal<br/> you have access to your info</h4>
+        <div className='Dashboard_Teach_Msg' >
+        {oneteacher ? 
+          <h4>{oneteacherdata.teacherName} Welcome to Teacher's portal<br/> you have access to your info</h4>
+          : "Loading name..."}
           <img src='/Message.png' alt='' className='Dashboard_Teach_Info_Mss' />
-        </div>
+        </div> 
+      
         <Calendar onChange={handleChange} value={date} className="Teach_Calender" />
       </div>
       </div>

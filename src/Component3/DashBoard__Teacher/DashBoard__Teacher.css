@@ -29,6 +29,7 @@
 
 .Dashboard_Teach_Info_Img {
     width: 150px;
+    height: 150px;
 }
 
 .Dashboard_Teach_Info_Mss {
@@ -109,5 +110,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .Dashboard_Teach_Info_Img {
+        width: 150px;
+        height: 150px;
     }
 }
