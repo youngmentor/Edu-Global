@@ -2,8 +2,16 @@ import React from 'react'
 import "./AccountSetting.css"
 import { useRef } from 'react'
 const AccountSetting = () => {
-  const inputRef = useRef('')
-
+  const [allAdmin, setAllAdmin] = useState([])
+  const getAdmin = async (e) => {
+    const res = await axios.get(`https://eduglobal.onrender.com/api/admin/Admin/${user?._id}`)
+    setAllAdmin(res.data.data)
+    // console.log(res.data.data)
+};
+const AllAdmin = { ...allAdmin }
+useEffect(() => {
+    getAdmin()
+}, [])
   return (
     <div className='UpdateAccountAdmin_Main'>
       <div className='UpdateAccountAdmin_Main_Wrap'>
@@ -17,7 +25,7 @@ const AccountSetting = () => {
         </div>
         <div className='UpdateAccountAdmin_Main_Wrap2' >
           <h4>Account Login Details</h4>
-          <div className='UpdateAccountAdmin' >Email:<p></p> </div>
+          <div className='UpdateAccountAdmin' >Email:<p>{AllAdmin.email}</p> </div>
           <div className='UpdateAccountAdmin' >PassWord: <p></p></div>
           <button className='UpdateAccounAdmint_Bttn2' >Delete Account</button>
         </div>
