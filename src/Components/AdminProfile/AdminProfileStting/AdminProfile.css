@@ -90,11 +90,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    object-fit: contain;
 }
 .AdminProfile_Logo{
   border-radius: 100%;
     width: 80px;
     height: 80px;
+    object-fit: contain;
 }
 .AdminProfileUpdate_Details{
     width: 100%;
@@ -127,7 +129,7 @@
     }
     .AdminUpdate{
         width: 250px;
-        height: 30px;
+        height: 42px;
         border-radius: 8px;
         padding: 15px;
         border: 1px solid rgb(185, 184, 184);

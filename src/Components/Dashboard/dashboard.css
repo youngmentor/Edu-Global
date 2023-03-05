@@ -15,8 +15,8 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
 }
 .AdminCard {
   width: 400px;
@@ -96,6 +96,13 @@
     align-items: center;
     justify-content: center;
     /* background-color: red; */
+  }
+  .AdminRightDiv{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .AdminCard {
     width: 350px;

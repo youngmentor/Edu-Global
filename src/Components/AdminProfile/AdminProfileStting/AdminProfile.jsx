@@ -12,10 +12,11 @@ const AdminProfile = () => {
   const dispatch = useDispatch()
   const [successMessage, setSuccessMessage] = useState(null);
   const [Load, setLoad] = useState(false)
+  const [allAdmin, setAllAdmin] = useState([])
   const [profile, setProfile] = useState({
     nameOfSchool: "",
     phoneNumber: "",
-    email: "",
+    // email: "",
     address: "",
     targetLine: "",
     website: "",
@@ -31,13 +32,21 @@ const AdminProfile = () => {
     setProfile({ ...profile, [e.target.name]: e.target.value });
   };
 
+  const getAdmin = async (e) => {
+    const res = await axios.get(`https://eduglobal.onrender.com/api/admin/Admin/${user?._id}`)
+    setAllAdmin(res.data.data)
+    // console.log(res.data.data)
+  };
+  useEffect(() => {
+    getAdmin()
+  }, [])
   const UpdateProfile = (e) => {
     e.preventDefault();
     console.log(profile)
     const formData = new FormData();
     formData.append('nameOfSchool', profile.nameOfSchool);
     formData.append('phoneNumber', profile.phoneNumber);
-    formData.append('email', profile.email);
+    // formData.append('email', profile.email);
     formData.append('address', profile.address);
     formData.append('targetLine', profile.targetLine);
     formData.append('website', profile.website);
@@ -66,9 +75,9 @@ const AdminProfile = () => {
         } else if (error.request) {
           console.log(error.request);
         } else {
-          console.log('Error', error.message);
+          // console.log('Error', error.message);
         }
-        console.log(error.config);
+        // console.log(error.config);
       });
   }
   const Profile = [
@@ -93,13 +102,13 @@ const AdminProfile = () => {
       placeholder: "Phone Number",
       required: true
     },
-    {
-      id: 4,
-      name: "email",
-      type: "text",
-      placeholder: "Email Address",
-      required: true
-    },
+    // {
+    //   id: 4,
+    //   name: "email",
+    //   type: "text",
+    //   placeholder: "Email Address",
+    //   required: true
+    // },
     {
       id: 5,
       name: "address",
@@ -121,7 +130,8 @@ const AdminProfile = () => {
       placeholder: "Website",
       required: true
     },
-  ]
+  ];
+  const AllAdmin ={...allAdmin}
   return (
     <div className='AdminProfile_Update'>
       <div className='AdminProfile_Update_Wrap'>
@@ -159,20 +169,21 @@ const AdminProfile = () => {
         </div>
         <div className='AdminProfile_Update_SubWrap2'>
           <h4>Your School Profile</h4>
-          <div className='AdminProfile_Logo_Div'><img src={profile.schoolImage} alt="Logo" className='AdminProfile_Logo'/></div>
-          <h4>{profile.nameOfSchool}</h4>
-          <p>{profile.targetLine}</p>
+          {allAdmin ?<div className='AdminProfile_Logo_Div'><img src={AllAdmin.schoolImage} alt="Logo" className='AdminProfile_Logo'/></div> : "Loading Image" }
+          
+          <h4>{AllAdmin.nameOfSchool}</h4>
+          <p>{AllAdmin.targetLine}</p>
           <hr className='line' />
           <div className='AdminProfileUpdate_Details'>
-            <AiOutlinePhone /><p>{profile.phoneNumber}</p>
+            <AiOutlinePhone /><p>{AllAdmin.phoneNumber}</p>
           </div>
           <div className='AdminProfileUpdate_Details'>
-            <AiOutlineMail /> <p>{profile.email}</p>
+            <AiOutlineMail /> <p>{AllAdmin.email}</p>
           </div>
           <hr className='line' />
           <GoLocation />
-          <h4>{profile.address}</h4>
-          <h5>{profile.country}</h5>
+          <h4>{AllAdmin.address}</h4>
+          <h5>{AllAdmin.country}</h5>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import './Admin.css'
 import AdminLeft from './AdminLeft'
 // import { AdminData } from './AdminData'
@@ -37,7 +37,7 @@ const Admin = () => {
     const [toggle, setToggle] = useState(false);
     const [open, setOpen] = useState(false)
     const user = useSelector((state) => state.Commerce.user)
-
+    const [allAdmin, setAllAdmin] = useState([])
     const AdminData = [
          {
             id: 1,
@@ -124,7 +124,15 @@ const Admin = () => {
             click1: "/admin/adminprofile/adminprofileupdate"
         }
     ];
-
+    const getAdmin = async (e) => {
+        const res = await axios.get(`https://eduglobal.onrender.com/api/admin/Admin/${user?._id}`)
+        setAllAdmin(res.data.data)
+        // console.log(res.data.data)
+      };
+      useEffect(() => {
+        getAdmin()
+      }, [])
+      const AllAdmin ={...allAdmin}
     const logOut = async () => {
         console.log("clicked")
         const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/${user?._id}`)
@@ -177,8 +185,7 @@ const Admin = () => {
                 </div>
                 <div className='AdminSchoolName'>
                     <div className='AdminSchoolNamewrap'>
-                        <div className='ActiveUse'></div>
-                        <h4>Edu-Global</h4>
+                        <h4>{AllAdmin.nameOfSchool}</h4>
                         {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
                     </div>
                     {open && Edudrop}
