@@ -65,12 +65,13 @@ const Login = () => {
                 console.log(res.data)
                 console.log(res.data.message)
                 res.data.data.email === value.email ? dispatch(addUser(res.data.data)) : null
-                if (res.data.data.isVerifield === true ) {
-                    navigate('/admin') 
-                  } else {
-                    logOut()
-                    setLoad(false)
-                  }
+                res.data.data.email === value.email ?  navigate('/admin') : null
+                // if (res.data.data.isVerifield === true ) {
+                //     navigate('/admin') 
+                //   } else {
+                //     logOut()
+                //     setLoad(false)
+                //   }
 
 
             })
