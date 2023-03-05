@@ -33,10 +33,7 @@ const [onestudent, setOneStudent]=useState()
   return (
     <div className='Dashboard_Students_Main'>
       <div className='Dashboard_Students_Main_Wrap' >
-      <div className='Dashboard_Students_Msg' >
-            <h4>{onestudentdata.studentName} Welcome to student portal<br /> you have access to your info</h4>
-            <img src='/Message.png' alt='' className='Dashboard_Stu_Info_Img' />
-          </div>
+     
         {
           onestudent ? <div className='Dashboard_Students_Info_Right' >
           <div className='Dashboard_Students_Info_Detail'>
@@ -61,13 +58,17 @@ const [onestudent, setOneStudent]=useState()
               <h5>{onestudentdata.DOB}</h5>
             </div>
             <div className='Dashboard_Students_detail'>
-              <h5>Gender:</h5>
-              <h5>{onestudentdata.gender}</h5>
+              <h5>Contact:</h5>
+              <h5>{onestudentdata.guardianPhoneNumber}</h5>
             </div>
           </div>
         </div>:"Loading Your info"
         }
         <div className='Dashboard_Students_Left'>
+        <div className='Dashboard_Students_Msg' >
+            <h4>{onestudentdata.studentName} Welcome to student portal<br /> you have access to your info</h4>
+            <img src='/Message.png' alt='' className='Dashboard_Stu_Info_Img' />
+          </div>
           <Calendar onChange={handleChange} value={date} className="Student_Calender" />
         </div>
       </div>

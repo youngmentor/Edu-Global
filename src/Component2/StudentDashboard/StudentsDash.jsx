@@ -16,7 +16,8 @@ import { AiFillHome } from "react-icons/ai";
 import "./StudentDash.css"
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearStudent } from '../../Redux/Features';
 const StudentsDash = () => {
 
     const navigate = useNavigate()
@@ -35,6 +36,16 @@ const StudentsDash = () => {
    useEffect(() => {
     getStudent()
   }, [])
+
+  const dispatch= useDispatch()
+  const logOut = async () => {
+    console.log("clicked")
+    const res = await axios.post(`https://eduglobal.onrender.com/api/student/logout/${student?._id}`)
+    console.log(res.data)
+    res.status === 200 ? dispatch(clearStudent()) : null
+    res.status === 200 ? navigate('/loginuser/login') : null
+}
+
     const studentLeft_Mobile = (
         <div className='StudentLeftMobile_co'>
             {
@@ -51,8 +62,8 @@ const StudentsDash = () => {
             {open && (
                 <div className='Student_Profile'>
                     <Link to={"accountsetStu"} className="StudentSetting"> <AiOutlineSetting />  <p>Account setting</p></Link>
-                    <div className="StudentSetting"> <BiLogOut /> <p onClick={() => navigate("/")} > Log out</p></div>
-                    <div className="StudentSetting">  < AiFillHome /> <h5 onClick={() => navigate("/")}>Home</h5></div>
+                    <div className="StudentSetting"> <BiLogOut/> <p onClick={() => { logOut() }} > Log out</p></div>
+                    <div className="StudentSetting">  < AiFillHome/> <h5 onClick={() => navigate("/")}>Home</h5></div>
                 </div>
             )}
         </div>
@@ -69,7 +80,7 @@ const StudentsDash = () => {
                     </div>
                     <div className='StudentSchoolName'>
                         <div className='StudentSchoolNamewrap'>
-                            {onestudent ?<h4>{onestudentdata.studentName}</h4>: "Edu-Global"}
+                            {onestudent ? <h4>{onestudentdata.studentName}</h4>: "Edu-Global"}
                             {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
                         </div>
                         {open && StudentEdudrop}

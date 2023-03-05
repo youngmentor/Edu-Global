@@ -48,13 +48,13 @@ const Login = () => {
     const handleFocus = (e) => {
         setFocus(true)
     }
-    // const logOut = async () => {
-    //     const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/${user?._id}`)
-    //     console.log(res.data)
-    //     res.status === 201 ? dispatch(clearUser()) : null
-    //     res.status === 201 ? navigate('/loginuser/login') : null
-    //     login_alert()
-    // }
+    const logOut = async () => {
+        const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/${user?._id}`)
+        console.log(res.data)
+        res.status === 200 ? dispatch(clearUser()) : null
+        res.status === 200 ? navigate('/loginuser/login') : null
+        
+    }
 
     const handleLogin = async (e) => {
         console.log("clicked")
@@ -65,7 +65,12 @@ const Login = () => {
                 console.log(res.data)
                 console.log(res.data.message)
                 res.data.data.email === value.email ? dispatch(addUser(res.data.data)) : null
-                res.data.data.email === value.email ? navigate('/admin') : null
+                if (res.data.data.isVerifield === true ) {
+                    navigate('/admin') 
+                  } else {
+                    logOut()
+                    setLoad(false)
+                  }
 
 
             })
