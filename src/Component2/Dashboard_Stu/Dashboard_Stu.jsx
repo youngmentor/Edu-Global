@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "./Dashboard_Stu.css"
 import Calendar from 'react-calendar'
 import axios from 'axios';
-import { addStudent } from '../../Redux/Features';
+// import { addStudent } from '../../Redux/Features';
 import { useDispatch, useSelector } from "react-redux";
 const Dashboard_Stu = () => {
 const [onestudent, setOneStudent]=useState()

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./All_Students.css"
 import { useDispatch, useSelector } from "react-redux";
@@ -47,7 +47,7 @@ const All_Students = () => {
       useEffect(() => {
         // console.log(res)
         // console.log(Allclass)
-      }, [Allstudents, DeleteStudent])
+      }, [Allstudents, ])
     return (
         <div className='TeacherStudents_All'>
            {Allstudents?.map((i)=>(

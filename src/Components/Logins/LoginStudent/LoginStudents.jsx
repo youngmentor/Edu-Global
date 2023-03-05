@@ -41,7 +41,6 @@ const LoginStudent = () => {
         await axios.post(`https://eduglobal.onrender.com/api/student/login`, value)
         
         .then(function(res){
-            // localStorage.setItem("res", JSON.stringify(res));
             console.log(res.data)
                 console.log(res.data.message)
                 res.data.data.email === value.email ? dispatch(addStudent(res.data.data)) : null
