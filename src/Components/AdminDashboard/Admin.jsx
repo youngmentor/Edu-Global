@@ -32,20 +32,21 @@ import { clearUser } from '../../Redux/Features';
 import { BiLogOut } from "react-icons/bi";
 const Admin = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
-    const dispatch=useDispatch()
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const [toggle, setToggle] = useState(false);
     const [open, setOpen] = useState(false)
+    const [open2, setOpen2] = useState(false)
     const user = useSelector((state) => state.Commerce.user)
     const [allAdmin, setAllAdmin] = useState([])
     const AdminData = [
-         {
+        {
             id: 1,
             title: "Classes",
             text1: "All classes",
             text2: "Add New Classes",
             // text3: "Edit or Delete",
-            icon1: < MdOutlineClass/>,
+            icon1: < MdOutlineClass />,
             icon2: <IoIosArrowForward />,
             value: false,
             icon3: <SlArrowDown />,
@@ -117,7 +118,7 @@ const Admin = () => {
             id: 8,
             title: "Profile",
             text1: "Edit Profile",
-            icon1: < AiOutlineProfile/>,
+            icon1: < AiOutlineProfile />,
             icon2: <IoIosArrowForward />,
             icon3: <SlArrowDown />,
             click: "admin/adminprofile",
@@ -128,11 +129,11 @@ const Admin = () => {
         const res = await axios.get(`https://eduglobal.onrender.com/api/admin/Admin/${user?._id}`)
         setAllAdmin(res.data.data)
         // console.log(res.data.data)
-      };
-      useEffect(() => {
+    };
+    useEffect(() => {
         getAdmin()
-      }, [])
-      const AllAdmin ={...allAdmin}
+    }, [])
+    const AllAdmin = { ...allAdmin }
     const logOut = async () => {
         console.log("clicked")
         const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/${user?._id}`)
@@ -141,10 +142,6 @@ const Admin = () => {
         res.status === 200 ? navigate('/loginuser/login') : null
         // console.log(user?._id)
     }
- const Login =(()=>{
-    setIsLoggedIn(false)
-    res.status === 200 ? navigate('/loginuser/login') : null
- })
     const adminLeft_Mobile = (
         <div className='AdminLeftMobile_co'>
             {
@@ -163,10 +160,22 @@ const Admin = () => {
         <div className='AdminProfileWrap'>
             {open && (
                 <div className='AdminProfile'>
-                  <Link to={"accountsetadmin"} className="AdminSetting"> <AiOutlineSetting/>  <p>Account setting</p></Link>
-                  <div className="AdminSetting"> < AiOutlineProfile/> <p onClick={()=> navigate("/admin/adminprofile/adminprofileupdate")}>Profile</p> </div>
-                  {isLoggedIn ? (<div className="AdminSetting"> <BiLogOut />  <p onClick={() => { logOut() }}>Log out</p></div>): (<div>  <p onClick={()=>{Login()}}>Log in</p></div>)}
-                   <div className="AdminSetting">  < AiFillHome /> <h5 onClick={() => navigate("/")}  >Home</h5></div>
+                    <Link to={"accountsetadmin"} className="AdminSetting"> <AiOutlineSetting />  <p>Account setting</p></Link>
+                    <div className="AdminSetting"> < AiOutlineProfile /> <p onClick={() => navigate("/admin/adminprofile/adminprofileupdate")}>Profile</p> </div>
+                    <div className="AdminSetting"> <BiLogOut />  <p onClick={() => { logOut() }}>Log out</p></div>
+                    <div className="AdminSetting">  < AiFillHome /> <h5 onClick={() => navigate("/")}  >Home</h5></div>
+                </div>
+            )}
+        </div>
+    )
+    const Edudrop2 = (
+        <div className='AdminProfileWrap2'>
+            {open2 && (
+                <div className='AdminProfile2'>
+                    {/* <Link to={"accountsetadmin"} className="AdminSetting"> <AiOutlineSetting/>  <p>Account setting</p></Link> */}
+                    {/* <div className="AdminSetting"> < AiOutlineProfile/> <p onClick={()=> navigate("/admin/adminprofile/adminprofileupdate")}>Profile</p> </div> */}
+                    <div className="AdminSetting"> <BiLogOut />  <p>Log In</p></div>
+                    <div className="AdminSetting">  < AiFillHome /> <h5 onClick={() => navigate("/")}  >Home</h5></div>
                 </div>
             )}
         </div>
@@ -176,19 +185,30 @@ const Admin = () => {
         <div className='AdminMain'>
             <div className='Admin_header'>
                 <div className='Admin_header_wrap'>
-                <div className='AdminBurger'>
-                    {toggle ? <FaTimes onClick={() => { setToggle(!toggle) }} /> : <GiHamburgerMenu onClick={() => { setToggle(!toggle) }} />}
-                </div>
-                <div className='AdminLogo'>
-                    <img src="/NewLogo1.png" alt="Logo" onClick={() => navigate("/")} className="AdminHeaderLogo" />
-                </div>
-                <div className='AdminSchoolName'>
-                    <div className='AdminSchoolNamewrap'>
-                        <h4>{AllAdmin.nameOfSchool}</h4>
-                        {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
+                    <div className='AdminBurger'>
+                        {toggle ? <FaTimes onClick={() => { setToggle(!toggle) }} /> : <GiHamburgerMenu onClick={() => { setToggle(!toggle) }} />}
                     </div>
-                    {open && Edudrop}
-                </div>
+                    <div className='AdminLogo'>
+                        <img src="/NewLogo1.png" alt="Logo" onClick={() => navigate("/")} className="AdminHeaderLogo" />
+                    </div>
+                    <div>
+                       { allAdmin ?
+                         <div className='AdminSchoolName'>
+                         <div className='AdminSchoolNamewrap'>
+                             <h4>{AllAdmin.nameOfSchool}</h4>
+                             {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
+                         </div>
+                         {open && Edudrop}
+                     </div>:
+                     <div className='AdminSchoolName2'>
+                         <div className='AdminSchoolNamewrap2'>
+                             <h4>Edu-Global</h4>
+                             {open2 ? < IoIosArrowForward onClick={() => { setOpen2(!open2) }} /> : <IoIosArrowDown onClick={() => { setOpen2(!open2) }} />}
+                         </div>
+                         {open2 && Edudrop2}
+                     </div>
+                       }
+                    </div>
                 </div>
             </div>
             <div className='AdminMainWrap'>
@@ -204,20 +224,20 @@ const Admin = () => {
                         </div>
                     </div>
                     {toggle && adminLeft_Mobile}
-                  
-                  <Routes>
+
+                    <Routes>
                         <Route path="/" element={<Dashboard />} />
                         <Route path="/clases/*" element={<Clases />} />
                         <Route path="/student/*" element={<Student />} />
                         <Route path="/subject/*" element={<Subject />} />
                         <Route path="/teachers/*" element={<Teachers />} />
-                        <Route path="/viewtimetable" element={< Timetable_Admin  />} />
+                        <Route path="/viewtimetable" element={< Timetable_Admin />} />
                         <Route path="/attendance/*" element={<Attendance />} />
                         <Route path="/fee" element={<Fee />} />
-                        <Route path="/adminprofile/*" element={<AdminProfileMain/>}/>
-                        <Route path="/accountsetadmin" element={<AccountSetting/>}/>
+                        <Route path="/adminprofile/*" element={<AdminProfileMain />} />
+                        <Route path="/accountsetadmin" element={<AccountSetting />} />
                     </Routes>
-               
+
                 </div>
             </div>
         </div>

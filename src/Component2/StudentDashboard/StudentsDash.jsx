@@ -76,7 +76,7 @@ const StudentsDash = () => {
                 <div className='Student_Profile2'>
                     {/* <Link to={"accountsetStu"} className="StudentSetting"> <AiOutlineSetting />  <p>Account setting</p></Link> */}
                     <Link to={"/loginuser/login"} className="StudentSettings"> <BiLogOut /><p className="StudentSettings"> Log In</p></Link>
-                    {/* <div className="StudentSetting">  < AiFillHome/> <h5 onClick={() => navigate("/")}>Home</h5></div> */}
+                    <div className="StudentSetting">  < AiFillHome/> <h5 onClick={() => navigate("/")}>Home</h5></div>
                 </div>
             )}
         </div>
@@ -102,7 +102,8 @@ const StudentsDash = () => {
                             <h4>Edu-Global</h4>
                             {open2 ? < IoIosArrowForward onClick={() => { setOpen2(!open2) }} /> : <IoIosArrowDown onClick={() => { setOpen2(!open2) }} />}
                             {open2 && StudentEduDrop2}
-                        </div>}
+                        </div>
+                        }
                     </div>
                 </div>
             </div>          

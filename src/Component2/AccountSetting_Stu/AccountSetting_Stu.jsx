@@ -3,6 +3,7 @@ import "./AccountSetting_Stu.css"
 import { useRef } from 'react'
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import Loading from '../../Components/LoadingSpin/Loading';
 const AccountSetting_Stu = () => {
   const student = useSelector((state) => state.Commerce.student)
   const [onestudent, setOneStudent] = useState()
@@ -30,7 +31,7 @@ useEffect(() => {
         </div>
         <div className='UpdateAccountStu_Main_Wrap2' >
           <h4>Account Login Details</h4>
-          <div className='UpdateAccountStu' >Email:  <p>{onestudentdata.email}</p> </div>
+         {onestudent?  <div className='UpdateAccountStu' >Email:  <p>{onestudentdata.email}</p> </div> : <Loading/> }
           <div className='UpdateAccountStu' >PassWord: <p></p></div>
           <button className='UpdateAccounStut_Bttn2' >Delete Account</button>
         </div>
