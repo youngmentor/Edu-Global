@@ -111,7 +111,7 @@
     height: 150px;
     border: 1px solid gray;
     background-color: gray;
-    border-radius: 50%;
+    border-radius: 100%;
     display: flex;
     cursor: pointer;
     align-items: center;
