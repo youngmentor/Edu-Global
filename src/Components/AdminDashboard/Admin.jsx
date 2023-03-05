@@ -137,10 +137,10 @@ const Admin = () => {
         console.log("clicked")
         const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/${user?._id}`)
         setIsLoggedIn(true)
-        console.log(res)
+        console.log(res.data)
         res.status === 200 ? dispatch(clearUser()) : null
         res.status === 200 ? navigate('/loginuser/login') : null
-        console.log(user?._id)
+        // console.log(user?._id)
     }
  const Login =(()=>{
     setIsLoggedIn(false)

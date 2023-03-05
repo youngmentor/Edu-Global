@@ -15,24 +15,33 @@ const Features = createSlice({
     addUser: (state, { payload }) => {
         state.user = payload;
       },
-      addStudent: (state, { payload }) => {
-        state.student = payload;
-      },
-      addClass: (state, { payload }) => {
-        state.allclass = payload;
-      },
       clearUser: (state) => {
         const clearAll = {}
         state.user = clearAll
       },
+      addStudent: (state, { payload }) => {
+        state.student = payload;
+      },
+      clearStudent: (state) => {
+        const clearAll = {}
+        state.student = clearAll
+      },
+      addClass: (state, { payload }) => {
+        state.allclass = payload;
+      },
+     
       addPayment: (state, { payload }) => {
         state.payment =[ payload];
       },
       addTeacher: (state, { payload }) => {
         state.teacher = payload;
       },
+      clearTeacher: (state) => {
+        const clearAll = {}
+        state.teacher = clearAll
+      },
   }
 })
 
-export const { addUser,clearUser, addFile, addClass, addStudent, addPayment, addTeacher} = Features.actions
+export const { addUser,clearUser,clearTeacher, clearStudent, addFile, addClass, addStudent, addPayment, addTeacher} = Features.actions
 export default Features.reducer
