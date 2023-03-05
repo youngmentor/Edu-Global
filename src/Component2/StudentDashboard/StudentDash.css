@@ -61,7 +61,32 @@
     justify-content: center;
     gap: 10px;
 }
-
+.StudentSchoolNamewrap2{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+} 
+.StudentProfileWrap2{
+    width: 220px;
+    background-color: rgb(242, 239, 239);
+    position: absolute;
+    padding: 10px;
+    line-height: 1.6;
+    top: 80px;
+    right: 60px;
+    border-radius: 8px;
+    border: 1px solid rgb(231, 207, 207);
+}
+.Student_Profile2{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
 .StudentProfileWrap {
     width: 220px;
     background-color: rgb(242, 239, 239);
@@ -89,6 +114,15 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    text-decoration: none;
+}
+.StudentSettings{
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* text-decoration: none; */
 }
 
 .Student_Dashboard_Main_Wrap {

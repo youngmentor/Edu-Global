@@ -21,30 +21,31 @@ import { clearStudent } from '../../Redux/Features';
 const StudentsDash = () => {
 
     const navigate = useNavigate()
-    const [onestudent, setOneStudent]=useState()
+    const [onestudent, setOneStudent] = useState()
     const [toggle, setToggle] = useState(false);
     const [open, setOpen] = useState(false)
+    const [open2, setOpen2] = useState(false)
     const student = useSelector((state) => state.Commerce.student)
 
 
-     const getStudent = () =>{
-    axios.get(`https://eduglobal.onrender.com/api/admin/Student/${student._id}`)
-    .then(res=> {setOneStudent(res.data.data)})
+    const getStudent = () => {
+        axios.get(`https://eduglobal.onrender.com/api/admin/Student/${student._id}`)
+            .then(res => { setOneStudent(res.data.data) })
 
-  }
-  const onestudentdata = {...onestudent}
-   useEffect(() => {
-    getStudent()
-  }, [])
+    }
+    const onestudentdata = { ...onestudent }
+    useEffect(() => {
+        getStudent()
+    }, [])
 
-  const dispatch= useDispatch()
-  const logOut = async () => {
-    console.log("clicked")
-    const res = await axios.post(`https://eduglobal.onrender.com/api/student/logout/${student?._id}`)
-    console.log(res.data)
-    res.status === 200 ? dispatch(clearStudent()) : null
-    res.status === 200 ? navigate('/loginuser/login') : null
-}
+    const dispatch = useDispatch()
+    const logOut = async () => {
+        console.log("clicked")
+        const res = await axios.post(`https://eduglobal.onrender.com/api/student/logout/${student?._id}`)
+        console.log(res.data)
+        res.status === 200 ? dispatch(clearStudent()) : null
+        res.status === 200 ? navigate('/loginuser/login') : null
+    }
 
     const studentLeft_Mobile = (
         <div className='StudentLeftMobile_co'>
@@ -58,12 +59,24 @@ const StudentsDash = () => {
         </div>
     );
     const StudentEdudrop = (
+
         <div className='StudentProfileWrap'>
             {open && (
                 <div className='Student_Profile'>
                     <Link to={"accountsetStu"} className="StudentSetting"> <AiOutlineSetting />  <p>Account setting</p></Link>
-                    <div className="StudentSetting"> <BiLogOut/> <p onClick={() => { logOut() }} > Log out</p></div>
-                    <div className="StudentSetting">  < AiFillHome/> <h5 onClick={() => navigate("/")}>Home</h5></div>
+                    <div className="StudentSetting"> <BiLogOut /> <p onClick={() => { logOut() }} > Log out</p></div>
+                    <div className="StudentSetting">  < AiFillHome /> <h5 onClick={() => navigate("/")}>Home</h5></div>
+                </div>
+            )}
+        </div>
+    )
+    const StudentEduDrop2 = (
+        <div className='StudentProfileWrap2'>
+            {open2 && (
+                <div className='Student_Profile2'>
+                    {/* <Link to={"accountsetStu"} className="StudentSetting"> <AiOutlineSetting />  <p>Account setting</p></Link> */}
+                    <Link to={"/loginuser/login"} className="StudentSettings"> <BiLogOut /><p className="StudentSettings"> Log In</p></Link>
+                    {/* <div className="StudentSetting">  < AiFillHome/> <h5 onClick={() => navigate("/")}>Home</h5></div> */}
                 </div>
             )}
         </div>
@@ -78,15 +91,21 @@ const StudentsDash = () => {
                     <div className='StudentLogo'>
                         <img src="/NewLogo1.png" alt="Logo" onClick={() => navigate("/")} className="StudentHeaderLogo" />
                     </div>
-                    <div className='StudentSchoolName'>
-                        <div className='StudentSchoolNamewrap'>
-                            {onestudent ? <h4>{onestudentdata.studentName}</h4>: "Edu-Global"}
-                            {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
-                        </div>
-                        {open && StudentEdudrop}
+                    <div>
+                        {onestudent ? <div className='StudentSchoolName'>
+                            <div className='StudentSchoolNamewrap'>
+                                <h4>{onestudentdata.studentName}</h4>
+                                {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
+                            </div>
+                            {open && StudentEdudrop}
+                        </div> : <div className='StudentSchoolNamewrap2'>
+                            <h4>Edu-Global</h4>
+                            {open2 ? < IoIosArrowForward onClick={() => { setOpen2(!open2) }} /> : <IoIosArrowDown onClick={() => { setOpen2(!open2) }} />}
+                            {open2 && StudentEduDrop2}
+                        </div>}
                     </div>
                 </div>
-            </div>
+            </div>          
             <div className='Student_Dashboard_Main_Wrap'>
                 <div className='StudentLeftHolder'>
                     <StudentDashLeft />
