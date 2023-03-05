@@ -200,8 +200,8 @@ const Admin = () => {
                          </div>
                          {open && Edudrop}
                      </div>:
-                     <div className='AdminSchoolName2'>
-                         <div className='AdminSchoolNamewrap2'>
+                     <div className='AdminSchoolName'>
+                         <div className='AdminSchoolNamewrap'>
                              <h4>Edu-Global</h4>
                              {open2 ? < IoIosArrowForward onClick={() => { setOpen2(!open2) }} /> : <IoIosArrowDown onClick={() => { setOpen2(!open2) }} />}
                          </div>
