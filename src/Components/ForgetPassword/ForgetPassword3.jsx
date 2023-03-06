@@ -31,7 +31,7 @@ const ForgetPassword3 = () => {
                 
                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className='forget_input' placeholder='Email'/>
                     {successMessage && <p>{successMessage}</p>}
-                <button type="submit" className='forget_button pointer' onClick={() => { navigate('/resetpassword') }} >Submit</button>
+                <button type="submit" className='forget_button pointer'>Submit</button>
                 <div className='forget_back pointer' onClick={() => { navigate('/loginuser/login') }} ><MdOutlineArrowBack fontSize={20} /><p>Back to login</p></div>
             </form>
 
