@@ -81,11 +81,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    color: inherit;
     gap: 15px;
 }
 .uploadresult:hover{
     cursor: pointer;
-    color: red;
+    color:#5390D9;
 }
 .ResultUpload input {
     width: 90%;

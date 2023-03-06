@@ -54,13 +54,22 @@ const Payment = () => {
     const classes = i.slice(0, 3)
     console.log(classes)
     if (classes === "SS1") {
-      setAmountPay(1000)
+      setAmountPay(18000)
       console.log("clicked1")
     } else if (classes === "SS2") {
-      setAmountPay(2000)
+      setAmountPay(20000)
       console.log("clicked2")
     } else if (classes === "SS3") {
-      setAmountPay(3000)
+      setAmountPay(25000)
+      console.log("clicked3")
+    }else if (classes === "JSS1") {
+      setAmountPay(12000)
+      console.log("clicked3")
+    }else if (classes === "JSS2") {
+      setAmountPay(13000)
+      console.log("clicked3")
+    }else if (classes === "JSS3") {
+      setAmountPay(14000)
       console.log("clicked3")
     }
   }
