@@ -4,6 +4,7 @@ import "./All_Students.css"
 import { useDispatch, useSelector } from "react-redux";
 import Loading from '../../Components/LoadingSpin/Loading';
 import { useParams } from 'react-router-dom';
+import { AiOutlineFileAdd } from "react-icons/ai";
 const All_Students = () => {
     const {id } = useParams()
     const allclass = useSelector((state) => state.Commerce.teacher.teacherclass)
@@ -68,10 +69,11 @@ const All_Students = () => {
              <p>{i.studentName}</p>
                 <p> {i.regNumber} </p>
                  <div className='ResultUpload'>
-                     <p>Upload Results</p>
+                     {/* <p>Upload Results</p>
                      <input type="file" onChange={handleFileSelect} />
                      <button onClick={handleFileUpload}>{load ? <Loading /> : "Upload"}</button>
-                     {message && <p>{message}</p>}
+                     {message && <p>{message}</p>} */}
+                    <div className='uploadresult'><AiOutlineFileAdd/> <p>Add Result</p></div>
                  </div>
              </div>
          </div>

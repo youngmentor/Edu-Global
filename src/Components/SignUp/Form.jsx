@@ -35,8 +35,8 @@ const Form = () => {
       placeholder: "Password",
       required: true,
       errMsg: `At least 8 characters, min 1 Uppercase 1 Lowercase 1 Number 1 special character`,
-      pattern: `(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}`
-      
+      pattern: `(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}`
+      // ^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$
     },
     {
       id: 3,
