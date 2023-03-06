@@ -141,7 +141,7 @@ const AddTeacher = () => {
     console.log(res.data)
     console.log(res.data.message)
     res.status === 200 ? dispatch(addTeacher(response.data.data)) : null
-    res.status === 200 ? Navigate('/admin/clases/allClasses') : null
+    res.status === 201 ? Navigate('/admin/clases/allClasses') : null
   };
   return (
     <div className='AdminAddnew_Teacher_Main'>

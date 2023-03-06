@@ -6,7 +6,7 @@ import Loading from '../../Components/LoadingSpin/Loading';
 import { useParams } from 'react-router-dom';
 const All_Students = () => {
     const {id } = useParams()
-    const allclass = useSelector((state) => state.Commerce.allclass)
+    const allclass = useSelector((state) => state.Commerce.teacher.teacherclass)
     const teacher = useSelector((state) => state.Commerce.teacher)
     const student = useSelector((state) => state.Commerce.student)
     const [Allstudents, setAllStudents] = useState([]);
@@ -38,12 +38,23 @@ const All_Students = () => {
                 console.error(error);
             });
     };
+
+
+
     const getAllStudent = async (e) => {
-        const res = await axios.get(`https://eduglobal.onrender.com/api/teacher/ClassStudents/`)
+
+        try{
+            const res = await axios.get(`https://eduglobal.onrender.com/api/teacher/ClassStudents/${allclass}`)
         setAllStudents(res.data.data)
-        // console.log(res.data.data)
+        console.log(res.data.data)
         console.log(res)
-      }
+      }catch{
+         
+    }
+    
+} 
+    
+     
       useEffect(() => {
         getAllStudent()
     
@@ -51,7 +62,7 @@ const All_Students = () => {
       useEffect(() => {
         // console.log(res)
         // console.log(Allclass)
-      }, [Allstudents, ])
+      }, [Allstudents ])
     return (
         <div className='TeacherStudents_All'>
            {/* {Allstudents?.map((i)=>( */}
@@ -60,8 +71,8 @@ const All_Students = () => {
                  <img src="/UserImg.png" alt="StudentLogo" className='TeacherStudent_Avatar' />
              </div>
              <div className='TeacherStudent_Details'>
-             <p>olalere</p>
-                <p>001</p>
+             <p>{Allstudents.studentName}</p>
+                <p> {Allstudents.regNumber} </p>
                  <div className='ResultUpload'>
                      <p>Upload Results</p>
                      <input type="file" onChange={handleFileSelect} />
