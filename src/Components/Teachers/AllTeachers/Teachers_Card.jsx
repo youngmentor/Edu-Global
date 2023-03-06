@@ -5,20 +5,19 @@ const Teachers_Card = (i) => {
 
   useEffect (() => {
       if (loader) {
-          i.status === 200 ? setLoader(false) : null
+          i.status === 201 ? setLoader(false) : null
       }
   }, [i.status])
   return (
-    <div className='AdminStudents_All_Wrap'>
-    <div className='AdminStudent_Img'>
-        <img src="/UserImg.png" alt="StudentLogo" className='AdminStudent_Avatar' />
+    <div className='AdminTeachers_All_Wrap'>
+    <div className='AdminTeachers_Img'>
+        <img src="/UserImg.png" alt="StudentLogo" className='AdminTeachers_Avatar' />
     </div>
-    <div className='AdminAllStudent_Details'>
+    <div className='AdminAllTeacher_Details'>
         <p>{i.teacherName}</p>
-
     </div>
     {loader ? <div className='AdminStudent_Loading'> deleting... </div> :
-        <div className='AdminStudent_Delete_Icon'> <MdDelete /></div>}
+        <div className='AdminTeacher_Delete_Icon'> <MdDelete onClick={() => { i.deleteTeacher(i._id); setLoader(true) }}/></div>}
 
 </div>
   )

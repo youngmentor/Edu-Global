@@ -7,6 +7,7 @@ import { NavLink, Link } from 'react-router-dom'
 import axios from 'axios'
 const AllTeachers = () => {
   const user = useSelector((state) => state.Commerce.user)
+  const teacher = useSelector((state) => state.Commerce.teacher)
   const [AllTeacher, setAllTeacher] = useState([]);
   const [DeleteTeacher, setDeleteTeacher] = useState("")
   const getAllTeacher = async (e) => {
@@ -14,7 +15,15 @@ const AllTeachers = () => {
     setAllTeacher(res.data.data)
     // console.log(res.data.data)
   };
-
+  const deleteTeacher = async (id) => {
+    console.log("clicked")
+    // console.log(teacher?._id)
+    const res = await axios.delete(`https://eduglobal.onrender.com/api/admin/deleteTeacher/${teacher?._id}/${id}`)
+    
+    setDeleteTeacher(res.status)
+    getAllStudent()
+    console.log(res)
+  }
   useEffect(() => {
     getAllTeacher()
 
@@ -22,12 +31,12 @@ const AllTeachers = () => {
   useEffect(() => {
     // console.log(res)
     // console.log(Allclass)
-  }, [AllTeacher])
+  }, [AllTeacher, DeleteTeacher])
 
   return (
     <div className='AdminTeacher_All'>
      {AllTeacher?.map((i)=>(
-      <Teachers_Card key={i._id} {...i} />
+      <Teachers_Card key={i._id} {...i} deleteTeacher={deleteTeacher} />
      ))}
       <NavLink className='AdminTeacher_All_AddWrap' to="/admin/clases/allClasses" >
         <p>+</p>

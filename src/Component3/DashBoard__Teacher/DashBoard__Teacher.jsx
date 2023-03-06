@@ -61,14 +61,14 @@ const Dashboard_Teacher= () => {
              </div>
           </div>
           </div>
-          : "Loading info..."}
+          : "You are not Logged in"}
        
         
       <div className='Dashboard_Teach_Left'>
         <div className='Dashboard_Teach_Msg' >
         {oneteacher ? 
           <h4>{oneteacherdata.teacherName} Welcome to Teacher's portal<br/> you have access to your info</h4>
-          : "Loading name..."}
+          : null}
           <img src='/Message.png' alt='' className='Dashboard_Teach_Info_Mss' />
         </div> 
       

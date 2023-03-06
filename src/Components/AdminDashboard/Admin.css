@@ -79,6 +79,14 @@
     justify-content: center;
     gap: 10px;
 }
+.AdminSchoolNamewrap1{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 10px;
+}
 .AdminLeft {
     /* height: 90%; */
     width: 25%;
