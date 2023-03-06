@@ -21,7 +21,7 @@ const ResetPassword2 = () => {
             <div className='forget_text'>
                 <h2>Please Enter a New password</h2>
             </div>
-            <form onSubmit={ResetPass}>
+            <form onSubmit={ResetPass} className='forget_text'>
                 <input className='forget_input' placeholder="Enter your new password..." />
                 <button className='forget_button pointer' type='submit' >ISubmit</button>
             </form>

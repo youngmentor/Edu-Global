@@ -11,7 +11,8 @@ const AdminProfile = () => {
   const user = useSelector((state) => state.Commerce.user)
   const dispatch = useDispatch()
   const [successMessage, setSuccessMessage] = useState(null);
-  const [Load, setLoad] = useState(false)
+  const [Load, setLoad] = useState(false);
+  const [waitImage, setWaitImage] = useState(false)
   const [allAdmin, setAllAdmin] = useState([])
   const [profile, setProfile] = useState({
     nameOfSchool: "",
@@ -35,7 +36,8 @@ const AdminProfile = () => {
   const getAdmin = async (e) => {
     const res = await axios.get(`https://eduglobal.onrender.com/api/admin/Admin/${user?._id}`)
     setAllAdmin(res.data.data)
-    // console.log(res.data.data)
+    // console.log(res.data.data.schoolImage.url)
+    setWaitImage(true)
   };
   useEffect(() => {
     getAdmin()
@@ -169,7 +171,10 @@ const AdminProfile = () => {
         </div>
         <div className='AdminProfile_Update_SubWrap2'>
           <h4>Your School Profile</h4>
-          {allAdmin ?<div className='AdminProfile_Logo_Div'><img src={AllAdmin.schoolImage} alt="Logo" className='AdminProfile_Logo'/></div> : "Loading Image" }
+         
+          <div className='AdminProfile_Logo_Div'>
+            
+          {  waitImage ? <img src={AllAdmin.schoolImage.url} alt="Logo" className='AdminProfile_Logo'/> : <p>loading image</p> }</div> 
           
           <h4>{AllAdmin.nameOfSchool}</h4>
           <p>{AllAdmin.targetLine}</p>
