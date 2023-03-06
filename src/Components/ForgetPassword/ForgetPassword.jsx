@@ -13,20 +13,19 @@ const ForgetPassword = () => {
     const [Load, setLoad] =useState(false)
     const [successMessage, setSuccessMessage] = useState(null);
     const navigate = useNavigate()
+    
     const handleForget = async (e) => {
         e.preventDefault();
         try {
             setLoad(true)
             const response = await axios.post('https://eduglobal.onrender.com/api/admin/forgotPassword', { email });
             setLoad(true)
-            console.log(response.data); 
-            setSuccessMessage(res.data.message)
+            // console.log(response.data); 
+            setSuccessMessage(response.data.message)
         } catch (error) {
             console.log(error.response.data); 
         }
     };
-
-
     return (
         <div className='forget'>
             <form onSubmit={handleForget} className='forget_text' >
@@ -34,7 +33,7 @@ const ForgetPassword = () => {
                 
                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className='forget_input' placeholder='Email'/>
                     {successMessage && <p>{successMessage}</p>}
-                <button type="submit" className='forget_button pointer' >Submit</button>
+                <button type="submit" className='forget_button pointer' onClick={() => { navigate('/resetpassword') }} >Submit</button>
                 <div className='forget_back pointer' onClick={() => { navigate('/loginuser/login') }} ><MdOutlineArrowBack fontSize={20} /><p>Back to login</p></div>
             </form>
 
