@@ -2,7 +2,7 @@ import React from 'react'
 import { useRef, useContext, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import "./ForgetPassword.css"
-// import axios from 'axios'
+import axios from 'axios'
 const ResetPassword2 = () => {
     const student = useSelector((state) => state.Commerce.student)
     const navigate = useNavigate()
