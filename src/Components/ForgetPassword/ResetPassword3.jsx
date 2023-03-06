@@ -11,7 +11,8 @@ const ResetPassword3 = () => {
 
 
     const ResetPass = async () => {
-        const res = await axios.post(`https://eduglobal.onrender.com/api/teacher/resetPassword/${teacher?._id}`, )
+        console.log(id)
+        const res = await axios.post(`https://eduglobal.onrender.com/api/teacher/resetPassword/${id}`, )
         res.status === 200 ? navigate('/login') : null
         console.log(res)
       }

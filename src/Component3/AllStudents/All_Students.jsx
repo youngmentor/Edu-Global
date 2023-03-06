@@ -38,20 +38,20 @@ const All_Students = () => {
                 console.error(error);
             });
     };
-    // const getAllStudent = async (e) => {
-    //     const res = await axios.get(`https://eduglobal.onrender.com/api/teacher/ClassStudents/`)
-    //     setAllStudents(res.data.data)
-    //     // console.log(res.data.data)
-    //     console.log(res)
-    //   }
-    //   useEffect(() => {
-    //     getAllStudent()
+    const getAllStudent = async (e) => {
+        const res = await axios.get(`https://eduglobal.onrender.com/api/teacher/ClassStudents/`)
+        setAllStudents(res.data.data)
+        // console.log(res.data.data)
+        console.log(res)
+      }
+      useEffect(() => {
+        getAllStudent()
     
-    //   }, [])
-    //   useEffect(() => {
-    //     // console.log(res)
-    //     // console.log(Allclass)
-    //   }, [Allstudents, ])
+      }, [])
+      useEffect(() => {
+        // console.log(res)
+        // console.log(Allclass)
+      }, [Allstudents, ])
     return (
         <div className='TeacherStudents_All'>
            {/* {Allstudents?.map((i)=>( */}
