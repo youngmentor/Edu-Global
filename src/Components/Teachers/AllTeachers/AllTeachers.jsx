@@ -4,6 +4,7 @@ import './AllTeachers.css'
 import Teachers_Card from './Teachers_Card'
 import { useSelector } from 'react-redux'
 import { NavLink, Link } from 'react-router-dom'
+import { clearTeacher } from '../../../Redux/Features'
 import axios from 'axios'
 const AllTeachers = () => {
   const user = useSelector((state) => state.Commerce.user)
@@ -17,10 +18,9 @@ const AllTeachers = () => {
   };
   const deleteTeacher = async (id) => {
     console.log("clicked")
-    // console.log(teacher?._id)
     const res = await axios.delete(`https://eduglobal.onrender.com/api/admin/deleteTeacher/${teacher?._id}/${id}`)
-    
     setDeleteTeacher(res.status)
+    res.status === 200 ? dispatch(clearTeacher()) : null
     getAllStudent()
     console.log(res)
   }

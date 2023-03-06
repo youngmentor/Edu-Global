@@ -6,7 +6,7 @@ import Loading from '../../Components/LoadingSpin/Loading';
 import { useParams } from 'react-router-dom';
 const All_Students = () => {
     const {id } = useParams()
-    const user = useSelector((state) => state.Commerce.user)
+    const allclass = useSelector((state) => state.Commerce.allclass)
     const teacher = useSelector((state) => state.Commerce.teacher)
     const student = useSelector((state) => state.Commerce.student)
     const [Allstudents, setAllStudents] = useState([]);
@@ -39,7 +39,7 @@ const All_Students = () => {
             });
     };
     // const getAllStudent = async (e) => {
-    //     const res = await axios.get(`https://eduglobal.onrender.com/api/admin/allStudent/${user?._id}`)
+    //     const res = await axios.get(`https://eduglobal.onrender.com/api/teacher/ClassStudents/`)
     //     setAllStudents(res.data.data)
     //     // console.log(res.data.data)
     //     console.log(res)

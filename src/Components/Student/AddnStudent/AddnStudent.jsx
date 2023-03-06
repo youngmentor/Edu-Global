@@ -6,12 +6,14 @@ import { NavLink, Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Student_Card from './Student_Card';
+import { clearStudent } from '../../../Redux/Features';
 // import { addStudent } from '../../../Redux/Features'
 
 const AddnStudent = () => {
   // const navigate = useNavigate()
   const { id } = useParams()
   const user = useSelector((state) => state.Commerce.user)
+  const student = useSelector((state) => state.Commerce.student)
   const [Allstudents, setAllStudents] = useState([]);
   const [DeleteStudent, setDeleteStudent] = useState("")
   const addStudent = useSelector((state) => state.Commerce.addStudent)
@@ -26,6 +28,7 @@ const AddnStudent = () => {
     console.log("clicked", id)
     const res = await axios.delete(`https://edusms.onrender.com/api/admin/deleteStudent/${user?._id}/${id}`)
     setDeleteStudent(res.status)
+    res.status === 200 ? dispatch(clearStudent()) : null
     getAllStudent()
     console.log(res)
   }

@@ -29,8 +29,7 @@ const ForgetPassword2 = () => {
     return (
         <div className='forget'>
             <form onSubmit={handleForget} className='forget_text' >
-                <h2>Forgot password?</h2>
-                
+                <h2>Forgot password?</h2>             
                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className='forget_input' placeholder='Email'/>
                     {successMessage && <p>{successMessage}</p>}
                 <button type="submit" className='forget_button pointer'>Submit</button>
