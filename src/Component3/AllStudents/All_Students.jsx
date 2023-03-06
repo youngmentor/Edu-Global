@@ -8,7 +8,7 @@ const All_Students = () => {
     const {id } = useParams()
     const allclass = useSelector((state) => state.Commerce.teacher.teacherclass)
     const teacher = useSelector((state) => state.Commerce.teacher)
-    const student = useSelector((state) => state.Commerce.student)
+    const student = useSelector((state) => state.Commerce.student._id)
     const [Allstudents, setAllStudents] = useState([]);
     const [selectedFile, setSelectedFile] = useState(null);
     const [message, setMessage] = useState('');
@@ -26,7 +26,7 @@ const All_Students = () => {
         const formData = new FormData();
         formData.append('file', selectedFile);
 
-        axios.post(`https://eduglobal.onrender.com/api/teacher/result/${teacher._id}${student._id}`, formData, {
+        axios.post(`https://eduglobal.onrender.com/api/teacher/result/${teacher._id}${student}`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -39,40 +39,34 @@ const All_Students = () => {
             });
     };
 
-
-
     const getAllStudent = async (e) => {
 
         try{
             const res = await axios.get(`https://eduglobal.onrender.com/api/teacher/ClassStudents/${allclass}`)
-        setAllStudents(res.data.data)
-        console.log(res.data.data)
+        setAllStudents(res.data.data.students)
+        // console.log(res.data.data.students)
         console.log(res)
       }catch{
          
     }
     
 } 
-    
-     
       useEffect(() => {
         getAllStudent()
     
       }, [])
       useEffect(() => {
-        // console.log(res)
-        // console.log(Allclass)
       }, [Allstudents ])
     return (
         <div className='TeacherStudents_All'>
-           {/* {Allstudents?.map((i)=>( */}
+           {Allstudents?.map((i)=>(
              <div className='TeacherStudents_All_Wrap'>
              <div className='TeacherStudent_Img'>
                  <img src="/UserImg.png" alt="StudentLogo" className='TeacherStudent_Avatar' />
              </div>
              <div className='TeacherStudent_Details'>
-             <p>{Allstudents.studentName}</p>
-                <p> {Allstudents.regNumber} </p>
+             <p>{i.studentName}</p>
+                <p> {i.regNumber} </p>
                  <div className='ResultUpload'>
                      <p>Upload Results</p>
                      <input type="file" onChange={handleFileSelect} />
@@ -81,7 +75,7 @@ const All_Students = () => {
                  </div>
              </div>
          </div>
-           {/* ))} */}
+            ))} 
         </div>
     )
 }
