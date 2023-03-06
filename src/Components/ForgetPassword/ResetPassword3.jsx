@@ -3,7 +3,7 @@ import { useRef, useContext,useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import "./ForgetPassword.css"
 // import axios from 'axios'
-const ResetPassword = () => {
+const ResetPassword3 = () => {
 
     const navigate = useNavigate()
     const inputRef = useRef('')
@@ -12,7 +12,7 @@ const ResetPassword = () => {
 
     // const ResetPass = async () => {
     //     const res = await axios.post(``, { password: inputRef.current.value })
-    //     res.status === 200 ? navigate('/loginuser/login') : null
+    //     res.status === 200 ? navigate('/login') : null
     //     console.log(res)
     //   }
 
@@ -27,5 +27,5 @@ const ResetPassword = () => {
     )
 }
 
-export default ResetPassword
+export default ResetPassword3
 // onClick={() => { ResetPass() }}

@@ -11,7 +11,11 @@ import LoginUser from './Components/Logins/LoginUser'
 import StudentsDash from './Component2/StudentDashboard/StudentsDash'
 import Teachers_Dashb from './Component3/TeacherDashboard/Teachers_Dashb'
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword'
+import ForgetPassword2 from './Components/ForgetPassword/ForgetPassword2'
+import ForgetPassword3 from './Components/ForgetPassword/ForgetPassword3'
 import ResetPassword from './Components/ForgetPassword/ResetPassword'
+import ResetPassword2 from './Components/ForgetPassword/ResetPassword2'
+import ResetPassword3 from './Components/ForgetPassword/ResetPassword3'
 import Verify from './Components/SignUp/Verify'
 
 const App = () => {
@@ -28,7 +32,11 @@ const App = () => {
           <Route path='/studentdash/*' element={<StudentsDash />} />
           <Route path='/teacherdash/*' element={<Teachers_Dashb />} />
           <Route path='/forgetpassword' element={<ForgetPassword />} />
+          <Route path='/forgetpassword2' element={<ForgetPassword2 />} />
+          <Route path='/forgetpassword3' element={<ForgetPassword3 />} />
           <Route path='/resetpassword' element={<ResetPassword />} />
+          <Route path='/resetpassword2' element={<ResetPassword2 />} />
+          <Route path='/resetpassword3' element={<ResetPassword3 />} />
           <Route path='/verify/:id' element={<Verify />} />
         </Routes>
       </ HashRouter>
