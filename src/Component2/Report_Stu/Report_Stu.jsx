@@ -7,16 +7,15 @@ function Report_Stu({ studentId }) {
   const [results, setResults] = useState([]);
   const [isDownloaded, setIsDownloaded] = useState(false);
 
+  const result = () =>{
+
+    axios.get(`https://eduglobal.onrender.com/api/teacher/`)
+    setResults(response.data.data.results);
+  }
+
   useEffect(() => {
-    // axios.get(`/${studentId}`)
-    //   .then(response => {
-    //     setStudentName(response.data.name);
-    //     setResults(response.data.results);
-    //   })
-    //   .catch(error => {
-    //     console.error(error);
-    //   });
-  }, [studentId]);
+    result()
+  }, []);
 
   const handleDownload = () => {
     const resultsString = JSON.stringify(results);
