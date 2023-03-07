@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import Loading from '../../Components/LoadingSpin/Loading'
+import axios from 'axios';
 const ReportCard_Stu = () => {
   const { id } = useParams()
   const [selectedFile, setSelectedFile] = useState(null);
