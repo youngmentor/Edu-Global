@@ -8,6 +8,7 @@ const ReportCard_Stu = () => {
   const { id } = useParams()
   const [load, setLoad] = useState(false)
   const [message, setMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState(null);
   const [profile, setProfile]= useState({
     currentSchoolTerm: "",
 	resultImage:""
@@ -15,8 +16,6 @@ const ReportCard_Stu = () => {
   const handleImage = (e) => {
     const file = e.target.files[0];
     setProfile({ ...profile, resultImage: file });
-  };
-  const handleChange = (e) => {
   };
   const handleFileUpload = (e) => {
     e.preventDefault();
@@ -32,10 +31,13 @@ const ReportCard_Stu = () => {
     })
       .then(response => {
         setMessage(response.data.message);
+        // response.status === 201 
         setLoad(false)
       })
       .catch(error => {
-        console.error(error);
+        setErrorMessage(error.message);
+        // console.error(error);
+        setLoad(false)
       });
   };
 
@@ -49,6 +51,7 @@ const ReportCard_Stu = () => {
        <div className="ReportFile"> <input type="file" placeholder='choose a file'  onChange={handleImage}  /></div>
         <button onClick={handleFileUpload} className="ReportBttn">{load ? <Loading /> : "Upload"}</button>
         {message && <p>{message}</p>}
+        {errorMessage && <p>{errorMessage}</p>}
       </form>
     </div>
   )

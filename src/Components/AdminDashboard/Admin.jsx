@@ -30,6 +30,8 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearUser } from '../../Redux/Features';
 import { BiLogOut } from "react-icons/bi";
+import { NavLink } from 'react-router-dom';
+import Swal from 'sweetalert2'
 const Admin = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
     const dispatch = useDispatch()
@@ -140,14 +142,31 @@ const Admin = () => {
         console.log(res.data)
         res.status === 200 ? dispatch(clearUser()) : null
         res.status === 200 ? navigate('/loginuser/login') : null
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'You have successfully logged out',
+            showConfirmButton: false,
+            timer: 3000
+        })
         // console.log(user?._id)
+    }
+    const colorObject = {
+        textDecoration: 'none',
+        color: 'inherit',
+    }
+    const activeColorObject = {
+        textDecoration: 'none',
+        color: 'blue',
     }
     const adminLeft_Mobile = (
         <div className='AdminLeftMobile_co'>
             {
                 toggle && (
                     <div className='AdminLeftMobile_mobile' >
-                        <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title1'><h4>Dashboard</h4></div>
+                        <NavLink to="/admin" className='AdminLeftWrap_title1' style={({ isActive }) => isActive ? activeColorObject : colorObject} >
+                            < AiFillHome /><h4>Dashboard</h4>
+                        </NavLink>
                         {AdminData.map((i) => (
                             <AdminLeft key={i.id}{...i} style={({ isActive }) => isActive ? activeColorObject : colorObject} />
                         ))}
@@ -192,22 +211,22 @@ const Admin = () => {
                         <img src="/NewLogo1.png" alt="Logo" onClick={() => navigate("/")} className="AdminHeaderLogo" />
                     </div>
                     <div>
-                       { allAdmin ?
-                         <div className='AdminSchoolName'>
-                         <div className='AdminSchoolNamewrap'>
-                             <h4>{AllAdmin.nameOfSchool}</h4>
-                             {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
-                         </div>
-                         {open && Edudrop}
-                     </div>:
-                     <div className='AdminSchoolName'>
-                         <div className='AdminSchoolNamewrap'>
-                             <h4>Edu-Global</h4>
-                             {open2 ? < IoIosArrowForward onClick={() => { setOpen2(!open2) }} /> : <IoIosArrowDown onClick={() => { setOpen2(!open2) }} />}
-                         </div>
-                         {open2 && Edudrop2}
-                     </div>
-                       }
+                        {allAdmin ?
+                            <div className='AdminSchoolName'>
+                                <div className='AdminSchoolNamewrap'>
+                                    <h4>{AllAdmin.nameOfSchool}</h4>
+                                    {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
+                                </div>
+                                {open && Edudrop}
+                            </div> :
+                            <div className='AdminSchoolName'>
+                                <div className='AdminSchoolNamewrap'>
+                                    <h4>Edu-Global</h4>
+                                    {open2 ? < IoIosArrowForward onClick={() => { setOpen2(!open2) }} /> : <IoIosArrowDown onClick={() => { setOpen2(!open2) }} />}
+                                </div>
+                                {open2 && Edudrop2}
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -215,7 +234,9 @@ const Admin = () => {
                 <div className='AdminMainWraps'>
                     <div className='AdminLeft'>
                         <div className='AdminLeftWrap' >
-                            <div onClick={() => { navigate("/admin") }} className='AdminLeftWrap_title1'> < AiFillHome /> <h4>Dashboard</h4></div>
+                            <NavLink to="/admin" className='AdminLeftWrap_title1' style={({ isActive }) => isActive ? activeColorObject : colorObject}>
+                                < AiFillHome /> <h4>Dashboard</h4>
+                            </NavLink>
                             <div className='AdminLeftHolder'>
                                 {AdminData.map((i) => (
                                     <AdminLeft key={i.id}{...i} />

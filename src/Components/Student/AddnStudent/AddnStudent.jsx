@@ -18,6 +18,7 @@ const AddnStudent = () => {
   const [Allstudents, setAllStudents] = useState([]);
   const [DeleteStudent, setDeleteStudent] = useState("")
   const addStudent = useSelector((state) => state.Commerce.addStudent)
+  
   const getAllStudent = async (e) => {
     const res = await axios.get(`https://eduglobal.onrender.com/api/admin/allStudent/${user?._id}`)
     setAllStudents(res.data.data)

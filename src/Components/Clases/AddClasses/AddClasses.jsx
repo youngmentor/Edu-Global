@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import './AddClasses.css'
 import Loading from '../../LoadingSpin/Loading';
 import { Navigate, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 const AddClasses = () => {
     const navigate= useNavigate()
     const [successMessage, setSuccessMessage] = useState(null);
@@ -44,6 +45,13 @@ const AddClasses = () => {
         setLoad(true)
         e.preventDefault();
         const res = await axios.post("https://eduglobal.onrender.com/api/classNew", AddData)
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'New Class created',
+            showConfirmButton: false,
+            timer: 3000
+          })
       setLoad(false)
         console.log(res)
         // console.log(res.data.message)

@@ -4,12 +4,16 @@ import React, { useState,useEffect } from 'react'
 import { FaGraduationCap } from "react-icons/fa";
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 export default function Dashboard() {
+  const navigate = useNavigate()
   const user = useSelector((state) => state.Commerce.user)
   const [date, setDate] = useState(new Date());
   const [Allclass, setAllClass] = useState([])
   const [Allstudent, setAllStudent] = useState([])
   const [Allteacher, setAllTeacher] = useState([])
+
+
   const handleChange = (selectedDate) => {
     setDate(selectedDate);
   };
@@ -47,7 +51,7 @@ export default function Dashboard() {
             <img src='/Message.png' alt='' className='Admin_Info_Mssg' />
           </div> */}
         <div className='AdminCardHolder'>
-          <div className='AdminCard'>         
+          <div className='AdminCard'  onClick={() => { navigate("/admin/student/addnstudents") }}>         
               <div className='AdminCardWrap'>
               <div className='AdminGraduationCap'>
                 <h4>Total Students:</h4>
@@ -58,7 +62,7 @@ export default function Dashboard() {
               </div>
             </div>     
           </div>
-          <div className='AdminCard'>
+          <div className='AdminCard' onClick={() => { navigate("/admin/teachers/allteacher") }} >
             <div className='AdminCardWrap'>
               <div className='AdminGraduationCap'>
                 <h4>Total Teachers:</h4>
@@ -69,7 +73,7 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-          <div className='AdminCard'>         
+          <div className='AdminCard' onClick={() => { navigate("/admin/clases/allClasses") }}   >         
               <div className='AdminCardWrap'>
               <div className='AdminGraduationCap'>
                 <h4>Total Classes:</h4>

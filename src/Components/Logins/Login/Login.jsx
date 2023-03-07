@@ -7,6 +7,7 @@ import { addUser } from "../../../Redux/Features";
 import { clearUser } from "../../../Redux/Features";
 import { useDispatch, useSelector } from "react-redux";
 import { ThemeContext } from "../../ContextApi/Context";
+import Swal from 'sweetalert2'
 const Login = () => {
     const { verifyAlert, login_alert } = useContext(ThemeContext)
 
@@ -60,10 +61,15 @@ const Login = () => {
         console.log("clicked")
         setLoad(true)
         e.preventDefault();
-        await axios.post('https://eduglobal.onrender.com/api/admin/login', value)
+        await axios.post('https://eduglobal.onrender.com/api/admin/login', value)     
             .then(function (res) {
-                console.log(res.data)
-                console.log(res.data.message)
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'You have successfully logged in',
+                    showConfirmButton: false,
+                    timer: 3000
+                  })
                 res.data.data.email === value.email ? dispatch(addUser(res.data.data)) : null
                 res.data.data.email === value.email ?  navigate('/admin') : null
                 // if (res.data.data.isVerifield === true ) {
@@ -72,12 +78,19 @@ const Login = () => {
                 //     logOut()
                 //     setLoad(false)
                 //   }
-
+                
 
             })
             .catch(function (error) {
+                
                 console.log(error);
                 setErr(error.response.data.message)
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                    // footer: '<a href="">Why do I have this issue?</a>'
+                  })
                 setLoad(false)
             });
     }

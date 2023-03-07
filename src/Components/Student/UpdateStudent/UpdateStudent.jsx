@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { addStudent } from '../../../Redux/Features'
 import Loading from '../../LoadingSpin/Loading'
+import Swal from 'sweetalert2'
 const UpdateStudent = () => {
   const {id}=useParams()
   const [Load, setLoad] =useState(false)
@@ -99,13 +100,28 @@ const UpdateStudent = () => {
    
       .then((response) => {
         setLoad(false)
-        setSuccessMessage(response.data.message)
-        console.log(response.data)
-        console.log(response.data.message)
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'New student created',
+          showConfirmButton: false,
+          timer: 3000
+        })
+        
+        // setSuccessMessage(response.data.message)
+        // console.log(response.data)
+        // console.log(response.data.message)
         response.status === 200 ? dispatch(addStudent(response.data.data)) : null
       })
       .catch((error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          // footer: '<a href="">Why do I have this issue?</a>'
+        })
         console.log(error);
+        setLoad(false)
       });
   };
 

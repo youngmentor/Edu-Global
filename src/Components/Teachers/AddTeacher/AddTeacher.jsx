@@ -6,6 +6,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import Loading from '../../LoadingSpin/Loading'
 import { addTeacher } from '../../../Redux/Features'
+import Swal from 'sweetalert2'
 const AddTeacher = () => {
   // const user = useSelector((state) => state.Commerce.user)
   // const allclass = useSelector((state) => state.Commerce.allclass)
@@ -135,13 +136,31 @@ const AddTeacher = () => {
     console.log("clicked")
     setLoad(true)
     const res = await axios.post(`https://eduglobal.onrender.com/api/admin/${id}`, AddnTeacher)
-
+    .then((response) =>{
+          Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'New student created',
+      showConfirmButton: false,
+      timer: 3000
+    })
     setLoad(false)
     setSuccessMessage(res.data.message)
     console.log(res.data)
     console.log(res.data.message)
     res.status === 200 ? dispatch(addTeacher(response.data.data)) : null
     res.status === 201 ? Navigate('/admin/clases/allClasses') : null
+    })
+    .catch((error) =>{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
+      console.log(error);
+      setLoad(false)
+    })
   };
   return (
     <div className='AdminAddnew_Teacher_Main'>

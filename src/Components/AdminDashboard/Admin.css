@@ -8,37 +8,42 @@
     width: 100%;
     height: 100%;
 }
-.AdminMainWrap{
+
+.AdminMainWrap {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
 }
-.AdminContain{
+
+.AdminContain {
     width: 100%;
     display: flex;
     gap: 20px;
 
 }
-.AdminLogo{
+
+.AdminLogo {
     width: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.AdminHeaderLogo{
+
+.AdminHeaderLogo {
     width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  cursor: pointer;
+    height: 50px;
+    border-radius: 100%;
+    cursor: pointer;
 }
+
 .Admin_header {
     width: 100%;
     height: 12%;
-    background: rgba(235,234,234, 3.00);
-    -webkit-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
-    -moz-box-shadow: -2px 3px 13px 0px rgba(70,151,217,1);
+    background: rgba(235, 234, 234, 3.00);
+    -webkit-box-shadow: -2px 3px 13px 0px rgba(70, 151, 217, 1);
+    -moz-box-shadow: -2px 3px 13px 0px rgba(70, 151, 217, 1);
     box-shadow: -2px 3px 13px 0px rgb(159, 161, 161);
     backdrop-filter: blur(10.4px);
     position: fixed;
@@ -46,9 +51,10 @@
     align-items: center;
 
     justify-content: center;
-  
+
 }
-.Admin_header_wrap{
+
+.Admin_header_wrap {
     width: 95%;
     height: 100%;
     padding: 10px;
@@ -57,29 +63,33 @@
     justify-content: space-between;
     /* background-color: green; */
 }
+
 .AdminMainWrap {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-  
+
 }
-.AdminMainWraps{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+
+.AdminMainWraps {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
 }
-.AdminSchoolNamewrap{
+
+.AdminSchoolNamewrap {
     width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
-.AdminSchoolNamewrap1{
+
+.AdminSchoolNamewrap1 {
     width: 200px;
     display: flex;
     align-items: center;
@@ -87,84 +97,108 @@
     gap: 10px;
     font-size: 10px;
 }
+
 .AdminLeft {
     /* height: 90%; */
     width: 25%;
-    
+
 }
 
 /* Admin Left */
 
 .AdminLeftWrap {
-    height: 75%;
+    height: 100%;
     width: 25%;
-    margin-top: 40px;
-    background-color: #ffffff;
+    margin-top: 10px;
+    background-color: #f5f5f5;
     position: fixed;
     top: 60px;
     left: 0px;
-    overflow-y: auto;
+    /* overflow-y: scroll; */
     display: flex;
     flex-direction: column;
-    /* border: 1px  solid rgb(223, 216, 216); */
+    /* border: 3px solid rgb(223, 216, 216); */
     padding: 5px;
     font-size: 13px;
 }
-.AdminLeftHolder{
+
+.AdminLeftHolder {
     width: 100%;
     justify-content: center;
     padding: 15px;
     /* background-color: red; */
-    
-}
-.AdminNav {
-    width: 80%;
-    display: flex;
-    align-items:start;
-    justify-content: space-between;
-    margin-top: 45px;
-}
-.AdminBurger{
-    display: none;
-    margin-left: 15px;
-}
-.DashDrop_wrap {
-    width: 60%;
-    margin-left: 40px;
-    /* background-color: green; */
-  cursor: pointer;
+
 }
 
-.Dash{
-    text-decoration: none;
-    color: inherit;
-    /* line-height: 1.7; */
-    margin-top: 10px;
-    cursor: pointer;
-}
-/* .AdminNavContan{
-    width: 90%;
+.AdminNavMain {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-} */
+    /* background-color: green; */
+    /* margin-top: 30px; */
+}
+
+.AdminNav {
+    width: 100%;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 20px;
+    /* background-color: yellow; */
+}
+
+.AdminNav:hover {
+    background-color: #5390D9;
+    color: white;
+}
+
+.AdminBurger {
+    display: none;
+    margin-left: 15px;
+}
+
+.DashDrop_wrap {
+    width: 100%;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.DashDrop {
+    margin-left: 85px;
+    line-height: 1.9;
+}
+
+.Dash {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
 .AdminLeftWrap_title1 {
-    width: 55%;
+    width: 80%;
+    height: 30px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     font-size: 13px;
-    cursor: pointer;  
-    margin-left: 15px;
-    /* background-color: red; */
+    cursor: pointer;
+    margin-left: 5px;
+    gap: 63px;
+    /* color: red; */
+    /* background-color: #5390D9; */
 }
-.AdminLeftWrap_title1 h4{
-    margin-right: 17px;
-}
-.AdminLeftMobile_co{
+
+
+.AdminLeftMobile_co {
     display: none;
 }
-.AdminProfileWrap{
+
+.AdminProfileWrap {
     width: 220px;
     background-color: rgb(242, 239, 239);
     position: absolute;
@@ -175,20 +209,23 @@
     border-radius: 8px;
     border: 1px solid rgb(231, 207, 207);
 }
-.ActiveUser{
+
+.ActiveUser {
     width: 10px;
     height: 10px;
     border-radius: 100%;
     background-color: green;
 }
-.AdminSetting{
+
+.AdminSetting {
     text-decoration: none;
     color: inherit;
     display: flex;
     align-items: center;
     gap: 20px;
 }
-.AdminProfile{
+
+.AdminProfile {
     width: 200px;
     display: flex;
     flex-direction: column;
@@ -197,6 +234,7 @@
     gap: 20px;
     cursor: pointer;
 }
+
 /* .AdminProfile:hover{
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
@@ -204,39 +242,46 @@
     transition: 1s ease;
     background-color: white;
 } */
-@media screen and (max-width: 426px){
-    .AdminHeaderLogo{
+@media screen and (max-width: 426px) {
+    .AdminHeaderLogo {
         display: none;
     }
-    .AdminLeftMobile_co{
+
+    .AdminLeftMobile_co {
         height: 80%;
         width: 75%;
         display: flex;
         position: fixed;
-        top: 60px;
+        top: 50px;
         left: 0px;
-        /* overflow-y: scroll;/ */
-        background-color:rgb(245, 238, 238);
-        border-radius: 8px;
+        /* overflow-y: scroll; */
+        background-color: #f5f5f5;
+        /* border-radius: 8px; */
         border: 1px solid rgb(231, 207, 207);
-       padding: 20px;
+        padding: 20px;
     }
-    .AdminLeftWrap{
+
+    .AdminLeftWrap {
         display: none;
     }
-    .AdminLeftMobile_mobile{
+
+    .AdminLeftMobile_mobile {
         width: 100%;
         padding: 15px 0px;
     }
-    .AdminLeft{
+
+    .AdminLeft {
         display: none;
     }
-    .AdminBurger{
+
+    .AdminBurger {
         display: flex;
     }
-    .AdminContain{
+
+    .AdminContain {
         display: none;
     }
+
     .DashDrop_wrap {
         width: 85%;
         display: flex;
@@ -246,30 +291,37 @@
         font-size: 15px;
         /* background-color: gold; */
     }
-    .DashDrop{
-      width: 150px;
-      /* background-color: #5390D9; */
+
+    .DashDrop {
+        width: 150px;
+        /* background-color: #5390D9; */
     }
+
     .AdminNav {
         width: 100%;
         display: flex;
         /* background-color: red; */
     }
-    .Admin_header{
+
+    .Admin_header {
         height: 40px;
     }
-    .AdminLeftWrap_title1{
-        font-size: 13px;
-        width: 60%;
+
+    .AdminLeftWrap_title1 {
+        width: 80%;
+        height: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
-        /* background-color: red; */
-        /* margin-left: -100px; */
+        font-size: 13px;
+        cursor: pointer;
+        margin-left: 5px;
+        gap: 50px;
     }
 
 }
-@media screen and (max-width: 769px){
+
+@media screen and (max-width: 769px) {
     .AdminLeftWrap {
         height: 80%;
         width: 30%;
@@ -285,14 +337,16 @@
         padding: 5px;
         font-size: 13px;
     }
+
     .AdminNav {
         width: 90%;
         display: flex;
-        align-items:start;
+        align-items: start;
         justify-content: space-between;
         margin-top: 30px;
     }
-    .AdminLeftWrap_title{
+
+    .AdminLeftWrap_title {
         font-size: 13px;
         margin-left: 2px;
     }
