@@ -41,12 +41,25 @@ const LoginTeacher = () => {
         await axios.post(`https://eduglobal.onrender.com/api/teacher/login`, value)
 
             .then(function (res) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'You have successfully logged in',
+                    showConfirmButton: false,
+                    timer: 3000
+                  })
                 console.log(res)
                 console.log(res.data.message)
                 res.data.data.email === value.email ? dispatch(addTeacher(res.data.data)) : null
                 res.data.data.email === value.email ? navigate('/teacherdash') : null
             })
             .catch(function (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                    // footer: '<a href="">Why do I have this issue?</a>'
+                  })
                 console.log(error);
                 setLoad(false)
             })

@@ -6,6 +6,7 @@ import axios from "axios";
 import { addStudent, addUser } from "../../../Redux/Features";
 import { useDispatch } from "react-redux";
 import Loading from "../../LoadingSpin/Loading";
+import Swal from 'sweetalert2'
 const LoginStudent = () => {
     const [load, setLoad] = useState(false)
     const dispatch = useDispatch()
@@ -41,12 +42,25 @@ const LoginStudent = () => {
         await axios.post(`https://eduglobal.onrender.com/api/student/login`, value)
         
         .then(function(res){
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'You have successfully logged in',
+                showConfirmButton: false,
+                timer: 3000
+              })
             console.log(res.data)
                 console.log(res.data.message)
                 res.data.data.email === value.email ? dispatch(addStudent(res.data.data)) : null
                 res.data.data.email === value.email ? navigate('/studentdash') : null
         })
         .catch(function(error){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+                // footer: '<a href="">Why do I have this issue?</a>'
+              })
             console.log(error);
             setLoad(false)
         })

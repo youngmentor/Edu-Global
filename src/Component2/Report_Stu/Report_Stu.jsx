@@ -9,14 +9,13 @@ function Report_Stu () {
   const [results, setResults] = useState([]);
   const [isDownloaded, setIsDownloaded] = useState(false);
 
-  const result = () =>{
-
+  const Result = () =>{
  const res =   axios.get(`https://eduglobal.onrender.com/api/teacher/${student}`)
-    setResults(res.data.resultImage.url);
+    setResults(res.data.result);
   }
 
   useEffect(() => {
-    result()
+    Result()
   }, []);
 
   // const handleDownload = () => {
@@ -28,15 +27,16 @@ function Report_Stu () {
 
   return (
     <div className='Report_Student_Main'>
-      <h2>{result.studentName}olalere </h2>
+      <h2>{results.studentName}olalere </h2>
         <div>
          {/* <img src={i.resultImage.url} /> */}
         </div>  
-      {!isDownloaded && (
         <button  className="DownloadAdminBtt" >Download Result</button>
-      )}
     </div>
   );
 }
 export default Report_Stu;
 // onClick={handleDownload}
+// {!isDownloaded && (
+//   <button  className="DownloadAdminBtt" >Download Result</button>
+// )}
