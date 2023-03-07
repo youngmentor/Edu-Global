@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import FileSaver from 'file-saver';
 import "./Report_Stu.css"
-function Report_Stu({ studentId }) {
+import axios from 'axios';
+function Report_Stu () {
   const [studentName, setStudentName] = useState('');
   const [results, setResults] = useState([]);
   const [isDownloaded, setIsDownloaded] = useState(false);

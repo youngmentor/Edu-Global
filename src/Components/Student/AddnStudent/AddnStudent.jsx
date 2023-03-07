@@ -11,6 +11,7 @@ import { clearStudent } from '../../../Redux/Features';
 
 const AddnStudent = () => {
   // const navigate = useNavigate()
+  const dispatch=useDispatch()
   const { id } = useParams()
   const user = useSelector((state) => state.Commerce.user)
   const student = useSelector((state) => state.Commerce.student)

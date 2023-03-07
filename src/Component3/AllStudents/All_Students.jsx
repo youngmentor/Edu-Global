@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./All_Students.css"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import Loading from '../../Components/LoadingSpin/Loading';
 import { useParams } from 'react-router-dom';
 import { AiOutlineFileAdd } from "react-icons/ai";
 const All_Students = () => {
+    const navigate= useNavigate()
     const { id } = useParams()
     const allclass = useSelector((state) => state.Commerce.teacher.teacherclass)
     const teacher = useSelector((state) => state.Commerce.teacher)
@@ -42,9 +43,9 @@ const All_Students = () => {
                         <p>{i.studentName}</p>
                         <p> {i.regNumber} </p>
                         <div className='ResultUpload'>
-                            <Link className='uploadresult' to={"reportcardstudent"} >
+                            <div  onClick={() => { navigate(`/reportcardstudent/${i._id}`) }} className='uploadresult'>
                                 <AiOutlineFileAdd /> <p>Add Result</p>
-                            </Link>
+                            </div>
 
                         </div>
                     </div>
