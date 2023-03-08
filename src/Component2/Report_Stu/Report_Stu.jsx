@@ -34,6 +34,7 @@ function Report_Stu() {
         const link = document.createElement('a');
         link.href = url;
         link.setAttribute('download', `image.jpeg`);
+        // console.log(url)
         document.body.appendChild(link);
         link.click();
       })

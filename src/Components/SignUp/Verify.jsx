@@ -31,7 +31,7 @@ const Verify = () => {
     }
   return (
     <div style={style} className='verify'>
-    {!state ? <h1>Waiting.....</h1> :
+    {!state ? <h1>Please Wait...</h1> :
       <h1>Your verification was sucessful</h1>}
   </div >
   )
