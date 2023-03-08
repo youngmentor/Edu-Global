@@ -162,7 +162,7 @@
 
     .Dashboard_Students_info {
         width: 190px;
-        background-color: rgb(193, 190, 190);
+        background-color: #5390D9;
         gap: 30px;
         padding: 10px;
         border-radius: 8px;
@@ -194,12 +194,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: gray;
+        background-color: #5390D9;
         border-radius: 8px;
         font-size: 10px;
         height: 80px;
         padding: 10px;
-        text-align: center;
+        /* text-align: center; */
     }
 
     .Dashboard_Stu_Info_Img {
