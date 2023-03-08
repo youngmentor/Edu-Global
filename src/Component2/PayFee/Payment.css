@@ -74,16 +74,22 @@
     }
 
     .StudentPayment_Main_Form {
-        width: 400px;
+        width: 300px;
         display: flex;
         align-items: center;
         justify-content: center;
-        /* background-color: green; */
+        /* background-color: rgb(250, 250, 255); */
+        /* margin-right: 60px; */
     }
 
     .Student_Payment_Input {
-        width: 300px;
+        width: 250px;
         height: 40px;
         /* margin-right: 40px; */
+    }
+    .Payment_Button {
+        width: 250px;
+        /* margin-right: 40px; */
+
     }
 }
