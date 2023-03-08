@@ -38,10 +38,10 @@ const activeColorObject = {
         <div className='StudentNav'>
             <NavLink to={"/studentdash"} className="Dash" style={({ isActive }) => isActive ? activeColorObject : colorObject}  ><h3><RxDashboard/> Dashboard</h3></NavLink>
             {/* <Link to={"table"} className="Dash" ><h3> <BsListTask/> TimeTable</h3></Link> */}
-            <NavLink to={"report"} className="Dash"><h3> <HiOutlineDocumentReport/>Report Card</h3></NavLink>
-            <NavLink to={"payfee"} className="Dash"><h3> <MdOutlinePayments/> Pay Fee</h3></NavLink>
-            <NavLink to={"accountsetStu"} className="Dash"><h3> <AiOutlineSetting/> Account Setting</h3></NavLink>
-            <NavLink to={"logout"} className="Dash"> <h3 onClick={() => { logOut() }} > <BiLogOut/> Logout</h3></NavLink>
+            <NavLink to={"report"} className="Dash" style={({ isActive }) => isActive ? activeColorObject : colorObject}><h3> <HiOutlineDocumentReport/>Report Card</h3></NavLink>
+            <NavLink to={"payfee"} className="Dash" style={({ isActive }) => isActive ? activeColorObject : colorObject}><h3> <MdOutlinePayments/> Pay Fee</h3></NavLink>
+            <NavLink to={"accountsetStu"} className="Dash" style={({ isActive }) => isActive ? activeColorObject : colorObject}><h3> <AiOutlineSetting/> Account Setting</h3></NavLink>
+            <NavLink to={"logout"} className="Dash"style={({ isActive }) => isActive ? activeColorObject : colorObject}> <h3 onClick={() => { logOut() }} > <BiLogOut/> Logout</h3></NavLink>
         </div>
     )
 }

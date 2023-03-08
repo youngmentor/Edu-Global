@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Loading from '../../Components/LoadingSpin/Loading'
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2'
+import { addFile } from '../../Redux/Features';
 const ReportCard_Stu = () => {
+  const dispatch= useDispatch()
   const teacher = useSelector((state) => state.Commerce.teacher)
   const { id } = useParams()
   const [load, setLoad] = useState(false)
@@ -39,7 +41,7 @@ const ReportCard_Stu = () => {
           timer: 3000
         })
         setMessage(response.data.message);
-        // response.status === 201 
+        // res.status === 201 ? dispatch(addFile()) : null 
         setLoad(false)
       })
       .catch(error => {
@@ -64,8 +66,8 @@ const ReportCard_Stu = () => {
 
        <div className="ReportFile"> <input type="file" placeholder='choose a file'  onChange={handleImage}  /></div>
         <button onClick={handleFileUpload} className="ReportBttn">{load ? <Loading /> : "Upload"}</button>
-        {message && <p>{message}</p>}
-        {errorMessage && <p>{errorMessage}</p>}
+        {/* {message && <p>{message}</p>} */}
+        {/* {errorMessage && <p>{errorMessage}</p>} */}
       </form>
     </div>
   )

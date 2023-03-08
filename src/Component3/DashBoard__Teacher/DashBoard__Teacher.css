@@ -52,7 +52,8 @@
     width: 400px;
     height: 80px;
     padding: 10px;
-    background-color: gray;
+    color: white;
+    background-color: #5390D9;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -62,7 +63,8 @@
 
 .Dashboard_info {
     width: 200px;
-    background-color: rgb(215, 215, 215);
+    background-color: #5390D9;
+    color: white;
     display: flex;
     flex-direction: column;
     gap: 20px;

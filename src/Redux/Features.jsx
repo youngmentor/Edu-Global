@@ -4,7 +4,7 @@ const initialState = {
   student: {},
   teacher: {},
   allclass: {},
-  addFile: [],
+  file: [],
   payment: []
 }
 
@@ -32,6 +32,9 @@ const Features = createSlice({
      
       addPayment: (state, { payload }) => {
         state.payment =[ payload];
+      },
+      addFile: (state, { payload }) => {
+        state.file =[ payload];
       },
       addTeacher: (state, { payload }) => {
         state.teacher = payload;
