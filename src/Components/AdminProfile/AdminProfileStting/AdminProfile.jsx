@@ -104,13 +104,6 @@ const AdminProfile = () => {
       placeholder: "Phone Number",
       required: true
     },
-    // {
-    //   id: 4,
-    //   name: "email",
-    //   type: "text",
-    //   placeholder: "Email Address",
-    //   required: true
-    // },
     {
       id: 5,
       name: "address",
