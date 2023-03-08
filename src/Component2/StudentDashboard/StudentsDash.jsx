@@ -43,8 +43,8 @@ const StudentsDash = () => {
         console.log("clicked")
         const res = await axios.post(`https://eduglobal.onrender.com/api/student/logout/${student?._id}`)
         console.log(res.data)
-        res.status === 201 ? dispatch(clearStudent()) : null
-        res.status === 201 ? navigate('/loginuser/login') : null
+        res.status === 200 ? dispatch(clearStudent()) : null
+        res.status === 200 ? navigate('/loginuser/login') : null
     }
 
     const studentLeft_Mobile = (
