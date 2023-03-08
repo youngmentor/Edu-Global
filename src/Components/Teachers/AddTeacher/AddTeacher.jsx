@@ -153,10 +153,11 @@ const AddTeacher = () => {
     })
     .catch((error) =>{
       Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Something went wrong!',
-        // footer: '<a href="">Why do I have this issue?</a>'
+        position: 'top-end',
+        icon: 'success',
+        title: 'New student created',
+        showConfirmButton: false,
+        timer: 3000
       })
       console.log(error);
       setLoad(false)

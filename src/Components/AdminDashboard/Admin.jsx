@@ -129,10 +129,12 @@ const Admin = () => {
         }
     ];
     const getAdmin = async (e) => {
+        setWaitImage(true)
         const res = await axios.get(`https://eduglobal.onrender.com/api/admin/Admin/${user?._id}`)
+        // 
         setAllAdmin(res.data.data)
         // console.log(res.data.data)
-        setWaitImage(true)
+        setWaitImage(false)
     };
     useEffect(() => {
         getAdmin()
@@ -218,8 +220,9 @@ const Admin = () => {
 
                                 <div className='AdminSchoolNamewrap'>
                                     <div className='AdminProfile_Logo_Div1'>
-                                        {waitImage ? <img src={AllAdmin.schoolImage.url} alt="Logo" className='AdminProfile_Logo1' /> : <p>loading image</p>}
+                                        {waitImage ? <img src={ AllAdmin.schoolImage.url} alt="Logo" className='AdminProfile_Logo1' /> : <p>L</p>}
                                     </div>
+                                    
                                     <h4>{AllAdmin.nameOfSchool}</h4>
                                     {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}
                                 </div>

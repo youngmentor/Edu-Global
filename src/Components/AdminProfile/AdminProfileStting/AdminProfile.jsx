@@ -67,6 +67,13 @@ const AdminProfile = () => {
         setSuccessMessage(res.data.message)
         console.log(res)
         console.log(res.data.message)
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'You have successfully Updated Your Profile',
+          showConfirmButton: false,
+          timer: 3000
+        })
         res.data.data.email === value.email ? dispatch(addUser(res.data.data)) : null
       })
       .catch(function (error) {
@@ -157,7 +164,7 @@ const AdminProfile = () => {
                 />
               </label>
             ))}
-            {successMessage && <p>{successMessage}</p>}
+            {/* {successMessage && <p>{successMessage}</p>} */}
             <button className='AdminUpdate_Bttn' type='submit'>{Load ? <Loading /> : "Update Profile"}</button>
           </form>
 
@@ -167,7 +174,8 @@ const AdminProfile = () => {
          
           <div className='AdminProfile_Logo_Div'>
             
-          {  waitImage ? <img src={AllAdmin.schoolImage.url} alt="Logo" className='AdminProfile_Logo'/> : <p>loading image</p> }</div> 
+          {  waitImage ? <img src={AllAdmin.schoolImage.url} alt="Logo" className='AdminProfile_Logo'/> : <p>loading image</p> }
+          </div> 
           
           <h4>{AllAdmin.nameOfSchool}</h4>
           <p>{AllAdmin.targetLine}</p>
