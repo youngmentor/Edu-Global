@@ -219,9 +219,9 @@ const Admin = () => {
                             <div className='AdminSchoolName'>
 
                                 <div className='AdminSchoolNamewrap'>
-                                    <div className='AdminProfile_Logo_Div1'>
+                                    {/* <div className='AdminProfile_Logo_Div1'>
                                         {waitImage ? <img src={ AllAdmin.schoolImage.url} alt="Logo" className='AdminProfile_Logo1' /> : <p>L</p>}
-                                    </div>
+                                    </div> */}
                                     
                                     <h4>{AllAdmin.nameOfSchool}</h4>
                                     {open ? < IoIosArrowForward onClick={() => { setOpen(!open) }} /> : <IoIosArrowDown onClick={() => { setOpen(!open) }} />}

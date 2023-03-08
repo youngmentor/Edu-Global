@@ -174,7 +174,7 @@ const AdminProfile = () => {
          
           <div className='AdminProfile_Logo_Div'>
             
-          {  waitImage ? <img src={AllAdmin.schoolImage.url} alt="Logo" className='AdminProfile_Logo'/> : <p>loading image</p> }
+          {/* {  waitImage ? <img src={AllAdmin.schoolImage.url} alt="Logo" className='AdminProfile_Logo'/> : <p>loading image</p> } */}
           </div> 
           
           <h4>{AllAdmin.nameOfSchool}</h4>
