@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Loading from '../../Components/LoadingSpin/Loading'
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import Swal from 'sweetalert2'
 const ReportCard_Stu = () => {
   const teacher = useSelector((state) => state.Commerce.teacher)
   const { id } = useParams()
@@ -30,11 +31,24 @@ const ReportCard_Stu = () => {
       }
     })
       .then(response => {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'result uploaded succesfully',
+          showConfirmButton: false,
+          timer: 3000
+        })
         setMessage(response.data.message);
         // response.status === 201 
         setLoad(false)
       })
       .catch(error => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          // footer: '<a href="">Why do I have this issue?</a>'
+        })
         setErrorMessage(error.message);
         // console.error(error);
         setLoad(false)

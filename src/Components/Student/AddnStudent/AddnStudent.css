@@ -41,11 +41,9 @@
     border-radius: 100%;
 }
 .AdminStudents_All_AddWrap{
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    margin-top: -30px;
-    margin-left: 30px;
+    width: 150px;
+    height: 215px;
+    border-radius: 8px;
     background-color: #5390D9;
     display: flex;
     align-items: center;

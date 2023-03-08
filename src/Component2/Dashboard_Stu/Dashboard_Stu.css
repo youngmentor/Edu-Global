@@ -54,7 +54,8 @@
 
 .Dashboard_Students_info {
     width: 220px;
-    background-color: rgb(193, 190, 190);
+    background-color: #5390D9;
+    color: white;
     gap: 30px;
     padding: 10px;
     border-radius: 8px;
@@ -86,9 +87,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(193, 190, 190);
+    background-color: #5390D9;
+    color: rgb(243, 235, 235);
     border-radius: 8px;
-    font-size: 15px;
+    font-size: 12px;
     height: 80px;
     padding: 10px;
 }

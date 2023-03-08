@@ -5,6 +5,7 @@ import LoginUser from "../LoginUser";
 import Loading from "../../LoadingSpin/Loading";
 import { addTeacher } from "../../../Redux/Features";
 import axios from "axios";
+import Swal from 'sweetalert2'
 import { useDispatch } from "react-redux";
 const LoginTeacher = () => {
     const dispatch= useDispatch()

@@ -30,7 +30,24 @@
     align-items: center;
     justify-content: center;
 }
-
+.AdminProfile_Logo_Div1{
+    /* margin-top: 20px; */
+    width: 40px;
+    height: 40px;
+    background-color: #5390D9;
+    object-fit: contain;
+    border-radius:100% ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+}
+.AdminProfile_Logo1{
+  border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
 .AdminHeaderLogo {
     width: 50px;
     height: 50px;
@@ -82,11 +99,12 @@
 }
 
 .AdminSchoolNamewrap {
-    width: 200px;
+    width: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    /* background-color: red; */
 }
 
 .AdminSchoolNamewrap1 {
@@ -94,6 +112,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background-color: blue; */
     gap: 10px;
     font-size: 10px;
 }

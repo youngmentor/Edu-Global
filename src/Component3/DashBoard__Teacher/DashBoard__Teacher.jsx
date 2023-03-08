@@ -61,7 +61,7 @@ const Dashboard_Teacher= () => {
              </div>
           </div>
           </div>
-          : "You are not Logged in"}
+          : "Loading..."}
        
         
       <div className='Dashboard_Teach_Left'>
