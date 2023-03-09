@@ -56,7 +56,8 @@ const AllClasses = () => {
               
               <Link to={`/admin/teachers/addteacher/${i._id}`} className='AddTeacher_icon'>
               <FaChalkboardTeacher /> 
-                {teacherName ? <p>{i.teachers[0]?.teacherName}</p> :  <div><FaChalkboardTeacher /> <p>Add Teacher</p></div>}
+              <p>Add Teacher</p>
+                {teacherName ? <p>{i.teachers[0]?.teacherName}</p> : null}
                 
                 
               </Link>
