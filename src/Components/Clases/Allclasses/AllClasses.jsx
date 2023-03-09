@@ -12,25 +12,30 @@ import { FaChalkboardTeacher } from "react-icons/fa";
 const AllClasses = () => {
   // const allclass = useSelector((state) => state.Commerce.allclass)
   const navigate = useNavigate()
+  const teacher = useSelector((state) => state.Commerce.teacher)
   const user = useSelector((state) => state.Commerce.user)
+  const [oneteacher, setOneTeacher]=useState()
   const [Allclass, setAllClass] = useState([])
   const [change, setChange] = useState(false)
+  const [teacherName, setTeacherName]= useState(false)
 
   const getAll = async () => {
     const res = await axios.get(`https://eduglobal.onrender.com/api/admin/allClass/${user?._id}`)
-
+   setTeacherName(res.data.data[0].teachers[0]?.teacherName)
     setAllClass(res.data.data)
-    // console.log(res.data.data)
+    // console.log(res.data.data[0].teachers[0]?.teacherName)
     // res.status === 201? dispatch(addClass(res.data.data)) : null
   };
   useEffect(() => {
     getAll()
+    
 
   }, [])
   useEffect(() => {
     // console.log(res)
     // console.log(Allclass)
   }, [Allclass])
+  const oneteacherdata = {...oneteacher}
   return (
     <div className='AllclassesMain' >
       <div className='AllClassCardHolder'>
@@ -50,8 +55,10 @@ const AllClasses = () => {
               </Link>
               
               <Link to={`/admin/teachers/addteacher/${i._id}`} className='AddTeacher_icon'>
-                <FaChalkboardTeacher />
-                <p>Add Teacher</p>
+              <FaChalkboardTeacher /> 
+                {teacherName ? <p>{i.teachers[0]?.teacherName}</p> :  <div><FaChalkboardTeacher /> <p>Add Teacher</p></div>}
+                
+                
               </Link>
               {/* <div className='AllClassGraduationCap'>
                 <FaGraduationCap style={{ width: "50px", height: "50px" }} />  

@@ -46,6 +46,7 @@ const Teachers_Dashb = () => {
     }
     useEffect(() => {
         getTeacher()
+        console.log(teacher[0]?._id)
 
     }, [])
     const oneteacherdata = { ...oneteacher }

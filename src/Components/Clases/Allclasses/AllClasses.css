@@ -16,8 +16,11 @@
   text-decoration: none;
   color: inherit;
 }
+.AddStudent_icon:hover{
+  transform: scale(1.2);
+}
 .AddStudent_icon p{
-  font-size: 8px;
+  font-size: 12px;
 }
 .AddTeacher_icon{
   position: relative;
@@ -28,6 +31,9 @@
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+}
+.AddTeacher_icon:hover{
+  transform: scale(1.5);
 }
 .AddTeacher_icon p{
   font-size: 8px;

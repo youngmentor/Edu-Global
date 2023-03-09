@@ -29,6 +29,9 @@
   align-items: center;
   justify-content: center;
 }
+.AdminCard:hover{
+  transform: scale(1.1);
+}
 .AdminCardWrap{
   width: 80%;
   display: flex;

@@ -18,7 +18,7 @@ const AllTeachers = () => {
   };
   const deleteTeacher = async (id) => {
     console.log("clicked")
-    const res = await axios.delete(`https://eduglobal.onrender.com/api/admin/deleteTeacher/${teacher[0]?._id}/${id}`)
+    const res = await axios.delete(`https://eduglobal.onrender.com/api/admin/deleteTeacher/${teacher?._id}/${id}`)
     setDeleteTeacher(res.status)
     res.status === 200 ? dispatch(clearTeacher()) : null
     getAllStudent()
@@ -26,7 +26,7 @@ const AllTeachers = () => {
   }
   useEffect(() => {
     getAllTeacher()
-console.log(teacher[0]?._id)
+
   }, [])
   useEffect(() => {
     // console.log(res)
