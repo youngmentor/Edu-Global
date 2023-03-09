@@ -140,6 +140,7 @@ const Login = () => {
                     ))}
                     <p className='forg' onClick={() => navigate("/forgetpassword")} >Forgot Paasword ?</p>
                     <button type="submit" className="Loginbtt" >{load ? <Loading /> : "Login"}</button>
+                    {/* <p>Don't have an Account yet <b>Sign Up ?</b> </p> */}
                 </div>
                 <hr style={{ transform: 'rotate(180deg)', height: '100vh' }} className="verticalSign" />
                 <div className="ImageWrap">

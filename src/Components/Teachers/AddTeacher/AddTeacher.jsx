@@ -135,7 +135,7 @@ const AddTeacher = () => {
     e.preventDefault();
     console.log("clicked")
 
-    console.log(id)
+    // console.log(id)
     setLoad(true)
     await axios.post(`https://eduglobal.onrender.com/api/admin/${id}`, AddnTeacher)
     

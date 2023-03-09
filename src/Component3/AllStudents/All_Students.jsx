@@ -9,7 +9,7 @@ import { AiOutlineFileAdd } from "react-icons/ai";
 const All_Students = () => {
     const navigate= useNavigate()
     const { id } = useParams()
-    const allclass = useSelector((state) => state.Commerce.teacher.teacherclass)
+    const allclass = useSelector((state) => state.Commerce.teacher[0].teacherclass)
     const teacher = useSelector((state) => state.Commerce.teacher)
     const student = useSelector((state) => state.Commerce.student._id)
     const [Allstudents, setAllStudents] = useState([]);
@@ -22,7 +22,7 @@ const All_Students = () => {
             // console.log(res.data.data.students)
             // console.log(res)
         } catch {
-
+            console.log(error)
         }
 
     }

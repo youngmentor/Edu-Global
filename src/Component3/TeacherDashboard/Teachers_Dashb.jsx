@@ -52,7 +52,7 @@ const Teachers_Dashb = () => {
     const dispatch = useDispatch()
     const logOut = async () => {
         console.log("clicked")
-        const res = await axios.post(`https://eduglobal.onrender.com/api/teacher/logout/${teacher?._id}`)
+        const res = await axios.post(`https://eduglobal.onrender.com/api/teacher/logout/${teacher[0]?._id}`)
         console.log(res.data)
         res.status === 200 ? dispatch(clearTeacher()) : null
         res.status === 200 ? navigate('/loginuser/login') : null
