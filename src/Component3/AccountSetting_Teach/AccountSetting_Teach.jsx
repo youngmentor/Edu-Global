@@ -1,8 +1,30 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import "./AccountSetting_Teach.css"
+import Loading from '../../Components/LoadingSpin/Loading'
 import { useRef } from 'react'
 const AccountSetting_Teach = () => {
-  const inputRef = useRef()
+  const teacher = useSelector((state) => state.Commerce.teacher)
+  const [oneteacher, setOneTeacher] = useState()
+  // const inputRef = useRef()
+
+  const getTeacher = () =>{
+  
+    axios.get(`https://eduglobal.onrender.com/api/admin/Teacher/${teacher[0]?._id}`)
+    
+    .then(res=> {
+      setOneTeacher(res.data.data)
+    })
+      .catch((e)=>{
+        console.log(e)
+      })
+  }
+ 
+  useEffect(() => {
+    getTeacher()
+    // console.log(teacher[0]?._id)
+
+  }, [])
+  const oneteacherdata = {...oneteacher}
   return (
     <div className='UpdateAccountTeach_Main'>
       <div className='UpdateAccountTeach_Main_Wrap'>
@@ -16,7 +38,8 @@ const AccountSetting_Teach = () => {
         </div>
         <div className='UpdateAccountTeach_Main_Wrap2' >
           <h4>Account Login Details</h4>
-          <div className='UpdateAccountTeach' >Email:<p></p> </div>
+          {oneteacher ? <div className='UpdateAccountTeach' >Email:<p></p> </div> : <Loading/>}
+          
           <div className='UpdateAccountTeach' >PassWord: <p></p></div>
           <button className='UpdateAccounTeacht_Bttn2' >Delete Account</button>
         </div>

@@ -31,7 +31,7 @@ useEffect(() => {
         </div>
         <div className='UpdateAccountStu_Main_Wrap2' >
           <h4>Account Login Details</h4>
-         {onestudent?  <div className='UpdateAccountStu' >Email:  <p>{onestudentdata.email}</p> </div> : <Loading/> }
+         {onestudent ?  <div className='UpdateAccountStu' >Email:  <p>{onestudentdata.email}</p> </div> : <Loading/> }
           <div className='UpdateAccountStu' >PassWord: <p></p></div>
           <button className='UpdateAccounStut_Bttn2' >Delete Account</button>
         </div>

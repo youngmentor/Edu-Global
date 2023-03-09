@@ -92,7 +92,7 @@ const Payment = () => {
         // Handle when modal is closed
       },
       onSuccess: function (data) {
-        data.reference === key ? dispatch(addPayment()) : null
+        data.reference === key ? dispatch(addPayment(Payment)) : null
         console.log(data)
         // console.log(key)
       },
