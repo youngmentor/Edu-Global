@@ -2,10 +2,10 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   user: {},
   student: {},
-  teacher: {},
+  teacher: [],
   allclass: {},
   file: [],
-  payment: []
+  payment: [{}]
 }
 
 const Features = createSlice({
@@ -37,7 +37,7 @@ const Features = createSlice({
         state.file =[ payload];
       },
       addTeacher: (state, { payload }) => {
-        state.teacher = payload;
+        state.teacher = [payload];
       },
       clearTeacher: (state) => {
         const clearAll = {}

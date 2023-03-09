@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import './AddTeacher.css'
@@ -9,10 +9,10 @@ import { addTeacher } from '../../../Redux/Features'
 import Swal from 'sweetalert2'
 const AddTeacher = () => {
   // const user = useSelector((state) => state.Commerce.user)
-  // const allclass = useSelector((state) => state.Commerce.allclass)
+  const allclass = useSelector((state) => state.Commerce.allclass)
   const { id } = useParams()
   const [Load, setLoad] = useState(false)
-  const Navigate = useNavigate()
+  const navigate = useNavigate()
   const [successMessage, setSuccessMessage] = useState(null);
   const [AddnTeacher, SetAddnTeacher] = useState({
     teacherName: "",
@@ -134,35 +134,46 @@ const AddTeacher = () => {
   const handleAddTeacher = async (e) => {
     e.preventDefault();
     console.log("clicked")
+
+    console.log(id)
     setLoad(true)
-    const res = await axios.post(`https://eduglobal.onrender.com/api/admin/${id}`, AddnTeacher)
+    await axios.post(`https://eduglobal.onrender.com/api/admin/${id}`, AddnTeacher)
+    
     .then((response) =>{
+     
           Swal.fire({
       position: 'top-end',
       icon: 'success',
-      title: 'New student created',
+      title: 'New Teacher created',
       showConfirmButton: false,
       timer: 3000
     })
     setLoad(false)
-    setSuccessMessage(res.data.message)
-    console.log(res.data)
-    console.log(res.data.message)
-    res.status === 200 ? dispatch(addTeacher(response.data.data)) : null
-    res.status === 201 ? Navigate('/admin/clases/allClasses') : null
+    // setSuccessMessage(res.data.message)
+    // console.log(res.data)
+    // console.log(res.data.message)
+    response.status === 200 ? dispatch(addTeacher(response.data.data)) : null
+    response.status === 200 ? navigate('/admin/clases/allClasses') : null
+    
     })
     .catch((error) =>{
       Swal.fire({
         position: 'top-end',
         icon: 'success',
-        title: 'New student created',
+        title: 'New Teacher created',
         showConfirmButton: false,
         timer: 3000
+
       })
+     
       console.log(error);
       setLoad(false)
     })
   };
+  useEffect(() => {
+    // console.log(res)
+    console.log(id)
+  }, [])
   return (
     <div className='AdminAddnew_Teacher_Main'>
       <div className='AdminAddnew_TeacherWrapper'>

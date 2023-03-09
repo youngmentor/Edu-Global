@@ -7,7 +7,7 @@ export const Datas =[
         id: 1,
         Img: Admin,
         bgtxt: "For Admin",
-        smtxt: "EduGlobal provides an interface design  that saves time and enhances better insights on Student performance, Biographical data, Attendance, Bulk Editing, Classes  and School wild view and so much more.",
+        smtxt: "EduGlobal provides an interface design  that saves time and enhances better insights on Student performance,Simplification of administrative tasks, Biographical data, Classes  and School wild view and so much more.",
         
     },
     {

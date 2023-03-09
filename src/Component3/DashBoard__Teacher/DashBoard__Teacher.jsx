@@ -15,14 +15,19 @@ const Dashboard_Teacher= () => {
 
   const getTeacher = () =>{
   
-    axios.get(`https://eduglobal.onrender.com/api/admin/Teacher/${teacher._id}`)
+    axios.get(`https://eduglobal.onrender.com/api/admin/Teacher/${teacher[0]?._id}`)
     
     .then(res=> {
-      setOneTeacher(res.data.data)}
-      )
+      setOneTeacher(res.data.data)
+    })
+      .catch((e)=>{
+        console.log(e)
+      })
   }
+ 
   useEffect(() => {
     getTeacher()
+    // console.log(teacher[0]?._id)
 
   }, [])
   const oneteacherdata = {...oneteacher}

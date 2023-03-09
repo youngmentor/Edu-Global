@@ -48,6 +48,7 @@ const AllClasses = () => {
                 <AiOutlineUserAdd />
                 <p>Add Student</p>
               </Link>
+              
               <Link to={`/admin/teachers/addteacher/${i._id}`} className='AddTeacher_icon'>
                 <FaChalkboardTeacher />
                 <p>Add Teacher</p>

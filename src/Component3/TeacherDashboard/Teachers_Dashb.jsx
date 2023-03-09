@@ -37,7 +37,7 @@ const Teachers_Dashb = () => {
 
     const getTeacher = () => {
 
-        axios.get(`https://eduglobal.onrender.com/api/admin/Teacher/${teacher._id}`)
+        axios.get(`https://eduglobal.onrender.com/api/admin/Teacher/${teacher[0]?._id}`)
 
             .then(res => {
                 setOneTeacher(res.data.data)
