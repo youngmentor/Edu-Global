@@ -2,6 +2,7 @@ import React from 'react'
 import { useRef, useContext,useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import "./ForgetPassword.css"
+import { useSelector } from 'react-redux'
 // import axios from 'axios'
 const ResetPassword3 = () => {
     const teacher = useSelector((state) => state.Commerce.teacher)

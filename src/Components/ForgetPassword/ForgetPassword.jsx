@@ -3,6 +3,7 @@ import "./ForgetPassword.css"
 import { useRef } from 'react'
 import { MdOutlineArrowBack } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 // import { NavLink } from 'react-router-dom';
 
 import axios from 'axios';
@@ -20,7 +21,14 @@ const ForgetPassword = () => {
         try {
             setLoad(true)
             const response = await axios.post('https://eduglobal.onrender.com/api/admin/forgotPassword', { email });
-            setLoad(true)
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Check Your Email for A reset password link',
+                showConfirmButton: false,
+                timer: 3000
+              })
+            setLoad(false)
             // console.log(response.data); 
             setSuccessMessage(response.data.message)
         } catch (error) {
@@ -32,7 +40,7 @@ const ForgetPassword = () => {
             <form onSubmit={handleForget} className='forget_text' >
                 <h2>Forgot password?</h2>             
                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className='forget_input' placeholder='Email'/>
-                    {successMessage && <p>{successMessage}</p>}
+                    {/* {successMessage && <p>{successMessage}</p>} */}
                 <button type="submit" className='forget_button pointer' >Submit</button>
                 <div className='forget_back pointer' onClick={() => { navigate('/loginuser/login') }} ><MdOutlineArrowBack fontSize={20} /><p>Back to login</p></div>
             </form>

@@ -76,7 +76,7 @@ const LoginTeacher = () => {
                         <div className="Students" onClick={() => navigate("/loginuser/loginstudent")}   >Student</div>
                     </div>
                     <div className="LoginType">
-                        <p>I'M a Teacher</p>
+                        {/* <p>I'M a Teacher</p> */}
                     </div>
                     {field.map((i) => (
                         <label key={i.name}>
