@@ -2,10 +2,12 @@ import React,{useState, useEffect} from 'react'
 import "./AccountSetting_Teach.css"
 import Loading from '../../Components/LoadingSpin/Loading'
 import { useRef } from 'react'
+import { useSelector } from 'react-redux'
+import axios from 'axios'
 const AccountSetting_Teach = () => {
   const teacher = useSelector((state) => state.Commerce.teacher)
   const [oneteacher, setOneTeacher] = useState()
-  // const inputRef = useRef()
+  const inputRef = useRef()
 
   const getTeacher = () =>{
   
@@ -38,7 +40,7 @@ const AccountSetting_Teach = () => {
         </div>
         <div className='UpdateAccountTeach_Main_Wrap2' >
           <h4>Account Login Details</h4>
-          {oneteacher ? <div className='UpdateAccountTeach' >Email:<p></p> </div> : <Loading/>}
+          {oneteacher ? <div className='UpdateAccountTeach' >Email:<p>{oneteacherdata.email}</p> </div> : <Loading/>}
           
           <div className='UpdateAccountTeach' >PassWord: <p></p></div>
           <button className='UpdateAccounTeacht_Bttn2' >Delete Account</button>

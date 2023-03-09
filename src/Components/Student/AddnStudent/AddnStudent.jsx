@@ -14,10 +14,11 @@ const AddnStudent = () => {
   const dispatch=useDispatch()
   const { id } = useParams()
   const user = useSelector((state) => state.Commerce.user)
-  const student = useSelector((state) => state.Commerce.student)
+  // const student = useSelector((state) => state.Commerce.student)
+  
   const [Allstudents, setAllStudents] = useState([]);
   const [DeleteStudent, setDeleteStudent] = useState("")
-  const addStudent = useSelector((state) => state.Commerce.addStudent)
+  // const addStudent = useSelector((state) => state.Commerce.addStudent)
   
   const getAllStudent = async (e) => {
     const res = await axios.get(`https://eduglobal.onrender.com/api/admin/allStudent/${user?._id}`)

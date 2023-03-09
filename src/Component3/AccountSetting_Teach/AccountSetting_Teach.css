@@ -30,7 +30,10 @@
 }
 .UpdateAccountTeach{
     width: 300px;
+    display: flex;
     height: 50px;
+    font-size: 15px;
+    gap: 10px;
     border-radius: 8px;
     padding: 15px;
 }

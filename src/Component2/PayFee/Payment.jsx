@@ -15,7 +15,7 @@ const Payment = () => {
     studentClass: "",
     studentEmail: "",
     regNumber: "",
-    pay: true
+    pay: false
 
   })
 
