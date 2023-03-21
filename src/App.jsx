@@ -40,7 +40,7 @@ const App = () => {
           <Route path='/resetpassword2/:id/:token' element={<ResetPassword2 />} />
           <Route path='/resetpassword3/:id/:token' element={<ResetPassword3 />} />
           <Route path='/verify/:id' element={<Verify />}/>
-          <Route path='/verifyPayment' element={<PaymentVerify/>}/>
+          <Route path='/verifypayment' element={<PaymentVerify/>}/>
           <Route path='/reportcardstudent/:id' element={<ReportCard_Stu/>}/>
         </Routes>
       </ HashRouter>
