@@ -119,7 +119,7 @@ const StudentsDash = () => {
                     <Route path="/report" element={<Report_Stu />} />
                     <Route path="/payfee" element={<Payment />} />
                     <Route path="/accountsetStu" element={<AccountSetting_Stu />} />
-                    <Route path='/verifyPayment' element={<PaymentVerify/>}/>
+                    <Route path='/verifypayment' element={<PaymentVerify/>}/>
                 </Routes>
             </div>
         </div>
