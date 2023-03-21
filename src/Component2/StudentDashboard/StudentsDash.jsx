@@ -18,6 +18,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearStudent } from '../../Redux/Features';
+import PaymentVerify from '../PayFee/PaymentVerify';
 const StudentsDash = () => {
 
     const navigate = useNavigate()
@@ -118,6 +119,7 @@ const StudentsDash = () => {
                     <Route path="/report" element={<Report_Stu />} />
                     <Route path="/payfee" element={<Payment />} />
                     <Route path="/accountsetStu" element={<AccountSetting_Stu />} />
+                    <Route path='/verifyPayment' element={<PaymentVerify/>}/>
                 </Routes>
             </div>
         </div>

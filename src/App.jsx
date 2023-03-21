@@ -18,6 +18,7 @@ import ResetPassword2 from './Components/ForgetPassword/ResetPassword2'
 import ResetPassword3 from './Components/ForgetPassword/ResetPassword3'
 import Verify from './Components/SignUp/Verify'
 import ReportCard_Stu from './Component3/AllStudents/ReportCard_Stu'
+import PaymentVerify from './Component2/PayFee/PaymentVerify'
 
 const App = () => {
   return (
@@ -38,7 +39,8 @@ const App = () => {
           <Route path='/resetpassword/:id/:token' element={<ResetPassword />} />
           <Route path='/resetpassword2/:id/:token' element={<ResetPassword2 />} />
           <Route path='/resetpassword3/:id/:token' element={<ResetPassword3 />} />
-          <Route path='/verify/:id' element={<Verify />} />
+          <Route path='/verify/:id' element={<Verify />}/>
+          <Route path='/verifyPayment' element={<PaymentVerify/>}/>
           <Route path='/reportcardstudent/:id' element={<ReportCard_Stu/>}/>
         </Routes>
       </ HashRouter>

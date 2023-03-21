@@ -3,7 +3,30 @@
     padding: 0px;
     box-sizing: border-box;
 }
+.Confirm_Payment{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+}
+.Confirm_Payment_Wrap{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.Confirm_Payment_Button{
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: #5390D9;
+    color: whitesmoke;
+}
 .StudentPayment_Main {
     width: 70%;
     height: 100%;
@@ -91,5 +114,9 @@
         width: 250px;
         /* margin-right: 40px; */
 
+    }
+    .Confirm_Payment_Wrap{
+        font-size: 12px;
+        width: 100%;
     }
 }

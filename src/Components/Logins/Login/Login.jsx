@@ -123,7 +123,7 @@ const Login = () => {
                         {/* <p>I'M an Admin</p> */}
                     </div>
                     {field.map((i) => (
-                        <label key={i.name}>
+                        <label key={i.id}>
                             <input
                                 className="LoginInput"
                                 type={i.type}
