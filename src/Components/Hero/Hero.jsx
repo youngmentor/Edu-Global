@@ -5,6 +5,7 @@ import HeroFeatures from './HeroFeatures'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import Why from './Why'
+import Mission from './Mission/Mission'
 import "./Hero.css"
 const Hero = () => {
   const navigate = useNavigate()
@@ -27,7 +28,8 @@ const Hero = () => {
         </div>
       </div>
       <HeroFeatures />
-      <Why />
+      <Why/>
+      <Mission/>
       <Footer/>
     </div>
   )
