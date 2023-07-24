@@ -13,9 +13,7 @@ const persistConfig = {
 const reducer = combineReducers({
   Commerce: eduglobal,
 })
-
 const persistedReducer = persistReducer(persistConfig, reducer)
-
 
 export const Store = configureStore({
   reducer: persistedReducer,

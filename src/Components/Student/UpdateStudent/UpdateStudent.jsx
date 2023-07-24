@@ -12,6 +12,8 @@ const UpdateStudent = () => {
   const [successMessage, setSuccessMessage] = useState(null);
   const dispatch = useDispatch()
   // const student = useSelector((state) => state.Commerce.student)
+  const user = useSelector((state) => state.Commerce.user)
+  const allclass = useSelector((state) => state.allclass);
   const [add_new_student, SetAdd_new_student] = useState(
     {
       studentName: "",
@@ -24,8 +26,7 @@ const UpdateStudent = () => {
       DOB: ""
     }
   )
-  const user = useSelector((state) => state.Commerce.user)
-  const allclass = useSelector((state) => state.Commerce.allclass)
+  
   const AddStudent = [
     {
       id: 1,
@@ -127,7 +128,6 @@ const UpdateStudent = () => {
 
   useEffect(() => {
 
-
   }, []);
   return (
     <div className='AdminAddn_Students'>   
@@ -147,12 +147,12 @@ const UpdateStudent = () => {
               />
             </label>
           ))}
-          <select className="AddStudent_Inputs" onChange={(e) => { SetAdd_new_student({ ...add_new_student, studentClass: e.target.value }); }}>
-          {allclass.map((i) => (
+          {/* <select className="AddStudent_Inputs" onChange={(e) => { SetAdd_new_student({ ...add_new_student, studentClass: e.target.value }); }}>
+          {allclass && allclass.map((i) => (
               <option onClick={() => { console.log(i._id) }} placeholder="Select Class" value={i.nameOfClass}>{i.nameOfClass} {i.classBranch}</option>
             ))
             }
-          </select>
+          </select> */}
            {successMessage && <p>{successMessage}</p>}
             <button type="submit" className="AddSbttn" >{Load? <Loading/>: "Add New Student"}</button>        
         </form>

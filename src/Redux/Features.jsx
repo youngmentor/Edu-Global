@@ -3,7 +3,7 @@ const initialState = {
   user: {},
   student: {},
   teacher: [],
-  allclass: {},
+  allclass: [],
   file: [],
   payment: [{}]
 }
@@ -27,7 +27,7 @@ const Features = createSlice({
         state.student = clearAll
       },
       addClass: (state, { payload }) => {
-        state.allclass = payload;
+        state.allclass = [...state.allclass, payload];
       },
      
       addPayment: (state, { payload }) => {
