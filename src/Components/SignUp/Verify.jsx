@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 const Verify = () => {
   const { id } = useParams()
-  console.log(id)
+  // console.log(id)
   const navigate = useNavigate()
   const [state, setState] = useState(false)
 
@@ -16,7 +16,6 @@ const Verify = () => {
         }, 3000);
     }
     useEffect(() => {
-
       handleSubmit()
     }, [])
 

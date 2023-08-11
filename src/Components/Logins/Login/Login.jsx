@@ -53,8 +53,7 @@ const Login = () => {
         const res = await axios.post(`https://eduglobal.onrender.com/api/admin/logout/${user?._id}`)
         console.log(res.data)
         res.status === 200 ? dispatch(clearUser()) : null
-        res.status === 201 ? navigate('/loginuser/login') : null
-        
+        res.status === 201 ? navigate('/loginuser/login') : null 
     }
 
     const handleLogin = async (e) => {
@@ -72,14 +71,12 @@ const Login = () => {
                   })
                 res.data.data.email === value.email ? dispatch(addUser(res.data.data)) : null
                 res.data.data.email === value.email ?  navigate('/admin') : null
-                // if (res.data.data.isVerifield === true ) {
-                //     navigate('/admin') 
-                //   } else {
-                //     logOut()
-                //     setLoad(false)
-                //   }
-                
-
+                if (res.data.data.isVerifield === true ) {
+                    navigate('/admin') 
+                  } else {
+                    logOut()
+                    setLoad(false)
+                  }
             })
             .catch(function (error) {
                 

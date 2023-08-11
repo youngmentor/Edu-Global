@@ -9,12 +9,11 @@ const persistConfig = {
   version: 1,
   storage
 }
-
+export const Store = configureStore({
+  reducer: persistedReducer,
+})
 const reducer = combineReducers({
   Commerce: eduglobal,
 })
 const persistedReducer = persistReducer(persistConfig, reducer)
 
-export const Store = configureStore({
-  reducer: persistedReducer,
-})

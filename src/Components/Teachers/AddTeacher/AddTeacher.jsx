@@ -149,7 +149,7 @@ const AddTeacher = () => {
       timer: 3000
     })
     setLoad(false)
-    // setSuccessMessage(res.data.message)
+    setSuccessMessage(res.data.message)
     // console.log(res.data)
     // console.log(res.data.message)
     response.status === 200 ? dispatch(addTeacher(response.data.data)) : null
